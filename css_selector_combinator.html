@@ -14,14 +14,24 @@
 			}
 
 			body {
-				margin: 10px 225px;
-				padding: 10px;
-				box-shadow: 0 0 5px black;
+				margin: 0;
+				padding: 0;
+				border: 0;
+				border-radius: 0;
 				font-family: 'Courier New', Courier, monospace;
+				background-color: #f0f0f0;
 			}
 
 			h1 {
 				text-align: center;
+			}
+
+			.container {
+				margin: 10px 225px;
+				padding: 10px;
+				border: 0;
+				box-shadow: 0 0 5px black;
+				background-color: #fff;
 			}
 
 			hr {
@@ -66,36 +76,38 @@
 	<body>
 		<h1>CSS Selector : Combinator</h1>
 
-		<h2>Group Combinator Example</h2>
-		<p>This is a paragraph styled with the group combinator.</p>
-		<hr />
+		<div class="container">
+			<h2>Group Combinator Example</h2>
+			<p>This is a paragraph styled with the group combinator.</p>
+			<hr />
 
-		<div class="highlight bold">All Combinator Example</div>
-		<hr />
+			<div class="highlight bold">All Combinator Example</div>
+			<hr />
 
-		<div>
-			<span>Descendant Combinator Example</span>
+			<div>
+				<span>Descendant Combinator Example</span>
+			</div>
+			<hr />
+
+			<ul>
+				<li>Child Combinator Example 1</li>
+				<li>Child Combinator Example 2</li>
+			</ul>
+			<hr />
+
+			<h3>Adjacent Sibling Combinator Example</h3>
+			<p>
+				This paragraph is immediately after an h3 element and is styled with
+				the adjacent sibling combinator.
+			</p>
+			<hr />
+
+			<h4>General Sibling Combinator Example</h4>
+			<p>
+				This paragraph is a sibling of the h4 element and is styled with the
+				general sibling combinator.
+			</p>
+			<p>Another paragraph which is a sibling of same h4 element.</p>
 		</div>
-		<hr />
-
-		<ul>
-			<li>Child Combinator Example 1</li>
-			<li>Child Combinator Example 2</li>
-		</ul>
-		<hr />
-
-		<h3>Adjacent Sibling Combinator Example</h3>
-		<p>
-			This paragraph is immediately after an h3 element and is styled with
-			the adjacent sibling combinator.
-		</p>
-		<hr />
-
-		<h4>General Sibling Combinator Example</h4>
-		<p>
-			This paragraph is a sibling of the h4 element and is styled with the
-			general sibling combinator.
-		</p>
-		<p>Another paragraph which is a sibling of same h4 element.</p>
 	</body>
 </html>
