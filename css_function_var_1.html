@@ -49,21 +49,19 @@
 </html>
 
 <!-- 
+	- Variable / CSS custom property 
 
-- Variable / CSS custom property 
+	- Variable must be defined inside a selector 
 
-- Variable must be defined inside a selector 
+	- Local scope means that the variable is only available to the selector where it is declared. 
+	This can be useful if you want to reuse a value in multiple places within the same selector. 
+	Or if we want to avoid polluting the global namespace with custom properties.
 
-- Local scope means that the variable is only available to the selector where it is declared. 
-  This can be useful if you want to reuse a value in multiple places within the same selector. 
-  Or if we want to avoid polluting the global namespace with custom properties.
+	- Global scope means that the variable is available to all selectors in the style sheet. 
+	This can be useful if we want to reuse a value in multiple selectors.
+	Or if you want to make it easy to change the value of the variable.
 
-- Global scope means that the variable is available to all selectors in the style sheet. 
-  This can be useful if we want to reuse a value in multiple selectors.
-  Or if you want to make it easy to change the value of the variable.
-
-- In HTML, it's not valid to place a block-level element like <div> inside a <p> element. 
-  The <p> element is meant to contain inline-level elements like text, inline links, and inline elements like <span>. 
-  Using a block-level element inside a <p> can lead to unpredictable rendering and is not semantically correct.
-    
+	- In HTML, it's not valid to place a block-level element like <div> inside a <p> element. 
+	The <p> element is meant to contain inline-level elements like text, inline links, and inline elements like <span>. 
+	Using a block-level element inside a <p> can lead to unpredictable rendering and is not semantically correct.    
 -->
