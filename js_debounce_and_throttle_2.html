@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<button type="button" onclick="DebounceFunc01()">
+			Debounce Previous
+		</button>
+		<button type="button" onclick="DebounceFunc02()">
+			Debounce Subsequent
+		</button>
+		<button type="button" onclick="DebounceFunc03(this.textContent)">
+			Debounce Subsequent Time Frame
+		</button>
+
+		<script>
+			function Func01() {
+				console.log('Debounce Previous');
+			}
+
+			function Func02() {
+				console.log('Debounce Subsequent');
+			}
+
+			function Func03(message) {
+				console.log(message);
+			}
+
+			function _DebouncePrevious(func, timeout) {
+				let timer;
+				return () => {
+					if (timer) {
+						clearTimeout(timer);
+					}
+					timer = setTimeout(() => {
+						func();
+						timer = undefined;
+					}, timeout);
+				};
+			}
+
+			function _DebounceSubsequent(func, timeout) {
+				let timer;
+				return () => {
+					if (!timer) {
+						func();
+					} else {
+						clearTimeout(timer);
+					}
+					timer = setTimeout(() => {
+						timer = undefined;
+					}, timeout);
+				};
+			}
+
+			function _DebounceSubsequentTimeFrame(func, timeout) {
+				let timer;
+				return (message) => {
+					if (!timer) {
+						func(message);
+						timer = setTimeout(() => {
+							timer = undefined;
+						}, timeout);
+					} else {
+						console.log('rest time');
+					}
+				};
+			}
+
+			const DebounceFunc01 = _DebouncePrevious(Func01, 3000);
+			const DebounceFunc02 = _DebounceSubsequent(Func02, 3000);
+			const DebounceFunc03 = _DebounceSubsequentTimeFrame(Func03, 3000);
+		</script>
+	</body>
+</html>

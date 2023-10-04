@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			const x = 15;
+			const y = 16;
+			var z = 17;
+			window.x = 18;
+
+			function F01() {
+				console.log(x);
+				console.log(window.x);
+			}
+
+			function F02() {
+				const x = 19;
+				console.log(x);
+				console.log(window.x);
+			}
+
+			function F03() {
+				console.log(window.x);
+				console.log(window.y);
+				console.log(window.z);
+			}
+
+			F01();
+			F02();
+			F03();
+			window.F03();
+		</script>
+	</body>
+</html>

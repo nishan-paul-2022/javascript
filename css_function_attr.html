@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<style>
+			a {
+				text-decoration: none;
+			}
+
+			a::after {
+				content: ' [ ' attr(href) ' ] ';
+			}
+
+			.set-div::before {
+				content: attr(data-message) ': ';
+			}
+		</style>
+
+		<a
+			href="https://www.youtube.com/watch?v=mqqft2x_Aa4&ab_channel=WarnerBros.Pictures"
+			class="set-a-content">
+			batman
+		</a>
+		<br />
+
+		<a
+			href="https://www.youtube.com/watch?v=Div0iP65aZo&ab_channel=20thCenturyStudios"
+			class="set-a-content">
+			wolverine
+		</a>
+		<br />
+
+		<a
+			href="https://www.youtube.com/watch?v=7SlILk2WMTI&ab_channel=MarvelEntertainment"
+			class="set-a-content">
+			winter soldier
+		</a>
+
+		<div class="set-div" data-message="HelloWorld">Empty!</div>
+	</body>
+</html>

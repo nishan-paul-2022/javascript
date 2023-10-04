@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			/* :nth-child(2n+1) selects odd-numbered elements */
+			li:nth-child(2n + 1) {
+				background-color: lightgray;
+			}
+
+			/* :nth-child(2n) selects even-numbered elements */
+			li:nth-child(2n) {
+				background-color: lightblue;
+			}
+
+			/* :first-child selects the first child of its parent */
+			li:first-child {
+				font-weight: bold;
+			}
+
+			/* :last-child selects the last child of its parent */
+			li:last-child {
+				text-decoration: underline;
+			}
+
+			/* :nth-child() selects elements based on their position among siblings */
+			li:nth-child(2) {
+				color: red;
+			}
+
+			/* Selects odd paragraphs using :nth-of-type(2n+1) */
+			p:nth-of-type(2n + 1) {
+				background-color: lightblue;
+			}
+
+			/* Selects even paragraphs using :nth-of-type(2n) */
+			p:nth-of-type(2n) {
+				background-color: lightgray;
+			}
+
+			/* :first-of-type selects the first element of a specific type among siblings */
+			p:first-of-type {
+				font-style: italic;
+			}
+
+			/* :last-of-type selects the last element of a specific type among siblings */
+			p:last-of-type {
+				text-transform: uppercase;
+			}
+
+			/* :nth-of-type() selects elements of a specific type based on their position among siblings */
+			p:nth-of-type(2) {
+				color: green;
+			}
+
+			h4:nth-last-of-type(2n + 1) {
+				font-style: italic;
+			}
+
+			div:only-of-type {
+				background-color: gray;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul>
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+			<li>Item 4</li>
+			<li>Item 5</li>
+			<li>Item 6</li>
+			<li>Item 7</li>
+			<li>Item 8</li>
+		</ul>
+
+		<div>
+			<p>Paragraph 1</p>
+			<p>Paragraph 2</p>
+			<p>Paragraph 3</p>
+			<p>Paragraph 4</p>
+			<p>Paragraph 5</p>
+			<p>Paragraph 6</p>
+			<p>Paragraph 7</p>
+			<p>Paragraph 8</p>
+		</div>
+
+		<div>
+			<h4>Header 1</h4>
+			<h4>Header 2</h4>
+			<h4>Header 3</h4>
+			<h4>Header 4</h4>
+			<h4>Header 5</h4>
+			<h4>Header 6</h4>
+			<h4>Header 7</h4>
+			<h4>Header 8</h4>
+		</div>
+
+		<div>
+			<div>Hello, how are you?</div>
+			<sapn>I'm doing well, thanks!</sapn>
+			<p>Hey there! What's up?</p>
+			<h4>Not much, just working on a project.</h4>
+		</div>
+
+		<div>
+			<div>Hello, how are you?</div>
+			<div>I'm doing well, thanks!</div>
+		</div>
+	</body>
+</html>
+
+<!-- 
+    descriptor: nunber | 2n+1 | 2n
+
+    // considering siblings of all types
+    nth-child(descriptor)
+    nth-last-child(descriptor)
+    first-child 
+    last-child
+    only-child
+
+    // considering siblings of same type
+    nth-of-type(descriptor)
+    nth-last-of-type(descriptor)
+    first-of-type
+    last-of-type
+    only-of-type
+ -->

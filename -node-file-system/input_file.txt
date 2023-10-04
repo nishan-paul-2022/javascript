@@ -1,0 +1,15 @@
+In this example:
+
+inputFilePath and outputFilePath specify the paths of the input and output files.
+
+fs.readFile is used to read the content of the input file ('input.txt') as a string with the 'utf8' encoding.
+
+In the callback of fs.readFile, data contains the content of the input file.
+
+The toUpperCase() method is used to convert the text to uppercase.
+
+fs.writeFile is used to write the uppercase text to the output file ('output.txt') with the 'utf8' encoding.
+
+In the callback of fs.writeFile, writeErr will be null if the writing is successful. Otherwise, an error message will be logged.
+
+Make sure to replace 'input.txt' and 'output.txt' with the actual paths to your input and output files. The code reads the content of the input file, converts it to uppercase, and then writes the uppercase text to the output file.

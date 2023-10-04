@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<style>
+			body {
+				counter-set: header 27;
+				counter-reset: subheader;
+				/* counter-set: header subheader; */
+				/* counter-reset: header 2 subheader 3; */
+			}
+
+			h1::before {
+				counter-increment: header;
+				content: counter(header) '. ';
+			}
+
+			h2::before {
+				counter-increment: subheader;
+				content: counter(header) '.' counter(subheader) '. ';
+			}
+		</style>
+		<h1>hello</h1>
+		<h2>html</h2>
+		<h2>css</h2>
+		<h2>sass</h2>
+		<h2>tailwind</h2>
+
+		<h1>world</h1>
+		<h2>typescript</h2>
+		<h2>react</h2>
+		<h2>express</h2>
+
+		<h1>MERN</h1>
+		<h2>full</h2>
+		<h2>stack</h2>
+	</body>
+</html>
+
+<!-- 
+	counter-set
+	counter-reset
+	counter-increment
+	counter()
+	content 
+-->

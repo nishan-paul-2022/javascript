@@ -1,0 +1,27 @@
+{
+	"name": "mern",
+	"version": "1.0.0",
+	"description": "mern-stack",
+	"main": "zmax.html",
+	"scripts": {
+		"test": "echo 'Error: no test specified' && exit 1",
+		"format": "npx prettier --write *.{html,css,json}",
+		"lint": "npx eslint --fix *.{js,ts,cjs,mjs,cts,mts}",
+		"tsc": "npx tsc"
+	},
+	"keywords": [],
+	"author": "nishan-paul",
+	"license": "ISC",
+	"type": "module",
+	"devDependencies": {
+		"@types/node": "^20.8.2",
+		"@typescript-eslint/eslint-plugin": "^6.7.4",
+		"@typescript-eslint/parser": "^6.7.4",
+		"eslint": "^8.50.0",
+		"eslint-config-prettier": "^9.0.0",
+		"eslint-plugin-prettier": "^5.0.0",
+		"prettier": "^3.0.3",
+		"ts-node": "^10.9.1",
+		"typescript": "^5.2.2"
+	}
+}

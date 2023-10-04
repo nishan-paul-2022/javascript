@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Transformation Example</title>
+		<style>
+			.container {
+				position: relative;
+				margin: 100px;
+			}
+
+			.transformation-example {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%) skewX(20deg) scale(1.5, 0.8)
+					rotate(45deg);
+				width: 100px;
+				height: 100px;
+				background-color: #3498db;
+				border: 2px solid black;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="transformation-example"></div>
+		</div>
+	</body>
+</html>
+
+<!-- 
+    transform property contains several functions
+    
+    translate(X)
+    translate(X, Y)
+    translateX(X)
+    translateY(Y)
+
+    skew(X)
+    skew(X, Y)
+    skewX(X)
+    skewY(Y)
+
+    scale(XY)
+    scale(X, Y)
+    scaleX(X)
+    scaleY(Y)
+
+    rotate(deg)
+    rotateX(deg)
+    rotateY(deg)
+ -->

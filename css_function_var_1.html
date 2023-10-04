@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<style>
+			:root {
+				--font-color-black: black;
+				--jawan-bgm: 'Anirudh';
+			}
+
+			.set-div {
+				--theme-color-lightgreen: lightgreen;
+				background-color: var(--theme-color-lightgreen, lightgreen);
+				color: var(--font-color-black);
+			}
+
+			.set-div-h::after {
+				content: ' : ' var(--jawan-bgm, 'AR Rahman');
+			}
+
+			.set-div-p {
+				--theme-color-lightgreen: green;
+				background-color: var(--theme-color-lightgreen, green);
+			}
+
+			.set-p {
+				background-color: var(--theme-color-lightgreen, lightgreen);
+			}
+
+			.set-p::after {
+				content: ' : ' var(--jawan-bgn, 'AR Rahman');
+			}
+		</style>
+
+		<div class="set-div">
+			HelloWoirld
+			<h3 class="set-div-h">King SRK</h3>
+			<p class="set-div-p">Pathan</p>
+			<div>Dunki</div>
+		</div>
+
+		<p class="set-p">Dev Patel</p>
+	</body>
+</html>
+
+<!-- 
+
+- Variable / CSS custom property 
+
+- Variable must be defined inside a selector 
+
+- Local scope means that the variable is only available to the selector where it is declared. 
+  This can be useful if you want to reuse a value in multiple places within the same selector. 
+  Or if we want to avoid polluting the global namespace with custom properties.
+
+- Global scope means that the variable is available to all selectors in the style sheet. 
+  This can be useful if we want to reuse a value in multiple selectors.
+  Or if you want to make it easy to change the value of the variable.
+
+- In HTML, it's not valid to place a block-level element like <div> inside a <p> element. 
+  The <p> element is meant to contain inline-level elements like text, inline links, and inline elements like <span>. 
+  Using a block-level element inside a <p> can lead to unpredictable rendering and is not semantically correct.
+    
+-->

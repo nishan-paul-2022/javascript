@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>General Sibling Combinator Example</title>
+		<style>
+			/* only immediate siblings */
+			.adjacent h2 + p {
+				color: blue;
+			}
+
+			/* all siblings */
+			.general h2 ~ p {
+				color: blue;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="adjacent">
+			<h2>This is a heading</h2>
+			<p>This paragraph is not selected.</p>
+			<p>This paragraph is selected and will be blue.</p>
+			<p>This paragraph is also selected and will be blue.</p>
+			<span>This span</span>
+		</div>
+
+		<div class="general">
+			<h2>This is a heading</h2>
+			<p>This paragraph is not selected.</p>
+			<p>This paragraph is selected and will be blue.</p>
+			<p>This paragraph is also selected and will be blue.</p>
+			<span>This span</span>
+		</div>
+	</body>
+</html>

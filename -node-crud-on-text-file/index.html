@@ -1,0 +1,49 @@
+<!-- index.html -->
+<!doctype html>
+<html>
+	<head>
+		<title>Text CRUD</title>
+		<link rel="stylesheet" href="style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" />
+	</head>
+	<body>
+		<div class="container">
+			<h1 class="my-3 text-center">Text CRUD</h1>
+
+			<!-- Single row with two columns -->
+			<div class="row">
+				<div class="col">
+					<input
+						type="text"
+						id="textInput"
+						placeholder="Enter text..."
+						class="form-control" />
+				</div>
+				<div class="col-auto">
+					<button onclick="createText()" class="btn btn-primary">
+						Create
+					</button>
+				</div>
+			</div>
+
+			<!-- Center the table -->
+			<div class="text-center">
+				<table class="table mt-3">
+					<thead>
+						<tr>
+							<th>Index</th>
+							<th>Text</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody id="output"></tbody>
+				</table>
+			</div>
+		</div>
+
+		<script src="script.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.min.js"></script>
+	</body>
+</html>

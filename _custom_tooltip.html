@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tooltip Example</title>
+		<style>
+			.arrowIcon::before {
+				content: '→';
+			}
+
+			.arrowIcon::after {
+				content: '←';
+			}
+
+			.tooltip::before {
+				content: attr(data-tooltip);
+				position: -webkit-sticky;
+				position: sticky;
+				top: 20px;
+				left: 50%;
+				transform: translateX(-50%);
+				background-color: #000;
+				color: #fff;
+				padding: 5px;
+				border-radius: 5px;
+				visibility: hidden;
+			}
+
+			.tooltip:hover::before {
+				visibility: visible;
+			}
+
+			.postionExp {
+				position: relative;
+				top: 5%;
+				left: 45%;
+				padding-bottom: 5%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<p>
+			Hover over the text below to see the tooltip:
+			<b class="arrowIcon">
+				<span class="tooltip" data-tooltip="This is a tooltip"
+					>Hover Me</span
+				>
+			</b>
+		</p>
+
+		<h1 class="postionExp">Tooltip Example</h1>
+
+		<pre>
+            - VPN
+            user id : nishan.paul 
+            password : helloWorld1996
+            
+            - Windows
+            password : helloWorld1996
+            
+            - HiBob / nishan.paul@enosisbd.com
+            
+            - Email
+            gmail: nishan.paul@enosisbd.com
+            password : helloWorld1996
+            
+            - MSSQL
+            Server name: NISHANLAP\SQLSERVER2022
+            Login: sa
+            Password: Enosis123
+            
+            -------------------------------------------------------------------------------------------------
+                
+            HTML
+                • https://www.tutorialspoint.com/html/
+                • https://www.w3schools.com/html/html_form_input_types.asp
+                • https://www.w3schools.com/html/html_form_attributes.asp
+                • https://developers.google.com/web/tools/chrome-devtools/dom/
+            
+            CSS BASIC
+                • difference between ID and Class - https://css-tricks.com/the-difference-between-id-and-class/
+                • get an idea on the basic CSS properties - https://www.tutorialspoint.com/css/index.htm
+                • learn about CSS selectors (basic selectors, grouping selectors, combinators) - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors
+                • learn about CSS specificity - https://css-tricks.com/specifics-on-css-specificity/
+                • learn how to use chrome developer tool to modify/debug CSS - https://developers.google.com/web/tools/chrome-devtools/css
+            
+            CSS ADVCANCED
+                • learn about different display types (inline, block, inline-block and none) - https://css-tricks.com/almanac/properties/d/display/
+                • learn about floats - https://css-tricks.com/almanac/properties/f/float/
+                • learn about Box Model (link attached from MDN) - https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model
+                • learn about CSS position (static, relative, absolute and fixed) - https://developer.mozilla.org/en-US/docs/Web/CSS/position
+                • basic concept of flex-box - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox
+                • basic concept of z-index - https://developer.mozilla.org/en-US/docs/Web/CSS/z-index
+                • browser responsiveness - https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design
+                • example of media queries - https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+            
+            JS PART 01
+            
+            l INTRO
+            1.1  https://javascript.info/intro
+            1.2  https://javascript.info/manuals-specifications 
+            
+            l JS FUNDAMENTALS: https://javascript.info/first-steps 
+            
+            l CODE QUALITY
+                https://developers.google.com/web/tools/chrome-devtools/javascript [BASIC WORKFLOW FOR DEBUGGING ANY JS ISSUE]
+            3.1  https://javascript.info/debugging-chrome
+            3.2  https://javascript.info/coding-style
+            3.3  https://javascript.info/comments 
+            
+            l OBJECTS
+            4.1  https://javascript.info/object 
+            4.2  https://javascript.info/object-copy
+            4.4  https://javascript.info/object-methods 
+            4.5  https://javascript.info/constructor-new 
+            4.6  https://javascript.info/optional-chaining
+            
+            l DATA TYPES: https://javascript.info/data-types 
+            
+            l ADVANCED WORKING WITH FUNCTIONS
+            6.3  https://javascript.info/closure
+                https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+            6.4  https://javascript.info/var 
+            6.10 https://javascript.info/bind 
+            6.8  https://javascript.info/settimeout-setinterval
+                https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Timeouts_and_intervals
+            
+            l ERROR HANDLING: https://javascript.info/try-catch
+            
+            PROMISE - https://betterprogramming.pub/is-javascript-synchronous-or-asynchronous-what-the-hell-is-a-promise-7aa9dd8f3bfb
+            
+            VALUE V REFERENCE - 
+            https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0
+            https://levelup.gitconnected.com/pass-by-value-vs-pass-by-reference-in-javascript-31e79afe850a
+            
+            JS PART 02
+            
+            EVENTS: https://javascript.info/eventsUI 
+            UI EVENTS: https://javascript.info/event-details 
+            FORMS: https://javascript.info/forms-controls 
+            DOCUMENT & RESOURCE LOADING: https://javascript.info/onload-ondomcontentloaded 
+            
+            JS PART 03
+            
+            1.1   https://javascript.info/popup-windows
+            1.2   https://javascript.info/cross-window-communication 
+            2.3   https://javascript.info/blob
+            2.4   https://javascript.info/file 
+            3.2   https://javascript.info/formdata
+            3.8   https://javascript.info/xmlhttprequest
+            3.11  https://javascript.info/websocket 
+            4.1   https://javascript.info/cookie
+            4.2   https://javascript.info/localstorage 
+            7.1   https://javascript.info/regexp-introduction
+            7.2   https://javascript.info/regexp-character-classes
+            7.9   https://javascript.info/regexp-quantifiers
+            
+            JQUERY
+            https://www.w3schools.com/jquery/
+            https://www.tutorialrepublic.com/jquery-tutorial/
+            
+            C#
+            https://www.tutorialspoint.com/csharp/index.htm
+            https://www.youtube.com/playlist?list=PLAC325451207E3105
+            https://www.tutorialsteacher.com/linq
+            
+            RDBMS: https://www.sqlservertutorial.net/sql-server-basics/
+            
+            DOT NET 6:
+            https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/start-mvc?view=aspnetcore-6.0&tabs=visual-studio
+            https://learn.microsoft.com/en-us/aspnet/core/fundamentals/?view=aspnetcore-6.0&tabs=linux 
+            https://www.youtube.com/watch?app=desktop&v=8NWC8BnxC8o
+            
+            E-TASK 
+            
+            l 01 / FETCH DATA USING API 
+            HTML DOM: https://www.w3schools.com/js/js_htmldom.asp
+            JSON: https://www.w3schools.com/js/js_json_intro.asp
+            AJAX: https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX/Getting_Started
+            FAKE DATA PROVIDER: https://reqres.in/ or https://jsonplaceholder.typicode.com/
+            
+            
+            
+            l 02 / MOVIE LIST (FRONTEND ONLY)
+            l 03 / FILE HANDLING USING C#
+            l 04 / MOVIE BOOKING SYSTEM USING SQL SERVER
+            
+            
+            
+            
+            l 05 / FULL STACK DEVELEOPMENT OF MOVIE BOOKING SYSTEM
+            https://www.sqlshack.com/how-to-connect-and-use-microsoft-sql-server-express-localdb/
+            https://www.youtube.com/watch?v=I-ZzFLruiuo&ab_channel=ISeeSharp
+            https://www.youtube.com/watch?v=4nXB_GfYIko&ab_channel=ISeeSharp
+            
+            https://in.bookmyshow.com/explore/home/chandigarh
+            https://www.ticketnew.com/Movie-Ticket-Online-booking/C/Mumbai
+            https://docs.google.com/document/d/14weCVMUdQCFXKeVTMUxYPUM_x6FE-9X_e3RlJiR93Uc/edit#
+            
+            
+            l 06 / SQL CHECKER
+            
+            CUSTOM
+            <add key="ConnectionString" value="user id=sa;password=Enosis123;initial catalog=SQLCheckerDatabase;data source=NISHANLAP\SQLSERVER2022;MultipleActiveResultSets=True" />
+            <add name="EntityIDTrackList" table="ID"/>
+            <add name="TableViewCombinationTrackList" table="ORDERS/ORDER_ITEMS,ORDERS/PRODUCTS,ORDER_ITEMS/PRODUCTS,ORDERS/N09_B_VIEW_TRACKING,TABLE_VIEW_SAMPLE_TABLE_A/TABLE_VIEW_SAMPLE_TABLE_B"/>
+            <add name="VLTUpdateTrackList" table="CUSTOMERS"/>
+            <add name="VLTDeleteTrackList" table="CUSTOMERS,ORDERS"/>
+            <add name="TableViewReferenceTrackList" table="PRODUCTS,CATEGORIES,BRANDS,TABLE_VIEW_SAMPLE_TABLE_A/TABLE_VIEW_SAMPLE_TABLE_B"/>
+            
+            ORIGINAL
+            <add key="ConnectionString" value="user id='';password='';initial catalog='';data source='';MultipleActiveResultSets=True" />
+            <!-- no white space -->
+            <!-- columns must be comma separated -->
+            <add name="EntityIDTrackList" table="ID"/>
+            
+            <!-- no white space -->
+            <!-- pairs must be comma separated -->
+            <!-- tables in a pair must be separated by front slash -->
+            <add name="TableViewCombinationTrackList" table="STUDENTS/RESULTHISTORY,STUDENTS/NOTESVIEW"/>
+            
+            <!-- no white space -->
+            <!-- tables must be comma separated -->
+            <add name="VLTUpdateTrackList" table="STUDENTS,TEACHERS,COURSES,RESULTS,VLTARCHIVE"/>
+            
+            <!-- no white space -->
+            <!-- tables must be comma separated -->
+            <add name="VLTDeleteTrackList" table="STUDENTS,TEACHERS,COURSES,RESULTHISTORY,VLTARCHIVE"/>
+            
+            <!-- no white space -->
+            <!-- groups must be comma separated -->
+            <!-- tables in a group must be front-slash separated -->
+            <!-- group can be consisted of single/multiple tables -->
+            <add name="TableViewReferenceTrackList" table="PRODUCT,STUDENTS,STUDENT/RESULTHISTORY,RESULT"/>
+            
+            
+            l 07 / TASK MANAGER
+            
+            Install-Package Microsoft.EntityFrameworkCore.Tools
+            Install-Package Microsoft.EntityFrameworkCore.Design
+            Install-Package Microsoft.EntityFrameworkCore.SqlServer
+            Install-Package Microsoft.EntityFrameworkCore.Relational
+            
+            nishan (admin) | pishan (manager) | rishan (manager)  | tishan (user) | vishan (user)
+            nishan@gmail.com
+            helloWorldSince1996@Gotham
+            
+            add-migration -Context AuthContext migrationName
+            update-database -Context AuthContext
+            
+            add-migration -Context TaskDBContext migrationName
+            update-database -Context TaskDBContext
+            
+            -------------------------------------------------------------------------------------------------
+            
+            
+            
+            
+            
+            Store Hotel facilities like Beach Side, Hill Side, Gym, Convention Hall, Swimming Pool
+            Store Hotel information Like Name, Address, Image, Rating, Place Id (As a foreign key), [Store available hotel facilities] 
+            Store Room Facilities Like Air Conditioner, Air Purifying, Smart TV, Furnished Bathroom, Parking Facility, High Chair
+            Store Room Information like Image, Adult, Child, Bed, Hotel Id (As a foreign key), [Store available room facilities information as well] 
+            
+            - Tech stack : .net 6 + mvc 
+            
+            - Table List
+            
+            (a)
+            table name : HotelFacility
+            table fields : Id, Name
+            table data : Beach side, Hill side, Gym, Convention hall, Swimming pool
+            
+            (b)
+            table name : HotelInfo
+            table fields : Id, Name, Address, Rating, Image, LocationId (as a foreign key from Location table primary key named Id) 
+            
+            (c)
+            table name : RoomFacility
+            table fields : Id, Name
+            table data : Air conditioning, Air purifying, Smart TV, Furnished bathroom, Car parking, High chair
+            
+            (d)
+            table name : RoomInfo
+            table fields : Id, Adult, Children, Bed, Image, HotelId (as a foreign key from Hotel table primary key named Id)
+            
+            - Requirements
+            
+            01. Image field will contain the image file name.
+            02. Image file name will be in this formation : imgId.ext
+            03. Image field will be 16 character long.
+            04. HotelFacility and HotelInfo have many to many relationship. That means HotelInfo must have information about facility that the hotel provides.
+            05. RoomFacility and RoomInfo have many to many relationship. That means RoomInfo must have information about facility that the room provides.
+            06. Rating filed value will be 1 to 5.
+            07. Hotel Name will be 50 character length.
+            08. Hotel Address will be 150 character length.
+            09. Hotel Name and Address will support only alphanumeric character, punctuation mark and common special character.
+            10. HotelFacility Name will be 50 character length.
+            11. RoomFacility Name will be 50 character length.
+            
+            - What I want
+            01. model for (a), (b), (c), (d) 
+            02. every model will have validation on basis of requirements
+            03. string length in model will be defined on basis of requirements
+            04. seed 10 meaningful data to HotelInfo table on basis of  Location data 
+            05. seed 20 meaningful data to RoomInfo table on basis of  HotelInfo data 
+            
+            (1) changes on location, corresponding changes on hotel and vice versa
+            - when I delete a location, corresponding hotel data in hotel table will be removed
+            - when I delete a hotel, hotel list of corresponding location data in location table will be updated
+            
+            (2) changes on hotel, corresponding changes on room and vice versa
+            - when I delete a hotel, corresponding room data in room table will be removed
+            - when I delete a room, room list of corresponding hotel data in hotel table will be updated
+            
+            (3) changes on hotel, corresponding changes on hotel-facility and vice versa
+            - when I delete a hotel, corresponding hotel list of hotel-facility data in hotel-facility table will be updated
+            - when I delete a hotel-facility, corresponding hotel-facility list of hotel data in hotel table will be updated
+            
+            (4) changes on hotel, corresponding changes on hotel-and-facility
+            - when I delete a hotel, corresponding hotel-and-facility data in hotel-and-facility table will be removed 
+            
+            (5) changes on room, corresponding changes on room-facility and vice versa
+            - when I delete a room, corresponding room list of room-facility data in room-facility table will be updated
+            - when I delete a room-facility, corresponding room-facility list of room data in room table will be updated
+            
+            (6) changes on room, corresponding changes on room-and-facility
+            - when I delete a room, corresponding room-and-facility data in room-and-facility table will be removed 
+            
+            https://learn.microsoft.com/en-us/ef/core/modeling/relationships
+            https://learn.microsoft.com/en-us/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
+            https://www.entityframeworktutorial.net/efcore/one-to-many-conventions-entity-framework-core.aspx
+            https://www.entityframeworktutorial.net/efcore/configure-many-to-many-relationship-in-ef-core.aspx
+            
+            mir.rabby@enosisbd.com
+            +8801712030171
+            
+            moneruzzaman.rana@enosisbd.com
+            01624944534
+            
+            mushfiqul.haque@enosisbd.com
+            01878175760
+            
+            start day: 
+            G4
+        </pre>
+	</body>
+</html>

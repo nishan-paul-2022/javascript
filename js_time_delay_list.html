@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<button type="button" id="run">Run</button>
+		<table>
+			<thead>
+				<tr>
+					<th>count</th>
+					<th>now</th>
+					<th>delay</th>
+				</tr>
+			</thead>
+			<tbody id="log"></tbody>
+		</table>
+
+		<script>
+			function ClosureTimer() {
+				let counter = 0;
+				let last = new Date().getMilliseconds();
+
+				function Timer() {
+					const now = new Date().getMilliseconds();
+					const log = document.querySelector('#log');
+					const logRow = log.insertRow();
+					logRow.insertCell().textContent = ++counter;
+					logRow.insertCell().textContent = now;
+					logRow.insertCell().textContent = now - last;
+					last = now;
+					if (counter < 10) {
+						setTimeout(Timer, 0);
+					}
+				}
+
+				return Timer;
+			}
+
+			function Run() {
+				const log = document.querySelector('#log');
+				while (log.lastElementChild) {
+					log.removeChild(log.lastElementChild);
+				}
+				const Timer = ClosureTimer();
+				setTimeout(Timer, 0);
+			}
+
+			document.querySelector('#run').addEventListener('click', Run);
+		</script>
+	</body>
+</html>
