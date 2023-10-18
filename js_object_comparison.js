@@ -55,8 +55,8 @@ ObjectCompare();
 ArrayCompare();
 Constant();
 
-// const means constant reference
-// const variable can't be reassigned, but mutable
-// except const, every other variables are reassignable
-// primitive data types (string, number, boolean) are immutable and 'by value'
-// objects are mutable and 'by reference'
+// two categories of variable : let and const
+// variable => pointer => memory address => value
+// we can change pointer for let variable (reassign)
+// we can't change pointer for const variable (no reassign)
+// primitive (frozen | using value) and reference (not frozen | using pointer)

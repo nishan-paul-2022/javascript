@@ -78,13 +78,13 @@ console.log(exa.FullName);
 console.log(exa.why.message);
 exa.FINGERCORE();
 
-const oWOC = {
+const exb = {
 	name: 'paul',
 	age: 27,
 	height: 5.5,
 	weight: 27
 };
-console.log(oWOC.name);
-console.log(oWOC.age);
+console.log(exb.name);
+console.log(exb.age);
 
 NamedFunction();

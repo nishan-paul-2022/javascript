@@ -48,15 +48,23 @@ console.log(`null == false : ${null == false}`);
 // no type coercion
 console.log(`5 === "5" : ${5 === '5'}`); //
 
+console.log(Boolean([]));
+console.log([] == false);
+console.log(Boolean(0));
+console.log(Boolean(''));
+console.log(Boolean(undefined));
+console.log(Boolean(null));
+
 /*
 	- arithmatic operator
 	- assign operator 
 	- ternary operator ?
 	- nullish coalescing operator ??
+	- optional chaining operator ?.
 	- logical operator 
 	- bitwise operator
 	- comparison operator
 
-	- dot notation using member as identifier
-	- bracket notation using member as string variable
+	condition checking => comparison => boolean 
+	everything without value is treated as false : 0 | '' | undefined | null | false 
 */

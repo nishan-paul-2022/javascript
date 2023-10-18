@@ -1,32 +1,36 @@
-function Func(obj) {
+function CheckObject(obj) {
 	const isE = Object.isExtensible(obj);
 	const isS = Object.isSealed(obj);
 	const isF = Object.isFrozen(obj);
 	console.log(`isExtensible: ${isE}, isSealed: ${isS}, isFrozen: ${isF}`);
 }
 
-const obj = {
-	name: 'jhon wick',
-	age: 27,
-	chapter: 4
-};
+function SetObjectBehaviour() {
+	const obj = {
+		name: 'jhon wick',
+		age: 27,
+		chapter: 4
+	};
 
-obj.country = 'russia';
-delete obj.chapter;
-obj.name = 'Jhon Wick';
-Func(obj);
+	obj.country = 'russia';
+	delete obj.chapter;
+	obj.name = 'Jhon Wick';
+	CheckObject(obj);
 
-Object.preventExtensions(obj);
-// obj.height = 5.5; // can't add propery
-Func(obj);
+	Object.preventExtensions(obj);
+	// obj.height = 5.5; // can't add propery
+	CheckObject(obj);
 
-Object.seal(obj);
-// delete obj.country; // for all properties -  configurable: false
-Func(obj);
+	Object.seal(obj);
+	// delete obj.country; // for all own-properties /  configurable: false
+	CheckObject(obj);
 
-Object.freeze(obj);
-// obj.age = 29; // for all properties - configurable: false and writable: false
-Func(obj);
+	Object.freeze(obj);
+	// obj.age = 29; // for all own-properties / configurable: false and writable: false
+	CheckObject(obj);
+}
+
+SetObjectBehaviour();
 
 /*
 Object.preventExtensions : Forbids the adding new properties to the object.

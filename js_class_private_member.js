@@ -2,6 +2,7 @@ class PrivateMember {
 	#name;
 	#age;
 	#height;
+	anything = Math.E;
 
 	constructor(age, height) {
 		this.#age = age;
@@ -23,6 +24,7 @@ class PrivateMember {
 	}
 
 	FullBio() {
+		console.log(this['anything']);
 		this.#FullBio();
 	}
 }

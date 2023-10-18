@@ -103,7 +103,7 @@ function UseCase15() {
 	const str15 = 'The quick brown fox jumps over the lazy dog.';
 	const searchResult = str15.search(/fox/);
 	const matchResult = str15.match(/o/g);
-	const matchAllResult = [...str15.matchAll(/o/)];
+	const matchAllResult = [...str15.matchAll(/o/g)];
 	const replacedStr = str15.replace('fox', 'cat');
 	const replacedAllStr = str15.replaceAll('o', 'x');
 	console.log(searchResult); // Output: 16
@@ -117,7 +117,7 @@ function UseCase16() {
 	let str = 'hello';
 	console.log(str[0]);
 
-	str[0] = 'i';
+	// str[0] = 'i'; // invalid
 	console.log(str[0]);
 
 	const number = [1, 2, 3, 4, 5];
@@ -132,6 +132,38 @@ function UseCase17() {
 	const str = 'string';
 	console.log(str[0]);
 	console.log(str['1']);
+}
+
+function CheckObject(object) {
+	const isE = Object.isExtensible(object);
+	const isS = Object.isSealed(object);
+	const isF = Object.isFrozen(object);
+	console.log(`isExtensible: ${isE}, isSealed: ${isS}, isFrozen: ${isF}`);
+}
+
+function StringAutoPrototype(s) {
+	console.log(Object.getPrototypeOf(s));
+	console.log(Object.getPrototypeOf(s) === String.prototype);
+	console.log(s);
+}
+
+function StringManualPrototype(s) {
+	const parent = { identity: 'parent object' };
+	Object.setPrototypeOf(s, parent);
+	console.log(Object.getPrototypeOf(s));
+	console.log(Object.getPrototypeOf(s) === parent);
+	console.log(s);
+}
+
+function StringBehaviour() {
+	const sLiteral = 'hello';
+	const sObject = new String('hello');
+	CheckObject(sLiteral);
+	CheckObject(sObject);
+	StringAutoPrototype(sLiteral);
+	StringAutoPrototype(sObject);
+	StringManualPrototype(sLiteral);
+	StringManualPrototype(sObject);
 }
 
 UseCase01();
@@ -150,3 +182,4 @@ UseCase14();
 UseCase15();
 UseCase16();
 UseCase17();
+StringBehaviour();

@@ -127,6 +127,11 @@ function ArrayIteration() {
 	}
 }
 
+function ArrayOf() {
+	const newArray = Array.of(1, 2, 3, 4, 5);
+	console.log(newArray); // Output: [1, 2, 3, 4, 5]
+}
+
 ArrayConcat();
 ArrayConversion();
 DeleteAndInsert();
@@ -134,3 +139,4 @@ StringToArray();
 HigherOrderMethods();
 ArrayKey();
 ArrayIteration();
+ArrayOf();

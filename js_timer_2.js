@@ -79,7 +79,7 @@ function Fn() {
 }
 
 function Gn() {
-	fs.readFile('zmax.txt', 'utf8', (err, data) => {
+	fs.readFile('zmax.html', 'utf8', (err, data) => {
 		setTimeout(() => {
 			console.log('SET-TIMEOUT');
 		}, 0);

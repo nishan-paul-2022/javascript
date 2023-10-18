@@ -62,12 +62,32 @@ function CheckKey() {
 	console.log('a' in x);
 }
 
+function ObjectProperties() {
+	const object = class A {
+		constructor() {
+			console.log('A');
+		}
+	};
+
+	console.log(Object.keys(object)); // returns enummerable and own attributes
+	console.log(Object.getOwnPropertyNames(object)); // returns own attributes
+}
+
+function ObjectLength() {
+	const object = [1, 2, 3];
+	object['4'] = 4;
+	object['hello'] = 'hello';
+	console.log(object);
+	console.log(object.length);
+}
+
 ForOfLoop();
 Destructuring();
 CheckKey();
+ObjectProperties();
+ObjectLength();
 
-// key-value pair
-// Id[key] = value | regular assign
-// Id = { key: value } | colon assign
-// for (value of iterator)
-// for (key in object)
+/* 
+regular assign : instance[attribute] = value 
+colon assign : instance = { attribute: value }
+*/
