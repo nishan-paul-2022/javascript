@@ -1,6 +1,20 @@
 /* eslint-disable eqeqeq */
 
-function Func01() {
+/*
+- prefix
+- postfix 
+- not 
+- unary 
+- arithmatic 
+- shift 
+- relational 
+- comparison 
+- bitwise 
+- logical 
+- conditional
+- assignment */
+
+function Example01() {
 	class ClassA {}
 	console.log(ClassA.something?.real);
 
@@ -23,7 +37,7 @@ function Func01() {
 }
 
 // null coalescing operator ??
-function Func02() {
+function Example02() {
 	const client = undefined;
 	const developer = null;
 	const manager = Math.E;
@@ -35,8 +49,8 @@ function Func02() {
 	console.log(ans3);
 }
 
-function Func03() {
-	// result will be: -1 * (n+1)
+function Example03() {
+	// result: -1 * (n+1)
 	console.log(~3);
 	console.log(~-4);
 
@@ -52,15 +66,55 @@ function Func03() {
 	console.log(Math.trunc(0.56));
 }
 
-Func01();
-Func02();
-Func03();
+function Example04() {
+	const regular1 = {
+		a: 1
+	};
 
-/*
-optional chaining operator ?.
-?. to safely access member
-property chain | method chain | mixed chain
-chain of node 
-except the last node (its' return value can vary), every node must return object to continue the chain reaction
-if not, then by using ?. we can set the end result of this chain reaction as undefined
-*/
+	console.log(regular1.a.b?.c.d.e);
+	console.log(regular1.a.b?.c?.d.e);
+	console.log(regular1.a.b?.c?.d?.e);
+}
+
+Example01();
+Example02();
+Example03();
+Example04();
+
+/* 
+- expression-group, member-access, function-call, optional-chaining, object-create 
+- postfix 
+- prefix 
+- not 
+- unary 
+- arithmatic 
+- shift 
+- relational 
+- comparison
+- bitwise 
+- logical 
+- conditional 
+- assignment 
+
+arguments await	
+boolean break	
+case catch class const continue
+default delete	do
+else export extends	
+false finally for function
+if import in instanceof 
+let	
+new null 
+return	
+static super switch	
+this throw true try	typeof	
+void
+while 
+yield
+
+eval with var debugger goto 
+
+private	protected public 
+interface implements 
+enum 
+package	*/

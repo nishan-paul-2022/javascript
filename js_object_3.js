@@ -81,13 +81,38 @@ function ObjectLength() {
 	console.log(object.length);
 }
 
+function ObjectAndThis() {
+	const regular = {
+		value: 1,
+		x: () => {
+			console.log(this.value);
+		},
+		y: function () {
+			console.log(this.value);
+		},
+		z: function () {
+			console.log(regular.value);
+		}
+	};
+
+	// regular.x(); // invalid
+	regular.y();
+	regular.z();
+}
+
 ForOfLoop();
 Destructuring();
 CheckKey();
 ObjectProperties();
 ObjectLength();
+ObjectAndThis();
 
 /* 
-regular assign : instance[attribute] = value 
-colon assign : instance = { attribute: value }
-*/
+- regular assign : instance[attribute] = value 
+- colon assign : instance = { attribute: value }
+- context is represented by 'this' keyword
+- context can be used inside, 
+	@ function [ indicating container object ]
+	@ method [ indicating container object ]
+	@ static method [ indicating container class ]
+	@ not attow function or method */

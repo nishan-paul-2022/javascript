@@ -8,9 +8,9 @@ class CustomError extends Error {
 	}
 }
 
-function ReadAndProcessFile(filePath) {
-	let fileContent;
-	let fileHandle;
+function Error01() {
+	const filePath = 'zmax.html';
+	let fileContent, fileHandle;
 
 	try {
 		fileHandle = fs.openSync(filePath, 'r');
@@ -22,14 +22,13 @@ function ReadAndProcessFile(filePath) {
 			fs.closeSync(fileHandle);
 			console.log('File handle closed.');
 		}
-	}
-
-	if (fileContent) {
-		console.log('File content:', fileContent);
+		if (fileContent) {
+			console.log('File content:', fileContent);
+		}
 	}
 }
 
-function Error04() {
+function Error02() {
 	try {
 		console.log(value);
 	} catch (error) {
@@ -37,7 +36,7 @@ function Error04() {
 	}
 }
 
-function Error05() {
+function Error03() {
 	try {
 		throw 'This is a custom error message';
 	} catch (error) {
@@ -45,7 +44,7 @@ function Error05() {
 	}
 }
 
-function Error06() {
+function Error04() {
 	try {
 		const error = new Error('ErrorMessage');
 		error.name = 'ErrorName';
@@ -55,10 +54,10 @@ function Error06() {
 	}
 }
 
-function Error07() {
+function Error05() {
 	try {
-		// console.log(value);
-		throw new CustomError('This is a custom error message');
+		// console.log(value); // throws default error
+		throw new CustomError('This is a custom error message'); // throws custom error
 	} catch (error) {
 		const errorDetails = `${error.name} / ${error.message}`;
 		if (error instanceof CustomError) {
@@ -69,13 +68,12 @@ function Error07() {
 	}
 }
 
-ReadAndProcessFile('zmax.html');
+Error01();
+Error02();
+Error03();
 Error04();
 Error05();
-Error06();
-Error07();
 
 /*
-# auto throw => default error => error object => name and message
-# manual throw => custom error => any object
-*/
+- auto throw => default error => error object => name and message
+- manual throw => custom error => any object */

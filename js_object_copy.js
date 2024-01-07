@@ -1,6 +1,7 @@
 const grandparent = { origin: 'grandparent' };
 const parent = { identity: 'parent' };
 const child = { name: 'child' };
+const grandChild = {};
 
 Object.defineProperties(parent, {
 	nature: {
@@ -136,6 +137,14 @@ function CopyByCreate03() {
 	print('byCreate', byCreate);
 }
 
+function ModByDefineProperties() {
+	Object.defineProperties(
+		grandChild,
+		Object.getOwnPropertyDescriptors(child)
+	);
+	print('ModByDefineProperties', grandChild);
+}
+
 OriginalObject();
 CopyByLoop();
 CopyBySpread();
@@ -146,13 +155,20 @@ CopyByJSON();
 CopyByCreate01();
 CopyByCreate02();
 CopyByCreate03();
+ModByDefineProperties();
 
-// loop : 					enumerable, 	member, 	own + inherited,	named
-// spread, rest, assign : 	enumerable, 	member, 	own,				named + symbolic
-// fromEntries : 			enumerable, 	member, 	own, 				named
-// json: 					enumerable, 	property, 	own, 				named
-// create() : 				set prototype and member-with-descriptor
+/* 
+OBJECT COPY //
 
-// descriptor is by default true [ literal ] and false [ create() ]
-// enumerable: listed in loop
-// inheritance doesn't depend upon value of enumerable attribute
+for-loop-in 				: 	enumerable, 		member, 	own + inherited,	named
+spread, rest, assign, log 	: 	enumerable, 		member, 	own,				named + symbolic
+keys, values, entries 		: 	enumerable, 		member, 	own, 				named
+json						: 	enumerable, 		property, 	own, 				named
+getOwnPropertyNames			:	non + enumerable, 	member, 	own,				named
+getOwnPropertySymbols		:	non + enumerable, 	member, 	own,				symbolic
+getOwnPropertyDescriptors	: 	non + enumerable, 	member, 	own, 				named + symbolic
+create() 					: 	set prototype and member-with-descriptor
+
+descriptor is by default false [ create() ] and true [ literal, for-loop-in, spread, rest, assign, json ]
+enumerable means recognized by for-loop-in, spread, rest, assign, json
+inheritance doesn't depend upon value of enumerable flag */

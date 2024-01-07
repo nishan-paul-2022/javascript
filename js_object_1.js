@@ -1,4 +1,4 @@
-function ObjectKey0() {
+function ObjectKey01() {
 	class A {
 		constructor() {
 			this.name = 'paul';
@@ -23,11 +23,12 @@ function ObjectKey0() {
 	object.PrintValues();
 }
 
-// two types of key: string and symbol
-// any value or identifier used as key, will be coerced to string
-// square bracket notation demands value, can't be used with identifier
-// dot notation demands identifier, can't be used with value
-function ObjectKey1() {
+/* 
+2 kinds of key: string and symbol
+any value or identifier used as key, will be coerced to string
+square bracket notation demands value, can't be used with identifier
+dot notation demands identifier, can't be used with value */
+function ObjectKey02() {
 	const object = {
 		1: 'hello',
 		true: 'world',
@@ -49,7 +50,7 @@ function ObjectKey1() {
 	console.log(object.id);
 }
 
-function ObjectKey2() {
+function ObjectKey03() {
 	const object = {
 		[1]: 'hello',
 		[true]: 'world',
@@ -67,7 +68,7 @@ function ObjectKey2() {
 	console.log(object.title);
 }
 
-function ObjectKey3() {
+function ObjectKey04() {
 	const ageKey = 'age';
 	const object1 = {
 		ageKey: 27 // ageKey as string
@@ -87,7 +88,7 @@ function ObjectKey3() {
 	console.log(object2['ageKey']); // undefined
 }
 
-ObjectKey0();
-ObjectKey1();
-ObjectKey2();
-ObjectKey3();
+ObjectKey01();
+ObjectKey02();
+ObjectKey03();
+ObjectKey04();

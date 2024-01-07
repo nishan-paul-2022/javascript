@@ -1,64 +1,59 @@
-const range = {
-	from: 1,
-	to: 5,
+function* RandomGenerator01() {
+	console.log('indicator-start');
 
-	// [Symbol.iterator]() { // (1)
-	//     return {
-	//         current: this.from,
-	//         last: this.to,
+	const con1 = yield Math.random();
+	console.log('indicator-1:', con1);
 
-	//         next() { // (2)
-	//             if (this.current <= this.last) {
-	//                 return { done: false, value: this.current++ };
-	//             } else {
-	//                 return { done: true };
-	//             }
-	//         }
-	//     };
-	// },
+	const con2 = yield Math.random();
+	console.log('indicator-2:', con2);
 
-	*[Symbol.iterator]() {
-		// (1)
-		let current = this.from;
-		for (let i = this.from; i <= this.to; i++) {
-			yield current++;
-		}
-	},
+	const con3 = yield Math.random();
+	console.log('indicator-3:', con3);
 
-	[Symbol.asyncIterator]() {
-		// (1)
-		return {
-			current: this.from,
-			last: this.to,
+	const con4 = yield Math.random();
+	console.log('indicator-4:', con4);
 
-			async next() {
-				// (2)
+	console.log('indicator-end');
+	return Math.random();
+}
 
-				// note: we can use "await" inside the async next:
-				await new Promise((resolve) => {
-					return setTimeout(resolve, 1000);
-				}); // (3)
+function* RandomGenerator02() {
+	yield Math.random();
+	yield Math.random();
+	yield Math.random();
+}
 
-				if (this.current <= this.last) {
-					return { done: false, value: this.current++ };
-				} else {
-					return { done: true };
-				}
-			}
-		};
+function GeneratorInOut01() {
+	console.log('\n - Generator In Out 01 \n');
+	const iterator = RandomGenerator01();
+	console.log(iterator.next('wasted')); // wasted
+	console.log(iterator.next(1));
+	console.log(iterator.next(2));
+	console.log(iterator.next(3));
+	console.log(iterator.next(4));
+	console.log(iterator.next('wasted')); // wasted
+}
+
+function GeneratorInOut02() {
+	console.log('\n - Generator In Out 02 \n');
+	const iterator = RandomGenerator02();
+	console.log(iterator.next());
+	console.log(iterator.return(2));
+	console.log(iterator.next());
+}
+
+function GeneratorInOut03() {
+	console.log('\n - Generator In Out 03 \n');
+	const iterator = RandomGenerator02();
+	console.log(iterator.next());
+	try {
+		console.log(iterator.throw(1));
+	} catch (error) {
+		console.log('error.message :', error);
 	}
-};
+	console.log(iterator.next());
+}
 
-(async () => {
-	for await (const value of range) {
-		// (4)
-		console.log(value); // 1,2,3,4,5
-	}
-
-	for (const value of range) {
-		// (4)
-		console.log(value); // 1,2,3,4,5
-	}
-})();
-
-console.log({ ...range });
+GeneratorInOut01();
+GeneratorInOut02();
+GeneratorInOut03();

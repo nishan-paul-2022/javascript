@@ -1,4 +1,4 @@
-const pro01 = {
+const prototype01 = {
 	FullName: function () {
 		const fullName = this.firstName + ' ' + this.lastName;
 		console.log(fullName);
@@ -11,7 +11,7 @@ const pro01 = {
 	}
 };
 
-const pro02 = {
+const prototype02 = {
 	firstName: 'hello',
 	lastName: 'world',
 	age: 27,
@@ -31,7 +31,7 @@ const pro02 = {
 };
 
 function TestCase01() {
-	const object1 = Object.create(pro01);
+	const object1 = Object.create(prototype01);
 	object1.firstName = 'hello';
 	object1.lastName = 'world';
 	object1.age = 27;
@@ -42,14 +42,14 @@ function TestCase01() {
 }
 
 function TestCase02() {
-	const object2 = Object.create(pro02);
+	const object2 = Object.create(prototype02);
 	object2.FullName();
 	object2.PrintBio();
 }
 
 function TestCase03() {
-	const object3 = pro01;
-	const object4 = pro01;
+	const object3 = prototype01;
+	const object4 = prototype01;
 	object3.firstName = 'hello';
 	object3.lastName = 'world';
 	object3.FullName();

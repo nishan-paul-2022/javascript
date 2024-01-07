@@ -38,7 +38,7 @@
 					}
 					timer = setTimeout(() => {
 						func();
-						timer = undefined;
+						timer = null;
 					}, timeout);
 				};
 			}
@@ -52,7 +52,7 @@
 						clearTimeout(timer);
 					}
 					timer = setTimeout(() => {
-						timer = undefined;
+						timer = null;
 					}, timeout);
 				};
 			}
@@ -63,7 +63,7 @@
 					if (!timer) {
 						func(message);
 						timer = setTimeout(() => {
-							timer = undefined;
+							timer = null;
 						}, timeout);
 					} else {
 						console.log('rest time');

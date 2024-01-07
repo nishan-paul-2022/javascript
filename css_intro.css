@@ -1,0 +1,33 @@
+:root {
+	--primary-color: #007bff;
+	--font-size: 16px;
+}
+
+body {
+	--secondary-color: #ff0000;
+	background-color: var(--primary-color);
+	font-size: var(--font-size);
+}
+
+header {
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	padding: 10px;
+}
+
+h1 {
+	margin: 20px;
+	background-color: var(--secondary-color);
+}
+
+p {
+	margin: 10px;
+	font-size: 18px;
+}
+
+/*
+    - universal selector    / *
+    - root selector         / :root
+    - body selector         / body
+    [ in case of html, body is the root ] */

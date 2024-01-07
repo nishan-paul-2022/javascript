@@ -55,8 +55,9 @@ ObjectCompare();
 ArrayCompare();
 Constant();
 
-// two categories of variable : let and const
-// variable => pointer => memory address => value
-// we can change pointer for let variable (reassign)
-// we can't change pointer for const variable (no reassign)
-// primitive (frozen | using value) and reference (not frozen | using pointer)
+/* 
+2 kinds of variable : let and const
+variable => pointer => memory address => value
+we can change pointer for let variable (reassign)
+we can't change pointer for const variable (no reassign)
+primitive (frozen | using value) and reference (not frozen | using pointer) */

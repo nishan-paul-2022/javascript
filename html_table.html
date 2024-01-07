@@ -4,33 +4,110 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width:device-width, initial-scale=1.0" />
 		<title>Table</title>
+		<style>
+			table {
+				border-spacing: 5px;
+			}
+
+			th,
+			td {
+				border: 1px solid black;
+				border-collapse: collapse;
+				border-radius: 5px;
+				border-style: groove;
+				padding: 5px;
+			}
+
+			td:nth-child(odd),
+			th:nth-child(odd) {
+				background-color: #d6eeee;
+			}
+		</style>
 	</head>
 
 	<body>
-		<table border="1">
-			<tr>
-				<th>head-01</th>
-				<th>head-02</th>
-				<th>head-03</th>
-			</tr>
+		<table>
+			<caption>
+				Table Caption
+			</caption>
 
-			<tr>
-				<td>data-11</td>
-				<td>data-12</td>
-				<td>data-13</td>
-			</tr>
+			<colgroup>
+				<col span="2" />
+				<col span="2" style="background-color: #00ff00" />
+			</colgroup>
 
-			<tr>
-				<td rowspan="2">data-21</td>
-				<td>data-22</td>
-				<td>data-23</td>
-			</tr>
+			<thead>
+				<tr>
+					<th>head-01</th>
+					<th>head-02</th>
+					<th>head-03</th>
+					<th>head-04</th>
+					<th>head-05</th>
+					<th>head-06</th>
+				</tr>
+			</thead>
 
-			<tr>
-				<td colspan="2">data-32</td>
-			</tr>
+			<tbody>
+				<tr>
+					<td>data-11</td>
+					<td>data-12</td>
+					<td>data-13</td>
+					<td>data-14</td>
+					<td>data-15</td>
+					<td>data-16</td>
+				</tr>
+
+				<tr>
+					<td rowspan="2">data-21</td>
+					<td>data-22</td>
+					<td>data-23</td>
+					<td>data-24</td>
+					<td>data-25</td>
+					<td>data-26</td>
+				</tr>
+
+				<tr>
+					<td colspan="2">data-31</td>
+					<td>data-33</td>
+					<td>data-34</td>
+					<td>data-35</td>
+				</tr>
+
+				<tr>
+					<td>data-41</td>
+					<td>data-42</td>
+					<td>data-43</td>
+					<td>data-44</td>
+					<td>data-45</td>
+					<td>data-46</td>
+				</tr>
+
+				<tr>
+					<td>data-51</td>
+					<td>data-52</td>
+					<td>data-53</td>
+					<td>data-54</td>
+					<td>data-55</td>
+					<td>data-56</td>
+				</tr>
+			</tbody>
+
+			<tfoot>
+				<tr>
+					<th>foot-01</th>
+					<th>foot-02</th>
+					<th>foot-03</th>
+					<th>foot-04</th>
+					<th>foot-05</th>
+					<th>foot-06</th>
+				</tr>
+			</tfoot>
 		</table>
 	</body>
 </html>
 
-<!-- border attribute is deprecated -->
+<!-- @ valid property in colgroup :
+		- width
+		- visibility
+		- background
+		- border -->

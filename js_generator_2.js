@@ -1,126 +1,83 @@
-class IterableUsingNext {
-	constructor(values) {
-		this.values = values;
-		this.index = 0;
-	}
-
-	[Symbol.iterator]() {
-		const values = this.values;
-		let index = this.index;
-		const rathore = {
-			next: () => {
-				if (index >= values.length) {
-					return { done: true };
-				}
-
-				const value = values[index++];
-				return { value, done: false };
-			}
-		};
-		return rathore;
-	}
-}
-
-class IterableUsingGenerator {
-	constructor(values) {
-		this.values = values;
-		this.index = 0;
-	}
-
-	[Symbol.iterator]() {
-		const values = this.values;
-		let index = this.index;
-		function* Generator() {
-			while (index < values.length) {
-				const value = values[index++];
-				yield value;
-			}
-		}
-		const rathore = Generator();
-		return rathore;
-	}
-}
-
-function* UseCase(iterator) {
-	yield* iterator;
-}
-
-function* NumberAndLetterGenerator() {
-	yield 1;
-	yield 2;
-	yield 3;
+function* LetterGenerator() {
 	yield 'a';
 	yield 'b';
-	yield 'c';
 }
 
-function* RandomGenerator() {
-	console.log('indicator-start');
+function* EvenGenerator() {
+	let num = -2;
+	while (true) {
+		num += 2;
+		yield num;
+	}
+}
 
-	const con1 = yield Math.random();
-	console.log('indicator-1:', con1);
+function* LetterAndEvenGenerator() {
+	yield* LetterGenerator();
+	yield* EvenGenerator();
+}
 
-	const con2 = yield Math.random();
-	console.log('indicator-2:', con2);
+class EvenNext {
+	num = -2;
 
-	try {
-		const con3 = yield Math.random();
-		console.log('indicator-3:', con3);
-	} catch (error) {
-		console.log(error);
+	next() {
+		this.num += 2;
+		if (this.num <= 20) {
+			return { value: this.num, done: false };
+		} else {
+			return { value: undefined, done: true };
+		}
 	}
 
-	const con4 = yield Math.random();
-	console.log('indicator-4:', con4);
-
-	console.log('indicator-end');
-	return true;
+	[Symbol.iterator]() {
+		const next = this.next.bind(this);
+		return {
+			next: next
+		};
+	}
 }
 
-function Func01() {
-	const iterator = NumberAndLetterGenerator();
-	console.log(...iterator);
-
-	const iterator1 = NumberAndLetterGenerator();
-	iterator1.next();
-	for (const i of UseCase(iterator1)) {
+function UseCase01() {
+	const iterator = LetterGenerator();
+	for (const i of iterator) {
 		console.log(i);
 	}
 }
 
-function Func02() {
-	const iterator = new IterableUsingNext([1, 2, 3]);
-	console.log(...iterator);
-	console.log({ ...iterator });
+function UseCase02() {
+	const iterator = EvenGenerator();
+	console.log(iterator.next());
+	console.log(iterator.next());
 
-	for (const i of UseCase(iterator)) {
+	for (let i = 0; i < 5; i++) {
+		console.log('iterator.next().value :', iterator.next().value);
+	}
+}
+
+function UseCase03() {
+	const iterator = LetterAndEvenGenerator();
+	console.log(iterator.next());
+	console.log(iterator.next());
+
+	for (let i = 0; i < 5; i++) {
+		console.log('iterator.next().value :', iterator.next().value);
+	}
+}
+
+function UseCase04() {
+	const iterator = new EvenNext();
+	console.log(iterator.next());
+	console.log(iterator.next());
+
+	for (let i = 0; i < 5; i++) {
+		console.log('iterator.next().value :', iterator.next().value);
+	}
+
+	for (const i of iterator) {
 		console.log(i);
 	}
 }
 
-function Func03() {
-	const iterator = new IterableUsingGenerator([1, 2, 3]);
-	console.log(...iterator);
-	console.log({ ...iterator });
-
-	for (const i of UseCase(iterator)) {
-		console.log(i);
-	}
-}
-
-function Func04() {
-	const iterator = RandomGenerator();
-	console.log(iterator.next(1)); // wasted
-	console.log(iterator.next(1));
-	console.log(iterator.throw(2));
-	console.log(iterator.return(3));
-	console.log(iterator.next(4));
-	console.log(iterator.next(6)); // wasted
-}
-
-Func01();
-Func02();
-Func03();
-Func04();
-
-// iterator delegation for yield all values, not return values
+UseCase01();
+UseCase02();
+UseCase03();
+UseCase04();

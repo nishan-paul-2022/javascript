@@ -57,3 +57,6 @@ console.log(Parent.str);
 Parent.Func();
 
 console.log(Parent.prototype.str);
+
+const parentName = child.constructor.__proto__.name;
+console.log(parentName);

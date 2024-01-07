@@ -4,14 +4,13 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { port, ServerRunning } from './server_module.js';
 
-// url | file path | directory
 const filePath = fileURLToPath(import.meta.url);
 const fileDirectory = path.dirname(filePath);
 
 const server = http.createServer((req, res) => {
 	if (req.method === 'GET' && req.url === '/') {
-		// Serve the index.html file
-		fs.readFile(path.join(fileDirectory, 'index.html'), (err, data) => {
+		const indexHTML = path.join(fileDirectory, 'index.html');
+		fs.readFile(indexHTML, (err, data) => {
 			if (err) {
 				res.writeHead(500);
 				res.end('Error reading the file');
@@ -23,8 +22,8 @@ const server = http.createServer((req, res) => {
 			}
 		});
 	} else if (req.method === 'GET' && req.url === '/style.css') {
-		// Serve the style.css file
-		fs.readFile(path.join(fileDirectory, 'style.css'), (err, data) => {
+		const styleCSS = path.join(fileDirectory, 'style.css');
+		fs.readFile(styleCSS, (err, data) => {
 			if (err) {
 				res.writeHead(404);
 				res.end('File not found');
@@ -36,8 +35,8 @@ const server = http.createServer((req, res) => {
 			}
 		});
 	} else if (req.method === 'GET' && req.url === '/script.js') {
-		// Serve the script.js file
-		fs.readFile(path.join(fileDirectory, 'script.js'), (err, data) => {
+		const scriptJS = path.join(fileDirectory, 'script.js');
+		fs.readFile(scriptJS, (err, data) => {
 			if (err) {
 				res.writeHead(404);
 				res.end('File not found');
@@ -49,8 +48,8 @@ const server = http.createServer((req, res) => {
 			}
 		});
 	} else if (req.method === 'GET' && req.url === '/module_1.js') {
-		// Serve the module_1.js file
-		fs.readFile(path.join(fileDirectory, 'module_1.js'), (err, data) => {
+		const module1JS = path.join(fileDirectory, 'module_1.js');
+		fs.readFile(module1JS, (err, data) => {
 			if (err) {
 				res.writeHead(404);
 				res.end('File not found');
@@ -62,8 +61,8 @@ const server = http.createServer((req, res) => {
 			}
 		});
 	} else if (req.method === 'GET' && req.url === '/module_2.js') {
-		// Serve the module_2.js file
-		fs.readFile(path.join(fileDirectory, 'module_2.js'), (err, data) => {
+		const module2JS = path.join(fileDirectory, 'module_2.js');
+		fs.readFile(module2JS, (err, data) => {
 			if (err) {
 				res.writeHead(404);
 				res.end('File not found');

@@ -1,0 +1,28 @@
+{
+	"files": {
+		"js_array_1.js": true,
+		"js_array_2.js": true,
+		"js_array_3.js": true,
+		"js_async_import.js": true,
+		"js_break_and_continue.js": true,
+		"js_callback.js": true,
+		"js_class_1.js": true,
+		"js_class_2.js": true,
+		"js_class_3.js": true,
+		"js_class_inheritance.js": true,
+		"js_class_private_member.js": true,
+		"js_closure_1.js": true,
+		"js_closure_2.js": true,
+		"js_closure_3.js": true,
+		"js_closure_4.js": true,
+		"js_closure_5.js": true,
+		"js_comparison.js": true,
+		"js_console.js": true,
+		"js_constructor.js": true,
+		"js_curry.js": true,
+		"js_date_and_time.js": true,
+		"js_destructuring.js": true,
+		"js_do_while.js": false,
+		"js_error_1.js": true
+	}
+}

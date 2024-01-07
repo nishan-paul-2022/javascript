@@ -8,14 +8,39 @@
 
 	<body>
 		<style>
-			/* 
-				before
-				after
-				first-line;
-				first-character;
-				selection
-				marker
-			*/
+			/* style the ::before pseudo-element */
+			p::before {
+				content: 'Before: ';
+				color: blue;
+			}
+
+			/* style the ::after pseudo-element */
+			p::after {
+				content: ' :After';
+				color: red;
+			}
+
+			/* style the ::first-line pseudo-element */
+			p::first-line {
+				font-weight: bold;
+			}
+
+			/* style the ::selection pseudo-element */
+			p::selection {
+				background-color: yellow;
+				color: black;
+			}
 		</style>
+
+		<p>This is a sample text for pseudo-elements. This is the 2nd line.</p>
 	</body>
 </html>
+
+<!-- 
+	before
+	after
+	first-line;
+	first-character;
+	selection
+	marker
+-->

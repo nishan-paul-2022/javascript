@@ -122,14 +122,3 @@ Func03();
 Func05();
 Func07();
 Func08();
-
-/*
-- Every object has a property named [[Prototype]], which is either null or object
-- __proto__ is a getter / setter for [[Prototype]]
-- for Object.prototype, [[Prototype]] is null 
-- for others objects, [[Prototype]] is Object.prototype
-- Object.prototype has methods like toString() and hasOwnProperty(key)
-- Object.prototype members are not enumerable
-- write and delete operations are applicable for object, not prototype
-- prototype chain is linear, can't be circular
-*/

@@ -9,29 +9,29 @@
 	<body>
 		<style>
 			/* 
-                @media optional-quantifier optional-mediatype and ((mediafeature) quantifier (mediafeature))
+                @media optional-quantifier optional-media-type and ((media-feature) quantifier (media-feature))
 
                 optional-quantifier
-                - not 
-                - only (making query older browser compatible)
+                    - not 
+                    - only (making query older browser compatible)
 
-                optional-mediatype
-                - screen 
-                - speech 
-                - print 
-                - all
+                optional-media-type
+                    - screen 
+                    - speech 
+                    - print 
+                    - all
 
-                mediafeature
-                - min-width: 100px
-                - max-width: 100px
-                - min-height: 100px
-                - max-height: 100px
-                - orientation: landascape
-                - orientation: portait
+                media-feature
+                    - min-width: 100px
+                    - max-width: 100px
+                    - min-height: 100px
+                    - max-height: 100px
+                    - orientation: landascape
+                    - orientation: portait
 
                 quantifier
-                - and 
-                - or 
+                    - and 
+                    - or 
 
                 @media screen and (max-width: 900px) and (min-width: 600px), (min-width: 1100px)
                 @media screen and ((max-width: 900px) and (min-width: 600px)), (min-width: 1100px)
@@ -40,7 +40,7 @@
                 @media screen and (min-width: 400px) and (max-width: 800px)
                 @media screen and (min-width: 400px) and (not (min-width: 800px))
 
-                mediatype is optional unless we are using quantifier before mediatype
+                optional-quantifier can be used only with optional-media-type
             */
 		</style>
 	</body>

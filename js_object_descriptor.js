@@ -62,10 +62,9 @@ TestCase01();
 TestCase02();
 
 /*
-after we make an object non-configuarable, 
+@ after we make an object non-configuarable, 
 - we can change the value of writable from true to false (not vice-versa)
 - we can't change the value of enumerable  
 - we can't change the value of configuarable
 
-writable is not relevant for accessor 
-*/
+@ writable is not relevant for accessor */

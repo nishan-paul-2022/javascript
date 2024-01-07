@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			body {
+				border: 1px solid black;
+			}
+
+			.container {
+				position: relative;
+				border: 1px solid black;
+			}
+
+			.black-box {
+				position: relative;
+				/* position: absolute; */
+				/* position: fixed; */
+				z-index: 1;
+				border: 2px solid black;
+				height: 100px;
+				margin: 30px;
+			}
+
+			/* gray box will be above green box */
+			.gray-box {
+				position: absolute;
+				z-index: 3;
+				background: lightgray;
+				height: 60px;
+				width: 70%;
+				left: 50px;
+				top: 50px;
+			}
+
+			/* green box will be above black box */
+			.green-box {
+				position: absolute;
+				z-index: 2;
+				background: lightgreen;
+				width: 35%;
+				left: 270px;
+				top: -15px;
+				height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Z-index Example</h1>
+
+		<p>
+			An element with greater stack order is always above an element with
+			a lower stack order.
+		</p>
+
+		<div class="container">
+			<div class="black-box">Black box (z-index: 1)</div>
+			<div class="gray-box">Gray box (z-index: 3)</div>
+			<div class="green-box">Green box (z-index: 2)</div>
+		</div>
+	</body>
+</html>
+
+<!-- if multiple positioned-elements overlap each other without a z-index specified, stack-order will be on basis of appearance-order -->
+<!-- relative 	/ in terms of view, under the container -->
+<!-- absolute 	/ in terms of view, outside the container -->
+<!-- fixed 		/ in terms of view, outside the container -->

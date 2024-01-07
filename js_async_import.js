@@ -1,7 +1,12 @@
-async function MyFunction() {
-	const myModule = await import('./my-module.js');
+function MyFunction1() {
+	const myModule = import('./js_module.js');
+	console.log(myModule.name); // undefined
+}
+
+async function MyFunction2() {
+	const myModule = await import('./js_module.js');
 	console.log(myModule.name);
 }
 
-await MyFunction();
-console.log('async import is done');
+MyFunction1();
+await MyFunction2();

@@ -38,6 +38,19 @@ class C02 extends C01 {
 	}
 }
 
+class Class1 {
+	static name1 = 'name1';
+
+	static name2() {
+		this.name3 = 'name3';
+		return this.name3;
+	}
+}
+
+class Class2 extends Class1 {
+	static name4 = 'name4';
+}
+
 function F01() {
 	const c02 = new C02('paul', 53);
 	c02.PrinValues();
@@ -51,5 +64,15 @@ function F02() {
 	c01.Jawan();
 }
 
+function F03() {
+	console.log(Class2.name1);
+	console.log(Class2.name2());
+	console.log(Class2.name3);
+	console.log(Class2.name4);
+}
+
 F01();
 F02();
+F03();
+
+/* method or static method can't be used as constructor */

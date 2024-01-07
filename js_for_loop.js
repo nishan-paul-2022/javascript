@@ -1,48 +1,60 @@
-const arr = [11, 22, 33, 44, 55, 66, 77, 88, 99, 111];
+const str = 'hello';
+const arr = [0, 11, 22, 33, 44];
 
-console.log('\narray + of');
-for (const i of arr) {
-	console.log(i);
-}
-
-console.log('\narray + in');
-for (const i in arr) {
-	console.log(`${i} : ${arr[i]}`);
-}
-
-const object = {
+const regular1 = {
 	x: 1,
 	y: 'string',
 	z: () => {
-		return console.log('function');
+		console.log('method');
 	}
 };
 
-console.log('\nobjec + in');
-for (const i in object) {
-	const key = object[i];
-	if (key instanceof Function) {
-		console.log(`${i} : `);
-		key();
-	} else {
-		console.log(`${i} : ${key}`);
+const regular2 = {
+	x: 1,
+	y: 'string',
+	z: () => {
+		console.log('method');
+	},
+	[Symbol.iterator]: function () {
+		const keys = Object.keys(this);
+		const length = keys.length;
+		let index = 0;
+		return {
+			next: function () {
+				if (index < length) {
+					return { value: keys[index++], done: false };
+				} else {
+					return { value: undefined, done: true };
+				}
+			}
+		};
+	}
+};
+
+function LoopOf(variable) {
+	try {
+		console.log('\n Loop Of');
+		for (const i of variable) {
+			console.log(i);
+		}
+	} catch (error) {
+		console.log(error.message);
 	}
 }
 
-console.log('\nstring + of');
-const superhero = 'batman';
-for (const i of superhero) {
-	console.log(i);
+function LoopIn(variable) {
+	console.log('\n Loop In');
+	for (const i in variable) {
+		console.log(i, ':', variable[i]);
+	}
 }
 
-console.log('\nstring + in');
-for (const i in superhero) {
-	console.log(`${i} - ${superhero[i]}`);
-}
+LoopOf(str);
+LoopOf(arr);
+LoopOf(regular1);
+LoopOf(regular2);
 
-// for (let i of object) { // invalid syntax
-//     console.log(i);
-// }
-
-// of / value : iterable object
-// in / key : iterable and non-iterable object
+LoopIn(str);
+LoopIn(arr);
+LoopIn(regular1);
+LoopIn(regular2);

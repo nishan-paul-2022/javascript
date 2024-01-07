@@ -109,5 +109,5 @@
 	"ts-node": {
 		"esm": true
 	},
-	"include": ["*.ts", "*.cts", "*.mts", "ts-hello-world/*ts"]
+	"include": ["*.ts", "*.cts", "*.mts", "ts-used-in-html/*.ts"]
 }

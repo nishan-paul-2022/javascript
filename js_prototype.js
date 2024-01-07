@@ -34,15 +34,15 @@ function Example04() {
 	userDefinedObject.functionObjectMember('userDefinedObject');
 }
 
+function Example05() {
+	const functionObject = function () {};
+	console.log(Object.getOwnPropertyDescriptor(functionObject, 'prototype'));
+	console.log(Object.getOwnPropertyDescriptor(Function, 'prototype'));
+	console.log(Object.getOwnPropertyDescriptor(Array, 'prototype'));
+}
+
 Example01();
 Example02();
 Example03();
 Example04();
-
-/*
-- Function / Function.prototype
-- FunctionObject / Function.prototype
-- userDefinedObject / FunctionObject.prototype
-- Array / Function.prototype
-- arrayObject / Array.prototype
-*/
+Example05();

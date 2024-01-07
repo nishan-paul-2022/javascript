@@ -12,7 +12,7 @@ function welcome3() {
 	console.log('Welcome to JavaTpoint 3');
 }
 
-function En() {
+function UseCase01() {
 	const id1 = setTimeout(welcome1, 1000);
 	const id2 = setInterval(welcome2, 1000);
 	const id3 = setImmediate(welcome3);
@@ -22,7 +22,7 @@ function En() {
 }
 
 // Simulating an I/O operation (e.g. reading a file)
-function Fn() {
+function UseCase02() {
 	console.log('Start');
 
 	fs.readFile('zmax.txt', 'utf8', (err, data) => {
@@ -78,7 +78,7 @@ function Fn() {
 	console.log('End');
 }
 
-function Gn() {
+function UseCase03() {
 	fs.readFile('zmax.html', 'utf8', (err, data) => {
 		setTimeout(() => {
 			console.log('SET-TIMEOUT');
@@ -101,7 +101,7 @@ function Gn() {
 	});
 }
 
-function Hn() {
+function UseCase04() {
 	console.log('START');
 
 	setTimeout(() => {
@@ -114,10 +114,9 @@ function Hn() {
 	console.log('END');
 }
 
-En();
-Fn();
-Gn();
-Hn();
+UseCase01();
+UseCase02();
+UseCase03();
+UseCase04();
 
-// module : client side (ES module) | server side (CommonJs module)
 // precedence : 01. Immediate 02. TimeOut, Interval

@@ -84,7 +84,7 @@ function ExampleThree() {
 	console.log(z.a);
 	console.log(z.b);
 	z.c(10, 20);
-	z.d;
+	console.log(z.d);
 	z.e(10, 20);
 	z.f();
 	z.g;
@@ -96,7 +96,7 @@ function ExampleFour() {
 	console.log(a);
 	console.log(b);
 	c.call(z, 10, 20);
-	d.call(e);
+	console.log(d);
 	e.call(z, 10, 20);
 	f();
 	g;

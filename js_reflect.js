@@ -126,9 +126,9 @@ UsingReflect07();
 /*
 Reflect.get(object, member)
 Reflect.set(object, member, value)
+Reflect.ownKeys(object)
+Reflect.deleteProperty(object, member)
 Reflect.getPrototypeOf(object)
 Reflect.setPrototypeOf(object1, object2)
-Reflect.deleteProperty(object, member)
 Reflect.apply(function, context, array of argument)
-Reflect.ownKeys(object)
 */
