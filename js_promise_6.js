@@ -1,39 +1,35 @@
-function Delay01() {
-	let i = 0;
-	const intervalId = setInterval(() => {
-		console.log(i++);
-		if (i >= 10) {
-			clearInterval(intervalId);
-		}
-	}, 2000);
-}
+const range = 10;
 
-async function Delay02() {
-	for (let i = 0; i < 10; i++) {
-		await new Promise((resolve) => {
-			setTimeout(() => {
-				console.log(i);
-				resolve();
-			}, 2000);
-		});
-	}
-}
+async function IterationDelay01() {
+	console.log('Iteration Delay 01');
 
-function Delay03(value) {
-	const promise = new Promise((resolve) => {
-		setTimeout(() => {
-			console.log(value);
-			resolve();
+	const promise = new Promise((SetResolve) => {
+		let i = 0;
+		const intervalId = setInterval(() => {
+			console.log(i++);
+			if (i >= range) {
+				clearInterval(intervalId);
+				SetResolve();
+			}
 		}, 2000);
 	});
 
-	return promise;
+	await promise;
 }
 
-Delay01();
+async function IterationDelay02() {
+	console.log('Iteration Delay 02');
 
-await Delay02();
-
-for (let i = 0; i < 10; i++) {
-	await Delay03(i);
+	for (let i = 0; i < range; i++) {
+		const promise = new Promise((SetResolve) => {
+			setTimeout(() => {
+				SetResolve(i);
+			}, 2000);
+		});
+		const resolve = await promise;
+		console.log(resolve);
+	}
 }
+
+await IterationDelay01();
+await IterationDelay02();

@@ -1,42 +1,26 @@
-function resolve(response) {
-	// The Promise was resolved, process the data
-	console.log('Data fetched successfully: \n', response);
+function GetResolve(message) {
+	console.log('resolve message:', message);
 }
 
-function reject(error) {
-	// The Promise was rejected, handle the error
-	console.log('Error fetching data: \n', error);
+function GetReject(message) {
+	console.log('reject message:', message);
 }
 
-function ExecutorFunction(resolve, reject) {
-	// Create an XMLHttpRequest object
-	const xhr = new XMLHttpRequest();
-
-	// Configure the request
-	xhr.open('GET', 'http://www.shafaetsplanet.com/planetcoding/?p=1400');
-
-	// Set up event handlers
-	xhr.onload = function () {
-		if (xhr.status === 200) {
-			// Request successful, resolve the Promise with the response data
-			resolve(xhr.responseText);
+function CreatePromise(flag) {
+	const promise = new Promise((SetResolve, SetReject) => {
+		if (flag % 2 !== 0) {
+			const message = 'resolved';
+			SetResolve(message);
 		} else {
-			// Request failed, reject the Promise with an error message
-			reject('Error: Unable to fetch data from the server.');
+			const message = 'rejected';
+			SetReject(message);
 		}
-	};
-
-	xhr.onerror = function () {
-		// Request error, reject the Promise with an error message
-		reject('Error: An unexpected error occurred.');
-	};
-
-	// Send the request
-	xhr.send();
+	});
+	return promise;
 }
 
-// Example function that returns a Promise to make an HTTP request
-const fetchDataFromServer = new Promise(ExecutorFunction);
+const promise1 = CreatePromise(1);
+promise1.then(GetResolve).catch(GetReject);
 
-// Using the Promise to fetch data from the server
-fetchDataFromServer.then(resolve).catch(reject);
+const promise2 = CreatePromise(2);
+promise2.then(GetResolve).catch(GetReject);

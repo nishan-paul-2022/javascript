@@ -27,6 +27,16 @@ function replace(text, regex) {
 	console.log(newText);
 }
 
+function exist1(text, pattern) {
+	const doExist = text.includes(pattern);
+	console.log(doExist);
+}
+
+function exist2(text, regex) {
+	const doExist = regex.test(text);
+	console.log(doExist);
+}
+
 const text = 'I love cats. Cats are easy to love. Cats are very popular.';
 
 const pattern = 'Cats';
@@ -49,3 +59,7 @@ match3(text, regex4);
 search(text, regex4);
 
 replace(text, regex4);
+
+exist1(text, pattern);
+
+exist2(text, regex4);

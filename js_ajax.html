@@ -7,30 +7,33 @@
 
 	<body>
 		<div id="hello"></div>
+		
 		<script>
-			function F() {
-				const elem = document.getElementById('hello');
+			function MakeHttpRequest() {
+				const element = document.getElementById('hello');
 
 				const xhr = new XMLHttpRequest();
+
 				xhr.onload = function () {
 					if (this.status === 200) {
 						const response = this.responseText;
-						elem.innerHTML = response;
+						element.innerHTML = response;
 						console.log('LOAD');
 					}
 				};
 
 				xhr.onerror = function () {
-					elem.innerHTML = 'ERROR';
+					element.innerHTML = 'ERROR';
 					console.log('ERROR');
 				};
 
 				xhr.open('GET', 'https://reqres.in/', true); // 'true' indicates asynchronous mode
 				xhr.send();
+				
 				console.log('OK');
 			}
 
-			F();
+			MakeHttpRequest();
 
 			// - xhr.open()
 			// - xhr.send()

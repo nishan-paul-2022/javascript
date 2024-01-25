@@ -290,6 +290,15 @@ function ObjectInInOperationCustomized() {
 	ObjectInOperation(regular2);
 }
 
+function BooleanConversionInExpression() {
+	const v = [undefined, null, false, ''];
+	for (const i of v) {
+		if (!i) {
+			console.log('helloWorld');
+		}
+	}
+}
+
 StringToNumber();
 StringToBoolean();
 NumberToString();
@@ -324,6 +333,8 @@ ObjectAndBooleanComparison();
 
 ObjectInOperationDefault();
 ObjectInInOperationCustomized();
+
+BooleanConversionInExpression();
 
 /*
 	@ comparison

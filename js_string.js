@@ -62,7 +62,7 @@ function UseCase09() {
 	console.log(trimmedStr); // Output: 'Hello, World!'
 }
 
-// padStart() and padEnd()
+// padStart(), padEnd()
 function UseCase10() {
 	const str11 = '42';
 	const paddedStrStart = str11.padStart(5, '0');
@@ -71,7 +71,7 @@ function UseCase10() {
 	console.log(paddedStrEnd); // Output: '42000'
 }
 
-// toUpperCase() and toLowerCase()
+// toUpperCase(), toLowerCase()
 function UseCase11() {
 	const str12 = 'Hello, World!';
 	const upperCaseStr = str12.toUpperCase();
@@ -80,7 +80,7 @@ function UseCase11() {
 	console.log(lowerCaseStr); // Output: 'hello, world!'
 }
 
-// startsWith() and endsWith()
+// startsWith(), endsWith()
 function UseCase12() {
 	const str13 = 'Hello, World!';
 	const startsWithHello = str13.startsWith('Hello');
@@ -89,13 +89,17 @@ function UseCase12() {
 	console.log(endsWithWorld); // Output: true
 }
 
-// charAt() and charCodeAt()
+// charAt(), charCodeAt(), fromCharCode()
 function UseCase14() {
 	const str14 = 'Hello, World!';
 	const charAtIndex2 = str14.charAt(2);
 	const charCodeAtIndex2 = str14.charCodeAt(2);
+	const charOne = String.fromCharCode(49);
+	const unicodeOne = charOne.charCodeAt(0);
 	console.log(charAtIndex2); // Output: 'l'
 	console.log(charCodeAtIndex2); // Output: 108
+	console.log(charOne); // Output: l
+	console.log(unicodeOne); // Output: 49
 }
 
 // search(), match(), matchAll(), replace(), replaceAll()

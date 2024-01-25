@@ -1,28 +1,36 @@
-// functions that return Promises after a delay
 function fetchUserData() {
-	return new Promise((resolve) => {
+	const promise = new Promise((SetResolve, _SetReject) => {
 		setTimeout(() => {
-			resolve({ name: 'John', age: 30 });
-			console.log('hello');
+			const data = { name: 'John', age: 30 };
+			SetResolve(data);
+			console.log('fetchUserData');
 		}, 2000);
 	});
+	return promise;
 }
 
 function fetchProductData() {
-	return new Promise((resolve) => {
+	const promise = new Promise((_SetResolve, SetReject) => {
 		setTimeout(() => {
-			resolve({ productName: 'Smartphone', price: 500 });
-			console.log('world');
-		}, 1500);
+			const data = { productName: 'Smart Phone', price: 500 };
+			SetReject(data);
+			console.log('fetchProductData');
+		}, 4000);
 	});
+	return promise;
 }
 
-// using async/await to handle sequential async operations
-async function fetchData() {
+async function HandleUserData() {
 	try {
 		const userData = await fetchUserData();
 		console.log('User Data:', userData);
+	} catch (error) {
+		console.error('Error fetching data:', error);
+	}
+}
 
+async function HandleProductData() {
+	try {
 		const productData = await fetchProductData();
 		console.log('Product Data:', productData);
 	} catch (error) {
@@ -30,4 +38,5 @@ async function fetchData() {
 	}
 }
 
-fetchData();
+HandleUserData();
+HandleProductData();

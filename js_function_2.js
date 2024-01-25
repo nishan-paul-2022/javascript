@@ -11,7 +11,7 @@ class ExA {
 
 	set Age(age) {
 		this.age = age;
-		// return this.age;
+		// return this.age; // invalid
 	}
 
 	get FullName() {

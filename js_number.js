@@ -224,6 +224,13 @@ function Func11() {
 	console.log(newArray);
 }
 
+// numeric separator / _
+function Func12() {
+	const num1 = 1_000_000_000;
+	const num2 = 1000000000;
+	console.log(num1 === num2);
+}
+
 Func01();
 Func02();
 Func03();
@@ -235,6 +242,7 @@ Func08();
 Func09();
 Func10();
 Func11();
+Func12();
 
 /*
 comparing (loose / strict) two objects always returns false

@@ -1,35 +1,46 @@
-// Simulating an asynchronous function that returns a Promise after a delay
-function fetchData() {
-	return new Promise((resolve /*, reject */) => {
-		setTimeout(() => {
-			// Simulate data retrieval
-			const data = {
-				name: 'John',
-				age: 30
-			};
-			resolve(data); // Resolve the Promise with the fetched data
-		}, 2000); // Simulate a delay of 2 seconds
-	});
+function GetResolve(message) {
+	console.log('resolve message:', message);
 }
 
-// Using async function to handle the asynchronous operation
-async function fetchDataAsync() {
+function GetReject(message) {
+	console.log('reject message:', message);
+}
+
+function fetchUserData() {
+	const promise = new Promise((SetResolve, _SetReject) => {
+		setTimeout(() => {
+			const data = { name: 'John', age: 30 };
+			SetResolve(data);
+			console.log('fetchUserData');
+		}, 2000);
+	});
+	return promise;
+}
+
+function fetchProductData() {
+	const promise = new Promise((_SetResolve, SetReject) => {
+		setTimeout(() => {
+			const data = { productName: 'Smart Phone', price: 500 };
+			SetReject(data);
+			console.log('fetchProductData');
+		}, 4000);
+	});
+	return promise;
+}
+
+async function fetchDataAsync(fetchData) {
 	try {
-		// Using await to pause the execution until the Promise is resolved
 		const result = await fetchData();
 		console.log('Data fetched successfully:', result);
-		return result; // The async function returns the resolved value
+		return result;
 	} catch (error) {
 		console.error('Error fetching data:', error);
-		throw error; // The async function throws the error for further handling
+		throw error;
 	}
 }
 
-// Invoking the async function
-fetchDataAsync()
-	.then((resolvedData) => {
-		console.log('Async function resolved:', resolvedData);
-	})
-	.catch((error) => {
-		console.error('Async function error:', error);
-	});
+const promise1 = fetchDataAsync(fetchUserData);
+promise1.then(GetResolve).catch(GetReject);
+
+const promise2 = fetchDataAsync(fetchProductData);
+promise2.then(GetResolve).catch(GetReject);

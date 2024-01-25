@@ -31,9 +31,8 @@ const regular2 = {
 	}
 };
 
-function LoopOf(variable) {
+function ForOfLoop(variable) {
 	try {
-		console.log('\n Loop Of');
 		for (const i of variable) {
 			console.log(i);
 		}
@@ -42,19 +41,20 @@ function LoopOf(variable) {
 	}
 }
 
-function LoopIn(variable) {
-	console.log('\n Loop In');
+function ForInLoop(variable) {
 	for (const i in variable) {
-		console.log(i, ':', variable[i]);
+		console.log(`${i} : ${variable[i]}`);
 	}
 }
 
-LoopOf(str);
-LoopOf(arr);
-LoopOf(regular1);
-LoopOf(regular2);
+ForOfLoop(str);
+ForOfLoop(arr);
+ForOfLoop(regular1);
+ForOfLoop(regular2);
 
-LoopIn(str);
-LoopIn(arr);
-LoopIn(regular1);
-LoopIn(regular2);
+ForInLoop(str);
+ForInLoop(arr);
+ForInLoop(regular1);
+ForInLoop(regular2);
+
+// iterable-object supports for-of-loop, non-iterable doesn't

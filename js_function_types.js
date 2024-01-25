@@ -20,17 +20,30 @@ func(func03);
 /* 
     function : function signature and function implementation
 
-    function expression / not reusable 
-    anonymous function expression 
-    arrow function expression 
-    named function expression 
+    - function expression / not reusable 
+        :: anonymous function expression 
+        :: arrow function expression 
+        :: named function expression 
 
-    function declaration / reusable 
-    regular function 
-    constructor function 
-    constructor 
-    static / non-static method 
-    static / non-static accessor (getter / setter) 
-    function variable 
-    function object 
+    - function declaration / reusable 
+        :: regular function 
+        :: constructor function 
+        :: constructor 
+        :: static / non-static method 
+        :: static / non-static accessor (getter / setter) 
+        :: function variable 
+        :: function object 
+
+    @ recursive function : function calling function itself
+
+    @ nested function / closure : function within function 
+        # main concept behind closure : child function can access all members of parent function
+        :: static member
+        :: data encapsulation
+        :: predefined beahviour of function
+        :: memorization
+        :: currying 
+
+    @ nested function-calling : funtion calling function 
+        :: callback hell : callback within callback
 */

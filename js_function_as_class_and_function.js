@@ -1,5 +1,5 @@
 function Constrcutor(message) {
-	// undefined | null | '' | blank
+	// undefined | null | '' | 0
 	if (message) {
 		console.log(message);
 		return Math.random();
@@ -13,7 +13,7 @@ Constrcutor.staticMethod = () => {
 };
 
 function UseCase01() {
-	const value = Constrcutor('Ureca');
+	const value = Constrcutor('GO!');
 	console.log(value);
 }
 

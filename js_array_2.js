@@ -55,9 +55,9 @@ function ArrayMethods() {
 	console.log(x);
 
 	const v = [1, 2, 3, [4, 5], [6, 7, 8], [9, 10, [11, 12]]];
+	console.log(v);
 	console.log(v.flat());
 	console.log(v.flat().flat());
-	console.log(v);
 
 	console.log(v.slice(1));
 	console.log(v.slice(1, 4));
@@ -132,12 +132,36 @@ function ObjectSort() {
 	);
 }
 
+// [] works on key | at() works on index
+function ArrayAt() {
+	const name = 'W3Schools';
+	console.log(name[0]);
+	console.log(name.at(0));
+	console.log(name[-1]);
+	console.log(name.at(-1));
+}
+
+function FlatMap() {
+	const v = [1, [2, 3], 4];
+	console.log(
+		v
+			.flatMap((x) => {
+				return x * 10;
+			})
+			.flatMap((x) => {
+				return x * 2;
+			})
+	);
+}
+
 RandomActivities();
 ArrayMethods();
 ArraySort();
 KnuthShuffle();
 MaxMinArray();
 ObjectSort();
+ArrayAt();
+FlatMap();
 
 // length
 // toString()

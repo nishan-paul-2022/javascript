@@ -131,17 +131,13 @@ UseCase03();
 [[DefineOwnProperty]]	defineProperty				Object.defineProperty, Object.defineProperties
 [[GetOwnProperty]]		getOwnPropertyDescriptor	Object.getOwnPropertyDescriptor, for..in, Object.keys/values/entries
 [[OwnPropertyKeys]]		ownKeys						Object.getOwnPropertyNames, Object.getOwnPropertySymbols, for..in, Object.keys/values/entries
-*/
 
-/*
 get (target, prop)
 set (target, prop, value) 
 ownKeys (target)
-
 defineProperty (target, prop) 
 deleteProperty (target, prop)
-
 getOwnPropertyDescriptor
 has (target, prop) 
-
-apply (target, thisArg, argList) */
+apply (target, thisArg, argList)
+*/

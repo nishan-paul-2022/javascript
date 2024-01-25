@@ -43,7 +43,7 @@ function PromiseExecute1(promisifiedFunction) {
 
 async function PromiseExecute2(promisifiedFunction) {
 	try {
-		const resolveValue = promisifiedFunction('zmax.html', 'utf-8');
+		const resolveValue = await promisifiedFunction('zmax.html', 'utf-8');
 		console.log(resolveValue);
 	} catch (rejectValue) {
 		console.log(rejectValue);
