@@ -163,18 +163,18 @@ ObjectSort();
 ArrayAt();
 FlatMap();
 
-// length
-// toString()
-// join()
-// concat()
-// pop() // delete last element
-// push() // add new element to end
-// shift() // delete firt element
-// unshift() // add new element to start
-// flat() // multi-dimensional array to one-dimensional array
-// splice(where to insert elements, from that postion number of elements to be deletd, new elements to be added)
-// slice(start position, end position excluding)
+/* 
+length
+toString()
+join()
+concat()
+pop() 		: delete last element
+push() 		: add new element to end
+shift() 	: delete firt element
+unshift() 	: add new element to start
+flat() 		: multi-dimensional array to one-dimensional array
+splice(where-to-insert-elements, from-that-postion-number-of-elements-to-be-deletd, new-elements-to-be-added)
+slice(start-position, end-position-exclusive)
 
-// array uses numbered index
-// object uses named index
-// stable sort : maintaining relative positions if values are same
+stable sort : maintaining relative positions if values are same 
+*/

@@ -6,4 +6,9 @@ function Add(x, y) {
 const fName = __filename;
 const dName = __dirname;
 
-module.exports = { Add, fName, dName };
+async function RandomFunction() {
+	console.log('RandomFunction');
+	return Math.PI;
+}
+
+module.exports = { Add, fName, dName, RandomFunction };

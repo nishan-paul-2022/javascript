@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.highlight {
+				background-color: aquamarine;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="container" style="border: 2px solid black">
+			hello world!
+			<p id="target">Click Me!</p>
+		</div>
+
+		<button id="insertButton">Insert Element</button>
+		<button id="replaceButton">Replace Content</button>
+		<button id="removeButton">Remove Event Listener</button>
+
+		<script>
+			const container = document.getElementById('container');
+			const target = document.getElementById('target');
+			const insertButton = document.getElementById('insertButton');
+			const replaceButton = document.getElementById('replaceButton');
+			const removeButton = document.getElementById('removeButton');
+
+			function handleClick() {
+				target.classList.toggle('highlight');
+			}
+
+			target.addEventListener('click', handleClick);
+
+			function insertElement() {
+				const newElement1 = document.createElement('p');
+				newElement1.textContent = 'NewElement1';
+
+				const newElement2 = document.createElement('p');
+				newElement2.textContent = 'NewElement2';
+
+				const newElement3 = document.createElement('p');
+				newElement3.textContent = 'NewElement3';
+
+				const newElement4 = document.createElement('p');
+				newElement4.textContent = 'NewElement4';
+
+				container.insertAdjacentElement('beforebegin', newElement1);
+				container.insertAdjacentElement('afterbegin', newElement2);
+				container.insertAdjacentElement('beforeend', newElement3);
+				container.insertAdjacentElement('afterend', newElement4);
+			}
+
+			function replaceContent() {
+				const h1 = document.createElement('h1');
+				h1.textContent = 'heading';
+				container.replaceChildren('new child', text, h1);
+			}
+
+			function removeListener() {
+				target.removeEventListener('click', handleClick);
+			}
+
+			insertButton.addEventListener('click', insertElement);
+			replaceButton.addEventListener('click', replaceContent);
+			removeButton.addEventListener('click', removeListener);
+		</script>
+	</body>
+</html>

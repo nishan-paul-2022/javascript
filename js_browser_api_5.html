@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	
+	<body>
+		<p id="demo">fetch a file to change this text</p>
+
+		<button onclick="myFunction1()">click-01</button>
+		<button onclick="myFunction2()">click-02</button>
+
+		<script>
+			function myFunction1() {
+				const file = 'html_table.html';
+				fetch(file)
+					.then((x) => x.text())
+					.then(
+						(y) => (document.getElementById('demo').innerHTML = y)
+					);
+			}
+
+			async function myFunction2() {
+				const file = 'html_intro.html';
+				let myObject = await fetch(file);
+				let myText = await myObject.text();
+				document.getElementById('demo').innerHTML = myText;
+			}
+		</script>
+	</body>
+</html>

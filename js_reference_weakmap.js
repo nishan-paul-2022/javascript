@@ -1,4 +1,4 @@
-// variable => type cohesion (string) => assign to attr => value is used as attribute
+// variable => type cohesion (string) => assign to attribute => value is used as attribute
 function ObjectExample() {
 	const userObject1 = { name: 'Bruce Wayne' }; // v1
 	const userObject2 = { name: 'Bruce Wayne' }; // v1
@@ -12,8 +12,8 @@ function ObjectExample() {
 	console.log(userRegularObject[userObject3]); // v1
 }
 
-// variable => assign to attr =>
-// pointer is used as attr (reference-variable) | value is used as attr (primitive-variable)
+// variable => assign to attribute =>
+// pointer is used as attribute (reference-variable) | value is used as attribute (primitive-variable)
 function MapExample() {
 	const userObject1 = { name: 'Bruce Wayne' }; // p1
 	const userObject2 = { name: 'Bruce Wayne' }; // p2
@@ -28,7 +28,7 @@ function MapExample() {
 	console.log(userMap.get(userObject3)); // p1
 }
 
-// reference-variable => assign to attr => pointer is used as attribute
+// reference-variable => assign to attribute => pointer is used as attribute
 function WeakMapExample01() {
 	const userObject1 = { name: 'Bruce Wayne' }; // p1
 	const userObject2 = { name: 'Bruce Wayne' }; // p2
@@ -37,14 +37,15 @@ function WeakMapExample01() {
 	const userWeakMap = new WeakMap();
 	userWeakMap.set(userObject1, 'Gotham City');
 
+	console.log(userWeakMap.get(userObject1)); // p1
+	console.log(userWeakMap.get(userObject2)); // p2
+	console.log(userWeakMap.get(userObject3)); // p1
+
+	// no result
 	console.log(userWeakMap);
 	console.log(userWeakMap.size);
 	console.log(Object.keys(userWeakMap));
 	console.log(Object.getOwnPropertyNames(userWeakMap));
-
-	console.log(userWeakMap.get(userObject1)); // p1
-	console.log(userWeakMap.get(userObject2)); // p2
-	console.log(userWeakMap.get(userObject3)); // p1
 }
 
 function WeakMapExample02() {

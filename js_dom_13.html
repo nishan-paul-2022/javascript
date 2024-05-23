@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<script>
+			// Define the key codes for the keys you want to listen for
+			const keyCodes = {
+				KeyA: false,
+				KeyB: false,
+				KeyC: false
+			};
+
+			// Function to handle the keydown event
+			function handleKeyDown(event) {
+				if (event.code in keyCodes) {
+					keyCodes[event.code] = true;
+					checkKeys();
+				}
+			}
+
+			// Function to handle the keyup event
+			function handleKeyUp(event) {
+				if (event.code in keyCodes) {
+					keyCodes[event.code] = false;
+				}
+			}
+
+			// Function to check if all keys are pressed
+			function checkKeys() {
+				const allKeysPressed = Object.values(keyCodes).every(
+					(value) => value
+				);
+				if (allKeysPressed) {
+					alert('You pressed A, B, and C keys simultaneously!');
+					// Reset the key states
+					Object.keys(keyCodes).forEach((key) => {
+						keyCodes[key] = false;
+					});
+				}
+			}
+
+			// Add event listeners for keydown and keyup events
+			document.addEventListener('keydown', handleKeyDown);
+			document.addEventListener('keyup', handleKeyUp);
+		</script>
+	</body>
+</html>

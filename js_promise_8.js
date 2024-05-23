@@ -1,11 +1,3 @@
-function getResolve(message) {
-	console.log('resolve message:', message);
-}
-
-function getReject(message) {
-	console.log('reject message:', message);
-}
-
 function ExecutorFunction(setResolve, setReject) {
 	console.log('Enter The Dragon');
 
@@ -41,65 +33,8 @@ async function HandleThennable(func) {
 	}
 }
 
-async function NestedPromise() {
-	const promise = new Promise((_, setReject) => {
-		setReject(
-			new Promise((setResolve, _) => {
-				setResolve(
-					new Promise((_, setReject) => {
-						return setReject(
-							new Promise((setResolve, _) => {
-								setResolve(
-									new Promise((setResolve, _) => {
-										setResolve(
-											new Promise((_, setReject) => {
-												setReject(
-													new Promise(
-														(setResolve, _) => {
-															setResolve(
-																'treasure'
-															);
-														}
-													)
-												);
-											})
-										);
-									})
-								);
-							})
-						);
-					})
-				);
-			})
-		);
-	});
-
-	await Promise.all([promise]).then(getResolve).catch(getReject);
-
-	await Promise.allSettled([promise]).then(getResolve).catch(getReject);
-
-	await promise
-		.catch((m) => {
-			console.log(m);
-			return m;
-		})
-		.catch((m) => {
-			console.log(m);
-			return m;
-		})
-		.catch((m) => {
-			console.log(m);
-			return m;
-		})
-		.then((m) => {
-			console.log(m);
-			return m;
-		});
-}
-
 await HandleThennable(ReturnThennable);
 await HandleThennable(ReturnPromise);
-await NestedPromise();
 
 /*
 - promise is async 

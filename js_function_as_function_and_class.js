@@ -1,5 +1,5 @@
 function Constrcutor(message) {
-	// undefined | null | '' | 0
+	// undefined | null | '' | false | 0
 	if (message) {
 		console.log(message);
 		return Math.random();

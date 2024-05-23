@@ -1,4 +1,4 @@
-class ExA {
+class ClassA {
 	constructor(x) {
 		this.x = x;
 	}
@@ -28,11 +28,7 @@ class ExA {
 	}
 }
 
-const chainFn = new ExA(10);
-const result = chainFn.Add(2).Sub(2).Mul(4).Div(8).getResult();
-console.log(result);
-
-function Gn(x) {
+function ClassB(x) {
 	this.x = x;
 
 	this.getResult = function () {
@@ -60,6 +56,10 @@ function Gn(x) {
 	};
 }
 
-const chainGn = new Gn(10);
-const result2 = chainGn.Add(2).Sub(2).Mul(4).Div(8).getResult();
+const objectA = new ClassA(10);
+const result1 = objectA.Add(2).Sub(2).Mul(4).Div(8).getResult();
+console.log(result1);
+
+const objectB = new ClassB(10);
+const result2 = objectB.Add(2).Sub(2).Mul(4).Div(8).getResult();
 console.log(result2);

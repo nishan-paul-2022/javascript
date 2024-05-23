@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	
+	<body>
+		<div id="1"></div>
+		<script>
+			const nodeObjectList = [
+				document, // HTMLDocument
+				document.createTextNode(''), // Text
+				document.createComment(''), // Comment
+				document.createDocumentFragment(), // Fragment
+				document.createElement('a'), // HTMLAnchorElement: anchor elements (<a>)
+				document.createElement('area'), // HTMLAreaElement: area elements (<area>)
+				document.createElement('audio'), // HTMLAudioElement: audio elements (<audio>)
+				document.createElement('base'), // HTMLBaseElement: base elements (<base>)
+				document.createElement('body'), // HTMLBodyElement: the <body> element.
+				document.createElement('br'), // HTMLBRElement: line break elements (<br>)
+				document.createElement('button'), // HTMLButtonElement: button elements (<button>)
+				document.createElement('canvas'), // HTMLCanvasElement: canvas elements (<canvas>)
+				document.createElement('dl'), // HTMLDListElement: definition list elements (<dl>)
+				document.createElement('data'), // HTMLDataElement: data elements (<data>)
+				document.createElement('datalist'), // HTMLDataListElement: datalist elements (<datalist>)
+				document.createElement('details'), // HTMLDetailsElement: details elements (<details>)
+				document.createElement('dialog'), // HTMLDialogElement: dialog elements (<dialog>)
+				document.createElement('div'), // HTMLDivElement: division elements (<div>)
+				document.createElement('fieldset'), // HTMLFieldSetElement: fieldset elements (<fieldset>)
+				document.createElement('form'), // HTMLFormElement: form elements (<form>)
+				document.createElement('head'), // HTMLHeadElement: the <head> element.
+				document.createElement('h1'), // HTMLHeadingElement: heading elements (<h1>, <h2>, etc.)
+				document.createElement('html'), // HTMLHtmlElement: the root <html> element.
+				document.createElement('iframe'), // HTMLIFrameElement: iframe elements (<iframe>)
+				document.createElement('img'), // HTMLImageElement: image elements (<img>)
+				document.createElement('input'), // HTMLInputElement: input elements (<input>)
+				document.createElement('label'), // HTMLLabelElement: label elements (<label>)
+				document.createElement('legend'), // HTMLLegendElement: legend elements (<legend>)
+				document.createElement('li'), // HTMLLIElement: list item elements (<li>)
+				document.createElement('link'), // HTMLLinkElement: link elements (<link>)
+				document.createElement('map'), // HTMLMapElement: map elements (<map>)
+				document.createElement('menu'), // HTMLMenuElement: menu elements (<menu>)
+				document.createElement('meta'), // HTMLMetaElement: meta elements (<meta>)
+				document.createElement('meter'), // HTMLMeterElement: meter elements (<meter>)
+				document.createElement('ol'), // HTMLOListElement: ordered list elements (<ol>)
+				document.createElement('optgroup'), // HTMLOptGroupElement: option group elements (<optgroup>)
+				document.createElement('option'), // HTMLOptionElement: option elements (<option>)
+				document.createElement('output'), // HTMLOutputElement: output elements (<output>)
+				document.createElement('p'), // HTMLParagraphElement: paragraph elements (<p>)
+				document.createElement('param'), // HTMLParamElement: param elements (<param>)
+				document.createElement('picture'), // HTMLPictureElement: picture elements (<picture>)
+				document.createElement('pre'), // HTMLPreElement: preformatted text elements (<pre>)
+				document.createElement('progress'), // HTMLProgressElement: progress elements (<progress>)
+				document.createElement('blockquote'), // HTMLQuoteElement: blockquote and q elements (<blockquote>, <q>)
+				document.createElement('script'), // HTMLScriptElement: script elements (<script>)
+				document.createElement('select'), // HTMLSelectElement: select elements (<select>)
+				document.createElement('source'), // HTMLSourceElement: source elements (<source>)
+				document.createElement('span'), // HTMLSpanElement: span elements (<span>)
+				document.createElement('style'), // HTMLStyleElement: style elements (<style>)
+				document.createElement('table'), // HTMLTableElement: table elements (<table>)
+				document.createElement('caption'), // HTMLTableCaptionElement: table caption elements (<caption>)
+				document.createElement('td'), // HTMLTableCellElement: table cell elements (<td>, <th>)
+				document.createElement('col'), // HTMLTableColElement: table column elements (<col>, <colgroup>)
+				document.createElement('table'), // HTMLTableElement: table elements (<table>)
+				document.createElement('thead'), // HTMLTableSectionElement: table section elements (<thead>, <tbody>, <tfoot>)
+				document.createElement('template'), // HTMLTemplateElement: template elements (<template>)
+				document.createElement('textarea'), // HTMLTextAreaElement: textarea elements (<textarea>)
+				document.createElement('time'), // HTMLTimeElement: time elements (<time>)
+				document.createElement('title'), // HTMLTitleElement: title elements (<title>)
+				document.createElement('track'), // HTMLTrackElement: track elements (<track>)
+				document.createElement('ul'), // HTMLUListElement: unordered list elements (<ul>)
+				document.createElement('unknown'), // HTMLUnknownElement: an unknown or custom element
+				document.createElement('video'), // HTMLVideoElement: video elements (<video>)
+				document.getElementsByTagName('a'), // HTMLCollection
+				document.querySelectorAll('p') // NodeList
+			];
+
+			function ExtractFunctionName(input) {
+				input = input.toString();
+				const functionNameRegex = /function\s+([\w$]+)\s*\(/;
+				const match = input.match(functionNameRegex);
+				if (match) {
+					return match[1];
+				}
+				return 'Function name not found';
+			}
+
+			function GetAllProperty() {
+				const container = {};
+				for (const i of nodeObjectList) {
+					let curr = i;
+					do {
+						const functionName = ExtractFunctionName(
+							curr.constructor
+						);
+						const propertyNames = Object.getOwnPropertyNames(curr);
+						propertyNames.forEach((prop) => {
+							if (prop !== 'constructor' && prop !== 'name') {
+								const keyName = prop.startsWith('on')
+									? 'On' + functionName
+									: functionName;
+								console.log(keyName);
+								if (!container[keyName]) {
+									container[keyName] = [];
+								}
+								if (container[keyName].indexOf(prop) === -1) {
+									container[keyName].push(prop);
+								}
+							}
+						});
+					} while (
+						(curr = Object.getPrototypeOf(curr)) !==
+						Object.prototype
+					);
+				}
+
+				console.log(container);
+
+				for (const i in container) {
+					document.getElementById(
+						'1'
+					).innerHTML += `${i} : ${container[i]} </br>`;
+				}
+			}
+
+			GetAllProperty();
+		</script>
+	</body>
+</html>

@@ -16,7 +16,7 @@ function* LetterAndEvenGenerator() {
 	yield* EvenGenerator();
 }
 
-class EvenNext {
+class EvenGeneratorLimited {
 	num = -2;
 
 	next() {
@@ -34,6 +34,18 @@ class EvenNext {
 			next: next
 		};
 	}
+}
+
+function* GenerateSequence(start, end) {
+	for (let i = start; i <= end; i++) {
+		yield i;
+	}
+}
+
+function* GeneratePassword() {
+	yield* GenerateSequence(48, 57);
+	yield* GenerateSequence(65, 90);
+	yield* GenerateSequence(97, 122);
 }
 
 function UseCase01() {
@@ -64,7 +76,7 @@ function UseCase03() {
 }
 
 function UseCase04() {
-	const iterator = new EvenNext();
+	const iterator = new EvenGeneratorLimited();
 	console.log(iterator.next());
 	console.log(iterator.next());
 
@@ -77,7 +89,17 @@ function UseCase04() {
 	}
 }
 
+function UseCase05() {
+	let str = '';
+	const iterator = GeneratePassword();
+	for (const value of iterator) {
+		str += String.fromCharCode(value);
+	}
+	console.log(str);
+}
+
 UseCase01();
 UseCase02();
 UseCase03();
 UseCase04();
+UseCase05();

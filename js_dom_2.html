@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	
+	<body>
+		<button onclick="setCookie()">Set Cookie</button> <br />
+
+		<a name="html" href="https://google.com">HTML Tutorial</a><br />
+		<a name="css" href="https://youtube.com">CSS Tutorial</a><br />
+		<a name="xml">XML Tutorial</a><br />
+
+		<script>
+			function setCookie() {
+				// Set cookie with name 'exampleCookie' and value 'exampleValue'
+				document.cookie =
+					'exampleCookie=exampleValue; expires=Thu, 18 Dec 2025 12:00:00 UTC; path=/';
+				alert('Cookie has been set!');
+				console.log(document.cookie);
+			}
+
+			console.log(document);
+			console.log(document.implementation);
+			console.log(document.location);
+
+			console.log(document.nodeType);
+			console.log(document.nodeName);
+			console.log(document.nodeValue);
+
+			console.log(document.documentElement); // Returns the <html> element
+			console.log(document.head); // Returns the <head> element
+			console.log(document.body); // Returns the <body> element
+			console.log(document.title); // Returns the <title> element
+			console.log(document.embeds); // Returns all <embed> elements
+			console.log(document.images); // Returns all <img> elements
+			console.log(document.scripts); // Returns all <script> elements
+
+			console.log(document.anchors); // Returns all <a> elements that have a name attribute
+			console.log(document.links); // Returns all <area> and <a> elements that have a href attribute
+
+			console.log(document.URL); // Returns the complete URL of the document
+			console.log(document.baseURI); // Returns the absolute base URI of the document
+			console.log(document.documentURI); // Returns the URI of the document
+			console.log(document.domain); // Returns the domain name of the document server
+
+			console.log(document.doctype); // Returns the document's doctype
+			console.log(document.inputEncoding); // Returns the document's encoding (character set)
+			console.log(document.lastModified); // Returns the date and time the document was updated
+			console.log(document.readyState); // Returns the(loading) status of the document
+			console.log(document.location);
+		</script>
+	</body>
+</html>

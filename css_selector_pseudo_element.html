@@ -4,34 +4,33 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
-	</head>
-
-	<body>
 		<style>
 			/* style the ::before pseudo-element */
 			p::before {
 				content: 'Before: ';
 				color: blue;
 			}
-
+		
 			/* style the ::after pseudo-element */
 			p::after {
 				content: ' :After';
 				color: red;
 			}
-
+		
 			/* style the ::first-line pseudo-element */
 			p::first-line {
 				font-weight: bold;
 			}
-
+		
 			/* style the ::selection pseudo-element */
 			p::selection {
 				background-color: yellow;
 				color: black;
 			}
 		</style>
+	</head>
 
+	<body>
 		<p>This is a sample text for pseudo-elements. This is the 2nd line.</p>
 	</body>
 </html>

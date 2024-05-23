@@ -1,7 +1,6 @@
 function ReduceCallback(acc, val, idx, arr) {
 	acc += val;
-	const arrStr = arr.toString();
-	console.log(`${idx}: ${arrStr}`);
+	console.log(`${idx}: ${arr}`);
 	return acc;
 }
 
@@ -11,12 +10,13 @@ function ArrayConcat() {
 	const arr3 = arr1 + arr2;
 	const arr4 = arr1.concat(arr2);
 
-	console.log(`${arr1}`);
 	console.log(arr1);
+	console.log(`${arr1}`);
+	console.log(arr1.toString());
 	console.log(arr3);
-	console.log(typeof arr3);
 	console.log(arr4);
-	console.log(`${arr4}`);
+	console.log(typeof arr3);
+	console.log(typeof arr4);
 }
 
 function ArrayConversion() {

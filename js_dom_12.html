@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body onload="checkCookie()">
+		<button onclick="clearCookie()">Clear</button>
+
+		<script>
+			function setCookie(cookieName, cookieValue, exdays) {
+				const d = new Date();
+				d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+				const date = d.toUTCString();
+				document.cookie = `${cookieName}=${cookieValue};expires=${date};path=/`;
+				console.log('set cookie');
+			}
+
+			function getCookie() {
+				const decodedCookie = decodeURIComponent(document.cookie);
+				const cookieValue = decodedCookie.split(';')[0].split('=')[1];
+				return cookieValue ?? '';
+			}
+
+			function clearCookie() {
+				const decodedCookie = decodeURIComponent(document.cookie);
+				const cookieName = decodedCookie.split(';')[0].split('=')[0];
+				document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+				console.log('clear cookie');
+			}
+
+			function checkCookie() {
+				let user = getCookie('username');
+				if (user) {
+					alert(`welcome again ${user}`);
+				} else {
+					user = prompt('please enter your name:', '');
+					if (user) {
+						setCookie('username', user.trim(), 30);
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

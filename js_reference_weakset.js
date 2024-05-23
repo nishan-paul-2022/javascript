@@ -25,9 +25,22 @@ function WeakSetExample02() {
 	console.log(myWeakSet.has(obj));
 }
 
+function WeakSetExample03() {
+	const myWeakSet = new WeakSet();
+	const obj = { title: 'TDK' };
+	myWeakSet.add(obj);
+
+	// no result
+	console.log(myWeakSet.size);
+	/* 	myWeakSet.forEach((value) => {
+			console.log(value);
+		}); */
+}
+
 SetExample();
 WeakSetExample01();
 WeakSetExample02();
+WeakSetExample03();
 
 /* 
 	Q: what is garbage-collection?

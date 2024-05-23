@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.color {
+				background-color: aqua;
+				padding: 10px;
+				margin: 10px;
+			}
+
+			.font {
+				font-family: 'Courier New', Courier, monospace;
+				font-size: large;
+				border: 2px solid gray;
+			}
+
+			.size1 {
+				height: 120px;
+				width: 240px;
+			}
+
+			.size2 {
+				height: 240px;
+				width: 120px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div
+			name="div"
+			id="id01"
+			class="color"
+			data-id="123"
+			data-title="paul"
+			lang="en"
+			translate="no"
+			dir="ltr"
+			title="interstellar">
+			hello world
+		</div>
+
+		<button id="id02" class="color font" disabled>radhe</button>
+
+		<button onclick="toggle()" class="color font">toggle</button>
+
+		<button onclick="styleSize()">style</button>
+
+		<p id="id03" class="color font">paragraph</p>
+
+		<div id="id04"></div>
+
+		<button onclick="classListAdd()">classList.add()</button>
+		<button onclick="classListRemove()">classList.remove()</button>
+		<button onclick="classListToggle()">classList.toggle()</button>
+		<button onclick="classListReplace()">classList.replace()</button>
+
+		<script>
+			const element = document.getElementById('id01');
+
+			console.log(element.id);
+			console.log(element.className);
+			console.log(element.lang);
+			console.log(element.translate);
+			console.log(element.dir);
+			console.log(element.title);
+			console.log(element.tagName);
+			console.log(element.dataset);
+			console.log(element.dataset.id);
+			console.log(element.dataset.title);
+
+			element.dataset.id = '456';
+			element.dataset.age = '30';
+			delete element.dataset.title;
+
+			console.log(element.dataset);
+
+			const attributes = element.attributes;
+			for (let i = 0; i < attributes.length; i++) {
+				const attribute = attributes[i];
+				if (attribute.nodeType === Node.ATTRIBUTE_NODE) {
+					console.log(
+						attribute.name +
+							' : ' +
+							attribute.value +
+							' / ' +
+							attribute.nodeValue
+					);
+				}
+			}
+
+			console.log(element.hasAttribute('id'));
+			console.log(element.hasAttributes());
+
+			console.log(element.getAttribute('name'));
+			element.setAttribute('name', 'radhe');
+			console.log(element.getAttribute('name'));
+
+			console.log(element.getAttributeNames());
+			element.removeAttribute('data-age');
+			console.log(element.getAttributeNames());
+
+			function toggle() {
+				const button = document.getElementById('id02');
+				button.toggleAttribute('disabled');
+			}
+
+			function styleSize() {
+				const button = document.getElementById('id02');
+				button.style.height = '60px';
+				button.style.width = '120px';
+			}
+
+			const paragrah = document.getElementById('id03');
+			console.log(paragrah.classList);
+
+			function classListAdd() {
+				paragrah.classList.add('size1'); // Adds one or more classes to element.
+			}
+
+			function classListRemove() {
+				paragrah.classList.remove('font'); // Removes one or more classes from element.
+			}
+
+			function classListToggle() {
+				paragrah.classList.toggle('color'); // Toggles the presence of a class on element.
+			}
+
+			function classListReplace() {
+				paragrah.classList.replace('size1', 'size2'); // Replaces one class with another to element.
+			}
+		</script>
+	</body>
+</html>

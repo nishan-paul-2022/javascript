@@ -1,12 +1,26 @@
-const module = require(`./node_module_a.cjs`);
+const module1 = require(`./node_module_a.cjs`);
 
 function ExampleOne() {
+	module1.Add(15, 25);
+	console.log(module1.fName);
+	console.log(module1.dName);
+}
+
+function ExampleTwo() {
+	const module2 = require(`./node_module_a.cjs`);
+
+	module2.Add(15, 25);
+	console.log(module2.fName);
+	console.log(module2.dName);
+}
+
+function ExampleThree() {
 	const {
 		Add,
 		fName: firstName,
 		dName,
 		Id: CollegeId = 'NDC'
-	} = require('./module_a.cjs');
+	} = require('./node_module_a.cjs');
 
 	Add(10, 20);
 	console.log(firstName);
@@ -14,20 +28,13 @@ function ExampleOne() {
 	console.log(CollegeId);
 }
 
-function ExampleTwo() {
-	const module = require(`./module_a.cjs`);
-
-	module.Add(15, 25);
-	console.log(module.fName);
-	console.log(module.dName);
-}
-
-function ExampleThree() {
-	module.Add(15, 25);
-	console.log(module.fName);
-	console.log(module.dName);
+async function ExampleFour() {
+	const value = await module1.RandomFunction();
+	console.log(value);
 }
 
 ExampleOne();
 ExampleTwo();
 ExampleThree();
+ExampleFour();
+/* await ExampleFour(); // invalid (no outside await in commonjs-module) */
