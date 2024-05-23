@@ -1,22 +1,8 @@
 /* eslint-disable eqeqeq */
 
-/*
-- prefix
-- postfix 
-- not 
-- unary 
-- arithmatic 
-- shift 
-- relational 
-- comparison 
-- bitwise 
-- logical 
-- conditional
-- assignment */
-
+// optional-chaining | ?. | null, undefined
 function Example01() {
 	class ClassA {}
-	console.log(ClassA.something?.real);
 
 	const user = {
 		id: 1,
@@ -30,13 +16,23 @@ function Example01() {
 		}
 	};
 
+	const regular = {
+		a: 1
+	};
+
+	console.log(ClassA.something?.real);
+
 	console.log(user.address.details.city);
 	console.log(user.address.details?.city);
 	console.log(user.address.detailss?.city);
 	// console.log(user.address.detailss.street);
+
+	console.log(regular.a.b?.c.d.e);
+	console.log(regular.a.b?.c?.d.e);
+	console.log(regular.a.b?.c?.d?.e);
 }
 
-// null coalescing operator ??
+// null-coalescing | ?? | null, undefined
 function Example02() {
 	const client = undefined;
 	const developer = null;
@@ -44,19 +40,20 @@ function Example02() {
 	const ans1 = client ?? 'U/N';
 	const ans2 = developer ?? 'U/N';
 	const ans3 = manager ?? 'U/N';
+
 	console.log(ans1);
 	console.log(ans2);
 	console.log(ans3);
 }
 
+// bitwise-not | ~ | result: -1*(n+1)
 function Example03() {
-	// result: -1 * (n+1)
-	console.log(~3);
-	console.log(~-4);
-
 	const a = 3.14;
 	const b = Math.floor(a);
 	const c = ~~a;
+
+	console.log(~3);
+	console.log(~-4);
 	console.log(b);
 	console.log(c);
 	console.log(b == c);
@@ -66,14 +63,17 @@ function Example03() {
 	console.log(Math.trunc(0.56));
 }
 
+// falsy values | false, 0, '', null, undefined, NaN
 function Example04() {
-	const regular1 = {
-		a: 1
-	};
-
-	console.log(regular1.a.b?.c.d.e);
-	console.log(regular1.a.b?.c?.d.e);
-	console.log(regular1.a.b?.c?.d?.e);
+	const falsy = [false, 0, '', null, undefined, NaN];
+	for (const i of falsy) {
+		if (i) {
+			console.log('true');
+		} else {
+			console.log('false');
+		}
+	}
+	console.log('' || 'hello');
 }
 
 Example01();
@@ -82,7 +82,6 @@ Example03();
 Example04();
 
 /* 
-- expression-group, member-access, function-call, optional-chaining, object-create 
 - postfix 
 - prefix 
 - not 

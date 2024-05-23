@@ -1,12 +1,12 @@
 // slice()
-function UseCase01() {
+function StringSlice() {
 	const str1 = 'Hello, World!';
 	const slicedStr = str1.slice(0, 5);
 	console.log(slicedStr); // Output: Hello
 }
 
 // concat()
-function UseCase02() {
+function StringConcat() {
 	const str2 = 'Hello';
 	const str3 = 'World';
 	const concatenatedStr = str2.concat(', ', str3, '!');
@@ -14,56 +14,56 @@ function UseCase02() {
 }
 
 // indexOf()
-function UseCase03() {
+function StringIndexOf() {
 	const str4 = 'This is a test string.';
 	const indexOfTest = str4.indexOf('test');
 	console.log(indexOfTest); // Output: 10
 }
 
 // lastIndexOf()
-function UseCase04() {
+function StringLastIndexOf() {
 	const str5 = 'This is a test string. This is another test string.';
 	const lastIndexOfTest = str5.lastIndexOf('test');
 	console.log(lastIndexOfTest); // Output: 35
 }
 
 // includes()
-function UseCase05() {
+function StringIncludes() {
 	const str6 = 'Hello, World!';
 	const includesWorld = str6.includes('World');
 	console.log(includesWorld); // Output: true
 }
 
 // split()
-function UseCase06() {
+function StringSplit() {
 	const str7 = 'apple,banana,cherry';
 	const fruitsArray = str7.split(',');
 	console.log(fruitsArray); // Output: ['apple', 'banana', 'cherry']
 }
 
 // substr()
-function UseCase07() {
+function StringSubstr() {
 	const str8 = 'Hello, World!';
 	const substrStr = str8.substr(7, 5);
 	console.log(substrStr); // Output: World
 }
 
 // substring()
-function UseCase08() {
+function StringSubstring() {
 	const str9 = 'Hello, World!';
 	const substringStr = str9.substring(7, 12);
 	console.log(substringStr); // Output: World
 }
 
 // trim()
-function UseCase09() {
+function StringTrim() {
 	const str10 = '   Hello, World!   ';
 	const trimmedStr = str10.trim();
 	console.log(trimmedStr); // Output: 'Hello, World!'
 }
 
 // padStart(), padEnd()
-function UseCase10() {
+function StringPadding() {
 	const str11 = '42';
 	const paddedStrStart = str11.padStart(5, '0');
 	const paddedStrEnd = str11.padEnd(5, '0');
@@ -72,7 +72,7 @@ function UseCase10() {
 }
 
 // toUpperCase(), toLowerCase()
-function UseCase11() {
+function StringChangeCase() {
 	const str12 = 'Hello, World!';
 	const upperCaseStr = str12.toUpperCase();
 	const lowerCaseStr = str12.toLowerCase();
@@ -81,7 +81,7 @@ function UseCase11() {
 }
 
 // startsWith(), endsWith()
-function UseCase12() {
+function StringWhatWith() {
 	const str13 = 'Hello, World!';
 	const startsWithHello = str13.startsWith('Hello');
 	const endsWithWorld = str13.endsWith('World');
@@ -90,7 +90,7 @@ function UseCase12() {
 }
 
 // charAt(), charCodeAt(), fromCharCode()
-function UseCase14() {
+function StringChar() {
 	const str14 = 'Hello, World!';
 	const charAtIndex2 = str14.charAt(2);
 	const charCodeAtIndex2 = str14.charCodeAt(2);
@@ -103,7 +103,7 @@ function UseCase14() {
 }
 
 // search(), match(), matchAll(), replace(), replaceAll()
-function UseCase15() {
+function StringFind() {
 	const str15 = 'The quick brown fox jumps over the lazy dog.';
 	const searchResult = str15.search(/fox/);
 	const matchResult = str15.match(/o/g);
@@ -117,73 +117,43 @@ function UseCase15() {
 	console.log(replacedAllStr); // Output: 'The quick brxwn fxx jumps xver the lazy dxg.'
 }
 
-function UseCase16() {
-	let str = 'hello';
-	console.log(str[0]);
+// string is immutable
+function StringImmutable() {
+	let str16 = 'WinterSoldier';
+	console.log(str16[0]);
+	// str[0] = 'i'; /* invalid */
+	console.log(str16[0]);
+	str16 = 'IronMan'; /* valid */
+	console.log(str16);
 
-	// str[0] = 'i'; // invalid
-	console.log(str[0]);
-
-	const number = [1, 2, 3, 4, 5];
+	let number = [1, 2, 3, 4, 5];
 	number[0] = 11;
 	console.log(number[0]);
-
-	str = 'ok';
-	console.log(str);
+	number = [11, 22, 33, 44, 55];
+	console.log(number);
 }
 
-function UseCase17() {
-	const str = 'string';
-	console.log(str[0]);
-	console.log(str['1']);
+// index of object is stirng or symbol
+function StringIndexing() {
+	const str17 = 'string';
+	console.log(str17[0]);
+	console.log(str17['0']);
+	console.log(str17[-1]); /* negative indexing is invalid */
 }
 
-function CheckObject(object) {
-	const isE = Object.isExtensible(object);
-	const isS = Object.isSealed(object);
-	const isF = Object.isFrozen(object);
-	console.log(`isExtensible: ${isE}, isSealed: ${isS}, isFrozen: ${isF}`);
-}
-
-function StringAutoPrototype(s) {
-	console.log(Object.getPrototypeOf(s));
-	console.log(Object.getPrototypeOf(s) === String.prototype);
-	console.log(s);
-}
-
-function StringManualPrototype(s) {
-	const parent = { identity: 'parent object' };
-	Object.setPrototypeOf(s, parent);
-	console.log(Object.getPrototypeOf(s));
-	console.log(Object.getPrototypeOf(s) === parent);
-	console.log(s);
-}
-
-function StringBehaviour() {
-	const sLiteral = 'hello';
-	const sObject = new String('hello');
-	CheckObject(sLiteral);
-	CheckObject(sObject);
-	StringAutoPrototype(sLiteral);
-	StringAutoPrototype(sObject);
-	StringManualPrototype(sLiteral);
-	StringManualPrototype(sObject);
-}
-
-UseCase01();
-UseCase02();
-UseCase03();
-UseCase04();
-UseCase05();
-UseCase06();
-UseCase07();
-UseCase08();
-UseCase09();
-UseCase10();
-UseCase11();
-UseCase12();
-UseCase14();
-UseCase15();
-UseCase16();
-UseCase17();
-StringBehaviour();
+StringSlice();
+StringConcat();
+StringIndexOf();
+StringLastIndexOf();
+StringIncludes();
+StringSplit();
+StringSubstr();
+StringSubstring();
+StringTrim();
+StringPadding();
+StringChangeCase();
+StringWhatWith();
+StringChar();
+StringFind();
+StringImmutable();
+StringIndexing();

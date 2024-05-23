@@ -31,13 +31,20 @@ function TypedArray() {
 	console.log(regularArray);
 }
 
+function CopyWithin() {
+	const fruits1 = ['Banana', 'Orange', 'Apple', 'Mango', 'Kiwi', 'Papaya'];
+	const fruits2 = ['Banana', 'Orange', 'Apple', 'Mango', 'Kiwi', 'Papaya'];
+	const fruits3 = fruits1.copyWithin(2, 0);
+	fruits2.copyWithin(2, 0, 2);
+	console.log(fruits3);
+	console.log(fruits2);
+}
+
 Trim();
 TypedArray();
+CopyWithin();
 
-/*
-TypedArray: Int8Array, Float32Array, . . . 
-
-Uint8Array :
-    - size of array is defined 
-    - value at each index is integer and 0-255
-*/
+/* 	TypedArray	: Int8Array, Float32Array, and others
+	Uint8Array 	:
+		- size of array is defined 
+		- value at each index is integer and 0-255 */
