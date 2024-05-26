@@ -3,14 +3,15 @@ import dns from 'dns';
 // Retrieves the list of IP addresses of the DNS servers used by the system.
 function getServers() {
 	const servers = dns.getServers();
-	console.log('getServers() /', 'DNS Servers:', servers);
+	console.log(`getServers() | DNS Servers: ${servers}`);
 }
 
 // Sets the list of IP addresses of DNS servers to be used by the system.
 function setServers() {
 	const customServers = ['8.8.8.8', '8.8.4.4'];
-	console.log('setServers() /');
+	console.log('setServers() |');
 	dns.setServers(customServers);
+	getServers();
 }
 
 // Resolves a hostname to an IP address using DNS.
@@ -19,7 +20,7 @@ function lookup() {
 		if (err) {
 			throw err;
 		}
-		console.log('lookup() /', 'IP Address:', address, 'Family:', family);
+		console.log(`lookup() | IP Address: ${address}, Family: ${family}`);
 	});
 }
 
@@ -32,11 +33,7 @@ function lookupService() {
 			throw err;
 		}
 		console.log(
-			'lookupService() /',
-			'Hostname:',
-			hostname,
-			'Service:',
-			service
+			`lookupService() | Hostname: ${hostname}, Service: ${service}`
 		);
 	});
 }
@@ -47,7 +44,7 @@ function reverse() {
 		if (err) {
 			throw err;
 		}
-		console.log('reverse() /', 'Hostnames:', hostnames);
+		console.log(`reverse() | Hostnames: ${hostnames}`);
 	});
 }
 
@@ -59,7 +56,7 @@ function resolve() {
 		if (err) {
 			throw err;
 		}
-		console.log('resolve() /', 'IP Addresses:', addresses);
+		console.log(`resolve() | IP Addresses: ${addresses}`);
 	});
 }
 
@@ -69,7 +66,7 @@ function resolve4() {
 		if (err) {
 			throw err;
 		}
-		console.log('resolve4() /', 'IPv4 Addresses:', addresses);
+		console.log(`resolve4() | IPv4 Addresses: ${addresses}`);
 	});
 }
 
@@ -79,7 +76,7 @@ function resolve6() {
 		if (err) {
 			throw err;
 		}
-		console.log('resolve6() /', 'IPv6 Addresses:', addresses);
+		console.log(`resolve6() | IPv6 Addresses: ${addresses}`);
 	});
 }
 
@@ -91,7 +88,7 @@ function resolveMx() {
 		if (err) {
 			throw err;
 		}
-		console.log('resolveMx() /', 'MX Records:', mxRecords);
+		console.log(`resolveMx() | MX Records: ${mxRecords}`);
 	});
 }
 
@@ -101,7 +98,7 @@ function resolveNs() {
 		if (err) {
 			throw err;
 		}
-		console.log('resolveNs() /', 'NS Records:', nsRecords);
+		console.log(`resolveNs() | NS Records: ${nsRecords}`);
 	});
 }
 
@@ -111,7 +108,7 @@ function resolveSoa() {
 		if (err) {
 			throw err;
 		}
-		console.log('resolveSoa() /', 'SOA Record:', soaRecord);
+		console.log(`resolveSoa() | SOA Record: ${soaRecord}`);
 	});
 }
 
@@ -121,7 +118,7 @@ function resolveTxt() {
 		if (err) {
 			throw err;
 		}
-		console.log('resolveTxt() /', 'TXT Records:', txtRecords);
+		console.log(`resolveTxt() | TXT Records: ${txtRecords}`);
 	});
 }
 
@@ -131,7 +128,7 @@ function resolveCname() {
 		if (err) {
 			throw err;
 		}
-		console.log('resolveCname() /', 'CNAME Records:', cnames);
+		console.log(`resolveCname() | CNAME Records: ${cnames}`);
 	});
 }
 
@@ -143,7 +140,7 @@ function _resolveSrv() {
 		if (err) {
 			throw err;
 		}
-		console.log('resolveSrv() /', 'SRV Records:', srvRecords);
+		console.log(`resolveSrv() | SRV Records: ${srvRecords}`);
 	});
 }
 
@@ -153,7 +150,7 @@ function _resolvePtr() {
 		if (err) {
 			throw err;
 		}
-		console.log('resolvePtr() /', 'PTR Records:', ptrRecords);
+		console.log(`resolvePtr() | PTR Records: ${ptrRecords}`);
 	});
 }
 

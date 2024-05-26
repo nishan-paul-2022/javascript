@@ -10,10 +10,10 @@ function UseCase01() {
 UseCase01();
 
 /* 
-//	global variable (string) : __filename, __dirname
-	global class : Buffer
-	global object : console, process
-	global function :
+//	global variable (string) 	: __filename, __dirname
+	global class 				: Buffer
+	global object 				: console, process
+	global function (timer) 	:
 		setImmediate
 		setInterval
 		setTimeout
@@ -23,5 +23,4 @@ UseCase01();
 
 	fileName.mjs / ES module
 	fileName.cjs / CommonJS module
-	can't use __dirname and __filename in ES module 
-*/
+	can't use __dirname and __filename in ES module */

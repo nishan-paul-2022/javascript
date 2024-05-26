@@ -1,31 +1,27 @@
-const x = 15;
-global.x = 16;
-const y = 17;
-global.z = 18;
+/* eslint-disable arrow-body-style */
+/* eslint-disable no-undef */
 
-function random() {
-	console.log(Math.random());
+const v1 = 1;
+global.v1 = 11;
+const v2 = 2;
+global.v3 = 33;
+
+const r1 = () => 4;
+global.r1 = () => 44;
+const r2 = () => 5;
+global.r3 = () => 66;
+
+{
+	const v1 = 7;
+	console.log(`v1: ${v1}, global.v1: ${global.v1}`);
+
+	const r1 = () => 8;
+	console.log(`r1(): ${r1()}, global.r1(): ${global.r1?.()}`);
 }
 
-function UseCase01() {
-	console.log(x);
-	console.log(global.x);
-	console.log(y);
-	console.log(global.z);
-	random();
-}
-
-function UseCase02() {
-	const x = 19;
-	console.log(x);
-	console.log(global.x);
-}
-
-function UseCase03() {
-	// console.log(z); // not defined
-	// global._random(); // not method
-}
-
-UseCase01();
-UseCase02();
-UseCase03();
+console.log(`v1: ${v1}, global.v1: ${global.v1}`);
+console.log(`v2: ${v2}, global.v2: ${global.v2}`);
+console.log(`v3: ${v3}, global.v3: ${global.v3}`);
+console.log(`r1(): ${r1()}, global.r1(): ${global.r1?.()}`);
+console.log(`r2(): ${r2()}, global.r2(): ${global.r2?.()}`);
+console.log(`r3(): ${r3()}, global.r3(): ${global.r3?.()}`);

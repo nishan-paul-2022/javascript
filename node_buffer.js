@@ -62,6 +62,8 @@ function BufferExample07() {
 	const buffer3 = Buffer.alloc(10, 0x68);
 	const buffer4 = Buffer.alloc(10);
 	buffer4.fill(0x68);
+	console.log(buffer1.length);
+	console.log(buffer2.length);
 	console.log(buffer1.toString('utf8'));
 	console.log(buffer2.toString('utf8'));
 	console.log(buffer3.toString('utf8'));
@@ -77,5 +79,16 @@ BufferExample06();
 BufferExample07();
 
 /*
-regular array / array of value 
-buffer array / array of unicode in hex */
+regular array 		: array of value 
+buffer array 		: array of unicode in hex 
+size of character 	: 1 byte 
+
+Buffer.from()
+Buffer.concat()
+Buffer.alloc()
+Buffer.isBuffer()
+
+buffer.write()
+buffer.fill()
+buffer.toString()
+buffer.length */
