@@ -100,4 +100,4 @@ F09();
 F10();
 F11();
 
-// eslint rule violation examples */
+/* eslint rule violation examples */
