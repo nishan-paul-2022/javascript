@@ -2,8 +2,8 @@ const object = {
 	i: 1,
 	j: 2,
 	k: 3,
-	Fn: function () {
-		console.log('FN');
+	f: function () {
+		console.log('function: f');
 	}
 };
 
@@ -25,36 +25,36 @@ function ForOfLoop() {
 }
 
 function Destructuring() {
-	const { i, j, k, Fn } = object;
+	const { i, j, k, f } = object;
 	console.log(i);
 	console.log(j);
 	console.log(k);
-	console.log(Fn);
+	console.log(f);
 
-	const { i: ii, j: jj, k: kk, Fn: Fnn } = object;
+	const { i: ii, j: jj, k: kk, f: ff } = object;
 	console.log(ii);
 	console.log(jj);
 	console.log(kk);
-	console.log(Fnn);
+	console.log(ff);
 
 	const p = 10;
 	const q = 3.1416;
 	const r = 'hello';
-	const Sn = () => {
-		return console.log('SN');
+	const s = () => {
+		return console.log('function: s');
 	};
-	const object1 = { p: p, q: q, r: r, Sn: Sn };
-	const object2 = { p, q, r, Sn }; // shorthand member name
+	const object1 = { p: p, q: q, r: r, s: s };
+	const object2 = { p, q, r, s }; // shorthand member name
 
 	console.log(object1.p);
 	console.log(object1.q);
 	console.log(object1.r);
-	console.log(object1.Sn);
+	console.log(object1.s);
 
 	console.log(object2.p);
 	console.log(object2.q);
 	console.log(object2.r);
-	console.log(object2.Sn);
+	console.log(object2.s);
 }
 
 function CheckKey() {
@@ -63,14 +63,20 @@ function CheckKey() {
 }
 
 function ObjectProperties() {
-	const object = class A {
+	class Class {
+		id = 1604085;
 		constructor() {
-			console.log('A');
+			console.log('class: Class');
 		}
-	};
+	}
+	Class.height = 5.5;
+	const object = new Class();
 
 	console.log(Object.keys(object)); // returns enummerable and own attributes
 	console.log(Object.getOwnPropertyNames(object)); // returns own attributes
+
+	console.log(Object.keys(Class));
+	console.log(Object.getOwnPropertyNames(Class));
 }
 
 function ObjectLength() {
@@ -95,7 +101,7 @@ function ObjectAndThis() {
 		}
 	};
 
-	// regular.x(); // invalid
+	// regular.x(); /* invalid */
 	regular.y();
 	regular.z();
 }
@@ -112,7 +118,7 @@ ObjectAndThis();
 - colon assign : instance = { attribute: value }
 - context is represented by 'this' keyword
 - context can be used inside, 
-	@ function [ indicating container object ]
-	@ method [ indicating container object ]
-	@ static method [ indicating container class ]
-	@ not attow function or method */
+	: function [ indicating container object ]
+	: method [ indicating container object ]
+	: static method [ indicating container class ]
+- context can't be used inside arrow-function and arrow-method */

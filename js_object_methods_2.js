@@ -6,36 +6,6 @@ function Assign() {
 	console.log(obj3);
 }
 
-function KeyValueEntry() {
-	const symbol = Symbol('symbol');
-
-	const obj = {
-		a: 1,
-		b: () => {
-			console.log('helloWorld');
-		},
-		get c() {
-			return this.a;
-		},
-		set c(b) {
-			this.b = b;
-		},
-		[symbol]: () => {
-			console.log('symbol');
-		}
-	};
-
-	const keys = Object.keys(obj);
-	const values = Object.values(obj);
-	const entries = Object.entries(obj);
-
-	console.log(keys);
-	console.log(values);
-	console.log(entries);
-	console.log(Object.fromEntries(entries));
-	values[1]();
-}
-
 function SetProperty() {
 	const symbol = Symbol('symbol');
 
@@ -152,7 +122,6 @@ function ObjectPrototypeMethods() {
 }
 
 Assign();
-KeyValueEntry();
 SetProperty();
 GetProperty();
 Prototype();

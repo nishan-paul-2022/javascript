@@ -8,7 +8,6 @@ function SymbolExample01() {
 	console.log('symbol1.toString() :', symbol1.toString());
 	console.log('symbol1.valueOf() :', symbol1.valueOf());
 	console.log('symbol1 == symbol2 :', symbol1 == symbol2);
-	console.log('---------SymbolExample01---------\n');
 }
 
 function SymbolExample02() {
@@ -19,7 +18,6 @@ function SymbolExample02() {
 	console.log('symbol1.description :', symbol1.description);
 	console.log('symbol2 == symbol3 :', symbol2 == symbol3);
 	console.log('symbol2 === symbol3 :', symbol2 === symbol3);
-	console.log('---------SymbolExample02---------\n');
 }
 
 function SymbolExample03() {
@@ -30,9 +28,11 @@ function SymbolExample03() {
 	console.log('symbol1 :', symbol1);
 	console.log('symbol1.description :', symbol1.description);
 	console.log('Symbol.keyFor(symbol1) :', Symbol.keyFor(symbol1));
-	console.log('Symbol.keyFor(symbol2) :', Symbol.keyFor(symbol2)); // invalid, cause local symbol
+	console.log(
+		'Symbol.keyFor(symbol2) :',
+		Symbol.keyFor(symbol2)
+	); /* undefined cause local symbol */
 	console.log('symbol1 === symbol3 :', symbol1 === symbol3);
-	console.log('---------SymbolExample03---------\n');
 }
 
 function SymbolExample04() {
@@ -50,39 +50,72 @@ function SymbolExample04() {
 		'Symbol.keyFor(Symbol.asyncIterator)',
 		Symbol.keyFor(Symbol.asyncIterator)
 	);
+}
 
-	console.log('---------SymbolExample04---------\n');
+function SymbolExample05() {
+	const object1 = [1, 2, 3];
+	const object2 = { name: 'John', age: 30, city: 'New York' };
+
+	console.log(object1.toString());
+	console.log(object2.toString());
+
+	object1[Symbol.toStringTag] = '1';
+	object2[Symbol.toStringTag] = '2';
+
+	console.log(object1.toString());
+	console.log(object2.toString());
+
+	const object3 = new (class Class {
+		name = 'batMan';
+		get [Symbol.toStringTag]() {
+			return this.name;
+		}
+	})();
+
+	const object4 = Object.create(Object.prototype, {
+		name: { value: 'ironMan' },
+		[Symbol.toStringTag]: {
+			get: () => {
+				return 'this.name';
+			}
+		}
+	});
+
+	console.log(object3.toString());
+	console.log(object4.toString());
 }
 
 SymbolExample01();
 SymbolExample02();
 SymbolExample03();
 SymbolExample04();
+SymbolExample05();
 
 /*
 SYMBOL METHODS :
 
-- Symbol()
-- Symbol.for()
-- Symbol.keyFor()
-- symbolObject.description
-- symbolObject.toString()
-- symbolObject.valueOf()
+	- Symbol()
+	- symbolObject.description
+	- symbolObject.toString()
+	- symbolObject.valueOf()
+	- Symbol.for()
+	- Symbol.keyFor()
 
 BUILT-IN GLOBAL SYMBOLS / SYSTEM SYMBOLS :
 
-- Symbol.iterator / for-of
-- Symbol.asyncIterator / for-await-of
-- Symbol.toPrimitive / type-conversion
+	These symbols are well-known symbols used internally by JavaScript for specific functionalities related to strings and iterables. 
+	While you cannot directly use them to create your own methods, 
+	they are often used by built-in methods.
 
-- Symbol.match / string.match()
-- Symbol.matchAll / string.matchAll()
-- Symbol.search / string.search()
-- Symbol.replace / string.replace()
-- Symbol.split / string.split()
+	- Symbol.iterator / for of
+	- Symbol.asyncIterator / for await of
+	- Symbol.toPrimitive / type conversion 
+	- Symbol.toStringTag / object.toString(), util.inspect(object)
 
-- Symbol.isConcatSpreadable / array.concat()
-
-- Symbol.toStringTag / object.toString()
-- Symbol.hasInstance / object1 instanceOf object2
-*/
+	- Symbol.match / string.match()
+	- Symbol.matchAll / string.matchAll()
+	- Symbol.search / string.search()
+	- Symbol.replace / string.replace()
+	- Symbol.split / string.split()
+	- Symbol.isConcatSpreadable / array.concat()
+	- Symbol.hasInstance / object1 instanceOf object2 */

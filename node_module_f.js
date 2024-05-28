@@ -9,7 +9,7 @@ function ESModuleExample01() {
 	console.log(module1.fName);
 	console.log(module1.dName);
 	module1.default();
-	/* module1.RandomFunction(); // invalid */
+	// module1.RandomFunction(); /* invalid */
 }
 
 async function ESModuleExample02() {
@@ -19,7 +19,7 @@ async function ESModuleExample02() {
 	console.log(module2.fName);
 	console.log(module2.dName);
 	module2.default();
-	/* module2.RandomFunction(); // invalid */
+	// module2.RandomFunction(); /* invalid */
 }
 
 ESModuleExample01();

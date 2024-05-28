@@ -1,5 +1,5 @@
 function func(callback) {
-	callback(14);
+	callback(13);
 }
 
 const func01 = (x) => {

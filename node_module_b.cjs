@@ -37,4 +37,4 @@ ExampleOne();
 ExampleTwo();
 ExampleThree();
 ExampleFour();
-/* await ExampleFour(); // invalid (no outside await in commonjs-module) */
+// await ExampleFour(); /* invalid (no outside await in commonjs-module) */

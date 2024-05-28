@@ -7,7 +7,6 @@ function Trim() {
 	console.log(text3 + '/');
 }
 
-// create a new Uint8Array with a length of 4 elements
 function TypedArray() {
 	const uint8Array = new Uint8Array(5);
 
@@ -40,11 +39,21 @@ function CopyWithin() {
 	console.log(fruits2);
 }
 
+function Reference() {
+	const number1 = [1, 2, 3, 4, 5];
+	const number2 = number1;
+	number1[0] = 11;
+	console.log(number1);
+	console.log(number2);
+}
+
 Trim();
 TypedArray();
 CopyWithin();
+Reference();
 
-/* 	TypedArray	: Int8Array, Float32Array, and others
-	Uint8Array 	:
-		- size of array is defined 
-		- value at each index is integer and 0-255 */
+/* 	
+TypedArray	: Int8Array, Uint8Array, Float32Array, ...
+Uint8Array 	:
+	- size of array is defined 
+	- value at each index is integer and 0-255 */

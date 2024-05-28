@@ -3,6 +3,7 @@ import path from 'path';
 import util from 'util';
 import child_process from 'child_process';
 import readline from 'readline';
+// import * as readline from 'readline/promises';
 
 async function ReadJsonFile(filePath) {
 	try {
@@ -32,10 +33,10 @@ async function GetFileDirs(directory, jsonData) {
 
 	const fileNames = fileNameSet.filter((fileName) => {
 		const isValidFile = fileName.match(/.*\.(js|ts|mjs|mts)$/);
-		const isNotNodeRunFile = fileName !== 'node_run_file.js';
+		const isNodeRunFile = fileName === 'node_run_file.js';
 		const isDone =
 			fileName in jsonData.files && jsonData.files[fileName] === true;
-		const isValid = isValidFile && isNotNodeRunFile && !isDone;
+		const isValid = isValidFile && !isNodeRunFile && !isDone;
 		return isValid;
 	});
 
@@ -47,10 +48,8 @@ async function RunFile(directory, fileName) {
 	console.log(`running ${fileName}...`);
 
 	try {
-		const execPromisify = util.promisify(child_process.exec);
-		const { stdout, _stderr } = await execPromisify(
-			`npx ts-node ${filePath}`
-		);
+		const exec = util.promisify(child_process.exec);
+		const { stdout, _stderr } = await exec(`npx ts-node ${filePath}`);
 		console.log(stdout);
 		console.log(`output of ${fileName}`);
 		return true;
@@ -60,18 +59,18 @@ async function RunFile(directory, fileName) {
 	}
 }
 
-async function RunAllFiles(directory, jsonData, fileNames) {
+async function RunAllFiles(directory, fileNames, jsonData) {
 	const rl = readline.createInterface({
 		input: process.stdin,
 		output: process.stdout
 	});
 
+	const question = util.promisify(rl.question.bind(rl));
+
 	for (const fileName of fileNames) {
-		const isTerminate = await new Promise((resolve) => {
-			rl.question('enter something: ', (userInput) => {
-				resolve(userInput);
-			});
-		});
+		const isTerminate = await question(
+			'enter something (blank to continue): '
+		);
 
 		if (!isTerminate) {
 			jsonData.files[fileName] = await RunFile(directory, fileName);
@@ -86,7 +85,7 @@ const directory = 'E:/CODE/MERN';
 const jsonFile = path.join(directory, 'node_run_file.json');
 const jsonData = await ReadJsonFile(jsonFile);
 const fileNames = await GetFileDirs(directory, jsonData);
-await RunAllFiles(directory, jsonData, fileNames);
+await RunAllFiles(directory, fileNames, jsonData);
 await WriteJsonFile(jsonFile, jsonData);
 
 /* 
@@ -99,13 +98,4 @@ FILE READ AND WRITE :
 			: promise-based 
 
 	# modular approach 
-
-	const exec = util.promisify(child_process.exec);
-	const {stdout, _stderr} = exec(`npx ts-node ${filePath}`);
-	console.log(stdout);
-
-	readline.createInterace({
-		stdin: process.stdin,
-		stdout: process.stdout
-	});
 */

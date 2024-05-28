@@ -1,38 +1,16 @@
-function RandomActivities() {
-	class A {}
-
-	class B extends A {}
-
-	const number = [1, 5, 10, 7, 2, 0];
-	console.log(number.sort()); // number will be treated as string
-	// value        | order
-	// positive     | 2nd arg
-	// not-positive | 1st arg
-	console.log(
-		number.sort((a, b) => {
-			return a - b;
-		})
-	);
-	console.log(
-		number.sort((a, b) => {
-			return b - a;
-		})
-	);
-
-	const object = new B();
-	console.log(object instanceof B ? 'B' : 'not B');
-	console.log(object instanceof A ? 'A' : 'not A');
-
+function ArrayCreation() {
 	const number1 = [1, 5, 10, 7, 2, 0];
-	console.log(number1);
 	const number2 = new Array(5);
+
 	number2[2] = Math.PI;
 	number2[7] = Math.E;
-	console.log(number2);
 
-	console.log(
-		Array.isArray(number2) ? 'number2 is array' : 'number2 is not array'
-	);
+	console.log(number1);
+	console.log(number2);
+	console.log(Array.isArray(number1));
+	console.log(Array.isArray(number2));
+	console.log(number1 instanceof Array);
+	console.log(number2 instanceof Array);
 }
 
 function ArrayMethods() {
@@ -63,7 +41,28 @@ function ArrayMethods() {
 	console.log(v.slice(1, 4));
 }
 
-function ArraySort() {
+function ArraySort1() {
+	const number = [1, 5, 10, 7, 2, 0];
+
+	// number will be treated as string
+	console.log(number.sort());
+
+	// value        | order
+	// positive     | 2nd arg
+	// not-positive | 1st arg
+	console.log(
+		number.sort((a, b) => {
+			return a - b;
+		})
+	);
+	console.log(
+		number.sort((a, b) => {
+			return b - a;
+		})
+	);
+}
+
+function ArraySort2() {
 	const names = ['z', 'a', 'm', 'd', 'i'];
 	console.log(names.reverse());
 	console.log(names.sort());
@@ -102,7 +101,7 @@ function MaxMinArray() {
 }
 
 function ObjectSort() {
-	const myArr = [
+	const arr = [
 		{ name: 'X00', price: 100 },
 		{ name: 'X01', price: 100 },
 		{ name: 'X02', price: 100 },
@@ -126,7 +125,7 @@ function ObjectSort() {
 	];
 
 	console.log(
-		myArr.sort((x, y) => {
+		arr.sort((x, y) => {
 			return x.price - y.price;
 		})
 	);
@@ -154,9 +153,10 @@ function FlatMap() {
 	);
 }
 
-RandomActivities();
+ArrayCreation();
 ArrayMethods();
-ArraySort();
+ArraySort1();
+ArraySort2();
 KnuthShuffle();
 MaxMinArray();
 ObjectSort();
@@ -164,17 +164,11 @@ ArrayAt();
 FlatMap();
 
 /* 
-length
-toString()
-join()
-concat()
-pop() 		: delete last element
-push() 		: add new element to end
-shift() 	: delete firt element
-unshift() 	: add new element to start
-flat() 		: multi-dimensional array to one-dimensional array
-splice(where-to-insert-elements, from-that-postion-number-of-elements-to-be-deletd, new-elements-to-be-added)
-slice(start-position, end-position-exclusive)
+pop() 											: delete last element
+push() 											: add new element to end
+shift() 										: delete firt element
+unshift() 										: add new element to start
+flat() 											: multi-dimensional array to one-dimensional array
+slice(start-position, end-position-exclusive) 	: returns array of extracted values
 
-stable sort : maintaining relative positions if values are same 
-*/
+stable sort is maintaining relative positions if values are same */

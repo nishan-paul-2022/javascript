@@ -27,7 +27,6 @@ function ObjectCompare() {
 }
 
 function ArrayCompare() {
-	// behaves like object
 	const x1 = [1, 2, 3];
 	const x2 = [1, 2, 3];
 	const x3 = Array.from(x1);
@@ -38,26 +37,17 @@ function ArrayCompare() {
 	console.log(x1 == x4);
 }
 
-function Constant() {
-	const obj4 = {
-		name: 'hello',
-		id: '1162036'
-	};
-	obj4.name = 'paul';
-	obj4.college = 'NDC';
-	console.log(obj4);
-	// obj4 = obj3; // not possible
-}
-
 SymbolCompare();
 StringCompare();
 ObjectCompare();
 ArrayCompare();
-Constant();
 
 /* 
 2 kinds of variable : let and const
-variable => pointer => memory address => value
-we can change pointer for let variable (reassign)
-we can't change pointer for const variable (no reassign)
-primitive (frozen | using value) and reference (not frozen | using pointer) */
+	: variable -> pointer -> memory address -> value
+	: we can change pointer for let variable (reassign)
+	: we can't change pointer for const variable (no reassign)
+
+2 kinds of object :
+	: primitive object [ frozen | using value ] 
+	: reference object [ not frozen | using pointer ] */

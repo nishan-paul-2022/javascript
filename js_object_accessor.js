@@ -21,7 +21,8 @@ function Person(firstName, lastName) {
 		},
 		fullName: {
 			get: function () {
-				return _firstName + ' ' + _lastName;
+				const name = `${_firstName} ${_lastName}`;
+				return name;
 			}
 		}
 	});
@@ -43,9 +44,12 @@ function User(name, birthday) {
 
 function TestCase01() {
 	const person = new Person('Logan', 'Paul');
+
 	console.log(person.fullName);
+
 	person.firstName = 'Jhon';
 	person.lastName = 'Wick';
+
 	console.log(person.firstName);
 	console.log(person.lastName);
 	console.log(person.fullName);
@@ -53,6 +57,7 @@ function TestCase01() {
 
 function TestCase02() {
 	const user = new User('John', new Date(1992, 6, 1));
+
 	console.log(user.name);
 	console.log(user.birthday);
 	console.log(user.age);
@@ -62,9 +67,9 @@ TestCase01();
 TestCase02();
 
 /*
-@ after we make an object non-configuarable, 
-- we can change the value of writable from true to false (not vice-versa)
-- we can't change the value of enumerable  
-- we can't change the value of configuarable
+# after we make an object non-configuarable, 
+	- we can change the value of writable from true to false (not vice-versa)
+	- we can't change the value of enumerable  
+	- we can't change the value of configuarable
 
-@ writable is not relevant for accessor */
+# writable is not relevant for accessor */

@@ -1,7 +1,6 @@
 const grandparent = { origin: 'grandparent' };
 const parent = { identity: 'parent' };
 const child = { name: 'child' };
-const grandChild = {};
 
 Object.defineProperties(parent, {
 	nature: {
@@ -51,14 +50,6 @@ function print(message, objectName) {
 	);
 }
 
-function CopyObjectByLoop(objectName) {
-	const copied = {};
-	for (const key in objectName) {
-		copied[key] = objectName[key];
-	}
-	return copied;
-}
-
 function OriginalObject() {
 	console.log('keys:', Object.keys(child));
 	console.log('getOwnPropertyNames:', Object.getOwnPropertyNames(child));
@@ -77,49 +68,52 @@ function OriginalObject() {
 	);
 }
 
-// Using a Loop
+// using a Loop
 function CopyByLoop() {
-	const byLoop = CopyObjectByLoop(child);
+	const byLoop = {};
+	for (const key in child) {
+		byLoop[key] = child[key];
+	}
 	print('byLoop', byLoop);
 }
 
-// Using Spread Operator
+// using Spread Operator
 function CopyBySpread() {
 	const bySpread = { ...child };
 	print('bySpread', bySpread);
 }
 
-// Using Object Spread Properties (ECMAScript 2018)
+// using Object Spread Properties (ECMAScript 2018)
 function CopyByRest() {
 	const { ...byRest } = child;
 	print('byRest', byRest);
 }
 
-// Using Object.assign()
+// using Object.assign()
 function CopyByAssign() {
 	const byAssign = Object.assign({}, child);
 	print('byAssign', byAssign);
 }
 
-// Using Object.fromEntries() (ECMAScript 2019)
+// using Object.fromEntries() (ECMAScript 2019)
 function CopyByFromEntries() {
 	const byFromEntries = Object.fromEntries(Object.entries(child));
 	print('byFromEntries', byFromEntries);
 }
 
-// Using JSON.parse() and JSON.stringify()
+// using JSON.parse() and JSON.stringify()
 function CopyByJSON() {
 	const byJSON = JSON.parse(JSON.stringify(child));
 	print('byJSON', byJSON);
 }
 
-// Using Object.create()
+// using Object.create()
 function CopyByCreate01() {
 	const byCreate = Object.create(child);
 	print('byCreate', byCreate);
 }
 
-// Using Object.create()
+// using Object.create()
 function CopyByCreate02() {
 	const byCreate = Object.create(child, {
 		a: { value: 1 },
@@ -128,7 +122,7 @@ function CopyByCreate02() {
 	print('byCreate', byCreate);
 }
 
-// Using Object.create()
+// using Object.create()
 function CopyByCreate03() {
 	const byCreate = Object.create(
 		Object.getPrototypeOf(child),
@@ -137,12 +131,10 @@ function CopyByCreate03() {
 	print('byCreate', byCreate);
 }
 
-function ModByDefineProperties() {
-	Object.defineProperties(
-		grandChild,
-		Object.getOwnPropertyDescriptors(child)
-	);
-	print('ModByDefineProperties', grandChild);
+function CopyByDefineProperties() {
+	const byDefine = {};
+	Object.defineProperties(byDefine, Object.getOwnPropertyDescriptors(child));
+	print('CopyByDefineProperties', byDefine);
 }
 
 OriginalObject();
@@ -155,10 +147,9 @@ CopyByJSON();
 CopyByCreate01();
 CopyByCreate02();
 CopyByCreate03();
-ModByDefineProperties();
+CopyByDefineProperties();
 
-/* 
-OBJECT COPY //
+/* OBJECT COPY
 
 for-loop-in 				: 	enumerable, 		member, 	own + inherited,	named
 spread, rest, assign, log 	: 	enumerable, 		member, 	own,				named + symbolic
@@ -167,7 +158,7 @@ json						: 	enumerable, 		property, 	own, 				named
 getOwnPropertyNames			:	non + enumerable, 	member, 	own,				named
 getOwnPropertySymbols		:	non + enumerable, 	member, 	own,				symbolic
 getOwnPropertyDescriptors	: 	non + enumerable, 	member, 	own, 				named + symbolic
-create() 					: 	set prototype and member-with-descriptor
+create  					: 	set prototype and member-with-descriptor
 
 descriptor is by default false [ create() ] and true [ literal, for-loop-in, spread, rest, assign, json ]
 enumerable means recognized by for-loop-in, spread, rest, assign, json

@@ -4,7 +4,7 @@ function UseCase01() {
 	};
 
 	console.log(randFunction.toString());
-	// const randObject = new randFunction(); // invalid
+	// const randObject = new randFunction(); /* invalid */
 }
 
 function UseCase02() {
@@ -35,7 +35,7 @@ function UseCase03() {
 	const randObject = new RandomClass();
 	randObject.print01();
 	RandomClass.print02();
-	// randObject.print02(); // invalid
+	// randObject.print02(); /* invalid */
 }
 
 function UseCase04() {

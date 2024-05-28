@@ -1,4 +1,4 @@
-function ReduceCallback(acc, val, idx, arr) {
+function callback(acc, val, idx, arr) {
 	acc += val;
 	console.log(`${idx}: ${arr}`);
 	return acc;
@@ -90,10 +90,10 @@ function HigherOrderMethods() {
 	});
 	console.log(idxFind);
 
-	const numberReduce = number.reduce(ReduceCallback, 0); // left to right
+	const numberReduce = number.reduce(callback, 0); // left to right
 	console.log(numberReduce);
 
-	const numberReduceRight = number.reduceRight(ReduceCallback, 0); // right to left
+	const numberReduceRight = number.reduceRight(callback, 0); // right to left
 	console.log(numberReduceRight);
 
 	number.forEach((n) => {
@@ -106,10 +106,10 @@ function HigherOrderMethods() {
 }
 
 function ArrayKey() {
-	const num = [1, 2, 3];
-	console.log(num['0']);
-	console.log(num['1']);
-	console.log(num['2']);
+	const number = [11, 22, 33];
+	console.log(number['0']);
+	console.log(number['1']);
+	console.log(number['2']);
 }
 
 function ArrayIteration() {
@@ -128,8 +128,8 @@ function ArrayIteration() {
 }
 
 function ArrayOf() {
-	const newArray = Array.of(1, 2, 3, 4, 5);
-	console.log(newArray); // Output: [1, 2, 3, 4, 5]
+	const arr = Array.of(1, 2, 3, 4, 5);
+	console.log(arr); // Output: [1, 2, 3, 4, 5]
 }
 
 ArrayConcat();
@@ -140,3 +140,5 @@ HigherOrderMethods();
 ArrayKey();
 ArrayIteration();
 ArrayOf();
+
+/* splice(where-to-insert-elements, from-that-postion-number-of-elements-to-be-deletd, new-elements-to-be-added) */

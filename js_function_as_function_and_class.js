@@ -21,7 +21,7 @@ function UseCase02() {
 	const object = new Constrcutor();
 	console.log(object.x);
 	console.log(object.y);
-	// object.staticMethod(); // invalid
+	// object.staticMethod(); /* invalid */
 }
 
 UseCase01();

@@ -2,12 +2,10 @@ function ObjectKey01() {
 	class A {
 		constructor() {
 			this.name = 'paul';
-			this.height = 5.5;
 		}
 
 		PrintValues() {
-			console.log(this.name);
-			console.log(this.age);
+			console.log(this.name, this.age);
 		}
 
 		get Name() {
@@ -16,11 +14,16 @@ function ObjectKey01() {
 	}
 
 	const object = new A();
-	object.weight = 52;
+
 	console.log(object.Name);
+
 	object.PrintValues();
 	object.age = 27;
 	object.PrintValues();
+
+	console.log(object);
+	object.height = 52;
+	console.log(object);
 }
 
 /* 
@@ -45,7 +48,7 @@ function ObjectKey02() {
 	console.log(object['title']);
 	console.log(object.title);
 
-	// console.log(object[id]); // invalid syntax
+	// console.log(object[id]); /* invalid syntax */
 	console.log(object['id']);
 	console.log(object.id);
 }
@@ -55,7 +58,7 @@ function ObjectKey03() {
 		[1]: 'hello',
 		[true]: 'world',
 		['title']: 'TDK'
-		// [id]: "fear" // invalid syntax
+		// [id]: "fear" /* invalid syntax */
 	};
 
 	console.log(object[1]);
@@ -70,9 +73,11 @@ function ObjectKey03() {
 
 function ObjectKey04() {
 	const ageKey = 'age';
+
 	const object1 = {
 		ageKey: 27 // ageKey as string
 	};
+
 	const object2 = {
 		[ageKey]: 27 // ageKey as variable
 	};
