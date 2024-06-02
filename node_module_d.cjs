@@ -3,7 +3,7 @@
 require(`./node_module_c.cjs`);
 
 function ExampleOne() {
-	global.Add(100, 101);
+	global.Add(33, 77);
 	console.log(global.fName);
 	console.log(global.dName);
 	global.RandomFunction();

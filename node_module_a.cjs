@@ -7,8 +7,10 @@ const fName = __filename;
 const dName = __dirname;
 
 async function RandomFunction() {
-	console.log('RandomFunction');
+	setTimeout(() => {
+		console.log('RandomFunction');
+	}, 1000);
 	return Math.PI;
 }
 
-module.exports = { Add, fName, dName, RandomFunction };
+module.exports = { Add, fName, dName, RandomFunction, message: 'FearIsATool' };

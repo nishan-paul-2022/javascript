@@ -2,14 +2,15 @@ import * as module1 from './node_module_e.js';
 /* import { RandomFunction, Add, fName, dName } from './node_module_e.js'; */
 /* import { RandomFunction as RandomFunctionNew, Add as AddNew, fName, dName } from './node_module_e.js'; */
 /* import RandomFunctionNew, { Add as AddNew, fName, dName } from './node_module_e.js'; */
-/* import RandomFunctionNew, * as module from './node_module_e.js'; */
+/* import RandomFunctionNew, * as module1 from './node_module_e.js'; */
 
-function ESModuleExample01() {
+async function ESModuleExample01() {
 	module1.Add(10, 20);
 	console.log(module1.fName);
 	console.log(module1.dName);
-	module1.default();
 	// module1.RandomFunction(); /* invalid */
+	const value = await module1.default();
+	console.log(value);
 }
 
 async function ESModuleExample02() {
@@ -18,9 +19,16 @@ async function ESModuleExample02() {
 	module2.Add(10, 20);
 	console.log(module2.fName);
 	console.log(module2.dName);
-	module2.default();
 	// module2.RandomFunction(); /* invalid */
+	const promise = module2.default();
+	promise
+		.then((resolve) => {
+			console.log(resolve);
+		})
+		.catch((reject) => {
+			console.log(reject);
+		});
 }
 
-ESModuleExample01();
+await ESModuleExample01();
 await ESModuleExample02();

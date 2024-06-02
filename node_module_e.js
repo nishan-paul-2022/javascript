@@ -9,6 +9,9 @@ export function Add(x, y) {
 export const fName = fileURLToPath(import.meta.url);
 export const dName = path.dirname(fName);
 
-export default function RandomFunction() {
-	console.log(Math.random());
+export default async function RandomFunction() {
+	setTimeout(() => {
+		console.log('RandomFunction');
+	}, 1000);
+	return Math.PI;
 }

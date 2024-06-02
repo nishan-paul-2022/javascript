@@ -1,5 +1,6 @@
 import fs from 'fs';
 import crypto from 'crypto';
+import { StringDecoder } from 'string_decoder';
 
 function BufferExample01() {
 	const buffer1 = Buffer.from('helloWorld');
@@ -70,6 +71,24 @@ function BufferExample07() {
 	console.log(buffer4.toString('utf8'));
 }
 
+function BufferExample08() {
+	const decoder = new StringDecoder('utf8');
+
+	const buffer1 = Buffer.from('HelloWorld');
+	const string1 = decoder.write(buffer1);
+	console.log(string1);
+
+	const buffer2 = Buffer.from('48656c6c6f576f726c64', 'hex');
+	const string2 = decoder.write(buffer2);
+	console.log(string2);
+
+	const buffer3 = Buffer.from([
+		0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x57, 0x6f, 0x72, 0x6c, 0x64
+	]);
+	const string3 = decoder.write(buffer3);
+	console.log(string3);
+}
+
 BufferExample01();
 BufferExample02();
 BufferExample03();
@@ -77,6 +96,7 @@ BufferExample04();
 BufferExample05();
 BufferExample06();
 BufferExample07();
+BufferExample08();
 
 /*
 regular array 		: array of value 

@@ -68,13 +68,11 @@ async function RunAllFiles(directory, fileNames, jsonData) {
 	const question = util.promisify(rl.question.bind(rl));
 
 	for (const fileName of fileNames) {
-		const isTerminate = await question(
-			'enter something (blank to continue): '
-		);
-
-		if (!isTerminate) {
+		try {
+			await question('enter something (blank to continue): ');
 			jsonData.files[fileName] = await RunFile(directory, fileName);
-		} else {
+		} catch (error) {
+			console.log(error);
 			rl.close();
 			break;
 		}

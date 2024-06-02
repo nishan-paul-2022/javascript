@@ -4,17 +4,22 @@ async function ESModuleExample01() {
 	module.Add(10, 20);
 	console.log(module.fName);
 	console.log(module.dName);
-	module.default();
+	// module.RandomFunction(); /* invalid */
+	const value = await module.default();
+	console.log(value);
 }
 
-function _ESModuleExample02() {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+async function ESModuleExample02() {
 	const module = require('./node_module_e.js');
 
 	module.Add(10, 20);
 	console.log(module.fName);
 	console.log(module.dName);
-	module.RandomFunction();
+	// module.RandomFunction(); /* invalid */
+	const value = await module.default();
+	console.log(value);
 }
 
 ESModuleExample01();
-// _ESModuleExample02();  // can't use require() to import es-module */
+// ESModuleExample02(); /* can't use require() to import es-module */
