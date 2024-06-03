@@ -1,8 +1,8 @@
-import * as module1 from './node_module_e.js';
-/* import { RandomFunction, Add, fName, dName } from './node_module_e.js'; */
-/* import { RandomFunction as RandomFunctionNew, Add as AddNew, fName, dName } from './node_module_e.js'; */
-/* import RandomFunctionNew, { Add as AddNew, fName, dName } from './node_module_e.js'; */
-/* import RandomFunctionNew, * as module1 from './node_module_e.js'; */
+import * as module1 from './node_module_5.js';
+/* import { RandomFunction, Add, fName, dName } from './node_module_5.js'; */
+/* import { RandomFunction as RandomFunctionNew, Add as AddNew, fName, dName } from './node_module_5.js'; */
+/* import RandomFunctionNew, { Add as AddNew, fName, dName } from './node_module_5.js'; */
+/* import RandomFunctionNew, * as module1 from './node_module_5.js'; */
 
 async function ESModuleExample01() {
 	module1.Add(10, 20);
@@ -14,7 +14,7 @@ async function ESModuleExample01() {
 }
 
 async function ESModuleExample02() {
-	const module2 = await import('./node_module_e.js');
+	const module2 = await import('./node_module_5.js');
 
 	module2.Add(10, 20);
 	console.log(module2.fName);

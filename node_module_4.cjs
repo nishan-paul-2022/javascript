@@ -1,6 +1,6 @@
 /*global Add, fName, dName, RandomFunction*/
 
-require(`./node_module_c.cjs`);
+require(`./node_module_3.cjs`);
 
 function ExampleOne() {
 	global.Add(33, 77);

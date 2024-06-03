@@ -25,6 +25,7 @@
 		"typescript": "^5.2.2"
 	},
 	"dependencies": {
+		"pg": "^8.11.5",
 		"punycode.js": "^2.3.1"
 	}
 }

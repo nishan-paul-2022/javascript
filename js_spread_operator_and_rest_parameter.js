@@ -1,9 +1,18 @@
-// spread operator
+/* arguments */
+function ArgumentsExample() {
+	let sum = 0;
+	for (const i of arguments) {
+		sum += i;
+	}
+	console.log(sum);
+}
+
+/* spread operator */
 function SpreadExample(a, b, c) {
 	console.log('a, b, c:', a, b, c);
 }
 
-// rest parameter
+/* rest parameter */
 function RestExample(...args) {
 	console.log('args:', args);
 }
@@ -26,10 +35,11 @@ function SpreadWithObject() {
 	const x3 = { ...x1, a: 10 }; // copy by value
 
 	x2.a = 10;
+
 	console.log('x1:', x1);
 	console.log('x2:', x2);
 	console.log('x3:', x3);
-	// console.log('...x1:', ...x1); // console.log(a: 1, b: 2, c: 3);
+	// console.log('...x1:', ...x1); /* equivalent statement: console.log(a: 1, b: 2, c: 3) | non-callable iterator */
 }
 
 function SpreadWithClassAndFunction() {
@@ -99,16 +109,17 @@ function SpreadWithGenerator() {
 	console.log('{ ...regular1 }:', { ...regular1 });
 	console.log('{ ...regular2 }:', { ...regular2 });
 	console.log('...regular1:', ...regular1);
-	// console.log('...regular2:', ...regular2);
+	// console.log('...regular2:', ...regular2); /* non-callable iterator */
 }
 
-const arr = [1, 2, 3];
-SpreadExample(...arr);
+const array = [1, 2, 3];
+
+ArgumentsExample(1, 2, 3, 4, 5);
+SpreadExample(...array);
 RestExample(1, 2, 3);
 SpreadWithArray();
 SpreadWithObject();
 SpreadWithClassAndFunction();
 SpreadWithGenerator();
 
-/*
-spread operator can use Symbol.iterator, not Symbol.asyncIterator  */
+/* spread operator can use Symbol.iterator, not Symbol.asyncIterator */

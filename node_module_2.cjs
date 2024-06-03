@@ -1,4 +1,4 @@
-const module1 = require(`./node_module_a.cjs`);
+const module1 = require(`./node_module_1.cjs`);
 
 function ExampleOne() {
 	module1.Add(15, 25);
@@ -9,7 +9,7 @@ function ExampleOne() {
 }
 
 function ExampleTwo() {
-	const module2 = require(`./node_module_a.cjs`);
+	const module2 = require(`./node_module_1.cjs`);
 
 	module2.Add(15, 25);
 	console.log(module2.fName);
@@ -25,7 +25,7 @@ function ExampleThree() {
 		dName: dirName,
 		message,
 		id: collegeId = 'NDC'
-	} = require('./node_module_a.cjs');
+	} = require('./node_module_1.cjs');
 
 	Add(10, 20);
 	console.log(fileName);
