@@ -2,9 +2,9 @@ import http from 'http';
 import pkg from 'pg';
 import fs from 'fs/promises';
 import path from 'path';
-import { fileURLToPath } from 'url';
+import url from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
+const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const { Pool } = pkg;
@@ -22,7 +22,7 @@ const server = http.createServer(async (req, res) => {
 
 	if (
 		req.method === 'GET' &&
-		(pathname === '/public/style.css' || pathname === '/public/script.js')
+		(pathname === '/style.css' || pathname === '/script.js')
 	) {
 		const filePath = path.join(__dirname, pathname);
 		try {
@@ -39,7 +39,7 @@ const server = http.createServer(async (req, res) => {
 		}
 	} else if (req.method === 'GET' && pathname === '/') {
 		try {
-			const data = await fs.readFile('./public/index.html');
+			const data = await fs.readFile('./index.html');
 			res.writeHead(200, { 'Content-Type': 'text/html' });
 			res.end(data);
 		} catch (err) {

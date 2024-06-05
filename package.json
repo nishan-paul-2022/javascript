@@ -25,6 +25,8 @@
 		"typescript": "^5.2.2"
 	},
 	"dependencies": {
+		"formidable": "^3.5.1",
+		"nodemailer": "^6.9.13",
 		"pg": "^8.11.5",
 		"punycode.js": "^2.3.1"
 	}

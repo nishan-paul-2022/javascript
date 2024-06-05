@@ -29,12 +29,16 @@ function shiftTask() {
 function editTask() {
 	const li = this.parentNode;
 	const label = li.querySelector('label');
-	const task = prompt('Edit task:', label.innerText);
-	if (task) {
-		label.innerText = task;
+	const flag = label.contentEditable;
+	if (flag === 'true') {
+		label.contentEditable = 'false';
 		const id = li.dataset.id;
+		const task = label.innerText;
 		const completed = li.querySelector('input').checked;
 		updateTask(id, task, completed);
+	} else {
+		label.contentEditable = 'true';
+		label.focus();
 	}
 }
 

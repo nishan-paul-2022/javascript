@@ -23,7 +23,6 @@ function editTask() {
 	} else {
 		label.contentEditable = 'true';
 		label.focus();
-		label.select();
 	}
 }
 
