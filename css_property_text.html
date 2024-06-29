@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS Text Properties</title>
+		<style>
+			body {
+				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+				background-color: #f0f4f8;
+				color: #333;
+				margin: 0;
+				padding: 20px;
+				line-height: 1.6;
+			}
+
+			h1,
+			h3 {
+				text-align: center;
+				margin-top: 40px;
+			}
+
+			.container {
+				max-width: 900px;
+				margin: 0 auto;
+				padding: 20px;
+				background: #fff;
+				border-radius: 8px;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			}
+
+			.example {
+				margin-bottom: 30px;
+			}
+
+			.example h3 {
+				margin-bottom: 10px;
+				color: #4caf50;
+			}
+
+			.text-sample {
+				padding: 10px;
+				border: 1px solid #ddd;
+				border-radius: 4px;
+				background: #f9f9f9;
+			}
+
+			.center-uppercase {
+				text-align: center; /* Centers the text horizontally */
+				text-transform: uppercase; /* Transforms all characters to uppercase */
+				color: #4caf50; /* Sets the text color to a shade of green */
+			}
+
+			.indent-justify-spacing {
+				text-indent: 50px; /* Indents the first line of the paragraph by 50px */
+				text-align: justify; /* Aligns the text to both left and right edges */
+                letter-spacing: 3px; /* Sets the amount of space between letters */
+			}
+
+			.no-decoration {
+				text-decoration: none; /* Removes any text decoration (like underline, overline, etc.) */
+			}
+
+			.decoration {
+				text-decoration-line: underline; /* Specifies the type of decoration (underline in this case) */
+				text-decoration-color: red; /* Sets the color of the text decoration */
+				text-decoration-style: wavy; /* Specifies the style of the text decoration (wavy line) */
+				text-decoration-thickness: 2px; /* Specifies the thickness of the text decoration */
+			}
+
+			.alignment {
+				text-align: right; /* Aligns the text to the right */
+				text-align-last: left; /* Aligns the last line of a block element to the left */
+				direction: rtl; /* Sets the direction of the text to right-to-left */
+				unicode-bidi: bidi-override; /* Overrides the bidirectional algorithm (used for mixed content with different text directions) */
+				vertical-align: middle; /* Aligns the element to the middle of the line height */
+			}
+
+			.uppercase {
+				text-transform: uppercase; /* Transforms all characters to uppercase */
+			}
+
+			.lowercase {
+				text-transform: lowercase; /* Transforms all characters to lowercase */
+			}
+
+			.capitalize {
+				text-transform: capitalize; /* Capitalizes the first letter of each word */
+			}
+
+			.text-spacing {
+				text-indent: 30px; /* Indents the first line of the paragraph by 30px */
+				letter-spacing: 3px; /* Sets the amount of space between letters */
+				line-height: 1.5; /* Sets the amount of space between lines of text */
+				word-spacing: 7px; /* Sets the amount of space between words */
+				white-space: pre-line; /* Preserves whitespace in the text (new lines and spaces) */
+			}
+
+			.shadow {
+				text-shadow: 2px 2px 4px #000000; /* Adds a shadow effect to the text */
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<h1>CSS Text Properties Demonstration</h1>
+
+			<div class="example">
+				<h3>Text Alignment and Transformation</h3>
+				<p class="text-sample center-uppercase">
+					This text is centered and uppercase with green color
+				</p>
+			</div>
+
+			<div class="example">
+				<h3>Text Indent, Justify, and Letter Spacing</h3>
+				<p class="text-sample indent-justify-spacing">
+					This paragraph has a text-indent of 50px, is justified, and
+					has a letter-spacing of 3px. Lorem ipsum dolor sit amet,
+					consectetur adipiscing elit. Sed do eiusmod tempor
+					incididunt ut labore et dolore magna aliqua.
+				</p>
+			</div>
+
+			<div class="example">
+				<h3>Text Decoration</h3>
+				<p class="text-sample no-decoration">
+					This text has no text decoration. Nulla facilisi. Cras
+					fermentum odio eu feugiat pretium.
+				</p>
+				<p class="text-sample decoration">
+					This text has underline, red color, wavy style, and 2px
+					thickness. Phasellus eget enim eu lectus faucibus
+					vestibulum.
+				</p>
+			</div>
+
+			<div class="example">
+				<h3>Text Alignment, Direction, and Vertical Alignment</h3>
+				<p class="text-sample alignment">
+					This text demonstrates text-align, text-align-last,
+					direction, unicode-bidi, and vertical-align properties.
+					Proin eget tortor risus.
+				</p>
+			</div>
+
+			<div class="example">
+				<h3>Text Transformations</h3>
+				<p class="text-sample uppercase">this text is uppercase.</p>
+				<p class="text-sample lowercase">THIS TEXT IS LOWERCASE.</p>
+				<p class="text-sample capitalize">this text is capitalized.</p>
+			</div>
+
+			<div class="example">
+				<h3>Text Spacing</h3>
+				<p class="text-sample text-spacing">
+					This paragraph demonstrates text-indent, letter-spacing,
+					line-height, word-spacing, and white-space properties. Lorem
+					ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+					eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				</p>
+			</div>
+
+			<div class="example">
+				<h3>Text Shadow</h3>
+				<p class="text-sample shadow">
+					This text has a shadow applied to it.
+				</p>
+			</div>
+		</div>
+	</body>
+</html>
