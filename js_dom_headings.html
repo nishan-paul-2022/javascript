@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<h5 class="hClass" name="heading" id="id">JS 01</h5>
+		<h5 class="hClass" name="heading">JS 02</h5>
+		<h5 class="hClass">JS 03</h5>
+		<h5 class="hClass">JS 04</h5>
+
+		<button type="button" onclick="documentHeadings()"></button>
+
+		<script>
+			function documentHeadings() {
+				const headings = document.getElementsByClassName('hClass');
+
+				const v1 = headings[0].textContent;
+				const v2 = headings['heading'].textContent;
+				const v3 = headings['id'].textContent;
+
+				alert(`v1: ${v1} \nv2: ${v2} \nv3: ${v3}`);
+			}
+		</script>
+	</body>
+</html>

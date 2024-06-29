@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="favicon" type="image/x-icon" href="image.avif" />
+		<style>
+			.h-w {
+				height: 200px;
+				width: 200px;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<picture>
+			<source
+				media="(min-width:900px)"
+				srcset="
+					https://i.dailymail.co.uk/1s/2019/02/07/18/9500748-6677227-He_s_a_lucky_guy_Matt_Damon_s_left_wife_Luciana_Barroso_43_secon-m-1_1549564801819.jpg
+				"
+				class="h-w" />
+			<source
+				media="(min-width: 600px)"
+				srcset="https://i.ytimg.com/vi/COp05UeuvEQ/maxresdefault.jpg"
+				class="h-w" />
+			<img
+				src="https://www.denofgeek.com/wp-content/uploads/2022/03/the-batman-robert-pattinson-bruce-wayne.jpg?fit=2380%2C1350"
+				alt="OK"
+				class="h-w" />
+		</picture>
+	</body>
+</html>

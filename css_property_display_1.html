@@ -68,27 +68,26 @@
 	</body>
 </html>
 
-<!--
-	@ DISPLAY 
-------------------------------------------------------------------------------------------------------------
-        display		: inline, block, inline-block, flex, grid, inline-flex, inline-grid, none
-        visibility	: visible, hidden, collapse
+<!--DISPLAY PROPERTY ------------------------------------------------------------------------------------------------------------
 
-        display		: none / hide and remove
-        visibility	: hidden / hide and not remove
-        visibility	: collapse / hide and remove
+	display		: inline, block, inline-block, contents, none, flex, grid, inline-flex, inline-grid
+	visibility	: visible, hidden, collapse
 
-		visibility in table element : we can only use 'collapse' to hide
-        visibility in other element : we can only use 'hidden' to hide
+	display		: none / hide and remove
+	visibility	: hidden / hide and not remove
+	visibility	: collapse / hide and remove
 
-        inside inline-element, we can't use block-element
-        inside block-element, we can use both block-element and inline-element
-        exception: inside paragraph, we can't use block-element
+	visibility in table element : we can only use 'collapse' to hide
+	visibility in other element : we can only use 'hidden' to hide
 
-        block-element always starts on a new line and takes up the full width available
-        an inline-element does not start on a new line and only takes up as much width as necessary.
-        height, width, margin, padding properties are applicable for block and inline-block 
+	inside inline-element, we can't use block-element
+	inside block-element, we can use both block-element and inline-element
+	exception: inside paragraph, we can't use block-element
 
-        changing display property of an element only changes how the element is displayed, not semantic rules
-        so, an inline-element with display: block, is not allowed to have block-element inside 
--->
+	block-element always starts on a new line and takes up the full width available
+	an inline-element does not start on a new line and only takes up as much width as necessary.
+	block and inline-block supports : height, width, margin, padding
+	inline supports 				: margin (horizontal), padding (horizontal)
+
+	changing display property of an element only changes how the element is displayed, not semantic rules
+	so, an inline-element with display: block, is not allowed to have block-element inside -->

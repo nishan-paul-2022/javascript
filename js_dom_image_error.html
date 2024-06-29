@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<img src="image_url" alt="batman" id="demo" />;
+		<script>
+			function handleImgError(event) {
+				event.target.src = 'image.avif';
+			}
+
+			document
+				.getElementById('demo')
+				.addEventListener('error', handleImgError);
+		</script>
+	</body>
+</html>

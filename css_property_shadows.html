@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			:root {
+				font-family: Arial, sans-serif;
+				background-color: #f4f4f4;
+			}
+
+			.container {
+				max-width: 800px;
+				margin: 50px auto;
+				padding: 20px;
+				background-color: #fff;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+				text-align: center;
+			}
+
+			h1 {
+				margin-bottom: 50px;
+			}
+
+			/* Basic text-shadow: horizontal offset, vertical offset, blur radius, color */
+			.text-shadow-example {
+				text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+			}
+
+			/* Box Shadow Examples */
+			.box-shadow-examples {
+				display: flex;
+				justify-content: space-around;
+				flex-wrap: wrap;
+			}
+
+			.box-shadow-examples > div {
+				width: 150px;
+				height: 100px;
+				margin: 20px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 16px;
+				background-color: #ddd;
+				padding: 10px;
+			}
+
+			/* Basic box-shadow: horizontal offset, vertical offset, blur radius, color */
+			.box-shadow-1 {
+				box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+			}
+
+			/* Box shadow with spread radius */
+			.box-shadow-2 {
+				box-shadow: 4px 4px 10px 5px rgba(0, 0, 0, 0.5);
+			}
+
+			/* Multiple box shadows */
+			.box-shadow-3 {
+				box-shadow:
+					4px 4px 10px rgba(0, 0, 0, 0.5),
+					-4px -4px 10px rgba(255, 0, 0, 0.5);
+			}
+
+			/* Inset box shadow */
+			.box-shadow-4 {
+				box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.5);
+			}
+
+			/* Spread radius and inset box shadow */
+			.box-shadow-5 {
+				box-shadow:
+					4px 4px 10px rgba(255, 0, 0, 0.5),
+					inset 4px 4px 10px rgba(0, 0, 0, 0.5);
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<h1 class="text-shadow-example">Text Shadow Example</h1>
+			<div class="box-shadow-examples">
+				<div class="box-shadow-1">Box Shadow 1</div>
+				<div class="box-shadow-2">Box Shadow 2</div>
+				<div class="box-shadow-3">Box Shadow 3</div>
+				<div class="box-shadow-4">Box Shadow 4</div>
+				<div class="box-shadow-5">Box Shadow 5</div>
+			</div>
+		</div>
+	</body>
+</html>

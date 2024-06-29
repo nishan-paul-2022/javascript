@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			:root {
+				font-family: Arial, sans-serif;
+				background-color: #6daef8;
+				text-align: center;
+			}
+
+			/* Apply border-box globally for better box model handling */
+			*,
+			*::before,
+			*::after {
+				box-sizing: border-box;
+			}
+
+			.container {
+				max-width: 800px;
+				margin: 0 auto;
+			}
+
+			h1 {
+				margin-bottom: 20px;
+			}
+
+			/* Common styles for all boxes */
+			.box {
+				width: 200px;
+				height: 100px;
+				margin: 10px auto;
+				padding: 20px;
+				border: 10px solid #333;
+				background-color: #ddd;
+			}
+
+			/* Box with content-box (default) */
+			.content-box {
+				box-sizing: content-box; /* Box size includes only content, padding and border are added outside */
+			}
+
+			/* Box with border-box */
+			.border-box {
+				box-sizing: border-box; /* Box size includes content, padding, and border */
+			}
+
+			/* Box with inherit (inherits box-sizing from parent) */
+			.inherit-box {
+				box-sizing: inherit; /* Will inherit the box-sizing value from its parent */
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<h1>Box Sizing Example</h1>
+			<div class="box content-box">Content Box</div>
+			<div class="box border-box">Border Box</div>
+			<div class="box inherit-box">Inherit Box</div>
+		</div>
+	</body>
+</html>
+
+<!-- box-sizing does cascade, but doesn't impact -->

@@ -14,7 +14,7 @@ process.argv.forEach((value, index) => {
 	console.log(`${index}: ${value}`);
 });
 
-/*  
+/*
 TTY is being used iternally :
 	- process.stdin / tty.ReadStream instance
 	- process.stdout / tty.WriteStream instance

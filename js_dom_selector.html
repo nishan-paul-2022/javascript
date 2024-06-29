@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<div id="id">Element with ID</div>
+		<div class="class">Element with Class</div>
+		<p name="name">Element with Name</p>
+		<p data-type="example">Paragraph Element with Data Attribute</p>
+		<div data-type="example">Div Element with Data Attribute</div>
+
+		<script>
+			// Get element by ID
+			const elementById = document.getElementById('id');
+			console.log('Element by ID:', elementById);
+
+			// Get elements by class name
+			const elementsByClass = document.getElementsByClassName('class');
+			console.log('Elements by class name:', elementsByClass);
+
+			// Get elements by tag name
+			const elementsByTagName = document.getElementsByTagName('div');
+			console.log('Elements by tag name:', elementsByTagName);
+
+			// Get elements by name attribute
+			const elementsByName = document.getElementsByName('name');
+			console.log('Elements by name attribute:', elementsByName);
+
+			// Select the first element that matches a CSS selector
+			const firstElementBySelector = document.querySelector('.class');
+			console.log('First element by selector:', firstElementBySelector);
+
+			// Select all elements that match a CSS selector
+			const allElementsBySelector = document.querySelectorAll('div');
+			console.log('All elements by selector:', allElementsBySelector);
+
+			// Select the first element with a specific attribute
+			const elementByAttribute = document.querySelector(
+				'[data-type="example"]'
+			);
+			console.log('Element by attribute:', elementByAttribute);
+
+			// Select all div elements with a specific attribute
+			const allDivsByAttribute = document.querySelectorAll(
+				'div[data-type="example"]'
+			);
+			console.log('All divs by attribute:', allDivsByAttribute);
+
+			// Check if an element matches a specified selector
+			const elementToCheck = document.getElementById('id');
+			if (elementToCheck.matches('.class')) {
+				console.log('Element matches the selector');
+			} else {
+				console.log('Element does not match the selector');
+			}
+
+			console.log(elementsByClass instanceof HTMLCollection);
+			console.log(elementsByTagName instanceof HTMLCollection);
+			console.log(elementsByName instanceof NodeList);
+			console.log(allElementsBySelector instanceof NodeList);
+			console.log(elementToCheck.children instanceof HTMLCollection);
+			console.log(elementToCheck.childNodes instanceof NodeList);
+		</script>
+	</body>
+</html>

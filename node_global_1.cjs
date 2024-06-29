@@ -1,13 +1,9 @@
-function UseCase01() {
-	const dName = __dirname;
-	const fName = __filename;
-	console.log(dName);
-	console.log(fName);
-	console.log(typeof dName);
-	console.log(typeof fName);
-}
-
-UseCase01();
+const dName = __dirname;
+const fName = __filename;
+console.log(dName);
+console.log(fName);
+console.log(typeof dName);
+console.log(typeof fName);
 
 /* 
 //	global variable (string) 	: __filename, __dirname

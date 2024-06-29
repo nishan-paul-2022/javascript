@@ -8,9 +8,12 @@
 			.box {
 				margin: 10px;
 				padding: 10px;
+				width: 1000px;
+				height: 100px;
 				color: black;
 				text-align: center;
 				font-family: 'Courier New', Courier, monospace;
+				font-weight: bolder;
 			}
 		</style>
 	</head>
@@ -18,39 +21,23 @@
 	<body style="background-color: silver">
 		<!-- 01. inline -->
 		<div class="box" style="display: inline; background-color: lightblue">
-			Inline
+			Inline (div)
 		</div>
 
 		<!-- 02. block -->
-		<span class="box" style="display: block; background-color: lightgreen"
-			>Block</span
-		>
+		<span class="box" style="display: block; background-color: lightgreen">
+			Block (span)
+		</span>
 
 		<!-- 03. inline-block -->
-		<div
-			class="box"
-			style="
-				display: inline-block;
-				width: 100px;
-				height: 100px;
-				background-color: gray;
-			">
-			Inline-block
+		<div class="box" style="display: inline-block; background-color: gray">
+			Inline-block (div)
 		</div>
 
 		<!-- 04. contents -->
-		<div
-			class="box"
-			style="
-				display: contents;
-				margin: 1000px;
-				background-color: aqua;
-				color: white;
-			">
-			<p>
-				The element itself does not generate any boxes, but its children
-				and pseudo-elements still generate boxes as normal.
-			</p>
+		<div class="box" style="display: contents; background-color: aqua">
+			The element itself does not generate any boxes, but its children and
+			pseudo-elements still generate boxes as normal.
 		</div>
 	</body>
 </html>

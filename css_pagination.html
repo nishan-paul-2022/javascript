@@ -5,19 +5,72 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
-			/* 
-				TYPES OF PAGINATION :
-				- pagination 
-				- navigation pagination 
-				- next/prev pagination 
-				- breadcrumb
+			body {
+				font-family: Arial, sans-serif;
+				background-color: #f4f4f4;
+				margin: 0;
+				padding: 0;
+			}
 
-				https://www.w3schools.com/css/css3_pagination.asp
-			*/
+			.container {
+				max-width: 800px;
+				margin: 50px auto;
+				padding: 20px;
+				background-color: #fff;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+				text-align: center;
+			}
+
+			h1 {
+				color: #333;
+			}
+
+			.pagination {
+				list-style: none;
+				padding: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-top: 20px;
+			}
+
+			.pagination li {
+				margin: 0 5px;
+			}
+
+			.pagination a {
+				display: block;
+				padding: 10px 20px;
+				text-decoration: none;
+				color: #007bff;
+				border: 1px solid #ddd;
+				border-radius: 5px;
+				transition:
+					background-color 0.3s,
+					color 0.3s;
+			}
+
+			.pagination a:hover,
+			.pagination a.active {
+				background-color: #007bff;
+				color: white;
+				border-color: #007bff;
+			}
 		</style>
 	</head>
 
 	<body>
-		<h1>PAGINATION</h1>
+		<div class="container">
+			<h1>CSS Pagination Example</h1>
+			<ul class="pagination">
+				<li><a href="#">&laquo;</a></li>
+				<li><a href="#" class="active">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">5</a></li>
+				<li><a href="#">&raquo;</a></li>
+			</ul>
+		</div>
 	</body>
 </html>

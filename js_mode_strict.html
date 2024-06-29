@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<script>
+			'use strict';
+
+			function case01() {
+				const inlineJS = `
+					let x = 1, y = 2; 
+					var z = x + y; 
+					console.log(z); 
+					function EvalFunction() {
+						console.log(1);
+					}
+				`;
+
+				eval(inlineJS);
+				/* reference error */
+				/*
+				console.log(x);
+				console.log(z);
+				EvalFunction(); */
+			}
+
+			function case02() {
+				class Class01 {
+					__NID = 0;
+					_balance = 0;
+
+					constructor(NID, balance) {
+						this.__NID = NID;
+						this._balance = balance;
+					}
+
+					get GetNID() {
+						return this.__NID;
+					}
+				}
+
+				const class01 = new Class01(12345, 10);
+				console.log(class01.GetNID);
+				// class01.GetNID = 6789; /* invalid */
+				console.log(class01.GetNID);
+			}
+
+			function case03() {
+				class Class02 {
+					constructor(firstName, lastName, age, height, weight) {
+						this.firstName = firstName;
+						this.lastName = lastName;
+						this.age = age;
+						this.height = height;
+						this.weight = weight;
+					}
+
+					FullName() {
+						const fullName = this.firstName + ' ' + this.lastName;
+						console.log(fullName);
+					}
+
+					FullPhysiology() {
+						console.log(this.age);
+						console.log(this.height);
+						console.log(this.weight);
+					}
+				}
+
+				const class02 = new Class02('bat', 'man', 27, 6.1, 77);
+				/* invalid */
+				/* 	
+				with (class02) {
+					FullName();
+					FullPhysiology();
+					console.log(firstName);
+				} */
+			}
+
+			function case04() {
+				const x = 10;
+				console.log(x);
+				// delete x; /* invalid */
+				console.log(x);
+
+				function Gotham() {
+					console.log('prince of gotham');
+				}
+				// delete Gotham; /* invalid */
+				Gotham();
+			}
+
+			function case05() {
+				class Class03 {
+					constructor() {
+						(this.name = 'paul'),
+							(this.age = 27),
+							(this.height = 5.5),
+							(this.weight = 52);
+					}
+
+					PrintBio() {
+						console.log(this.name);
+						console.log(this.age);
+						console.log(this.height);
+						console.log(this.weight);
+					}
+				}
+
+				class Class04 extends Class03 {
+					skilSet = 'JS';
+					profession = 'MERN developer';
+				}
+
+				const class03 = new Class03();
+				class03.PrintBio();
+				delete class03.name;
+				class03.PrintBio();
+				delete class03.PrintBio;
+				// class03.PrintBio(); /* invalid */
+
+				const class04 = new Class04();
+				console.log(class04.skilSet);
+				console.log(class04.age);
+				delete class04.age;
+				console.log(class04.age);
+				console.log(class04.xyz);
+			}
+
+			function case06() {
+				const class05 = {};
+				Object.defineProperty(class05, 'name', {
+					value: 'Paul',
+					writable: true,
+					configurable: true
+				});
+
+				Object.defineProperty(class05, 'age', {
+					value: 27,
+					writable: false,
+					configurable: false
+				});
+
+				class05.name = 'Rolex';
+				// class05.age = 24; /* invalid */
+				console.log(class05.name);
+				console.log(class05.age);
+
+				console.log(delete class05.name);
+				// console.log(delete class05.age); /* invalid */
+				console.log(class05.name);
+				console.log(class05.age);
+			}
+
+			function case07() {
+				const arr = [11, 22, 33, 44, 55];
+				// delete arr; /* invalid */
+				console.log(arr);
+				delete arr[2];
+				console.log(arr);
+
+				console.log(Math.E);
+				// delete Math.E; /* invalid */
+				console.log(Math.E);
+			}
+
+			case01();
+			case02();
+			case03();
+			case04();
+			case05();
+			case06();
+			case07();
+
+			/*
+			'use strict' directive is only recognized at the beginning of a regular script or a function
+
+			in eval, only variable that can be used outside eval, is var [ loose mode ]
+
+			function in global scope, this refers :
+			- [ loose mode ] global object (window in browser / global in node)
+			- [ strict mode ] undefined
+
+			semantic rules of strict mode :
+			- can't violate descriptor 
+			- can't delete anything but object member 
+			- can't use with statement 
+			- no redeclaration 
+			- no octal escape character */
+		</script>
+	</body>
+</html>

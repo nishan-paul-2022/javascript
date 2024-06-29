@@ -18,13 +18,11 @@ function UnZip() {
 Zip();
 UnZip();
 
-/*  
-    zip = zlib.createGzip()
+/*	zip = zlib.createGzip()
     unzip = zlib.createUnzip()
 
     file1 = fs.createReadStream(fileName1)
     file2 = fs.writeReadStream(fileName2)
 
     file1.pipe(zip).pipe(file2)
-    file1.pipe(unzip).pipe(file2)
-*/
+    file1.pipe(unzip).pipe(file2) */

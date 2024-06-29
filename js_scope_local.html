@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<script>
+			var x = Math.PI;
+			function ClassExample() {
+				// new Class01(); /* can't access before initialization */
+				class Class01 {
+					constructor() {
+						console.log('CLASS: A');
+					}
+				}
+
+				{
+					class Class02 {
+						constructor() {
+							console.log('CLASS: B');
+						}
+					}
+				}
+				// new Class02(); /* not defined */
+
+				class Class03 {
+					constructor() {
+						console.log('CLASS: C');
+					}
+				}
+				new Class03();
+			}
+
+			function FunctionExample() {
+				function02();
+
+				function function02() {
+					console.log('FUNCTION : function02');
+				}
+
+				{
+					for (let i = 0; i < 1; i++) {
+						function function01() {
+							console.log('FUNCTION : function01');
+						}
+					}
+					function01();
+				}
+				function01();
+
+				// function03(); /* not a function */
+				{
+					function function03() {
+						console.log('FUNCTION : function03');
+					}
+				}
+				function03();
+			}
+
+			function VarEXample1() {
+				x = 10;
+				console.log(x);
+				console.log(window.x);
+				var x = 10;
+			}
+
+			function VarEXample2() {
+				console.log(z);
+				x = 5;
+				y = 6;
+				var z = x + y;
+			}
+
+			function LocalAndBlock() {
+				if (1 === 1) {
+					var x = 11;
+				}
+				console.log(x);
+
+				function function01() {
+					if (1 === 1) {
+						const y = 10;
+					}
+				}
+				console.log(y);
+			}
+
+			// Declaration -> Initilization -> Utilization
+			function DIU() {
+				const object = {
+					i: 1,
+					j: 'paul'
+				};
+				console.log(object.k);
+				// console.log(object.m()); /* not a function */
+
+				console.log(x);
+				x = 10;
+				let x;
+			}
+
+			ClassExample();
+			FunctionExample();
+			VarEXample1();
+			VarEXample2();
+			LocalAndBlock();
+			DIU();
+
+			/*
+			for every declaration, scope defines : visibilitty, accessibility, lifespan
+
+			global scope [ script element in html ]
+			module scope [ document ]
+			local scope [ declaration (class and function) ]
+			block scope [ control flow structure | any independent curly brace pair ]
+			declaration -> initilization -> utilization | let and const follow | var doesn't follow
+			declaration -> utilization | class follows | function doesn't follow
+			var, let, const, function have hositing | class doesn't have hoisting
+			block scope : let, const, class follow | var doesn't follow
+			function : doesn't follow block scope (loose mode) | follows block scope (strict mode)
+
+			property : supports direct utilization (value will be undefined)
+			method : doesn't support direct utilization (needs declaration / intialization first) */
+		</script>
+	</body>
+</html>

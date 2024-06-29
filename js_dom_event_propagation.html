@@ -1,0 +1,170 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.component {
+				border: 1px solid black;
+				margin: 5px;
+				padding: 5px;
+			}
+		</style>
+	</head>
+
+	<body onclick="alert('BODY')">
+		<div id="root" class="component">
+			<div id="container">
+				<button id="content">button</button>
+			</div>
+		</div>
+
+		<div id="unordered-list" class="component"></div>
+
+		<div id="ordered-list" class="component">
+			<p>paragraph</p>
+			<ol>
+				<li>A</li>
+				<li>B</li>
+				<li>C</li>
+				<li>D</li>
+				<li>E</li>
+			</ol>
+		</div>
+
+		<div class="component">
+			<ul id="item-list">
+				<li>item 01</li>
+				<li>item 02</li>
+				<li>item 03</li>
+				<li>item 04</li>
+			</ul>
+		</div>
+
+		<form class="component">
+			<label for="check-box">Checkbox:</label>
+			<input type="checkbox" id="check-box" />
+		</form>
+
+		<button id="my-button" class="component">Click Me!</button>
+
+		<script type="text/javascript">
+			function EventPropagation01() {
+				document.getElementById('root').addEventListener(
+					'click',
+					() => {
+						alert('ROOT');
+					},
+					true
+				);
+
+				document.getElementById('container').addEventListener(
+					'click',
+					() => {
+						alert('CONTAINER');
+					},
+					false
+				);
+
+				document
+					.getElementById('content')
+					.addEventListener('click', () => {
+						alert('CONTENT');
+					});
+			}
+
+			function EventPropagation02() {
+				const div = document.getElementById('unordered-list');
+
+				const unorderedList = document.createElement('ul');
+				const paragraph = document.createElement('p');
+
+				paragraph.textContent = 'paragraph';
+				unorderedList.appendChild(paragraph);
+
+				for (let i = 0; i < 10; i++) {
+					const listItem = document.createElement('li');
+					listItem.textContent = `line ${i + 1}`;
+					unorderedList.appendChild(listItem);
+				}
+
+				unorderedList.addEventListener('click', (event) => {
+					if (event.target.nodeName === 'LI') {
+						alert(event.target.textContent);
+					}
+				});
+
+				div.appendChild(unorderedList);
+
+				div.addEventListener('click', (event) => {
+					alert('ROOT');
+				});
+			}
+
+			function EventPropagation03() {
+				const itemList = document.getElementById('item-list');
+
+				itemList.addEventListener('click', (event) => {
+					if (event.target && event.target.matches('li.list-item')) {
+						console.log(
+							'List item clicked:',
+							event.target.textContent
+						);
+					}
+				});
+			}
+
+			function StopPropagation() {
+				document
+					.getElementById('ordered-list')
+					.addEventListener('click', (event) => {
+						alert(event.target.textContent);
+						event.stopPropagation();
+					});
+			}
+
+			function StopImmediatePropagation() {
+				const button = document.getElementById('my-button');
+
+				const eventListener1 = (event) => {
+					alert('Event Listener 1');
+					event.stopImmediatePropagation(); // stops other listeners from being called
+				};
+
+				const eventListener2 = () => {
+					alert('Event Listener 2');
+				};
+
+				const eventListener3 = () => {
+					alert('Event Listener 3');
+				};
+
+				button.addEventListener('click', eventListener1);
+				button.addEventListener('click', eventListener2);
+				button.addEventListener('click', eventListener3);
+			}
+
+			function PreventDefault() {
+				document
+					.getElementById('check-box')
+					.addEventListener('click', (event) => {
+						event.preventDefault();
+						alert('preventDefault wont let you check this');
+					});
+			}
+
+			EventPropagation01();
+			EventPropagation02();
+			EventPropagation03();
+			StopPropagation();
+			StopImmediatePropagation();
+			PreventDefault();
+
+			/*
+			capturing-phase | [ root-node to target-node ] | true 
+			bubbling-phase  | [ target-node to root-node ] | false
+			event propagation: capturing-phase -> target-phase -> bubbling-phase 
+			by default, event-listener is activated during bubbling-phase (false) */
+		</script>
+	</body>
+</html>

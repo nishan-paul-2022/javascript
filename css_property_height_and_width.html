@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS Dimension Practice</title>
+		<style>
+			:root {
+				padding: 10px;
+			}
+
+			.example-section {
+				margin-bottom: 40px;
+			}
+
+			.example-code {
+				background-color: #f0f0f0;
+				padding: 10px;
+				margin-bottom: 20px;
+			}
+
+			.example-box {
+				border: 1px solid black;
+				background-color: #fff;
+				margin-bottom: 10px;
+			}
+
+			.box-200x100 {
+				width: 200px;
+				height: 100px;
+			}
+
+			.box-50percent {
+				width: 50%;
+				height: 150px;
+			}
+
+			.box-viewport {
+				width: 50vw;
+				height: 50vh;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="example-section">
+			<h2>CSS Dimension Practice</h2>
+
+			<div class="example-code">
+				<h3>Fixed Width and Height</h3>
+				<div class="example-box box-200x100">200px x 100px</div>
+			</div>
+
+			<div class="example-code">
+				<h3>Percentage Width</h3>
+				<div class="example-box box-50percent">
+					50% width of parent (150px height)
+				</div>
+			</div>
+
+			<div class="example-code">
+				<h3>Viewport Units</h3>
+				<div class="example-box box-viewport">
+					50vw x 50vh (full viewport width and height)
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+<!--    px  : sets fixed dimension that does not change
+        %   : sets dimension relative to the parent element's dimension
+        vw  : sets dimension relative to the viewport's dimension 
+
+        1vw : 1% of the viewport width
+        1%  : 1% of the parent element's dimension -->

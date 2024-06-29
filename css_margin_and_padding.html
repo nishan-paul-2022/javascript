@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS Padding and Margin Examples</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				margin: 20px;
+			}
+
+			.example-section {
+				margin-bottom: 40px;
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			.example-section h2 {
+				margin-bottom: 10px;
+				width: 100%;
+			}
+
+			.example-code {
+				background-color: #f0f0f0;
+				padding: 10px;
+				margin-bottom: 20px;
+				width: calc(50% - 20px);
+				/* Two columns with margin */
+				margin-right: 20px;
+				box-sizing: border-box;
+			}
+
+			.example-box {
+				border: 1px solid black;
+				width: 200px;
+				height: 100px;
+				background-color: #fff;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="example-section">
+			<h2>Padding and Margin Examples</h2>
+
+			<div class="example-code">
+				<h3>Padding: Top Right Bottom Left</h3>
+				<div class="example-box" style="padding: 20px 40px 10px 30px">
+					Content
+				</div>
+			</div>
+
+			<div class="example-code">
+				<h3>Margin: Top Right Bottom Left</h3>
+				<div class="example-box" style="margin: 20px 40px 10px 30px">
+					Content
+				</div>
+			</div>
+
+			<div class="example-code">
+				<h3>Padding: Top-Bottom Right-Left</h3>
+				<div class="example-box" style="padding: 20px 30px">
+					Content
+				</div>
+			</div>
+
+			<div class="example-code">
+				<h3>Margin: Top-Bottom Right-Left</h3>
+				<div class="example-box" style="margin: 20px 30px">Content</div>
+			</div>
+
+			<div class="example-code">
+				<h3>Padding: Top Right-Left Bottom</h3>
+				<div class="example-box" style="padding: 20px 30px 10px">
+					Content
+				</div>
+			</div>
+
+			<div class="example-code">
+				<h3>Margin: Top Right-Left Bottom</h3>
+				<div class="example-box" style="margin: 20px 30px 10px">
+					Content
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

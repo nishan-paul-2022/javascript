@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.font {
+				font-family: 'Courier New', Courier, monospace;
+				font-size: 2rem;
+			}
+
+			.color {
+				background-color: aqua;
+				border-bottom: 2px solid black;
+				padding: 10px;
+				margin: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1 id="id01">
+			<p class="font">
+				hello
+				<span style="display: none"> WinterSoldier </span>
+				world
+			</p>
+		</h1>
+
+		<div id="id02" class="color"></div>
+		<div id="id03" class="color"></div>
+		<div id="id04" class="color"></div>
+		<div id="id05" class="color"></div>
+		<div id="id06" class="color"></div>
+
+		<script>
+			const element01 = document.getElementById('id01');
+			const element02 = document.getElementById('id02');
+			const element03 = document.getElementById('id03');
+			const element04 = document.getElementById('id04');
+			const element05 = document.getElementById('id05');
+			const element06 = document.getElementById('id06');
+
+			element02.textContent = element01.textContent;
+			element03.innerText = element01.innerText;
+			element04.outerText = element01.outerText;
+			element05.innerHTML = element01.innerHTML;
+			element06.outerHTML = element01.outerHTML;
+
+			console.log(element01.textContent);
+			console.log(element01.innerText);
+			console.log(element01.outerText);
+			console.log(element01.innerHTML);
+			console.log(element01.outerHTML);
+		</script>
+	</body>
+</html>

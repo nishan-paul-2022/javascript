@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			/* Group Combinator: Select both h1 and p elements */
+			h1,
+			p {
+				color: blue;
+			}
+
+			/* All Combinator: Select elements with both .highlight and .bold classes */
+			.highlight.bold {
+				background-color: yellow;
+			}
+
+			/* Descendant Combinator: Select span elements inside div elements */
+			div span {
+				font-weight: bold;
+			}
+
+			/* Child Combinator: Select direct children li elements of ul */
+			ul > li {
+				list-style-type: square;
+			}
+
+			/* Adjacent Sibling Combinator: Select the p element immediately following h2 */
+			h2 + p {
+				color: green;
+			}
+
+			/* General Sibling Combinator: Select all p elements that are siblings of h3 */
+			h3 ~ p {
+				color: blueviolet;
+			}
+
+			/* Wildcard with Adjacent Sibling Combinator: Select any element immediately following any other element */
+			* + * {
+				margin-top: 10px;
+			}
+
+			/* Wildcard with General Sibling Combinator: Select any element that is a sibling of any other element */
+			* ~ * {
+				border: 1px dashed gray;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>Group Combinator Example</h1>
+		<p>This is a paragraph styled with the group combinator.</p>
+
+		<div class="highlight bold">All Combinator Example</div>
+
+		<div>
+			<span>Descendant Combinator Example</span>
+		</div>
+
+		<ul>
+			<li>Child Combinator Example 1</li>
+			<li>Child Combinator Example 2</li>
+		</ul>
+
+		<h2>Adjacent Sibling Combinator Example</h2>
+		<p>
+			This paragraph is immediately after an h2 element and is styled with
+			the adjacent sibling combinator.
+		</p>
+
+		<h3>General Sibling Combinator Example</h3>
+		<p>
+			This paragraph is a sibling of the h3 element and is styled with the
+			general sibling combinator.
+		</p>
+		<p>Another paragraph sibling of the h3 element.</p>
+
+		<div>Wildcard Adjacent Sibling Example</div>
+		<div>Wildcard General Sibling Example</div>
+	</body>
+</html>

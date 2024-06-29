@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-loss-of-precision */
 /* eslint-disable eqeqeq */
 
-function Func01() {
+function function01() {
 	const num1 = 123;
 	const num2 = new Number(123);
 	const num3 = new Number(123);
@@ -16,7 +16,7 @@ function Func01() {
 	console.log(num3 === num4);
 }
 
-function Func02() {
+function function02() {
 	console.log('MAX_VALUE :', Number.MAX_VALUE); // 2^1024
 	console.log('MIN_VALUE :', Number.MIN_VALUE); // -2^-1023
 	console.log('MAX_SAFE_INTEGER :', Number.MAX_SAFE_INTEGER); // +(2^53-1)
@@ -29,7 +29,8 @@ function Func02() {
 	console.log('max number of fractional digit (16)', 0.1234567891234567);
 }
 
-function Func03() {
+/* hexa */
+function function03() {
 	const num5 = 0x32;
 
 	// argument of toString() is the base of output string-number and it is optional
@@ -41,7 +42,7 @@ function Func03() {
 	console.log(num5.toString(2));
 }
 
-function Func04() {
+function function04() {
 	const v0 = Math.random() / Infinity;
 	const v1 = Math.random() / 0;
 	const v2 = Math.random() / -Infinity;
@@ -65,7 +66,7 @@ function Func04() {
 	console.log('0/Infinity :', v9);
 }
 
-function Func05() {
+function function05() {
 	const pattern = 'hello';
 	const flag = 'gi';
 	const regex1 = new RegExp(pattern, flag);
@@ -97,7 +98,7 @@ function Func05() {
 	console.log(typeof symbol1.valueOf());
 }
 
-function Func06() {
+function function06() {
 	console.log(Number());
 	console.log(Number(''));
 	console.log(Number([]));
@@ -130,7 +131,7 @@ function Func06() {
 	console.log(parseInt('10', 36));
 }
 
-function Func07() {
+function function07() {
 	const num7 = 925.1256;
 
 	// number of digit
@@ -157,7 +158,7 @@ function Func07() {
 	console.log(num7.toExponential(6));
 }
 
-function Func08() {
+function function08() {
 	const num8 = 123456789123456789;
 	console.log(isFinite(1 / 0));
 	console.log(isNaN(0 / 0));
@@ -165,7 +166,7 @@ function Func08() {
 	console.log(Number.isSafeInteger(num8));
 }
 
-function Func09() {
+function function09() {
 	let num9 = 12345n;
 	const num10 = 5n;
 	const num11 = BigInt(2);
@@ -189,7 +190,7 @@ function Func09() {
 	console.log(++num9);
 }
 
-function Func10() {
+function function10() {
 	const u0 = [];
 	const u1 = new Array(5);
 	const u2 = [1, 2, 3];
@@ -205,8 +206,8 @@ function Func10() {
 	console.log(v2);
 }
 
-function Func11() {
-	// Creating an array from an iterable with a map function and this
+// creating an array from an iterable
+function function11() {
 	const myIterable = {
 		values: [1, 2, 3],
 		multiplier: 2,
@@ -224,25 +225,39 @@ function Func11() {
 	console.log(newArray);
 }
 
-// numeric separator / _
-function Func12() {
-	const num1 = 1_000_000_000;
-	const num2 = 1000000000;
-	console.log(num1 === num2);
+// numeric separator _
+function function12() {
+	const num13 = 1_000_000_000;
+	const num14 = 1000000000;
+	console.log(num13 === num14);
 }
 
-Func01();
-Func02();
-Func03();
-Func04();
-Func05();
-Func06();
-Func07();
-Func08();
-Func09();
-Func10();
-Func11();
-Func12();
+/* octal */
+function function13() {
+	const num15 = 0o32;
+
+	// argument of toString() is the base of output string-number and it is optional
+	console.log(num15.toString(32));
+	console.log(num15.toString(16));
+	console.log(num15.toString(12));
+	console.log(num15.toString(10));
+	console.log(num15.toString(8));
+	console.log(num15.toString(2));
+}
+
+function01();
+function02();
+function03();
+function04();
+function05();
+function06();
+function07();
+function08();
+function09();
+function10();
+function11();
+function12();
+function13();
 
 /*
 comparing (loose / strict) two objects always returns false
@@ -257,5 +272,4 @@ to convert from value to object : constructor
 anything can be converted to string using : objectName.toString()
 base can be 2 to 36
 
-bigint always works with signed number
-*/
+bigint always works with signed number */

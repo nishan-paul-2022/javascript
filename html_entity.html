@@ -4,23 +4,31 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<style>
+			* + * {
+				padding-top: 10px;
+			}
+
+			.basic {
+				border: 1px solid black;
+				margin: 10px;
+				padding: 5px;
+			}
+		</style>
 	</head>
-	
+
 	<body>
-		<h2>hello &nbsp; &nbsp; &nbsp; world</h2>
-
-		<h2>
-			&lt; &gt; &amp; &quot; &apos; &copy; &reg; &cent; &pound; &yen;
-			&euro;
-		</h2>
-
-		<h2>&#8209;</h2>
-
-		<h2>I will display A B C</h2>
-
-		<h2>I will display &#65; &#66; &#67;</h2>
-
-		<h2 style="font-size: 48px">&#128512; &#128516; &#128525; &#128151;</h2>
+		<div class="basic">
+			<h4>hello &nbsp; &nbsp; &nbsp; world</h4>
+			<h4>
+				&lt; &gt; &amp; &quot; &apos; &copy; &reg; &cent; &pound; &yen;
+				&euro;
+			</h4>
+			<h4>&#8209;</h4>
+			<h4>A B C</h4>
+			<h4>&#65; &#66; &#67;</h4>
+			<h4>&#128512; &#128516; &#128525; &#128151;</h4>
+		</div>
 	</body>
 </html>
 

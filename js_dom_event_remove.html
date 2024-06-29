@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.highlight {
+				background-color: aquamarine;
+			}
+		</style>
+	</head>
+	<body>
+		<p id="target">Click Me!</p>
+
+		<button id="removeButton">Remove Event Listener</button>
+
+		<script>
+			const target = document.getElementById('target');
+
+			function classListToggle() {
+				target.classList.toggle('highlight');
+			}
+
+			function removeEventListener() {
+				target.removeEventListener('click', classListToggle);
+			}
+
+			target.addEventListener('click', classListToggle);
+			removeButton.addEventListener('click', removeEventListener);
+
+			/* 
+			element.addEventListener(event, eventListener, phase)
+			element.removeEventListener(event, eventListener, phase) 
+			phase : true / capture | false / bubble
+			phase default value is false */
+		</script>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				text-align: center;
+			}
+
+			.container {
+				margin-top: 50px;
+			}
+
+			button {
+				padding: 10px 20px;
+				font-size: 16px;
+				margin: 10px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<button onclick="screenSize()">Screen Size</button>
+		</div>
+
+		<script>
+			// Screen properties
+			function screenSize() {
+				console.log('Screen Width: ', screen.width);
+				console.log('Screen Height: ', screen.height);
+				console.log('Available Screen Width: ', screen.availWidth);
+				console.log('Available Screen Height: ', screen.availHeight);
+			}
+
+			console.log('Screen Color Depth: ', screen.colorDepth);
+			console.log('Screen Pixel Depth: ', screen.pixelDepth);
+		</script>
+	</body>
+</html>

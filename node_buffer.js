@@ -47,7 +47,7 @@ function BufferExample05() {
 }
 
 function BufferExample06() {
-	fs.readFile('zmax.avif', (error, data) => {
+	fs.readFile('image.avif', (error, data) => {
 		if (error) {
 			throw error;
 		}

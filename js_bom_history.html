@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<h2>History API</h2>
+
+		<button onclick="myFunction1()">Back</button>
+		<button onclick="myFunction2()">Forward</button>
+		<button onclick="myFunction3()">Go Back 2 Pages</button>
+		<button onclick="myFunction4()">Go Forward 2 Pages</button>
+
+		<script>
+			function myFunction1() {
+				window.history.back();
+			}
+
+			function myFunction2() {
+				window.history.forward();
+			}
+
+			function myFunction3() {
+				window.history.go(-2);
+			}
+
+			function myFunction4() {
+				window.history.go(2);
+			}
+
+			console.log(window.history.length);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>DOM Event Handling Examples</title>
+		<style>
+			.example {
+				margin: 20px 0;
+			}
+
+			.example > * {
+				display: inline-block;
+				margin-right: 10px;
+				vertical-align: middle;
+			}
+
+			.button {
+				padding: 10px 20px;
+				margin: 5px;
+				cursor: pointer;
+			}
+
+			.output {
+				margin-top: 10px;
+				color: green;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="example" id="clickExample">
+			<h3>Click Event</h3>
+			<button class="button" id="clickButton">Click</button>
+			<div class="output" id="clickOutput"></div>
+		</div>
+
+		<div class="example" id="inputExample">
+			<h3>Input Event</h3>
+			<input
+				type="text"
+				id="inputField"
+				placeholder="Type something..." />
+			<div class="output" id="inputOutput"></div>
+		</div>
+
+		<div class="example" id="mouseoverExample">
+			<h3>Mouse Over Event</h3>
+			<div
+				class="button"
+				id="mouseoverBox"
+				style="background-color: lightblue">
+				Hover
+			</div>
+			<div class="output" id="mouseoverOutput"></div>
+		</div>
+
+		<div class="example" id="submitExample">
+			<h3>Form Submit Event</h3>
+			<form id="exampleForm">
+				<input type="text" placeholder="Enter text" />
+				<button type="submit" class="button">Submit</button>
+			</form>
+			<div class="output" id="submitOutput"></div>
+		</div>
+
+		<div class="example" id="dblclickExample">
+			<h3>Double Click Event</h3>
+			<button class="button" id="dblclickButton">Double Click</button>
+			<div class="output" id="dblclickOutput"></div>
+		</div>
+
+		<div class="example" id="keydownExample">
+			<h3>Key Down Event</h3>
+			<input type="text" id="keydownField" placeholder="Press a key" />
+			<div class="output" id="keydownOutput"></div>
+		</div>
+
+		<div class="example" id="focusExample">
+			<h3>Focus Event</h3>
+			<input type="text" id="focusField" placeholder="Focus" />
+			<div class="output" id="focusOutput"></div>
+		</div>
+
+		<div class="example" id="blurExample">
+			<h3>Blur Event</h3>
+			<input type="text" id="blurField" placeholder="Blur" />
+			<div class="output" id="blurOutput"></div>
+		</div>
+
+		<div class="example" id="contextmenuExample">
+			<h3>Context Menu Event</h3>
+			<div
+				class="button"
+				id="contextMenuBox"
+				style="background-color: lightgreen">
+				Right Click
+			</div>
+			<div class="output" id="contextmenuOutput"></div>
+		</div>
+
+		<div class="example" id="resizeExample">
+			<h3>Window Resize Event</h3>
+			<div class="output" id="resizeOutput">Resize the window</div>
+		</div>
+
+		<div class="example" id="scrollExample">
+			<h3>Window Scroll Event</h3>
+			<div class="output" id="scrollOutput">Scroll the page</div>
+		</div>
+
+		<div class="example" id="changeExample">
+			<h3>Change Event</h3>
+			<select id="changeSelect">
+				<option value="option1">Option 1</option>
+				<option value="option2">Option 2</option>
+				<option value="option3">Option 3</option>
+			</select>
+			<div class="output" id="changeOutput"></div>
+		</div>
+
+		<div class="example" id="mouseoutExample">
+			<h3>Mouse Out Event</h3>
+			<div
+				class="button"
+				id="mouseoutBox"
+				style="background-color: lightcoral">
+				Hover Out
+			</div>
+			<div class="output" id="mouseoutOutput"></div>
+		</div>
+
+		<div class="example" id="mousemoveExample">
+			<h3>Mouse Move Event</h3>
+			<div
+				class="button"
+				id="mousemoveBox"
+				style="background-color: lightsalmon">
+				Move Mouse
+			</div>
+			<div class="output" id="mousemoveOutput"></div>
+		</div>
+
+		<div class="example" id="mouseupExample">
+			<h3>Mouse Up Event</h3>
+			<button class="button" id="mouseupButton">Mouse Up</button>
+			<div class="output" id="mouseupOutput"></div>
+		</div>
+
+		<div class="example" id="mousedownExample">
+			<h3>Mouse Down Event</h3>
+			<button class="button" id="mousedownButton">Mouse Down</button>
+			<div class="output" id="mousedownOutput"></div>
+		</div>
+
+		<div class="example" id="keypressExample">
+			<h3>Key Press Event</h3>
+			<input type="text" id="keypressField" placeholder="Key Press" />
+			<div class="output" id="keypressOutput"></div>
+		</div>
+
+		<script>
+			// Click Event
+			document
+				.getElementById('clickButton')
+				.addEventListener('click', () => {
+					document.getElementById('clickOutput').textContent =
+						'Button clicked!'; // Display click event output
+				});
+
+			// Input Event
+			document
+				.getElementById('inputField')
+				.addEventListener('input', (event) => {
+					document.getElementById(
+						'inputOutput'
+					).textContent = `Typed: ${event.target.value}`; // Display input event output
+				});
+
+			// Mouse Over Event
+			document
+				.getElementById('mouseoverBox')
+				.addEventListener('mouseover', () => {
+					document.getElementById('mouseoverOutput').textContent =
+						'Mouse over!'; // Display mouse over event output
+				});
+
+			// Form Submit Event
+			document
+				.getElementById('exampleForm')
+				.addEventListener('submit', (event) => {
+					event.preventDefault();
+					document.getElementById('submitOutput').textContent =
+						'Form submitted!'; // Display form submit event output
+				});
+
+			// Double Click Event
+			document
+				.getElementById('dblclickButton')
+				.addEventListener('dblclick', () => {
+					document.getElementById('dblclickOutput').textContent =
+						'Double clicked!'; // Display double click event output
+				});
+
+			// Key Down Event
+			document
+				.getElementById('keydownField')
+				.addEventListener('keydown', (event) => {
+					document.getElementById(
+						'keydownOutput'
+					).textContent = `Key down: ${event.key}`; // Display key down event output
+				});
+
+			// Focus Event
+			document
+				.getElementById('focusField')
+				.addEventListener('focus', () => {
+					document.getElementById('focusOutput').textContent =
+						'Focused!'; // Display focus event output
+				});
+
+			// Blur Event
+			document
+				.getElementById('blurField')
+				.addEventListener('blur', () => {
+					document.getElementById('blurOutput').textContent =
+						'Blurred!'; // Display blur event output
+				});
+
+			// Context Menu Event
+			document
+				.getElementById('contextMenuBox')
+				.addEventListener('contextmenu', (event) => {
+					event.preventDefault();
+					document.getElementById('contextmenuOutput').textContent =
+						'Right clicked!'; // Display context menu event output
+				});
+
+			// Window Resize Event
+			window.addEventListener('resize', () => {
+				document.getElementById(
+					'resizeOutput'
+				).textContent = `Resized to ${window.innerWidth} x ${window.innerHeight}`; // Display window resize event output
+			});
+
+			// Window Scroll Event
+			window.addEventListener('scroll', () => {
+				document.getElementById(
+					'scrollOutput'
+				).textContent = `Scrolled to ${window.scrollY}px`; // Display window scroll event output
+			});
+
+			// Change Event
+			document
+				.getElementById('changeSelect')
+				.addEventListener('change', (event) => {
+					document.getElementById(
+						'changeOutput'
+					).textContent = `Selected: ${event.target.value}`; // Display change event output
+				});
+
+			// Mouse Out Event
+			document
+				.getElementById('mouseoutBox')
+				.addEventListener('mouseout', () => {
+					document.getElementById('mouseoutOutput').textContent =
+						'Mouse out!'; // Display mouse out event output
+				});
+
+			// Mouse Move Event
+			document
+				.getElementById('mousemoveBox')
+				.addEventListener('mousemove', (event) => {
+					document.getElementById(
+						'mousemoveOutput'
+					).textContent = `Mouse moved to (${event.clientX}, ${event.clientY})`; // Display mouse move event output
+				});
+
+			// Mouse Up Event
+			document
+				.getElementById('mouseupButton')
+				.addEventListener('mouseup', () => {
+					document.getElementById('mouseupOutput').textContent =
+						'Mouse up!'; // Display mouse up event output
+				});
+
+			// Mouse Down Event
+			document
+				.getElementById('mousedownButton')
+				.addEventListener('mousedown', () => {
+					document.getElementById('mousedownOutput').textContent =
+						'Mouse down!'; // Display mouse down event output
+				});
+
+			// Key Press Event
+			document
+				.getElementById('keypressField')
+				.addEventListener('keypress', (event) => {
+					document.getElementById(
+						'keypressOutput'
+					).textContent = `Key press: ${event.key}`; // Display key press event output
+				});
+		</script>
+	</body>
+</html>

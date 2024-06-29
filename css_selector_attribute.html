@@ -4,19 +4,74 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<style>
+			:root {
+				font-family: Arial, sans-serif;
+				background-color: #f0f8ff;
+				color: #333;
+				text-align: center;
+			}
+
+			*,
+			*::before,
+			*::after {
+				box-sizing: border-box;
+				margin: 10px;
+				padding: 10px;
+			}
+
+			body {
+				margin: 0;
+				padding: 0;
+			}
+
+			/* Styles for elements with a title attribute */
+			[title] {
+				border: 2px solid #000;
+				background-color: lightgreen;
+			}
+
+			/* Styles for elements with a data-role attribute equal to 'admin' */
+			[data-role='admin'] {
+				font-weight: bolder;
+			}
+
+			/* Styles for elements with a data-role attribute containing the substring 'user' */
+			[data-role*='user'] {
+				text-decoration: underline;
+			}
+
+			/* Styles for elements with a data-role attribute containing the word 'guest' */
+			[data-role~='guest'] {
+				font-style: italic;
+			}
+
+			/* Styles for elements with a data-lang attribute starting with 'en' followed by a hyphen or nothing */
+			[data-lang|='en'] {
+				color: blue;
+			}
+
+			/* Styles for elements with a data-id attribute starting with 'item' */
+			[data-id^='item'] {
+				border: 2px solid white;
+			}
+
+			/* Styles for elements with a data-id attribute ending with '5' */
+			[data-id$='5'] {
+				border: 2px solid red;
+			}
+		</style>
 	</head>
 
 	<body>
-		<style>
-			/* 
-				[attribute] : selects attribute 
-				[attribute=value] : selects attribute with exact value 
-				[attribute*=value] : selects attribute contaians value 
-				[attribute~=value] : selects attribute contaians value as substring followed by hyphen / whole-string 
-				[attribute|=value] : selects attribute contaians value as word / whole-string 
-				[attribute^=value] : selects attribute starts with value
-				[attribute$=value] : selects attribute ends with value
-			*/
-		</style>
+		<h1>attribute selectors example</h1>
+
+		<div class="container" title="Container Element">
+			<p data-role="admin" data-id="item1">Admin User</p>
+			<p data-role="user" data-id="item2">Regular User</p>
+			<p data-role="guest user" data-id="item3">Guest User</p>
+			<p data-lang="en-US" data-id="item4">English (US)</p>
+			<p data-id="item5">Item 5</p>
+		</div>
 	</body>
 </html>

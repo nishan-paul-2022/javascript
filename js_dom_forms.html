@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<form name="form" id="id01">
+			<input type="text" name="text" id="id02" />
+			<input type="submit" onclick="documentForms()" />
+		</form>
+
+		<script>
+			function documentForms() {
+				const v1 = document.forms[0].children[0].value;
+				const v2 = document.forms[0][0].value;
+				const v3 = document.forms['form'].children['text'].value;
+				const v4 = document.forms['form']['text'].value;
+				const v5 = document.forms['id01'].children['id02'].value;
+				const v6 = document.forms['id01']['id02'].value;
+
+				alert(
+					`v1: ${v1} \nv2: ${v2} \nv3: ${v3} \nv4: ${v4} \nv5: ${v5} \nv6: ${v6}`
+				);
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS Outline Properties</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				margin: 20px;
+			}
+
+			.example-section {
+				margin-bottom: 40px;
+				display: flex;
+				flex-wrap: wrap;
+				gap: 20px;
+			}
+
+			.example-section h2 {
+				margin-bottom: 10px;
+				width: 100%;
+			}
+
+			.example-code {
+				background-color: #f0f0f0;
+				padding: 10px;
+				margin-bottom: 10px;
+				overflow-x: auto;
+				width: calc(33.33% - 20px);
+				box-sizing: border-box;
+			}
+
+			.example-code div {
+				width: 100px;
+				height: 100px;
+				margin: 10px;
+				float: left;
+			}
+
+			.dotted-outline {
+				outline: 2px dotted black;
+			}
+
+			.dashed-outline {
+				outline: 2px dashed blue;
+			}
+
+			.solid-outline {
+				outline: 4px solid red;
+			}
+
+			.double-outline {
+				outline: 3px double green;
+			}
+
+			.groove-outline {
+				outline: 4px groove orange;
+			}
+
+			.ridge-outline {
+				outline: 4px ridge purple;
+			}
+
+			.inset-outline {
+				outline: 4px inset brown;
+			}
+
+			.outset-outline {
+				outline: 4px outset gray;
+			}
+
+            .offset-outline {
+				outline: 4px outset gray;
+                outline-offset: 15px;
+				border: 1px solid black;
+			}
+
+			.none-outline {
+				outline: none;
+				border: 1px solid black;
+			}
+
+			.hidden-outline {
+				outline: hidden;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="example-section">
+			<h2>CSS Outline Style Examples</h2>
+
+			<div class="example-code">
+				<h3>Dotted Outline</h3>
+				<div class="dotted-outline"></div>
+			</div>
+
+			<div class="example-code">
+				<h3>Dashed Outline</h3>
+				<div class="dashed-outline"></div>
+			</div>
+
+			<div class="example-code">
+				<h3>Solid Outline</h3>
+				<div class="solid-outline"></div>
+			</div>
+
+			<div class="example-code">
+				<h3>Double Outline</h3>
+				<div class="double-outline"></div>
+			</div>
+
+			<div class="example-code">
+				<h3>3D Grooved Outline</h3>
+				<div class="groove-outline"></div>
+			</div>
+
+			<div class="example-code">
+				<h3>3D Ridged Outline</h3>
+				<div class="ridge-outline"></div>
+			</div>
+
+			<div class="example-code">
+				<h3>3D Inset Outline</h3>
+				<div class="inset-outline"></div>
+			</div>
+
+			<div class="example-code">
+				<h3>3D Outset Outline</h3>
+				<div class="outset-outline"></div>
+			</div>
+
+            <div class="example-code">
+                <h3>Outline offset</h3>
+                <div class="offset-outline"></div>
+            </div>
+
+			<div class="example-code">
+				<h3>No outline</h3>
+				<div class="none-outline"></div>
+			</div>
+
+			<div class="example-code">
+				<h3>Hidden outline</h3>
+				<div class="hidden-outline"></div>
+			</div>
+		</div>
+	</body>
+</html>

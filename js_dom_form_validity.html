@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.background {
+				background-color: aqua;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h2>Validation API</h2>
+
+		<p>Enter a number and click OK:</p>
+
+		<input
+			id="form-id"
+			type="number"
+			min="100"
+			max="300"
+			step="10"
+			required />
+		<button onclick="formValidity01()">VALIDITY-01</button>
+		<button onclick="formValidity02()">VALIDITY-02</button>
+
+		<p>
+			If the number is less than 100 or greater than 300, an error message
+			will be displayed.
+		</p>
+
+		<p id="message-id" class="background"></p>
+
+		<script>
+			function formValidity01() {
+				const inputElement = document.getElementById('form-id');
+				const message = document.getElementById('message-id');
+
+				if (!inputElement.checkValidity()) {
+					message.innerHTML = inputElement.validationMessage;
+				} else {
+					message.innerHTML = 'VALID';
+				}
+			}
+
+			function formValidity02() {
+				const inputElement = document.getElementById('form-id');
+				const message = document.getElementById('message-id');
+
+				if (inputElement.validity.rangeOverflow) {
+					inputElement.setCustomValidity(
+						'value is greater than its max attribute'
+					);
+				} else if (inputElement.validity.rangeUnderflow) {
+					inputElement.setCustomValidity(
+						'value is less than its min attribute'
+					);
+				} else if (inputElement.validity.stepMismatch) {
+					inputElement.setCustomValidity(
+						'value is invalid per its step'
+					);
+				} else if (inputElement.validity.typeMismatch) {
+					inputElement.setCustomValidity(
+						'value is invalid per its type attribute'
+					);
+				} else if (inputElement.validity.valueMissing) {
+					inputElement.setCustomValidity('element has no value');
+				} else {
+					inputElement.setCustomValidity('valid');
+				}
+
+				message.innerHTML = inputElement.validationMessage;
+
+				console.log(
+					'set custom validity?',
+					inputElement.validity.customError
+				);
+			}
+		</script>
+	</body>
+</html>

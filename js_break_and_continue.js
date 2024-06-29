@@ -9,5 +9,20 @@ labelName: {
 	console.log(5);
 }
 
-// break : exits loop / switch
-// continue : skips loop iteration
+for (let i = 0; i <= 10; i++) {
+	if (i === 5) {
+		break;
+	}
+	console.log(i);
+}
+
+for (let i = 0; i <= 10; i++) {
+	if (i === 5) {
+		continue;
+	}
+	console.log(i);
+}
+
+/* 
+break : exits loop, switch, and scope
+continue : skips iteration in loop */

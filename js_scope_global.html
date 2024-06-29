@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<script>
+			const x = 15;
+			const y = 16;
+			var z = 17;
+			window.x = 18;
+
+			function function01() {
+				console.log(x);
+				console.log(window.x);
+			}
+
+			function function02() {
+				const x = 19;
+				console.log(x);
+				console.log(window.x);
+			}
+
+			function function03() {
+				console.log(window.x);
+				console.log(window.y);
+				console.log(window.z);
+			}
+
+			function01();
+			function02();
+			function03();
+			window.function03();
+		</script>
+	</body>
+</html>

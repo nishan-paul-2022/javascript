@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			function case01() {
+				mistypedVariable = 17; // ReferenceError: mistypedVariable is not defined
+			}
+
+			function case02() {
+				const object = { a: 1, a: 2 }; // SyntaxError: Duplicate data property in object literal not allowed
+			}
+
+			function case03() {
+				function foo() {
+					console.log(this); // undefined
+				}
+				foo();
+			}
+
+			function case04() {
+				function foo() {
+					x = 10; // x becomes a global variable
+				}
+				foo();
+				console.log(x); // 10
+			}
+
+			function case05() {
+				const x = 1;
+				delete x; // SyntaxError: Delete of an unqualified identifier in strict mode.
+			}
+
+			function case06() {
+				const object = {};
+				Object.defineProperty(object, 'x', {
+					value: 42,
+					writable: false
+				});
+				object.x = 9; // fails silently
+				console.log(object.x); // 42
+			}
+
+			function case07() {
+				const object = {};
+				Object.defineProperty(object, 'x', {
+					value: 42,
+					writable: false
+				});
+				object.x = 9; // TypeError: Cannot assign to read-only property 'x' of object
+			}
+
+			case01();
+			case02();
+			case03();
+			case04();
+			case05();
+			case06();
+			case07();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.border {
+				border: 2px solid black;
+				padding: 10px;
+				margin-bottom: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="parent" class="border">
+			<code id="child">hello world!</code>
+		</div>
+
+		<button onclick="InsertBefore()">Insert Before</button>
+		<button onclick="InsertAdjacentElement()">
+			Insert Adjacent Element
+		</button>
+		<button onclick="ReplaceChildren()">Replace Children</button>
+		<button onclick="AppendChild()">Append Child</button>
+		<button onclick="RemoveChild()">Remove Child</button>
+		<button onclick="ReplaceChild1()">Replace Child 01</button>
+		<button onclick="ReplaceChild2()">Replace Child 02</button>
+
+		<script>
+			const parent = document.getElementById('parent');
+			const child = document.getElementById('child');
+			const element = document.createElement('p');
+
+			function InsertBefore() {
+				const newChild = document.createElement('textarea');
+				newChild.textContent = 'PI = 3.1416';
+				parent.insertBefore(newChild, child);
+			}
+
+			function InsertAdjacentElement() {
+				const p1 = document.createElement('p');
+				p1.textContent = 'new element 01';
+
+				const p2 = document.createElement('p');
+				p2.textContent = 'new element 02';
+
+				const p3 = document.createElement('p');
+				p3.textContent = 'new element 03';
+
+				const p4 = document.createElement('p');
+				p4.textContent = 'new element 04';
+
+				parent.insertAdjacentElement('beforebegin', p1);
+				parent.insertAdjacentElement('afterbegin', p2);
+				parent.insertAdjacentElement('beforeend', p3);
+				parent.insertAdjacentElement('afterend', p4);
+			}
+
+			function ReplaceChildren() {
+				const h1 = document.createElement('h1');
+				h1.textContent = 'heading';
+
+				const pre = document.createElement('pre');
+				pre.textContent = 'preformat';
+
+				parent.replaceChildren('text node', pre, h1);
+			}
+
+			function AppendChild() {
+				element.textContent = 'append child element';
+				parent.appendChild(element);
+			}
+
+			function RemoveChild() {
+				parent.removeChild(child);
+			}
+
+			function ReplaceChild1() {
+				const replacementChildElem = document.createElement('p');
+				replacementChildElem.textContent = 'replacement child element';
+				parent.replaceChild(replacementChildElem, child);
+			}
+
+			function ReplaceChild2() {
+				const replacementChildElem = document.createElement('p');
+				replacementChildElem.textContent = 'replacement child element';
+				parent.replaceChild(replacementChildElem, parent.firstChild);
+			}
+		</script>
+	</body>
+</html>

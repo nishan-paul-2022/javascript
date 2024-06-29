@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS Background Examples</title>
+		<style>
+			:root {
+				font-family: Arial, sans-serif;
+				background-color: #f4f4f4;
+				margin: 0;
+				padding: 20px;
+				text-align: center;
+			}
+
+			h1 {
+				margin-bottom: 40px;
+			}
+
+			.container {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+
+			section {
+				width: 45%;
+				margin: 10px;
+				box-sizing: border-box;
+				border: 2px solid black;
+			}
+
+			h2 {
+				margin-top: 40px;
+			}
+
+			.example {
+				height: 200px;
+				padding: 20px;
+				border: 1px solid #ccc;
+				text-align: center;
+				line-height: 160px;
+				overflow: hidden;
+			}
+
+			.background-color-example {
+				background-color: lightblue;
+			}
+
+			.background-image-example {
+				background-image: url('https://www.w3schools.com/css/img_tree.gif');
+				background-color: green;
+				background-size: cover;
+				background-position: center;
+				background-clip: content-box;
+			}
+
+			.background-repeat-example {
+				background-image: url('https://www.w3schools.com/css/paper.gif');
+				background-repeat: repeat-y;
+				background-size: cover;
+				background-position: center;
+				background-clip: content-box;
+			}
+
+			.background-attachment-example {
+				background-image: url('https://www.w3schools.com/css/img_tree.gif');
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-size: cover;
+				background-position: center;
+				background-clip: content-box;
+			}
+
+			.background-shorthand-example {
+				background: lightblue
+					url('https://www.w3schools.com/css/img_tree.gif') no-repeat
+					fixed center/cover; /* color image repeat attachment position size*/
+				background-clip: content-box;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>CSS Background Examples</h1>
+
+		<div class="container">
+			<section>
+				<h2>Background Color</h2>
+				<div class="example background-color-example">
+					This is an example of a background color.
+				</div>
+			</section>
+
+			<section>
+				<h2>Background Image</h2>
+				<div class="example background-image-example">
+					This is an example of a background image.
+				</div>
+			</section>
+
+			<section>
+				<h2>Background Repeat</h2>
+				<div class="example background-repeat-example">
+					This is an example of a background image with repeat.
+				</div>
+			</section>
+
+			<section>
+				<h2>Background Attachment</h2>
+				<div class="example background-attachment-example">
+					This is an example of a fixed background image.
+				</div>
+			</section>
+
+			<section>
+				<h2>Background Shorthand</h2>
+				<div class="example background-shorthand-example">
+					This is an example of the background shorthand property.
+				</div>
+			</section>
+		</div>
+	</body>
+</html>
+
+<!--	background-image: url('https://www.w3schools.com/css/img_tree.gif'); /* Sets the background image */
+		background-color: lightblue; /* Sets the background color to light blue */
+		background-size: cover; /* Ensures the background image covers the entire element */
+		background-position: center; /* Positions the background image at the center */
+		background-clip: content-box; /* Restricts the background to inside the element's content box */
+		background-repeat: repeat-y; /* Repeats the background image vertically */
+		background-attachment: fixed; /* Fixes the background position relative to the viewport */ -->

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<div id="parent">
+			<p id="child">Hello, world!</p>
+		</div>
+
+		<script>
+			// Get the parent and child elements
+			const parent = document.getElementById('parent');
+			const child = document.getElementById('child');
+
+			// Example using cloneNode method
+			const clonedChild = child.cloneNode(true);
+			console.log('Cloned child element:', clonedChild);
+
+			// Example using contains method
+			console.log('Does parent contain child?', parent.contains(child));
+
+			// Example using getRootNode method
+			console.log('Root node of child:', child.getRootNode());
+
+			// Example using hasChildNodes method
+			console.log(
+				'Does parent have child nodes?',
+				parent.hasChildNodes()
+			);
+
+			// Example using isEqualNode method
+			console.log(
+				'Are child and clonedChild equal?',
+				child.isEqualNode(clonedChild)
+			);
+
+			// Example using isSameNode method
+			console.log(
+				'Are child and clonedChild the same node?',
+				child.isSameNode(clonedChild)
+			);
+		</script>
+	</body>
+</html>
