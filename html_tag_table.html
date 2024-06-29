@@ -2,11 +2,29 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width:device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
+			:root {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				min-height: 100vh;
+				margin: 0;
+				background-color: #f4f4f9;
+			}
+
+			.table-container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
 			table {
 				border-spacing: 5px;
+				caption-side: bottom;
+				empty-cells: hide;
+				table-layout: fixed;
 			}
 
 			th,
@@ -15,99 +33,96 @@
 				border-collapse: collapse;
 				border-radius: 5px;
 				border-style: groove;
-				padding: 5px;
+				text-align: center;
+				padding: 10px;
 			}
 
 			td:nth-child(odd),
 			th:nth-child(odd) {
 				background-color: #d6eeee;
 			}
+
+			tr:hover {
+				background-color: aqua;
+			}
 		</style>
 	</head>
 
 	<body>
-		<table>
-			<caption>
-				Table Caption
-			</caption>
+		<div class="table-container">
+			<table>
+				<caption>
+					Table Caption
+				</caption>
 
-			<colgroup>
-				<col span="2" />
-				<col span="2" style="background-color: #00ff00" />
-			</colgroup>
+				<colgroup>
+					<col span="2" />
+					<col span="2" style="background-color: #00ff00" />
+				</colgroup>
 
-			<thead>
-				<tr>
-					<th>head-01</th>
-					<th>head-02</th>
-					<th>head-03</th>
-					<th>head-04</th>
-					<th>head-05</th>
-					<th>head-06</th>
-				</tr>
-			</thead>
+				<thead>
+					<tr>
+						<th>head-01</th>
+						<th>head-02</th>
+						<th>head-03</th>
+						<th>head-04</th>
+						<th>head-05</th>
+						<th>head-06</th>
+					</tr>
+				</thead>
 
-			<tbody>
-				<tr>
-					<td>data-11</td>
-					<td>data-12</td>
-					<td>data-13</td>
-					<td>data-14</td>
-					<td>data-15</td>
-					<td>data-16</td>
-				</tr>
+				<tbody>
+					<tr>
+						<td>data-11</td>
+						<td>data-12</td>
+						<td>data-13</td>
+						<td>data-14</td>
+						<td>data-15</td>
+						<td>data-16</td>
+					</tr>
+					<tr>
+						<td rowspan="2">data-21</td>
+						<td>data-22</td>
+						<td>data-23</td>
+						<td>data-24</td>
+						<td>data-25</td>
+						<td>data-26</td>
+					</tr>
+					<tr>
+						<td colspan="2">data-31</td>
+						<td>data-33</td>
+						<td>data-34</td>
+						<td>data-35</td>
+					</tr>
+					<tr>
+						<td>data-41</td>
+						<td>data-42</td>
+						<td>data-43</td>
+						<td>data-44</td>
+						<td>data-45</td>
+						<td>data-46</td>
+					</tr>
+					<tr>
+						<td>data-51</td>
+						<td>data-52</td>
+						<td>data-53</td>
+						<td>data-54</td>
+						<td>data-55</td>
+						<td>data-56</td>
+					</tr>
+				</tbody>
 
-				<tr>
-					<td rowspan="2">data-21</td>
-					<td>data-22</td>
-					<td>data-23</td>
-					<td>data-24</td>
-					<td>data-25</td>
-					<td>data-26</td>
-				</tr>
-
-				<tr>
-					<td colspan="2">data-31</td>
-					<td>data-33</td>
-					<td>data-34</td>
-					<td>data-35</td>
-				</tr>
-
-				<tr>
-					<td>data-41</td>
-					<td>data-42</td>
-					<td>data-43</td>
-					<td>data-44</td>
-					<td>data-45</td>
-					<td>data-46</td>
-				</tr>
-
-				<tr>
-					<td>data-51</td>
-					<td>data-52</td>
-					<td>data-53</td>
-					<td>data-54</td>
-					<td>data-55</td>
-					<td>data-56</td>
-				</tr>
-			</tbody>
-
-			<tfoot>
-				<tr>
-					<th>foot-01</th>
-					<th>foot-02</th>
-					<th>foot-03</th>
-					<th>foot-04</th>
-					<th>foot-05</th>
-					<th>foot-06</th>
-				</tr>
-			</tfoot>
-		</table>
+				<tfoot>
+					<tr>
+						<th>foot-01</th>
+						<th>foot-02</th>
+						<th>foot-03</th>
+						<th>foot-04</th>
+						<th></th>
+						<th>foot-06</th>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
 	</body>
 </html>
-
-<!-- @ valid property in colgroup :
-		- width
-		- visibility
-		- background
-		- border -->
