@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.boundary {
+				border: 2px solid black;
+				margin: 10px;
+				padding: 10px;
+			}
+
+			div.first {
+				background: rgba(4, 170, 109, 0.1);
+			}
+
+			div.second {
+				background: rgba(4, 170, 109, 0.3);
+			}
+
+			div.third {
+				background: rgba(4, 170, 109, 0.6);
+			}
+
+			div.fourth {
+				background: rgba(4, 170, 109, 1);
+			}
+
+			div.background {
+				background: url('./image.avif') repeat;
+				border: 2px solid black;
+			}
+
+			div.transbox {
+				margin: 30px;
+				background-color: #ffffff;
+				border: 1px solid black;
+				opacity: 0.3;
+			}
+
+			div.transbox p {
+				margin: 5%;
+				font-weight: bold;
+				color: #000000;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="boundary">
+			<div style="opacity: 0.1">
+				<p>10% opacity</p>
+			</div>
+			<div style="opacity: 0.3">
+				<p>30% opacity</p>
+			</div>
+			<div style="opacity: 0.6">
+				<p>60% opacity</p>
+			</div>
+			<div style="opacity: 1">
+				<p>100% opacity</p>
+			</div>
+		</div>
+
+		<div class="boundary">
+			<div class="first">
+				<p>10% opacity</p>
+			</div>
+			<div class="second">
+				<p>30% opacity</p>
+			</div>
+			<div class="third">
+				<p>60% opacity</p>
+			</div>
+			<div class="fourth">
+				<p>100% opacity</p>
+			</div>
+		</div>
+
+		<div class="background">
+			<div class="transbox">
+				<p>This is some text that is placed in the transparent box.</p>
+			</div>
+		</div>
+	</body>
+</html>
