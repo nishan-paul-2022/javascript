@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			:root {
+				font-family: 'Courier New', monospace;
+			}
+
+			body {
+				margin: 0;
+				padding: 0;
+			}
+
+			/* NAVIGATION BAR*/
+			#navbar {
+				display: flex;
+				list-style-type: none;
+				position: fixed;
+				top: 0;
+				margin: 0;
+				padding: 0;
+				background-color: #f1f1f1;
+				overflow: auto;
+				line-height: 2;
+				transition: all 1s;
+			}
+
+			#navbar.horizontal {
+				flex-direction: row;
+				width: 100%;
+				height: auto;
+			}
+
+			#navbar.vertical {
+				flex-direction: column;
+				width: 25%;
+				height: 100%;
+			}
+
+			.link {
+				display: block;
+				color: #000;
+				padding: 8px 16px;
+				text-decoration: none;
+			}
+
+			.active {
+				background-color: #04aa6d;
+				color: white;
+			}
+
+			.link:hover:not(.active) {
+				background-color: #555;
+				color: white;
+			}
+
+			#toggle {
+				background-color: #f1f1f1;
+				color: black;
+				padding: 8px 16px;
+				margin: 5px 10px;
+				cursor: pointer;
+				border-radius: 5px;
+			}
+
+			#toggle:hover {
+				background-color: #010101;
+				color: white;
+			}
+
+			/* CONTENT */
+			#content {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				height: 100vh;
+				background-color: lightblue;
+				line-height: 1.6;
+				font-weight: bold;
+				transition: margin-left 0.3s;
+			}
+
+			#content.horizontal {
+				margin-left: 0;
+			}
+
+			#content.vertical {
+				margin-left: 25%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul id="navbar" class="vertical">
+			<li><a class="link active" href="#home">Home</a></li>
+			<li><a class="link" href="#news">News</a></li>
+			<li><a class="link" href="#contact">Contact</a></li>
+			<li><a class="link" href="#about">About</a></li>
+			<li><button id="toggle">Toggle Navbar</button></li>
+		</ul>
+
+		<div id="content" class="vertical">
+			MEAN is a source-available JavaScript software stack for building
+			dynamic web sites and web applications. A variation known as MERN
+			replaces Angular with React.js front-end, and another named MEVN use
+			Vue.js as front-end
+		</div>
+
+		<script>
+			document
+				.getElementById('toggle')
+				.addEventListener('click', function () {
+					var navbar = document.getElementById('navbar');
+					var content = document.getElementById('content');
+
+					if (navbar.classList.contains('vertical')) {
+						navbar.classList.remove('vertical');
+						navbar.classList.add('horizontal');
+						content.classList.remove('vertical');
+						content.classList.add('horizontal');
+					} else {
+						navbar.classList.remove('horizontal');
+						navbar.classList.add('vertical');
+						content.classList.remove('horizontal');
+						content.classList.add('vertical');
+					}
+				});
+		</script>
+	</body>
+</html>
