@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple" />
+		<style>
+			:root {
+				font-family: Arial, sans-serif;
+			}
+
+			body {
+				background-color: #f4f4f9;
+				margin: 0;
+				padding: 20px;
+				text-align: center;
+			}
+
+			h2 {
+				color: #333;
+			}
+
+			.container {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 20px;
+			}
+
+			.section {
+				background-color: #fff;
+				border-radius: 8px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+				padding: 20px;
+				flex: 1 1 calc(33.333% - 40px);
+				max-width: calc(33.333% - 40px);
+				box-sizing: border-box;
+			}
+
+			.arial {
+				font-family: Arial, sans-serif;
+			}
+			.verdana {
+				font-family: Verdana, sans-serif;
+			}
+			.tahoma {
+				font-family: Tahoma, sans-serif;
+			}
+			.trebuchet {
+				font-family: 'Trebuchet MS', sans-serif;
+			}
+
+			.times {
+				font-family: 'Times New Roman', serif;
+			}
+			.georgia {
+				font-family: Georgia, serif;
+			}
+			.garamond {
+				font-family: Garamond, serif;
+			}
+
+			.courier {
+				font-family: 'Courier New', monospace;
+			}
+
+			.brush-script {
+				font-family: 'Brush Script MT', cursive;
+			}
+
+			.google-font {
+				font-family: 'Sofia', sans-serif;
+				font-size: 30px;
+			}
+
+			.normal-text {
+				font-style: normal;
+			}
+
+			.italic-text {
+				font-style: italic;
+			}
+
+			.oblique-text {
+				font-style: oblique;
+			}
+
+			.normal-weight {
+				font-weight: normal;
+			}
+
+			.bold-weight {
+				font-weight: bold;
+			}
+
+			.bolder-weight {
+				font-weight: bolder;
+			}
+
+			.normal-variant {
+				font-variant: normal;
+			}
+
+			.small-caps-variant {
+				font-variant: small-caps;
+			}
+
+			.shorthand-example1 {
+				font:
+					20px Arial,
+					sans-serif;
+			}
+
+			.shorthand-example2 {
+				font:
+					italic small-caps bold 12px/30px Georgia,
+					serif;
+			}
+
+			@media (max-width: 768px) {
+				.section {
+					flex: 1 1 calc(50% - 40px);
+					max-width: calc(50% - 40px);
+				}
+			}
+
+			@media (max-width: 480px) {
+				.section {
+					flex: 1 1 100%;
+					max-width: 100%;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<h2>CSS Font Examples</h2>
+		<div class="container">
+			<div class="section">
+				<h2>Sans-serif:</h2>
+				<div>
+					Sans-serif fonts have clean lines (no small strokes
+					attached). They create a modern and minimalistic look.
+				</div>
+				<hr />
+				<div class="arial">
+					<strong>Arial</strong>
+					<p>
+						Arial is the most widely used font for both online and
+						printed media. Arial is also the default font in Google
+						Docs. Arial is one of the safest web fonts, and it is
+						available on all major operating systems.
+					</p>
+				</div>
+				<div class="verdana">
+					<strong>Verdana</strong>
+					<p>
+						Verdana is a very popular font. Verdana is easily
+						readable even for small font sizes.
+					</p>
+				</div>
+				<div class="tahoma">
+					<strong>Tahoma</strong>
+					<p>
+						The Tahoma font has less space between the characters.
+					</p>
+				</div>
+				<div class="trebuchet">
+					<strong>Trebuchet MS</strong>
+					<p>
+						Trebuchet MS was designed by Microsoft in 1996. Use this
+						font carefully. Not supported by all mobile operating
+						systems.
+					</p>
+				</div>
+			</div>
+
+			<div class="section">
+				<h2>Serif:</h2>
+				<div>
+					Serif fonts have a small stroke at the edges of each letter.
+					They create a sense of formality and elegance.
+				</div>
+				<hr />
+				<div class="times">
+					<strong>Times New Roman</strong>
+					<p>
+						Times New Roman is one of the most recognizable fonts in
+						the world. It looks professional and is used in many
+						newspapers and "news" websites. It is also the primary
+						font for Windows devices and applications.
+					</p>
+				</div>
+				<div class="georgia">
+					<strong>Georgia</strong>
+					<p>
+						Georgia is an elegant serif font. It is very readable at
+						different font sizes, so it is a good candidate for
+						mobile-responsive design.
+					</p>
+				</div>
+				<div class="garamond">
+					<strong>Garamond</strong>
+					<p>
+						Garamond is a classical font used for many printed
+						books. It has a timeless look and good readability.
+					</p>
+				</div>
+			</div>
+
+			<div class="section">
+				<h2>Monospace:</h2>
+				<div>
+					Monospace fonts - here all the letters have the same fixed
+					width. They create a mechanical look.
+				</div>
+				<hr />
+				<div class="courier">
+					<strong>Courier New</strong>
+					<p>
+						Courier New is the most widely used monospace serif
+						font. Courier New is often used with coding displays,
+						and many email providers use it as their default font.
+						Courier New is also the standard font for movie
+						screenplays.
+					</p>
+				</div>
+			</div>
+
+			<div class="section">
+				<h2>Cursive:</h2>
+				<div>Cursive fonts imitate human handwriting.</div>
+				<hr />
+				<div class="brush-script">
+					<strong>Brush Script MT</strong>
+					<p>
+						The Brush Script MT font was designed to mimic
+						handwriting. It is elegant and sophisticated, but can be
+						hard to read. Use it carefully.
+					</p>
+				</div>
+			</div>
+
+			<div class="section">
+				<h2>Google Font Examples</h2>
+				<div class="google-font">
+					<div class="font-effect-neon">Neon</div>
+					<div class="font-effect-outline">Outline</div>
+					<div class="font-effect-emboss">Emboss</div>
+					<div class="font-effect-shadow-multiple">
+						Shadow Multiple
+					</div>
+				</div>
+			</div>
+
+			<div class="section">
+				<h2>Font Style Examples</h2>
+				<div class="normal-text">This is normal text.</div>
+				<div class="italic-text">This is italic text.</div>
+				<div class="oblique-text">This is oblique text.</div>
+			</div>
+
+			<div class="section">
+				<h2>Font Weight Examples</h2>
+				<div class="normal-weight">This is normal weight text.</div>
+				<div class="bold-weight">This is bold weight text.</div>
+				<div class="bolder-weight">This is bolder weight text.</div>
+			</div>
+
+			<div class="section">
+				<h2>Font Variant Examples</h2>
+				<div class="normal-variant">This is normal variant text.</div>
+				<div class="small-caps-variant">
+					This is small-caps variant text.
+				</div>
+			</div>
+
+			<div class="section">
+				<h2>Font Shorthand Examples</h2>
+				<div class="shorthand-example1">
+					This is a shorthand example with 20px Arial, sans-serif.
+				</div>
+				<div class="shorthand-example2">
+					This is a shorthand example with italic, small-caps, bold,
+					12px/30px Georgia, serif.
+				</div>
+			</div>
+
+			<div class="section">
+				<h1>Georgia and Verdana</h1>
+				<h5 style="font-family: Georgia">Beautiful Norway</h5>
+				<div style="font-family: Verdana">
+					Norway has a total area of 385,252 square kilometers and a
+					population of 5,438,657 (December 2020). Norway is bordered
+					by Sweden, Finland and Russia to the north-east, and the
+					Skagerrak to the south, with Denmark on the other side.
+					Norway has beautiful mountains, glaciers and stunning
+					fjords. Oslo, the capital, is a city of green spaces and
+					museums. Bergen, with colorful wooden houses, is the
+					starting point for cruises to the dramatic Sognefjord.
+					Norway is also known for fishing, hiking and skiing.
+				</div>
+			</div>
+
+			<div class="section">
+				<h1>Helvetica and Garamond</h1>
+				<h5 style="font-family: Helvetica">Beautiful Norway</h5>
+				<div style="font-family: Garamond">
+					Norway has a total area of 385,252 square kilometers and a
+					population of 5,438,657 (December 2020). Norway is bordered
+					by Sweden, Finland and Russia to the north-east, and the
+					Skagerrak to the south, with Denmark on the other side.
+					Norway has beautiful mountains, glaciers and stunning
+					fjords. Oslo, the capital, is a city of green spaces and
+					museums. Bergen, with colorful wooden houses, is the
+					starting point for cruises to the dramatic Sognefjord.
+					Norway is also known for fishing, hiking and skiing.
+				</div>
+			</div>
+
+			<div class="section">
+				<h1>Merriweather and Open Sans</h1>
+				<h5 style="font-family: Merriweather">Beautiful Norway</h5>
+				<div style="font-family: 'Open Sans'">
+					Norway has a total area of 385,252 square kilometers and a
+					population of 5,438,657 (December 2020). Norway is bordered
+					by Sweden, Finland and Russia to the north-east, and the
+					Skagerrak to the south, with Denmark on the other side.
+					Norway has beautiful mountains, glaciers and stunning
+					fjords. Oslo, the capital, is a city of green spaces and
+					museums. Bergen, with colorful wooden houses, is the
+					starting point for cruises to the dramatic Sognefjord.
+					Norway is also known for fishing, hiking and skiing.
+				</div>
+			</div>
+
+			<div class="section">
+				<h1>Ubuntu and Lora</h1>
+				<h5 style="font-family: Ubuntu">Beautiful Norway</h5>
+				<div style="font-family: Lora">
+					Norway has a total area of 385,252 square kilometers and a
+					population of 5,438,657 (December 2020). Norway is bordered
+					by Sweden, Finland and Russia to the north-east, and the
+					Skagerrak to the south, with Denmark on the other side.
+					Norway has beautiful mountains, glaciers and stunning
+					fjords. Oslo, the capital, is a city of green spaces and
+					museums. Bergen, with colorful wooden houses, is the
+					starting point for cruises to the dramatic Sognefjord.
+					Norway is also known for fishing, hiking and skiing.
+				</div>
+			</div>
+
+			<div class="section">
+				<h1>Abril Fatface and Poppins</h1>
+				<h5 style="font-family: 'Abril Fatface'">Beautiful Norway</h5>
+				<div style="font-family: Poppins">
+					Norway has a total area of 385,252 square kilometers and a
+					population of 5,438,657 (December 2020). Norway is bordered
+					by Sweden, Finland and Russia to the north-east, and the
+					Skagerrak to the south, with Denmark on the other side.
+					Norway has beautiful mountains, glaciers and stunning
+					fjords. Oslo, the capital, is a city of green spaces and
+					museums. Bergen, with colorful wooden houses, is the
+					starting point for cruises to the dramatic Sognefjord.
+					Norway is also known for fishing, hiking and skiing.
+				</div>
+			</div>
+
+			<div class="section">
+				<h1>Cinzel and Fauna One</h1>
+				<h5 style="font-family: Cinzel">Beautiful Norway</h5>
+				<div style="font-family: 'Fauna One'">
+					Norway has a total area of 385,252 square kilometers and a
+					population of 5,438,657 (December 2020). Norway is bordered
+					by Sweden, Finland and Russia to the north-east, and the
+					Skagerrak to the south, with Denmark on the other side.
+					Norway has beautiful mountains, glaciers and stunning
+					fjords. Oslo, the capital, is a city of green spaces and
+					museums. Bergen, with colorful wooden houses, is the
+					starting point for cruises to the dramatic Sognefjord.
+					Norway is also known for fishing, hiking and skiing.
+				</div>
+			</div>
+
+			<div class="section">
+				<h1>Fjalla One and Libre Baskerville</h1>
+				<h5 style="font-family: 'Fjalla One'">Beautiful Norway</h5>
+				<div style="font-family: 'Libre Baskerville'">
+					Norway has a total area of 385,252 square kilometers and a
+					population of 5,438,657 (December 2020). Norway is bordered
+					by Sweden, Finland and Russia to the north-east, and the
+					Skagerrak to the south, with Denmark on the other side.
+					Norway has beautiful mountains, glaciers and stunning
+					fjords. Oslo, the capital, is a city of green spaces and
+					museums. Bergen, with colorful wooden houses, is the
+					starting point for cruises to the dramatic Sognefjord.
+					Norway is also known for fishing, hiking and skiing.
+				</div>
+			</div>
+
+			<div class="section">
+				<h1>Space Mono and Muli</h1>
+				<h5 style="font-family: 'Space Mono'">Beautiful Norway</h5>
+				<div style="font-family: Muli">
+					Norway has a total area of 385,252 square kilometers and a
+					population of 5,438,657 (December 2020). Norway is bordered
+					by Sweden, Finland and Russia to the north-east, and the
+					Skagerrak to the south, with Denmark on the other side.
+					Norway has beautiful mountains, glaciers and stunning
+					fjords. Oslo, the capital, is a city of green spaces and
+					museums. Bergen, with colorful wooden houses, is the
+					starting point for cruises to the dramatic Sognefjord.
+					Norway is also known for fishing, hiking and skiing.
+				</div>
+			</div>
+
+			
+			<div class="section">
+				<h1>Spectral and Rubik</h1>
+				<h5 style="font-family: Spectral">Beautiful Norway</h5>
+				<div style="font-family: Rubik">
+					Norway has a total area of 385,252 square kilometers and a
+					population of 5,438,657 (December 2020). Norway is bordered
+					by Sweden, Finland and Russia to the north-east, and the
+					Skagerrak to the south, with Denmark on the other side.
+					Norway has beautiful mountains, glaciers and stunning
+					fjords. Oslo, the capital, is a city of green spaces and
+					museums. Bergen, with colorful wooden houses, is the
+					starting point for cruises to the dramatic Sognefjord.
+					Norway is also known for fishing, hiking and skiing.
+				</div>
+			</div>
+
+			<div class="section">
+				<h1>Oswald and Noto Sans</h1>
+				<h5 style="font-family: Oswald">Beautiful Norway</h5>
+				<div style="font-family: Noto Sans">
+					Norway has a total area of 385,252 square kilometers and a
+					population of 5,438,657 (December 2020). Norway is bordered
+					by Sweden, Finland and Russia to the north-east, and the
+					Skagerrak to the south, with Denmark on the other side.
+					Norway has beautiful mountains, glaciers and stunning
+					fjords. Oslo, the capital, is a city of green spaces and
+					museums. Bergen, with colorful wooden houses, is the
+					starting point for cruises to the dramatic Sognefjord.
+					Norway is also known for fishing, hiking and skiing.
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+<!--	The following list are the best generic-font-families and web-safe-fonts for HTML and CSS:
+			sans-serif :
+				- Arial 
+				- Verdana 
+				- Tahoma 
+				- Trebuchet MS 
+			serif :
+				- Times New Roman 
+				- Georgia 
+				- Garamond
+			monospace :
+				- Courier New 
+			cursive :
+				- Brush Script MT 
+
+		[ :root should have variables and font properties, cause font is by-default defined in root ]
+		[ * should have box-model properties, cause box-model properties cascade but not impact ]
+		[ body should have globally applicable styles ]
+
+		[ if we don't specify font size, default size for normal text is 16px (1em) ]
+
+		(font + element)
+			[ px is defined size ]
+			[ % is percentage of parent ]
+
+		(font) 
+			[ em is multiple of parent-element font-size  ]
+			[ rem is multiple of root-element font-size ]
+
+		(element)
+			[ vw is viewport width ]
+			[ vh is viewport height ]
+
+		[ responsive design : rem and vw ] 
+		
+		font-pairing :
+			- Find font pairings that complement each other for harmony.
+			- Use fonts from the same superfamily to ensure compatibility.
+			- Contrast fonts effectively to highlight their differences.
+			- Establish hierarchy by selecting one dominant font.
+		
+		popular font-pairing :
+			Georgia and Verdana
+			Helvetica and Garamond
+			Merriweather and Open Sans
+			Ubuntu and Lora
+			Abril Fatface and Poppins
+			Cinzel and Fauna One
+			Fjalla One and Libre Baskerville
+			Space Mono and Muli
+			Spectral and Rubik
+			Oswald and Noto Sans -->
