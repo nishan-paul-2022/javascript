@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* + * {
+				margin: 10px;
+			}
+
+			div,
+			img {
+				border: 3px solid green;
+			}
+
+			.center1 {
+				margin: auto;
+				width: 60%;
+				padding: 10px;
+			}
+
+			.center2 {
+				text-align: center;
+			}
+
+			.img1 {
+				display: block;
+				margin: auto;
+				width: 40%;
+			}
+
+			.img2 {
+				float: right;
+				height: 170px;
+				width: 170px;
+			}
+
+			.clearfix {
+				border: 3px solid #4caf50;
+				padding: 10px;
+			}
+
+			.clearfix::after {
+				content: '';
+				display: table;
+				clear: both;
+			}
+
+			.center3 {
+				padding: 70px 0;
+			}
+
+			.center4 {
+				padding: 70px 0;
+				text-align: center;
+			}
+
+			.center5 {
+				height: 100px;
+				line-height: 100px;
+				text-align: center;
+			}
+
+			.center5 p {
+				display: inline-block;
+				vertical-align: middle;
+				line-height: 2;
+			}
+
+			.center6 {
+				height: 200px;
+				position: relative;
+			}
+
+			.center6 p {
+				margin: 0;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			.center7 {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 200px;
+			}
+
+			.right {
+				position: absolute;
+				right: 0px;
+				width: 300px;
+				padding: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="center1">
+			<p>
+				To horizontally center a block element (like div), use margin:
+				auto;
+			</p>
+		</div>
+
+		<div class="center2">
+			<p>This text is centered.</p>
+		</div>
+
+		<img
+			class="img1"
+			src="https://picsum.photos/400/300?random=1"
+			alt="random" />
+
+		<div class="clearfix">
+			<img
+				class="img2"
+				src="https://picsum.photos/400/300?random=1"
+				alt="random" />
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+			imperdiet...
+		</div>
+
+		<div class="center3">
+			<p>I am vertically centered.</p>
+		</div>
+
+		<div class="center4">
+			<p>I am vertically and horizontally centered.</p>
+		</div>
+
+		<div class="center5">
+			<p>I am vertically and horizontally centered.</p>
+		</div>
+
+		<div class="center6">
+			<p>I am vertically and horizontally centered.</p>
+		</div>
+
+		<div class="center7">
+			<p>I am vertically and horizontally centered.</p>
+		</div>
+
+		<div class="right">
+			<p>
+				In my younger and more vulnerable years my father gave me some
+				advice that I've been turning over in my mind ever since.
+			</p>
+		</div>
+	</body>
+</html>
