@@ -47,7 +47,7 @@ function BufferExample05() {
 }
 
 function BufferExample06() {
-	fs.readFile('image.avif', (error, data) => {
+	fs.readFile('./favicon.png', (error, data) => {
 		if (error) {
 			throw error;
 		}

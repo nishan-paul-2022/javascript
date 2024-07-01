@@ -4,13 +4,22 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<style>
+			body {
+				margin: 20px;
+				padding: 20px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		</style>
 	</head>
 
 	<body>
-		<img src="image_url" alt="batman" id="demo" />;
+		<img src="image_url" alt="random" id="demo" />;
 		<script>
 			function handleImgError(event) {
-				event.target.src = 'image.avif';
+				event.target.src = 'https://picsum.photos/400/300?random=1';
 			}
 
 			document
