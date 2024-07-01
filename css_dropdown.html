@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			:root {
+				font-family: Arial, sans-serif;
+			}
+
+			body {
+				margin: 10px;
+				padding: 10px;
+			}
+
+			ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				background-color: #333;
+			}
+
+			li {
+				position: relative;
+			}
+
+			li > a {
+				display: inline-block;
+				color: white;
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;
+			}
+
+			li:hover {
+				background-color: #494bc8;
+			}
+
+			.dropdown-content {
+				display: none;
+				position: absolute;
+				background-color: #f9f9f9;
+				min-width: 160px;
+				box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+				z-index: 1;
+			}
+
+			.dropdown:hover .dropdown-content {
+				display: block;
+			}
+
+			.dropdown-link {
+				color: black;
+				padding: 12px 16px;
+				text-decoration: none;
+				display: block;
+				text-align: left;
+			}
+
+			.dropdown-link:hover {
+				background-color: #c4f9f9;
+			}
+
+			.profile-min {
+				height: 35px;
+				width: 35px;
+				clip-path: circle(50% at center);
+			}
+
+			.profile-max {
+				height: 200px;
+				width: 300px;
+			}
+
+			.image-description {
+				padding: 5px;
+				text-align: center;
+				background-color: #f9f9f9;
+			}
+
+			.rightmost {
+				margin-left: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul>
+			<li><a href="https://picsum.photos/400/300?random=1">Home</a></li>
+
+			<li><a href="https://picsum.photos/400/300?random=2">News</a></li>
+
+			<li class="dropdown">
+				<a href="javascript:void(0)">Dropdown</a>
+
+				<div class="dropdown-content">
+					<a
+						href="https://picsum.photos/400/300?random=3"
+						class="dropdown-link">
+						Link 1
+					</a>
+					<a
+						href="https://picsum.photos/400/300?random=4"
+						class="dropdown-link">
+						Link 2
+					</a>
+					<a
+						href="https://picsum.photos/400/300?random=5"
+						class="dropdown-link">
+						Link 3
+					</a>
+				</div>
+			</li>
+
+			<li class="dropdown">
+				<a href="https://picsum.photos/400/300?random=6">
+					<img
+						src="https://picsum.photos/400/300?random=6"
+						alt="random"
+						class="profile-min" />
+				</a>
+
+				<div class="dropdown-content">
+					<img
+						src="https://picsum.photos/400/300?random=7"
+						alt="random"
+						class="profile-max" />
+					<div class="image-description">random</div>
+				</div>
+			</li>
+
+			<li class="rightmost">
+				<a href="https://picsum.photos/400/300?random=8">Rules</a>
+			</li>
+		</ul>
+	</body>
+</html>
