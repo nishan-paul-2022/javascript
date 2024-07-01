@@ -103,7 +103,7 @@ SYMBOL METHODS :
 
 BUILT-IN GLOBAL SYMBOLS / SYSTEM SYMBOLS :
 
-	These symbols are well-known symbols used internally by JavaScript for specific functionalities related to strings and iterables. 
+	These symbols are well-known symbols used internally by Javascript for specific functionalities related to strings and iterables. 
 	While you cannot directly use them to create your own methods, 
 	they are often used by built-in methods.
 
