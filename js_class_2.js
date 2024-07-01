@@ -17,7 +17,7 @@ class ClassB {
 	static bio = 'MERN';
 
 	constructor() {
-		this.name = 'paul';
+		this.name = 'Paul';
 		this.address = '3/4';
 	}
 
@@ -50,11 +50,11 @@ function Func01() {
 
 function Func02() {
 	const classB = new ClassB();
-	classB.name = 'bateman';
+	classB.name = 'Bateman';
 	console.log(classB.name);
 
 	console.log(ClassB.Bio);
-	ClassB.Bio = 'JAVASCRIPT';
+	ClassB.Bio = 'Javascript';
 	console.log(ClassB.Bio);
 }
 

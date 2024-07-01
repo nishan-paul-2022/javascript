@@ -24,14 +24,14 @@ function UtilInspect() {
 	console.log(util.inspect(object2));
 
 	const object3 = new (class Class {
-		name = 'batMan';
+		name = 'Batman';
 		get [Symbol.toStringTag]() {
 			return this.name;
 		}
 	})();
 
 	const object4 = Object.create(Object.prototype, {
-		name: { value: 'ironMan' },
+		name: { value: 'Ironman' },
 		[Symbol.toStringTag]: {
 			get: () => {
 				return 'this.name';

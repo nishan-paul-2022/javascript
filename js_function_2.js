@@ -28,7 +28,7 @@ function Hello(x, y, z) {
 	this.y = y;
 	this.z = z;
 	this.w = {
-		name: 'paul',
+		name: 'Paul',
 		age: 27,
 		height: 5.5,
 		weight: 52
@@ -68,7 +68,7 @@ const world = new Function('x', 'y', 'z', 'return x+y+z;');
 console.log(world(1, 2, 3));
 console.log(typeof world);
 
-const exa = new ExA('nishan', 'paul', 27);
+const exa = new ExA('Nishan', 'Paul', 27);
 exa.why = {
 	message: 'my life, my rules'
 };
@@ -79,7 +79,7 @@ console.log(exa.why.message);
 exa.FINGERCORE();
 
 const exb = {
-	name: 'paul',
+	name: 'Paul',
 	age: 27,
 	height: 5.5,
 	weight: 27

@@ -1,7 +1,7 @@
 function ObjectKey01() {
 	class A {
 		constructor() {
-			this.name = 'paul';
+			this.name = 'Paul';
 		}
 
 		PrintValues() {

@@ -27,14 +27,14 @@ function print(objectName) {
 // regular1 and regular2 don't behave in same way in terms of other characteristics
 function UseCase01() {
 	const regular1 = {
-		name: 'paul',
+		name: 'Paul',
 		id: 1604085,
-		location: 'dhaka'
+		location: 'Dhaka'
 	};
 
 	const regular2 = new Proxy(regular1, {});
 	regular2.id = 1162036;
-	regular2.skill = 'mern';
+	regular2.skill = 'MERN';
 	regular1.state = 'broken';
 
 	console.log(regular2.name);
@@ -85,9 +85,9 @@ function UseCase02() {
 
 function UseCase03() {
 	let regular1 = {
-		name: 'paul',
+		name: 'Paul',
 		id: 1604085,
-		_location: 'dhaka',
+		_location: 'Dhaka',
 		[Symbol('hashing')]: 'helloWorld',
 		__proto__: {
 			year: 1999,

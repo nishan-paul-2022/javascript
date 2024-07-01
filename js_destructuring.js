@@ -33,9 +33,9 @@ function Hn() {
 
 function In() {
 	const arrObj = [
-		{ id: 1, name: 'paul' },
-		{ id: 2, name: 'bateman' },
-		{ id: 3, name: 'batman' }
+		{ id: 1, name: 'Paul' },
+		{ id: 2, name: 'Bateman' },
+		{ id: 3, name: 'Batman' }
 	];
 
 	const [, , { name }] = arrObj; // array destrcuturing using array literal
@@ -74,7 +74,7 @@ function Kn() {
 }
 
 function Ln() {
-	const object = { id: 1, name: 'bateman' };
+	const object = { id: 1, name: 'Bateman' };
 	const { id: Id = 0, name: fullName, address = '3/4' } = object; // destructuring with alias and default value
 	console.log(Id);
 	console.log(fullName);
@@ -84,8 +84,8 @@ function Ln() {
 // computed property name : using literal as peoperty name
 function Mn() {
 	const object = {
-		name: 'paul',
-		name: 'bate',
+		name: 'Paul',
+		name: 'Batman',
 		'is-it': true,
 		oww: Math.PI,
 		false: Math.E
@@ -216,7 +216,7 @@ On();
 Pn();
 Qn();
 
-/* 
+/*	
 string is not mutable, but reassignable
 indexing / natural
 member access / square bracket notation using string | dot notation using identifier
@@ -227,5 +227,4 @@ MEMBER - KEY : VALUE
 KEY : identifier | literal | variable
 
 shorthand property name is a syntactic sugar
-computed property name is a syntactic feature
-*/
+computed property name is a syntactic feature */

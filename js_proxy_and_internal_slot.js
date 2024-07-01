@@ -1,5 +1,5 @@
 class RandomClass {
-	#name = 'daredevil';
+	#name = 'Daredevil';
 
 	getName() {
 		return this.#name;
@@ -18,7 +18,7 @@ function print1(randomObj) {
 	try {
 		console.log(randomObj.getName());
 		console.log(randomObj.Name);
-		randomObj.Name = 'batman';
+		randomObj.Name = 'Batman';
 	} catch (error) {
 		console.log(error.message);
 	}

@@ -11,7 +11,7 @@ console.log(myMap.size);
 myMap.clear();
 
 myMap.set(Math.PI, 'value1');
-myMap.set('batman', 'value2');
+myMap.set('Batman', 'value2');
 myMap.set(true, 'value3');
 myMap.set(BigInt(27), 'value4');
 myMap.set(regualr1, 'value4');
@@ -36,10 +36,9 @@ myMap.forEach((value, key) => {
 const mapToArray = [...myMap];
 console.log(mapToArray);
 
-/*
+/*  
 USP of Map :
     - iterable 
     - size 
     - key can be any type 
-    - keys are ordered on basis of insertion 
-*/
+    - keys are ordered on basis of insertion */

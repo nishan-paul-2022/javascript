@@ -52,14 +52,14 @@ class Class2 extends Class1 {
 }
 
 function F01() {
-	const c02 = new C02('paul', 53);
+	const c02 = new C02('Paul', 53);
 	c02.PrinValues();
 	c02.Jawan();
 	c02.JawanOG();
 }
 
 function F02() {
-	const c01 = new C01('logan', 63);
+	const c01 = new C01('Logan', 63);
 	c01.PrinValues();
 	c01.Jawan();
 }

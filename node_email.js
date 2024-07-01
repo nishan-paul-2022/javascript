@@ -12,8 +12,8 @@ const mailOptions = {
 	from: 'nishanpaul12011996se@gmail.com',
 	to: 'np007mlf@gmail.com, udntnomeyt@gmail.com',
 	subject: 'sending email using node.js',
-	html: '<div>hello, <b>batman</b></div>'
-	// text: 'hello, batman'
+	html: '<div>hello, <b>Batman</b></div>'
+	// text: 'hello, Batman'
 };
 
 const callback = (error, info) => {

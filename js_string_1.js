@@ -123,7 +123,7 @@ function StringImmutable() {
 	console.log(str16[0]);
 	// str[0] = 'i'; /* invalid */
 	console.log(str16[0]);
-	str16 = 'IronMan'; /* valid */
+	str16 = 'Ironman'; /* valid */
 	console.log(str16);
 
 	let number = [1, 2, 3, 4, 5];

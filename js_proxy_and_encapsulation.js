@@ -1,6 +1,6 @@
 function UseCase01() {
 	let regular1 = {
-		username: 'paul',
+		username: 'Paul',
 		_password: 'helloWorld'
 	};
 

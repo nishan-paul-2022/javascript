@@ -2,7 +2,7 @@ import querystring from 'querystring';
 
 function StringToObject() {
 	console.log('StringToObject');
-	const string = 'name=batmana&city=gotham';
+	const string = 'name=Batman&city=Gotham';
 	const object = querystring.parse(string);
 	console.log(object);
 }
@@ -10,8 +10,8 @@ function StringToObject() {
 function ObjectToString() {
 	console.log('ObjectToString');
 	const object = {
-		name: 'batman',
-		company: 'gotham'
+		name: 'Batman',
+		company: 'Gotham'
 	};
 	const string = querystring.stringify(object);
 	console.log(string);

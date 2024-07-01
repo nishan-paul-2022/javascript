@@ -1,5 +1,5 @@
 const parent = {
-	identity: 'batMan',
+	identity: 'Batman',
 	tag: () => {
 		console.log('parent');
 	}
@@ -7,7 +7,7 @@ const parent = {
 
 Object.defineProperties(parent, {
 	location: {
-		value: 'dhaka',
+		value: 'Dhaka',
 		writable: true,
 		enumerable: false,
 		configurable: false
@@ -24,7 +24,7 @@ Object.defineProperties(parent, {
 
 const child = {
 	PI: Math.PI,
-	identity: 'ironMan',
+	identity: 'Ironman',
 	tag: () => {
 		console.log('child');
 	},
