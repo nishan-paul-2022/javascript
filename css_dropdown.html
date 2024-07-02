@@ -10,11 +10,11 @@
 			}
 
 			body {
-				margin: 10px;
-				padding: 10px;
+				margin: 1vw;
+				padding: 1vw;
 			}
 
-			ul {
+			.navbar {
 				list-style-type: none;
 				margin: 0;
 				padding: 0;
@@ -24,117 +24,131 @@
 				background-color: #333;
 			}
 
-			li {
+			.navbar__item {
 				position: relative;
 			}
 
-			li > a {
+			.navbar__link {
 				display: inline-block;
 				color: white;
 				text-align: center;
-				padding: 14px 16px;
+				padding: 1vw 2vw;
 				text-decoration: none;
 			}
 
-			li:hover {
+			.navbar__link:hover {
 				background-color: #494bc8;
 			}
 
-			.dropdown-content {
+			.navbar__image {
+				height: 2.5vw;
+				width: 2.5vw;
+				margin-left: 0.5vw;
+				margin-top: 0.25vw;
+				border: 1px solid white;
+				border-radius: 50%;
+				clip-path: circle(50% at center);
+			}
+
+			.dropdown {
 				display: none;
 				position: absolute;
 				background-color: #f9f9f9;
-				min-width: 160px;
-				box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+				min-width: 15vw;
+				box-shadow: 0vw 0.5vw 1vw 0vw rgba(0, 0, 0, 0.2);
 				z-index: 1;
 			}
 
-			.dropdown:hover .dropdown-content {
-				display: block;
-			}
-
-			.dropdown-link {
+			.dropdown__link {
 				color: black;
-				padding: 12px 16px;
+				padding: 1vw;
 				text-decoration: none;
 				display: block;
 				text-align: left;
 			}
 
-			.dropdown-link:hover {
+			.dropdown__image {
+				height: 40vh;
+				width: 30vw;
+			}
+
+			.navbar__item:hover > .dropdown {
+				display: block;
+			}
+
+			.dropdown__link:hover {
 				background-color: #c4f9f9;
 			}
 
-			.profile-min {
-				height: 35px;
-				width: 35px;
-				clip-path: circle(50% at center);
-			}
-
-			.profile-max {
-				height: 200px;
-				width: 300px;
-			}
-
-			.image-description {
-				padding: 5px;
+			.dropdown__content {
+				padding: 0.5vw;
 				text-align: center;
 				background-color: #f9f9f9;
 			}
 
-			.rightmost {
+			.navbar__item--last {
 				margin-left: auto;
 			}
 		</style>
 	</head>
 
 	<body>
-		<ul>
-			<li><a href="https://picsum.photos/400/300?random=1">Home</a></li>
+		<ul class="navbar">
+			<li class="navbar__item">
+				<a
+					class="navbar__link"
+					href="https://picsum.photos/400/300?random=1">
+					Home
+				</a>
+			</li>
 
-			<li><a href="https://picsum.photos/400/300?random=2">News</a></li>
+			<li class="navbar__item">
+				<a
+					class="navbar__link"
+					href="https://picsum.photos/400/300?random=2">
+					News
+				</a>
+			</li>
 
-			<li class="dropdown">
-				<a href="javascript:void(0)">Dropdown</a>
-
-				<div class="dropdown-content">
+			<li class="navbar__item">
+				<a class="navbar__link" href="javascript:void(0)">Dropdown</a>
+				<div class="dropdown">
 					<a
-						href="https://picsum.photos/400/300?random=3"
-						class="dropdown-link">
+						class="dropdown__link"
+						href="https://picsum.photos/400/300?random=3">
 						Link 1
 					</a>
 					<a
-						href="https://picsum.photos/400/300?random=4"
-						class="dropdown-link">
+						class="dropdown__link"
+						href="https://picsum.photos/400/300?random=4">
 						Link 2
 					</a>
 					<a
+						class="dropdown__link"
 						href="https://picsum.photos/400/300?random=5"
-						class="dropdown-link">
-						Link 3
-					</a>
+						>Link 3</a
+					>
 				</div>
 			</li>
-
-			<li class="dropdown">
-				<a href="https://picsum.photos/400/300?random=6">
+			<li class="navbar__item">
+				<img
+					class="navbar__image"
+					src="https://picsum.photos/400/300?random=6"
+					alt="random" />
+				<div class="dropdown">
 					<img
-						src="https://picsum.photos/400/300?random=6"
-						alt="random"
-						class="profile-min" />
-				</a>
-
-				<div class="dropdown-content">
-					<img
+						class="dropdown__image"
 						src="https://picsum.photos/400/300?random=7"
-						alt="random"
-						class="profile-max" />
-					<div class="image-description">random</div>
+						alt="random" />
+					<div class="dropdown__content">random</div>
 				</div>
 			</li>
-
-			<li class="rightmost">
-				<a href="https://picsum.photos/400/300?random=8">Rules</a>
+			<li class="navbar__item navbar__item--last">
+				<a
+					class="navbar__link"
+					href="https://picsum.photos/400/300?random=8"
+					>Rules</a
+				>
 			</li>
 		</ul>
 	</body>
