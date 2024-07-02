@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			:root {
+				--color-red: rgb(249, 138, 161);
+				--color-green: rgb(106, 236, 106);
+				--color-blue: rgb(70, 70, 246);
+			}
+
+			* {
+				box-sizing: border-box;
+			}
+
+			html {
+				font-size: 62.5%;
+				background-color: lightgreen;
+			}
+
+			body {
+				margin: 1vw;
+				padding: 2vw;
+				font:
+					italic normal bolder 2rem/2 'Courier New',
+					Courier,
+					monospace;
+				text-align: center;
+				background-color: lightblue;
+			}
+
+			h1 {
+				background-color: var(--color-red);
+			}
+
+			div {
+				margin: 3vw;
+				padding: 3vw;
+				border: 0.2vw solid var(--color-green);
+			}
+
+			p {
+				color: var(--color-blue);
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>:root selector and * selector</h1>
+
+		<div>
+			<p>
+				This paragraph is inside a container div and is styled using the
+				universal selector and CSS variables defined in the :root
+				pseudo-class.
+			</p>
+
+			<p>Another paragraph inside the same container.</p>
+		</div>
+	</body>
+</html>
+
+<!--in case of html document, html is the root | https://blog.timonwa.com/all-vs-root-vs-html-vs-body-selectors 
+
+	:root 	: 
+		Represents the highest level of the document tree, 
+		typically used to define global CSS variables.
+		Common Properties: --variable-name (CSS custom properties)
+
+	*		: 
+		The universal selector applies to all elements in the document, 
+		commonly used to set global styles.
+		Common Properties: box-sizing, margin, padding
+
+	html	: 
+		Targets the root HTML element of the document, 
+		used for setting global styles like base font size and background color.
+		Common Properties: font-size, background-color, line-height.
+
+	body	: 
+		Targets the body element, where the main content of the document resides, 
+		typically used for overall page styling.
+		Common Properties: margin, padding, font-family, color, background-color.	-->
