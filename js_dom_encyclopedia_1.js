@@ -121,8 +121,9 @@ OnHTMLBodyElement : onblur,onerror,onfocus,onload,onresize,onscroll,onafterprint
     - innerHTML   (element)   : get html from inside the element and set html to inside the element
     - outerHTML   (element)   : get html of the element and set html in place of element
 
-# 3 steps of form validation : 
+# 4 steps of form validation : 
     - constraint validation : max, min, pattern, type, step, required, disabled
     - client side validation
     - server side validation
+    - database side validation
 */
