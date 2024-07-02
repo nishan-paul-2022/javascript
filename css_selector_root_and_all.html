@@ -5,47 +5,44 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
-			/* :root pseudo-class to define CSS variables and apply styles to html element */
 			:root {
-				--main-bg-color: #f0f8ff;
-				--main-text-color: #333;
-				--border-color: #000;
-				--padding: 10px;
-				font-style: italic;
-				font-variant: normal;
-				font-weight: bolder;
-				font-size: 1.25rem;
-				line-height: 2;
-				font-family: 'Courier New', Courier, monospace;
+				--color-red: rgb(249, 138, 161);
+				--color-green: rgb(106, 236, 106);
+				--color-blue: rgb(70, 70, 246);
 			}
 
-			/* universal selector to apply styles to all elements */
 			* {
 				box-sizing: border-box;
-				padding: var(--padding);
-				color: var(--main-text-color);
 			}
 
-			/* additional styles for body and specific elements */
+			html {
+				font-size: 62.5%;
+				background-color: lightgreen;
+			}
+
 			body {
-				background-color: var(--main-bg-color);
-				margin: 0;
-				font-family: Arial, sans-serif;
+				margin: 10px;
+				padding: 10px;
+				font:
+					italic normal bolder 1.25rem/2 'Courier New',
+					Courier,
+					monospace;
+				text-align: center;
+				background-color: lightblue;
 			}
 
 			h1 {
-				border: 2px solid var(--border-color);
-				text-align: center;
-			}
-
-			p {
-				border: 1px dashed var(--border-color);
+				background-color: var(--color-red);
 			}
 
 			.container {
 				margin: 20px;
-				padding: var(--padding);
-				border: 2px solid var(--border-color);
+				padding: 20px;
+				border: 2px solid var(--color-green);
+			}
+
+			p {
+				color: var(--color-blue);
 			}
 		</style>
 	</head>
@@ -64,9 +61,41 @@
 	</body>
 </html>
 
-<!-- 	in case of html document, html is the root | https://blog.timonwa.com/all-vs-root-vs-html-vs-body-selectors 
+<!--	▓░▓░▓░▓░▓░▓░▓░▓░▓░▓░
 
-		CSS PROPERTY / box-sizing: border-box
-			Many developers want all elements on their pages to work this way.
-			Many browsers already use this for many form elements, but not all.
-			Which is why inputs and text areas look different at 100% width. -->
+		in case of html document, html is the root | https://blog.timonwa.com/all-vs-root-vs-html-vs-body-selectors 
+
+		▓░▓░▓░▓░▓░▓░▓░▓░▓░▓░
+
+		:root 	| define global variable 
+		* 		| style for every element
+		html 	| style for content and not-content
+		body 	| style for content
+
+		▓░▓░▓░▓░▓░▓░▓░▓░▓░▓░
+		
+		Each group includes related properties that affect similar aspects of styling or behavior in web design.
+		These groups are essential for better organization, readability, navigation, and maintainance of css.
+			
+			Box Model:
+				width, height, margin, padding, border, box-sizing, outline
+			
+			Typography: 
+				font, font-style, font-variant, font-weight, font-size, line-height, font-family, 
+				text-align, text-decoration, text-transform, letter-spacing
+			
+			Color:
+				color, background-color, border-color, box-shadow, text-shadow, fill (for SVG elements)
+			
+			Flexbox and Grid:
+				display, flex, flex-direction, justify-content, align-items, 
+				grid, grid-template-columns, grid-template-rows, grid-gap
+			
+			Positioning:
+				position, top, bottom, right, left, z-index
+			
+			Visual:
+				visibility, opacity, overflow, clip-path, transform, transition, animation
+
+			Miscellaneous:
+				cursor, pointer-events, user-select, filter, backdrop-filter, scroll-behavior, resize -->
