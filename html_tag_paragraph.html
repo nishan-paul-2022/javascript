@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			html {
+				padding: 20px;
+			}
+
+			body {
+				width: 50%;
+				margin: auto;
+				padding: 10px;
+				border: 1px solid black;
+				text-align: center;
+			}
+
+			p {
+				padding: 10px;
+				border: 2px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<h1>Paragraph</h1>
+
+			<div>
+				Paragraph is a block-element.
+				<hr />
+				Unlike other block-elements, it doesn't support both inline and
+				block.
+				<hr />
+				It supports only inline.
+				<hr />
+				Using block element inside paragraph leads to unpredictable
+				rendering.
+				<hr />
+				So, it is semantically incorrect.
+				<hr />
+			</div>
+
+			<p>
+				This is a paragraph with an <span>inline element</span> inside
+				it.
+			</p>
+
+			<!-- <p>This is a paragraph incorrectly containing a <div>block element</div> inside it.</p> -->
+		</div>
+	</body>
+</html>
