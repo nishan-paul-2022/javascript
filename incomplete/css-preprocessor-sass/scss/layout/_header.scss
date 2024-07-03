@@ -1,0 +1,9 @@
+.header {
+	background-color: $primary-color;
+	padding: $padding;
+	color: white;
+
+	.header__title {
+		font-size: 24px;
+	}
+}

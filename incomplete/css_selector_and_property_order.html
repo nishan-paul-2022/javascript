@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			/* General Styles */
+			body {
+				font-family: Arial, sans-serif;
+				background-color: #f0f0f0;
+				margin: 10px;
+				padding: 10px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				min-height: 100vh;
+			}
+
+			.container {
+				box-sizing: border-box;
+				width: 90%;
+				max-width: 1200px;
+				padding: 20px;
+				background-color: #fff;
+				border: 2px solid #333;
+				outline: 2px dashed #666;
+				text-align: center;
+			}
+
+			.title {
+				font:
+					bold 36px Arial,
+					sans-serif;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				text-decoration: underline;
+				margin-bottom: 20px;
+			}
+
+			/* Sections */
+			section {
+				margin: 20px 0;
+				padding: 20px;
+				border: 1px solid #ccc;
+				border-radius: 8px;
+				background-color: #fafafa;
+			}
+
+			/* Box Model */
+			.box-model .box-sizing-demo,
+			.box-model .dimensions-demo,
+			.box-model .spacing-demo,
+			.box-model .borders-demo {
+				margin: 10px 0;
+			}
+
+			/* Box Sizing */
+			.box-sizing-demo {
+				width: 100px;
+				height: 100px;
+				margin: 10px;
+				padding: 10px;
+				border: 2px solid #000;
+				background-color: #ddd;
+			}
+
+			/* Dimensions */
+			.dimensions-demo {
+				width: 200px;
+				height: 100px;
+				background-color: #ccc;
+				margin: 10px auto;
+			}
+
+			/* Spacing */
+			.spacing-demo {
+				margin: 20px;
+				padding: 20px;
+				border: 1px solid #000;
+				background-color: #bbb;
+			}
+
+			/* Borders and Outlines */
+			.borders-demo {
+				width: 150px;
+				height: 150px;
+				border: 5px solid #000;
+				outline: 3px dotted #333;
+				margin: 10px auto;
+				background-color: #aaa;
+			}
+
+			/* Typography */
+			.typography p {
+				margin: 10px 0;
+			}
+
+			.font-demo {
+				font:
+					italic bold 24px Georgia,
+					serif;
+			}
+
+			.text-align-demo {
+				text-align: right;
+			}
+
+			.text-transform-demo {
+				text-transform: capitalize;
+				letter-spacing: 3px;
+			}
+
+			.text-decoration-demo {
+				text-decoration: line-through;
+			}
+
+			/* Paint */
+			.colors-demo {
+				color: #ff0000;
+				background-color: #00ff00;
+				border: 2px solid #0000ff;
+				padding: 10px;
+			}
+
+			.border-color-demo {
+				border: 3px solid #ff6347;
+				padding: 10px;
+			}
+
+			.svg-fill-demo {
+				fill: #ff6347;
+				margin: 10px auto;
+			}
+
+			.shadow-demo {
+				box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+				text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+				padding: 10px;
+				background-color: #eee;
+			}
+
+			/* Layout */
+			.layout .flexbox-demo,
+			.layout .grid-demo {
+				margin: 10px 0;
+			}
+
+			.flexbox-demo {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				height: 100px;
+				background-color: #ddd;
+				margin: 10px 0;
+			}
+
+			.grid-demo {
+				display: grid;
+				grid-template-rows: 100px 100px;
+				grid-template-columns: 1fr 1fr;
+				grid-gap: 10px;
+				margin: 10px auto;
+			}
+
+			.grid-item {
+				background-color: #ccc;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			/* Positioning */
+			.positioning .position-demo,
+			.positioning .offsets-demo,
+			.positioning .z-index-demo {
+				margin: 10px 0;
+			}
+
+			.position-demo {
+				position: relative;
+				top: 10px;
+				right: 10px;
+				background-color: #ddd;
+				margin: 10px;
+				padding: 10px;
+			}
+
+			.offsets-demo {
+				position: absolute;
+				top: 20px;
+				left: 20px;
+				background-color: #bbb;
+				padding: 10px;
+				z-index: 2;
+			}
+
+			.z-index-demo {
+				position: relative;
+				z-index: 1;
+				background-color: #999;
+				padding: 10px;
+				margin: 10px;
+			}
+
+			/* Visual Effects */
+			.visual-effects .visibility-demo,
+			.visual-effects .overflow-demo,
+			.visual-effects .transform-demo,
+			.visual-effects .animation-demo {
+				margin: 10px 0;
+			}
+
+			.visibility-demo {
+				visibility: hidden;
+				opacity: 0.5;
+				background-color: #ccc;
+				padding: 10px;
+				margin: 10px;
+			}
+
+			.overflow-demo {
+				width: 100px;
+				height: 100px;
+				overflow: hidden;
+				clip-path: circle(50%);
+				background-color: #bbb;
+				margin: 10px auto;
+			}
+
+			.transform-demo {
+				transform: rotate(15deg);
+				transition: transform 0.3s ease-in-out;
+				padding: 10px;
+				background-color: #aaa;
+				margin: 10px;
+			}
+
+			.transform-demo:hover {
+				transform: rotate(-15deg);
+			}
+
+			.animation-demo {
+				animation: exampleAnimation 2s infinite;
+				background-color: #999;
+				padding: 10px;
+				margin: 10px;
+			}
+
+			@keyframes exampleAnimation {
+				0% {
+					opacity: 1;
+				}
+				50% {
+					opacity: 0.5;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+
+			/* Miscellaneous */
+			.miscellaneous .interaction-demo,
+			.miscellaneous .filter-demo,
+			.miscellaneous .scroll-resize-demo {
+				margin: 10px 0;
+			}
+
+			.interaction-demo {
+				cursor: pointer;
+				pointer-events: auto;
+				user-select: none;
+				background-color: #ddd;
+				padding: 10px;
+				margin: 10px;
+			}
+
+			.filter-demo {
+				filter: grayscale(50%);
+				backdrop-filter: blur(5px);
+				background-color: #ccc;
+				padding: 10px;
+				margin: 10px;
+			}
+
+			.scroll-resize-demo {
+				scroll-behavior: smooth;
+				resize: both;
+				overflow: auto;
+				background-color: #bbb;
+				padding: 10px;
+				width: 200px;
+				height: 100px;
+				margin: 10px;
+			}
+
+			/* Responsive Design */
+			@media (max-width: 768px) {
+				.container {
+					width: 95%;
+					padding: 10px;
+				}
+
+				.grid-demo {
+					grid-template-columns: 1fr;
+					grid-template-rows: auto;
+				}
+
+				.dimensions-demo,
+				.spacing-demo,
+				.borders-demo,
+				.flexbox-demo,
+				.overflow-demo {
+					width: 90%;
+					margin: 10px auto;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<h1 class="title">CSS Properties Demonstration</h1>
+
+			<section class="box-model">
+				<h2>Box Model</h2>
+				<div class="box-sizing-demo">Box Sizing Demo</div>
+				<div class="dimensions-demo">Dimensions Demo</div>
+				<div class="spacing-demo">Spacing Demo</div>
+				<div class="borders-demo">Borders and Outlines Demo</div>
+			</section>
+
+			<section class="typography">
+				<h2>Typography</h2>
+				<p class="font-demo">Font Properties Demo</p>
+				<p class="text-align-demo">Text Alignment Demo</p>
+				<p class="text-transform-demo">Text Transformations Demo</p>
+				<p class="text-decoration-demo">Text Decoration Demo</p>
+			</section>
+
+			<section class="paint">
+				<h2>Paint</h2>
+				<p class="colors-demo">Text and Background Colors Demo</p>
+				<p class="border-color-demo">Border Colors Demo</p>
+				<svg class="svg-fill-demo" width="100" height="100">
+					<circle cx="50" cy="50" r="40" />
+				</svg>
+				<div class="shadow-demo">Shadows Demo</div>
+			</section>
+
+			<section class="layout">
+				<h2>Layout</h2>
+				<div class="flexbox-demo">Flexbox Layout Demo</div>
+				<div class="grid-demo">
+					<div class="grid-item">Grid Item 1</div>
+					<div class="grid-item">Grid Item 2</div>
+					<div class="grid-item">Grid Item 3</div>
+					<div class="grid-item">Grid Item 4</div>
+				</div>
+			</section>
+
+			<section class="positioning">
+				<h2>Positioning</h2>
+				<div class="position-demo">Position Type Demo</div>
+				<div class="offsets-demo">Position Offsets Demo</div>
+				<div class="z-index-demo">Stacking Order Demo</div>
+			</section>
+
+			<section class="visual-effects">
+				<h2>Visual Effects</h2>
+				<div class="visibility-demo">Visibility and Opacity Demo</div>
+				<div class="overflow-demo">Overflow and Clipping Demo</div>
+				<div class="transform-demo">
+					Transformations and Transitions Demo
+				</div>
+				<div class="animation-demo">Animation Demo</div>
+			</section>
+
+			<section class="miscellaneous">
+				<h2>Miscellaneous</h2>
+				<div class="interaction-demo">User Interaction Demo</div>
+				<div class="filter-demo">Filters Demo</div>
+				<div class="scroll-resize-demo">
+					Scrolling and Resizing Demo
+				</div>
+			</section>
+		</div>
+	</body>
+</html>
+
+<!--Each group includes related properties that affect similar aspects of styling or behavior in web.
+    These groups are essential for better organization, readability, navigation, and maintainance of css.
+
+        1. Box Model
+            Box Sizing: box-sizing
+            Dimensions: width, height
+            Spacing: margin, padding
+            Borders and Outlines: border, outline
+
+        2. Typography
+            Font Properties: font
+            Text Alignment: text-align
+            Text Transformations: text-transform, letter-spacing
+            Text Decoration: text-decoration
+
+        3. Paint
+            Text and Background Colors: color, background-color
+            Border Colors: border-color
+            SVG Fill: fill
+            Shadows: box-shadow, text-shadow
+
+        4. Layout
+            Display Type: display
+            Flexbox Layout: flex, flex-direction, justify-content, align-items
+            Grid Layout: grid, grid-template-rows, grid-template-columns, grid-gap
+
+        5. Positioning
+            Position Type: position
+            Position Offsets: top, bottom, right, left
+            Stacking Order: z-index
+
+        6. Visual Effects
+            Visibility and Opacity: visibility, opacity
+            Overflow and Clipping: overflow, clip-path
+            Transformation, Transitions and Animation: transform, transition, animation
+
+        7. Miscellaneous
+            User Interaction: cursor, pointer-events, user-select
+            Filters: filter, backdrop-filter
+            Scrolling and Resizing: scroll-behavior, resize -->

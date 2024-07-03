@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+
+	<body>
+		<h1>Upload a Text File</h1>
+		<form id="upload-form" enctype="multipart/form-data">
+			<input type="text" name="name" id="name" />
+			<input
+				type="file"
+				name="fileInput"
+				id="file-input"
+				accept=".txt"
+				multiple="multiple"
+				required />
+			<button type="submit">Upload</button>
+		</form>
+
+		<h2>Uploaded Files</h2>
+		<div id="file-grid" class="grid"></div>
+
+		<div id="modal" class="modal">
+			<div class="modal-content">
+				<span id="modal-close" class="close">&times;</span>
+				<pre id="file-content"></pre>
+			</div>
+		</div>
+
+		<script type="module" src="script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Change CSS Properties</title>
+		<style>
+			:root {
+				--bg-color: lightblue;
+				--text-color: black;
+				--button-color: lightgreen;
+				--box-bg-color: lightgreen;
+			}
+
+			html {
+				font-size: 62.5%;
+			}
+
+			body {
+				margin-top: 50px;
+				font-family: Arial, sans-serif;
+				text-align: center;
+				color: var(--text-color);
+				background-color: var(--bg-color);
+			}
+
+			button {
+				margin: 10px;
+				padding: 10px 20px;
+				border: none;
+				font-size: 16px;
+				background-color: var(--button-color);
+				cursor: pointer;
+			}
+
+			button:hover {
+				background-color: darkgrey;
+			}
+
+			#box {
+				box-sizing: border-box;
+				width: 300px;
+				height: 200px;
+				margin: 20px auto;
+				padding: 10px;
+				border: 2px solid black;
+				color: black;
+				background-color: var(--box-bg-color);
+				text-align: center;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				transition:
+					background-color 0.3s,
+					width 0.3s,
+					height 0.3s;
+			}
+		</style>
+	</head>
+
+	<body>
+		<button onclick="changeThemeColor()">Change Theme Color</button>
+		<button onclick="removeThemeColor()">Remove Theme Color</button>
+		<button onclick="setCssText()">Set CSS Text</button>
+		<button onclick="getCssText()">Get CSS Text</button>
+		<button onclick="changeBoxProperties()">Change Box Properties</button>
+		<button onclick="resetBoxProperties()">Reset Box Properties</button>
+		<button onclick="logCurrentColor()">Log Current Color</button>
+		<button onclick="getComputedStyles()">Get Computed Style</button>
+
+		<div id="box"></div>
+
+		<script>
+			function logOutput(message) {
+				const box = document.getElementById('box');
+				box.innerHTML = message;
+			}
+
+			function changeThemeColor() {
+				const root = document.documentElement;
+				root.style.setProperty('--bg-color', 'lightcoral');
+				root.style.setProperty('--text-color', 'white');
+				root.style.setProperty('--button-color', 'darkblue');
+				logOutput('Theme colors changed.');
+			}
+
+			function removeThemeColor() {
+				const root = document.documentElement;
+				root.style.removeProperty('--bg-color');
+				root.style.removeProperty('--text-color');
+				root.style.removeProperty('--button-color');
+				logOutput('Theme colors removed. Refresh the page to reset.');
+			}
+
+			function setCssText() {
+				const box = document.getElementById('box');
+				box.style.cssText = 'width: 150px; height: 150px; background-color: orange;';
+				logOutput(`CSS Text Set: ${box.style.cssText}`);
+			}
+
+			function getCssText() {
+				const box = document.getElementById('box');
+				logOutput(`Current CSS Text: ${box.style.cssText}`);
+			}
+
+			function changeBoxProperties() {
+				const root = document.documentElement;
+				const box = document.getElementById('box');
+
+				// Using setProperty with CSS variables
+				root.style.setProperty('--bg-color', 'lightcoral');
+				root.style.setProperty('--text-color', 'white');
+
+				// Using setProperty with regular CSS properties
+				box.style.setProperty('background-color', 'purple');
+				box.style.setProperty('width', '200px');
+				box.style.setProperty('height', '200px');
+				logOutput('Box properties changed.');
+			}
+
+			function resetBoxProperties() {
+				const root = document.documentElement;
+				const box = document.getElementById('box');
+
+				// Reset CSS variables
+				root.style.setProperty('--bg-color', 'lightblue');
+				root.style.setProperty('--text-color', 'black');
+
+				// Reset regular CSS properties
+				box.style.setProperty(
+					'background-color',
+					'var(--box-bg-color)'
+				);
+				box.style.setProperty('width', '300px');
+				box.style.setProperty('height', '200px');
+				logOutput('Box properties reset.');
+			}
+
+			function logCurrentColor() {
+				const root = document.documentElement;
+				const bgColor = root.style.getPropertyValue('--bg-color');
+				const textColor = root.style.getPropertyValue('--text-color');
+				const buttonColor =
+					root.style.getPropertyValue('--button-color');
+				logOutput(
+					`Current Background Color: ${bgColor} <br />
+					Current Text Color: ${textColor} <br />
+					Current Button Color: ${buttonColor}`
+				);
+			}
+
+			// function getComputedStyles() {
+			// 	let text = '';
+			// 	const root = getComputedStyle(document.documentElement);
+			// 	const box = getComputedStyle(document.body);
+			// 	console.log(box);
+			// 	console.log(box["background-color"]);
+			// 	// for (const i in root) {
+			// 	// 	text += `${root[root[i]]} <br />`
+			// 	// }
+			// 	for (const i in box) {
+			// 		text += `${root[$]} : ${root[root[i]]} \n`
+			// 	}
+			// 	console.log(text);
+			// 	logOutput(text);
+			// }
+		</script>
+	</body>
+</html>

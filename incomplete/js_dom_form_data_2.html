@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<form id="my-form">
+			<input type="text" name="username" id="username" required />
+			<input type="file" name="profile-pic" id="profile-pic" required />
+			<button type="button" id="submit-btn">Submit</button>
+		</form>
+
+		<script>
+			function handleSubmission() {
+				const form = document.getElementById('my-form');
+				const formData = new FormData(form);
+
+				// Append example
+				formData.append('email', 'john.doe@example.com');
+
+				// Log all entries, keys, values
+				console.log('Entries :');
+				formData.entries().forEach((value, key) => {
+					console.log(key, ':', value);
+				});
+
+				// Log all keys
+				console.log('Keys :');
+				formData.keys().forEach((value, key) => {
+					console.log(key, ':', value);
+				});
+
+				// Log all values
+				console.log('Values :');
+				formData.values().forEach((value, key) => {
+					console.log(key, ':', value);
+				});
+
+				// Check if a key exists
+				if (formData.has('username')) {
+					console.log('Username is present in FormData');
+				}
+
+				// Get and log a specific value
+				const username = formData.get('username');
+				console.log('Username:', username);
+
+				// Set a new value
+				formData.set('username', 'Jane Doe');
+				console.log('New Username:', formData.get('username'));
+
+				// Delete a key/value pair
+				formData.delete('email');
+				console.log('Email deleted:', !formData.has('email'));
+
+				// Using forEach to log all key/value pairs
+				console.log('forEach:');
+				formData.forEach((value, key) => {
+					console.log(key, ':', value);
+				});
+
+				// Updating the form fields with FormData values
+				document.getElementById('username').value =
+					formData.get('username');
+
+				const fileList = formData.getAll('profile-pic');
+				if (fileList.length > 0) {
+					// Note: You cannot set file input values programmatically for security reasons,
+					// this is just a demonstration of how to retrieve the file.
+					console.log('Profile Pic:', fileList[0].name);
+				}
+			}
+
+			document
+				.getElementById('submit-btn')
+				.addEventListener('click', handleSubmission);
+		</script>
+	</body>
+</html>

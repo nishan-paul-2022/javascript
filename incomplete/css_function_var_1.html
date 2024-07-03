@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+	<style>
+		:root {
+			--font-color-black: black;
+			--bgm-default: 'AR Rahman';
+			--theme-color-lightgreen: lightgreen;
+			--theme-color-green: green;
+		}
+
+		* {
+			margin: 10px;
+			padding: 10px;
+		}
+
+		body {
+			width: 60%;
+			margin: auto;
+		}
+
+		.theme {
+			background-color: var(--theme-color-lightgreen, lightgreen);
+			color: var(--font-color-black);
+		}
+
+		.theme__heading::after {
+			content: ' : ' var(--bgm-default, 'AR Rahman');
+		}
+
+		.theme__paragraph {
+			background-color: var(--theme-color-lightgreen, lightgreen);
+		}
+
+		.theme__paragraph--green {
+			--theme-color-lightgreen: var(--theme-color-green, green);
+			background-color: var(--theme-color-lightgreen, green);
+		}
+
+		.theme__note {
+			background-color: var(--theme-color-lightgreen, lightgreen);
+		}
+
+		.theme__note::after {
+			content: ' : ' var(--bgm-default, 'AR Rahman');
+		}
+	</style>
+</head>
+
+<body>
+	<div class="theme theme--lightgreen">
+		<p class="theme__text">KING</p>
+		<h3 class="theme__heading">Jawan</h3>
+		<p class="theme__paragraph theme__paragraph--green">Pathan</p>
+		<div class="theme__subtext">Dunki</div>
+	</div>
+
+	<p class="theme__note">Dev Patel</p>
+</body>
+
+</html>
+
+<!--	-  Variable is a CSS custom property 
+
+		-  Variable must be defined inside a selector 
+
+		-  Local scope means that the variable is only available to the selector where it is declared. 
+		   This can be useful if you want to reuse a value in multiple places within the same selector. 
+		   Or if we want to avoid polluting the global namespace with custom properties.
+
+		-  Global scope means that the variable is available to all selectors in the style sheet. 
+		   This can be useful if we want to reuse a value in multiple selectors.
+		   Or if you want to make it easy to change the value of the variable. -->

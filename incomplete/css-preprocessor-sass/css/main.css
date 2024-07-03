@@ -1,0 +1,92 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	color: #333;
+	line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 16px;
+}
+
+.header {
+	background-color: #3498db;
+	padding: 16px;
+	color: white;
+}
+.header .header__title {
+	font-size: 24px;
+}
+
+.footer {
+	background-color: #2ecc71;
+	padding: 16px;
+	color: white;
+	text-align: center;
+}
+
+.sidebar {
+	width: 250px;
+	background-color: #f4f4f4;
+	padding: 16px;
+	float: left;
+}
+.sidebar::after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+.button {
+	background-color: #3498db;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	cursor: pointer;
+}
+.button--secondary {
+	background-color: #2ecc71;
+}
+
+.card {
+	border: 1px solid #ccc;
+	padding: 16px;
+	margin-bottom: 16px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.card__title {
+	font-size: 20px;
+	margin-bottom: 16px;
+}
+.card__content {
+	font-size: 16px;
+}
+
+.navbar {
+	background-color: #3498db;
+	color: white;
+	padding: 16px;
+}
+.navbar ul {
+	list-style: none;
+	display: flex;
+}
+.navbar ul li {
+	margin-right: 16px;
+}
+.navbar ul li a {
+	color: white;
+	text-decoration: none;
+}
+
+/*# sourceMappingURL=main.css.map */
