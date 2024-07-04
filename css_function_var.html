@@ -1,69 +1,67 @@
 <!doctype html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			:root {
+				--font-color-black: black;
+				--bgm-default: 'AR Rahman';
+				--theme-color-lightgreen: lightgreen;
+				--theme-color-green: green;
+			}
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Document</title>
-	<style>
-		:root {
-			--font-color-black: black;
-			--bgm-default: 'AR Rahman';
-			--theme-color-lightgreen: lightgreen;
-			--theme-color-green: green;
-		}
+			* {
+				margin: 10px;
+				padding: 10px;
+			}
 
-		* {
-			margin: 10px;
-			padding: 10px;
-		}
+			body {
+				width: 60%;
+				margin: auto;
+				font-family: 'Courier New', Courier, monospace;
+				text-transform: uppercase;
+			}
 
-		body {
-			width: 60%;
-			margin: auto;
-			font-family: 'Courier New', Courier, monospace;
-			text-transform: uppercase;
-		}
+			.theme {
+				background-color: var(--theme-color-lightgreen, lightgreen);
+				color: var(--font-color-black);
+			}
 
-		.theme {
-			background-color: var(--theme-color-lightgreen, lightgreen);
-			color: var(--font-color-black);
-		}
+			.theme__heading::after {
+				content: ' : ' var(--bgm-default, 'AR Rahman');
+			}
 
-		.theme__heading::after {
-			content: ' : ' var(--bgm-default, 'AR Rahman');
-		}
+			.theme__paragraph {
+				background-color: var(--theme-color-lightgreen, lightgreen);
+			}
 
-		.theme__paragraph {
-			background-color: var(--theme-color-lightgreen, lightgreen);
-		}
+			.theme__paragraph--green {
+				--theme-color-lightgreen: var(--theme-color-green, green);
+				background-color: var(--theme-color-lightgreen, green);
+			}
 
-		.theme__paragraph--green {
-			--theme-color-lightgreen: var(--theme-color-green, green);
-			background-color: var(--theme-color-lightgreen, green);
-		}
+			.theme__note {
+				background-color: var(--theme-color-lightgreen, lightgreen);
+			}
 
-		.theme__note {
-			background-color: var(--theme-color-lightgreen, lightgreen);
-		}
+			.theme__note::after {
+				content: ' : ' var(--bgm-default, 'AR Rahman');
+			}
+		</style>
+	</head>
 
-		.theme__note::after {
-			content: ' : ' var(--bgm-default, 'AR Rahman');
-		}
-	</style>
-</head>
+	<body>
+		<div class="theme theme--lightgreen">
+			<p class="theme__text">KING</p>
+			<h3 class="theme__heading">Jawan</h3>
+			<p class="theme__paragraph theme__paragraph--green">Pathan</p>
+			<div class="theme__subtext">Dunki</div>
+		</div>
 
-<body>
-	<div class="theme theme--lightgreen">
-		<p class="theme__text">KING</p>
-		<h3 class="theme__heading">Jawan</h3>
-		<p class="theme__paragraph theme__paragraph--green">Pathan</p>
-		<div class="theme__subtext">Dunki</div>
-	</div>
-
-	<p class="theme__note">Dev Patel</p>
-</body>
-
+		<p class="theme__note">Dev Patel</p>
+	</body>
 </html>
 
 <!--	-  Variable is a CSS custom property 
