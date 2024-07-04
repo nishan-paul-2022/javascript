@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			body {
+				margin: 10px;
+				padding: 10px;
+				font-family: 'Courier New', Courier, monospace;
+				background-color: #f0f0f0;
+				text-align: center;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.container {
+				padding: 20px;
+				border: 2px solid #333;
+			}
+
+			.title {
+				margin-bottom: 20px;
+				font-weight: bold;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				text-decoration: underline;
+			}
+
+			section {
+				margin: 20px 0;
+				padding: 20px;
+				border: 1px solid #ccc;
+				border-radius: 8px;
+				background-color: #fafafa;
+			}
+
+			.visibility-demo {
+				margin: 20px;
+				padding: 20px;
+				background-color: #ccc;
+				visibility: visible;
+				opacity: 0.5;
+			}
+
+			.overflow-demo {
+				width: 100px;
+				height: 100px;
+				margin: 10px auto;
+				background-color: #bbb;
+				overflow: hidden;
+				clip-path: circle(50%);
+			}
+
+			.transform-demo {
+				margin: 10px;
+				padding: 10px;
+				background-color: #aaa;
+				transform: rotate(15deg);
+				transition: transform 0.3s ease-in-out;
+			}
+
+			.transform-demo:hover {
+				transform: rotate(-15deg);
+			}
+
+			.animation-demo {
+				margin: 10px;
+				padding: 10px;
+				background-color: #999;
+				animation: exampleAnimation 2s infinite;
+			}
+
+			@keyframes exampleAnimation {
+				0% {
+					color: darkviolet;
+					background-color: rgb(255, 61, 61);
+					opacity: 1;
+				}
+
+				50% {
+					color: darkgray;
+					background-color: rgb(121, 255, 121);
+					opacity: 0.5;
+				}
+
+				100% {
+					color: aqua;
+					background-color: rgb(96, 96, 255);
+					opacity: 1;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<h1 class="title">CSS Properties Demonstration : Visual Effect</h1>
+
+			<section class="visual-effect">
+				<div class="visibility-demo">Visibility and Opacity Demo</div>
+				<div class="overflow-demo">Overflow and Clipping Demo</div>
+				<div class="transform-demo">
+					Transformations and Transitions Demo
+				</div>
+				<div class="animation-demo">Animation Demo</div>
+			</section>
+		</div>
+	</body>
+</html>
