@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			body {
+				margin: 10px;
+				padding: 10px;
+				font-family: 'Courier New', Courier, monospace;
+				background-color: #f0f0f0;
+				text-align: center;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.container {
+				padding: 20px;
+				border: 2px solid #333;
+			}
+
+			.title {
+				margin-bottom: 20px;
+				font-weight: bold;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				text-decoration: underline;
+			}
+
+			section {
+				margin: 20px 0;
+				padding: 20px;
+				border: 1px solid #ccc;
+				border-radius: 8px;
+				background-color: #fafafa;
+			}
+
+			.interaction-demo {
+				margin: 10px;
+				padding: 10px;
+				background-color: #ddd;
+				user-select: none;
+			}
+
+			.interaction-demo .cursor {
+				margin: 10px;
+				padding: 10px;
+				border: 1px solid black;
+				cursor: pointer;
+			}
+
+			.interaction-demo .none {
+				margin: 10px;
+				padding: 10px;
+				border: 1px solid black;
+				text-decoration: none;
+				display: block;
+				pointer-events: none;
+			}
+
+			.interaction-demo .auto {
+				margin: 10px;
+				padding: 10px;
+				border: 1px solid black;
+				text-decoration: none;
+				display: block;
+				pointer-events: auto;
+			}
+
+			.filter-demo {
+				margin: 10px;
+				padding: 10px;
+				background-color: #ddd;
+			}
+
+			.filter-demo .image {
+				width: 400px;
+				height: 300px;
+				margin: auto;
+				background-image: url('https://picsum.photos/400/300?random=1');
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				filter: grayscale(50%);
+			}
+
+			.filter-demo .transparent-box {
+				padding: 10px;
+				font-weight: bold;
+				background-color: rgba(90, 253, 253, 0.701);
+				backdrop-filter: blur(0px);
+			}
+
+			.scroll-resize-demo {
+				margin: 10px;
+				padding: 10px;
+				background-color: #ddd;
+			}
+
+			.scroll-resize-demo .textarea {
+				width: 200px;
+				height: 100px;
+				margin: 10px;
+				padding: 10px;
+				background-color: #bbb;
+				scroll-behavior: smooth;
+				resize: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<h1 class="title">CSS Properties Demonstration : Miscellaneous</h1>
+
+			<section class="miscellaneous">
+				<div class="interaction-demo">
+					<h1>User Interaction Demo</h1>
+					<div>
+						<div class="cursor">CURSOR</div>
+						<a class="none" href="https://www.w3schools.com/html">
+							HTML Tutorial
+						</a>
+						<a class="auto" href="https://www.w3schools.com/css">
+							CSS Tutorial
+						</a>
+					</div>
+				</div>
+
+				<div class="filter-demo">
+					<h1>Filters Demo</h1>
+					<div class="image">
+						<div class="transparent-box">backdrop-filter: blur</div>
+					</div>
+				</div>
+
+				<div class="scroll-resize-demo">
+					<h1>Scrolling and Resizing Demo</h1>
+					<textarea class="textarea">
+						HELLO WORLD
+						HELLO WORLD
+						HELLO WORLD
+						HELLO WORLD
+						HELLO WORLD
+						HELLO WORLD
+					</textarea>
+				</div>
+			</section>
+		</div>
+	</body>
+</html>
