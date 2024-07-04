@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			body {
+				margin: 10px;
+				padding: 10px;
+				font-family: 'Courier New', Courier, monospace;
+				background-color: #f0f0f0;
+				text-align: center;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.container {
+				padding: 20px;
+				border: 2px solid #333;
+			}
+
+			.title {
+				margin-bottom: 20px;
+				font-weight: bold;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				text-decoration: underline;
+			}
+
+			section {
+				margin: 20px 0;
+				padding: 20px;
+				border: 1px solid #ccc;
+				border-radius: 8px;
+				background-color: #fafafa;
+			}
+
+			.box-model .box-sizing-demo,
+			.box-model .dimensions-demo,
+			.box-model .spacing-demo,
+			.box-model .borders-demo {
+				margin: 10px 0;
+			}
+
+			.box-sizing-demo {
+				width: 100px;
+				height: 100px;
+				margin: 10px;
+				padding: 10px;
+				border: 2px solid #000;
+				background-color: #ddd;
+			}
+
+			.dimensions-demo {
+				width: 200px;
+				height: 100px;
+				margin: 10px auto;
+				background-color: #ccc;
+			}
+
+			.spacing-demo {
+				margin: 20px;
+				padding: 20px;
+				border: 1px solid #000;
+				background-color: #bbb;
+			}
+
+			.borders-demo {
+				width: 150px;
+				height: 150px;
+				margin: 10px auto;
+				border: 5px solid #000;
+				outline: 3px dotted #333;
+				background-color: #aaa;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<h1 class="title">CSS Properties Demonstration : Box Model</h1>
+
+			<section class="box-model">
+				<div class="box-sizing-demo">Box Sizing Demo</div>
+				<div class="dimensions-demo">Dimensions Demo</div>
+				<div class="spacing-demo">Spacing Demo</div>
+				<div class="borders-demo">Borders and Outlines Demo</div>
+			</section>
+		</div>
+	</body>
+</html>
+
+<!--Each group includes related properties that affect similar aspects of styling or behavior in web.
+    These groups are essential for better organization, readability, navigation, and maintainance of css.
+
+        1. Box Model
+            Box Sizing: box-sizing
+            Dimensions: width, height
+            Spacing: margin, padding
+            Borders and Outlines: border, outline
+
+        2. Typography
+            Font Properties: font
+            Text Alignment: text-align
+            Text Transformations: text-transform, letter-spacing
+            Text Decoration: text-decoration
+
+        3. Painting
+            Text and Background Colors: color, background-color
+            Border Colors: border-color
+            SVG Fill: fill
+            Shadows: text-shadow, box-shadow
+
+        4. Layout
+            Display Type: display
+            Flexbox Layout: flex, flex-direction, justify-content, align-items
+            Grid Layout: grid, grid-template-rows, grid-template-columns, grid-gap
+
+        5. Positioning
+            Position Type: position
+            Position Offsets: top, bottom, right, left
+            Stacking Order: z-index
+
+        6. Visual Effect
+            Visibility and Opacity: visibility, opacity
+            Overflow and Clipping: overflow, clip-path
+            Transformation, Transitions and Animation: transform, transition, animation
+
+        7. Miscellaneous
+            User Interaction: cursor, pointer-events, user-select
+            Filters: filter, backdrop-filter
+            Scrolling and Resizing: scroll-behavior, resize -->
