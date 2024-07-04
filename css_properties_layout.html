@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			body {
+				margin: 10px;
+				padding: 10px;
+				font-family: 'Courier New', Courier, monospace;
+				background-color: #f0f0f0;
+				text-align: center;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.container {
+				padding: 20px;
+				border: 2px solid #333;
+			}
+
+			.title {
+				margin-bottom: 20px;
+				font-weight: bold;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				text-decoration: underline;
+			}
+
+			section {
+				margin: 20px 0;
+				padding: 20px;
+				border: 1px solid #ccc;
+				border-radius: 8px;
+				background-color: #fafafa;
+			}
+
+			.flex-container {
+				margin: 5px 0;
+				padding: 5px;
+				background-color: #ddd;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+				align-items: center;
+			}
+
+			.grid-container {
+				margin: 5px 0;
+				padding: 5px;
+				background-color: #ddd;
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 5px;
+			}
+
+			.flex-container > div,
+			.grid-container > div {
+				margin: 5px;
+				padding: 5px;
+				background-color: #bbb;
+				border: 1px solid #333;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<h1 class="title">CSS Properties Demonstration : Layout</h1>
+
+			<section class="flexbox">
+				<div class="flex-container">
+					<div>Item 1</div>
+					<div>Item 2</div>
+					<div>Item 3</div>
+				</div>
+			</section>
+
+			<section class="grid">
+				<div class="grid-container">
+					<div>Item 1</div>
+					<div>Item 2</div>
+					<div>Item 3</div>
+					<div>Item 4</div>
+					<div>Item 5</div>
+					<div>Item 6</div>
+				</div>
+			</section>
+		</div>
+	</body>
+</html>
