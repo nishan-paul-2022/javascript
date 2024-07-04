@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			body {
+				margin: 10px;
+				padding: 10px;
+				font-family: 'Courier New', Courier, monospace;
+				background-color: #f0f0f0;
+				text-align: center;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.container {
+				padding: 20px;
+				border: 2px solid #333;
+			}
+
+			.title {
+				margin-bottom: 20px;
+				font-weight: bold;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				text-decoration: underline;
+			}
+
+			section {
+				margin: 20px 0;
+				padding: 20px;
+				border: 1px solid #ccc;
+				border-radius: 8px;
+				background-color: #fafafa;
+			}
+
+			.position-demo {
+				margin: 10px;
+				padding: 10px;
+				background-color: #ddd;
+				position: relative;
+				top: 20px;
+				right: 20px;
+			}
+
+			.offsets-demo {
+				margin: 10px;
+				padding: 10px;
+				background-color: #bbb;
+				position: absolute;
+				top: 50px;
+				right: 50px;
+				z-index: 2;
+			}
+
+			.z-index-demo {
+				margin: 10px;
+				padding: 10px;
+				background-color: #999;
+				position: relative;
+				z-index: 1;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<h1 class="title">CSS Properties Demonstration : Positioning</h1>
+
+			<section class="positioning">
+				<div class="position-demo">Position Type Demo</div>
+				<div class="offsets-demo">Position Offsets Demo</div>
+				<div class="z-index-demo">Stacking Order Demo</div>
+			</section>
+		</div>
+	</body>
+</html>
