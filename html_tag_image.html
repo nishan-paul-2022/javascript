@@ -12,6 +12,15 @@
 				align-items: center;
 				justify-content: center;
 			}
+
+			figcaption {
+				margin-top: 10px;
+				font:
+					normal bold normal 12px/1.5 'Courier New',
+					Courier,
+					monospace;
+				text-align: center;
+			}
 		</style>
 	</head>
 
@@ -19,7 +28,19 @@
 		<img
 			src="https://picsum.photos/400/300?random=1"
 			alt="random"
-			height="500px"
-			width="500px" />
+			height="250px"
+			width="250px" />
+
+		<figure>
+			<img src="https://picsum.photos/400/300?random=1" alt="random" />
+			<figcaption>random</figcaption>
+		</figure>
+
+		<figure>
+			<img
+				src="https://placehold.co/250x250/aqua/white/png?text=Hello+World&font=roboto"
+				alt="placeholder" />
+			<figcaption>placeholder</figcaption>
+		</figure>
 	</body>
 </html>
