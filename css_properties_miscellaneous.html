@@ -99,14 +99,17 @@
 				background-color: #ddd;
 			}
 
-			.scroll-resize-demo .textarea {
-				width: 200px;
-				height: 100px;
-				margin: 10px;
+			.scroll-resize-demo .resizable {
+				width: 300px;
+				height: 200px;
+				margin: auto;
 				padding: 10px;
-				background-color: #bbb;
+				border-radius: 1%;
+				resize: both;
+				overflow: auto;
+				background-color: #fff;
+				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 				scroll-behavior: smooth;
-				resize: none;
 			}
 		</style>
 	</head>
@@ -138,14 +141,25 @@
 
 				<div class="scroll-resize-demo">
 					<h1>Scrolling and Resizing Demo</h1>
-					<textarea class="textarea">
-						HELLO WORLD
-						HELLO WORLD
-						HELLO WORLD
-						HELLO WORLD
-						HELLO WORLD
-						HELLO WORLD
-					</textarea>
+					<div class="resizable">
+						<p>
+							Content inside a resizable and scrollable div.
+							Resize the div by dragging the bottom-right corner.
+						</p>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing
+							elit. Quisque vel arcu a lacus vestibulum efficitur.
+							Morbi quis est sit amet justo fermentum eleifend.
+							Duis sit amet tristique urna, sit amet egestas nunc.
+							Nam nec arcu at nunc egestas elementum et vel erat.
+							Donec cursus malesuada magna, eu auctor ligula
+							malesuada ut. Ut volutpat vehicula nisl, ac
+							porttitor justo vestibulum vel. Vestibulum ante
+							ipsum primis in faucibus orci luctus et ultrices
+							posuere cubilia curae; Aenean sodales auctor lectus
+							vel faucibus. Suspendisse potenti.
+						</p>
+					</div>
 				</div>
 			</section>
 		</div>
