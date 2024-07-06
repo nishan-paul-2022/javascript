@@ -63,7 +63,7 @@ function demonstrateTypes(
 	console.log(`Set: ${[...set]}`);
 	console.log(`Map: ${[...map]}`);
 	console.log(`Function Result 01: ${func1(10, 20)}`);
-	console.log(`Function Result 02: ${func2('winter', 'soldier')}`);
+	console.log(`Function Result 02: ${func2('Winter', 'Soldier')}`);
 	console.log(`Object: ${JSON.stringify(obj)}`);
 	console.log(`Class Instance: ${JSON.stringify(classInstance)}`);
 }
