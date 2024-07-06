@@ -1,13 +1,14 @@
 {
-	"name": "mern",
+	"name": "javascript",
 	"version": "1.0.0",
-	"description": "mern-stack",
+	"description": "javascript",
 	"main": "zmax.html",
 	"scripts": {
-		"test": "echo 'Error: no test specified' && exit 1",
+		"test": "echo 'error: no test specified' && exit 1",
 		"format": "npx prettier --write *.{html,css,json}",
 		"lint": "npx eslint --fix *.{js,ts,cjs,mjs,cts,mts}",
-		"tsc": "npx tsc"
+		"tsc": "npx tsc",
+		"exe": "npx ts-node"
 	},
 	"keywords": [],
 	"author": "nishan-paul",
