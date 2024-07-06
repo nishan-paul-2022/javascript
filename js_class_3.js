@@ -9,7 +9,7 @@ class C01 {
 		this.weight = weight;
 	}
 
-	PrinValues() {
+	Print() {
 		console.log(this.age);
 		console.log(this.height);
 		console.log(this.surname);
@@ -32,9 +32,9 @@ class C02 extends C01 {
 		console.log('LAST OF THE STARS');
 	}
 
-	JawanOG() {
+	Pathan() {
 		super.Jawan();
-		console.log(super.age); // does not mean anything
+		console.log(super.age); /* does not mean anything */
 	}
 }
 
@@ -53,14 +53,14 @@ class Class2 extends Class1 {
 
 function F01() {
 	const c02 = new C02('Paul', 53);
-	c02.PrinValues();
+	c02.Print();
 	c02.Jawan();
-	c02.JawanOG();
+	c02.Pathan();
 }
 
 function F02() {
 	const c01 = new C01('Logan', 63);
-	c01.PrinValues();
+	c01.Print();
 	c01.Jawan();
 }
 
@@ -75,4 +75,4 @@ F01();
 F02();
 F03();
 
-/* method or static method can't be used as constructor */
+/* method and static-method can't be used as constructor */

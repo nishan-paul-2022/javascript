@@ -1,100 +1,100 @@
-class ExA {
+class ExampleClass {
 	static count = 0;
 
 	constructor(x, y, z) {
 		this.x = x;
 		this.y = y;
 		this.z = z;
-		ExA.count++;
+		ExampleClass.count++;
 	}
 
-	static get Counter() {
-		return ExA.count;
+	static get counter() {
+		return ExampleClass.count;
 	}
 
-	static Hi() {
-		console.log('SAY HI FROM ADD()');
+	static greetings() {
+		console.log('GREETINGS FROM ADD()');
 	}
 
-	Add() {
-		ExA.Hi();
+	add() {
+		ExampleClass.greetings();
 
 		const sum = this.x + this.y + this.z;
 		console.log(sum);
 
 		this.count = 15;
 
-		this.Hello = function () {
-			console.log('Hello' + ' ' + this.x);
+		this.hello = function () {
+			console.log('Hello ' + this.x);
 		};
 
-		this.Rfunction1 = function () {
-			console.log('Rfunction1');
+		this.returnFunction1 = function () {
+			console.log('returnFunction1');
 
-			function HomeWork() {
-				console.log('Add -> Rfunction -> HomeWork');
+			function homeWork() {
+				console.log('Add -> returnFunction1 -> homeWork');
 			}
 
-			return HomeWork;
+			return homeWork;
 		};
 
-		this.Rfunction2 = function () {
-			console.log('Rfunction2');
-			return this.Hello;
+		this.returnFunction2 = function () {
+			console.log('returnFunction2');
+			return this.hello;
 		};
 	}
 
-	Extra() {
+	extra() {
 		console.log('EXTRA');
-		this.World = function () {
-			console.log('World');
+		this.welcome = function () {
+			console.log('welcome');
 
-			function OK() {
-				this.Add();
+			function salute() {
+				this.add();
 			}
 
-			return OK;
+			return salute;
 		};
 	}
 }
 
-const exa = new ExA(10, 20, 30);
+const example = new ExampleClass(10, 20, 30);
 
-function StaticExample() {
-	console.log('StaticExample');
-	ExA.Hi();
-	console.log(ExA.count);
-	console.log(ExA.Counter);
+function staticExample() {
+	console.log('staticExample');
+	ExampleClass.greetings();
+	console.log(ExampleClass.count);
+	console.log(ExampleClass.counter);
 }
 
-function MethodWithMember() {
-	console.log('MethodWithMember');
-	// console.log(exa.count);
-	// exa.Hello();
-	exa.Add();
-	exa.Hello();
-	console.log(exa.count);
+function methodWithMember() {
+	console.log('methodWithMember');
+	// console.log(example.count);
+	// example.hello();
+	example.add();
+	example.hello();
+	console.log(example.count);
 }
 
-function MethodReturnsFunction1() {
-	console.log('MethodReturnsFunction');
-	const HomeWork = exa.Rfunction1();
-	HomeWork();
+function methodReturnsFunction1() {
+	console.log('methodReturnsFunction1');
+	const homeWork = example.returnFunction1();
+	homeWork();
 
-	const Hello = exa.Rfunction2();
-	// Hello();
-	Hello.call(exa);
+	const hello = example.returnFunction2();
+	// hello();
+	hello.call(example);
 }
 
-function MethodReturnsFunction2() {
-	console.log('MethodReturnsFunction2');
-	exa.Extra();
-	const OK = exa.World();
-	// OK();
-	OK.call(exa);
+function methodReturnsFunction2() {
+	console.log('methodReturnsFunction2');
+	example.extra();
+	const welcome = example.welcome();
+	// welcome();
+	welcome.call(example);
 }
 
-StaticExample();
-MethodWithMember();
-MethodReturnsFunction1();
-MethodReturnsFunction2();
+staticExample();
+methodWithMember();
+methodReturnsFunction1();
+methodReturnsFunction2();
