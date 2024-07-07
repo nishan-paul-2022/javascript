@@ -28,10 +28,16 @@ function F03() {
 
 /* Type Inference : Array */
 function F04() {
-	const numbers = [1, 2, 3]; // numbers is inferred to be a number[]
-	numbers.push(4); // valid
-	// numbers.push('5'); // error: argument of type 'string' is not assignable to parameter of type 'number'.
-	console.log(numbers);
+	const numbers1 = [1, 2, 3, 4]; // numbers is inferred to be a number[]
+	numbers1.push(5); // valid
+	// numbers1.push('5'); // error: argument of type 'string' is not assignable to parameter of type 'number'.
+	console.log(numbers1);
+
+	const numbers2 = [1, 2, '3', '4']; // numbers is inferred to be a number[]
+	numbers2.push(5); // valid
+	numbers2.push('5'); // valid
+	// numbers2.push(true); // error: argument of type 'boolean' is not assignable to parameter of type 'number | string'.
+	console.log(numbers2);
 }
 
 /* Type Inference : Contextual */
@@ -107,8 +113,7 @@ function F10() {
 
 /* Types Inference : Type Assertion */
 function F11() {
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	const someValue: any = 'this is a string';
+	const someValue: unknown = 'this is a string';
 	const strLength: number = (someValue as string).length; // strLength is inferred to be a number
 
 	console.log(someValue);

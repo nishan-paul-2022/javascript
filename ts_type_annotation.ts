@@ -27,7 +27,8 @@ const myBigInt: bigint = 123456789012345678901234567890n; // BigInt
 const mySymbol: symbol = Symbol('mySymbol'); // Symbol
 const myNull: null = null; // Null
 const myUndefined: undefined = undefined; // Undefined
-const myArray: number[] = [1, 2, 3, 4, 5]; // Array
+const myArray1: number[] = [1, 2, 3, 4]; // Array
+const myArray2: (number | string)[] = [1, 2, '3', '4']; // Array
 const mySet: Set<number> = new Set([1, 2, 3]); // Set
 const myMap: Map<string, number> = new Map([
 	['one', 1],
@@ -44,7 +45,8 @@ function demonstrateTypes(
 	sym: symbol,
 	nul: null,
 	undef: undefined,
-	arr: number[],
+	arr1: number[],
+	arr2: (number | string)[],
 	set: Set<number>,
 	map: Map<string, number>,
 	func1: (x: number, y: number) => number,
@@ -59,7 +61,8 @@ function demonstrateTypes(
 	console.log(`Symbol: ${sym.toString()}`);
 	console.log(`Null: ${nul}`);
 	console.log(`Undefined: ${undef}`);
-	console.log(`Array: ${arr}`);
+	console.log(`Array 01: ${arr1}`);
+	console.log(`Array 02: ${arr2}`);
 	console.log(`Set: ${[...set]}`);
 	console.log(`Map: ${[...map]}`);
 	console.log(`Function Result 01: ${func1(10, 20)}`);
@@ -76,7 +79,8 @@ demonstrateTypes(
 	mySymbol,
 	myNull,
 	myUndefined,
-	myArray,
+	myArray1,
+	myArray2,
 	mySet,
 	myMap,
 	myFunction1,
