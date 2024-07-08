@@ -1,10 +1,10 @@
-type addType = number[] | number | string;
+type alphanumeric = number[] | number | string;
 
 function add(x: number[], y: number[]): number[];
 function add(x: number, y: number): number;
 function add(x: string, y: string): string;
-function add(x: addType, y: addType): addType {
-	let z: addType;
+function add(x: alphanumeric, y: alphanumeric): alphanumeric {
+	let z: alphanumeric;
 
 	if (Array.isArray(x) && Array.isArray(y)) {
 		z = x.concat(y);

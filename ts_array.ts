@@ -30,7 +30,7 @@ function F04() {
 }
 
 function F05() {
-	type HttpResponse = [statusCode: number, statusMessage: string];
+	type HttpResponse = readonly [statusCode: number, statusMessage: string];
 	const response: HttpResponse = [200, 'OK'];
 	const [statusCode, statusMessage] = response;
 	const [statusCode1, statusMessage2] = response;
