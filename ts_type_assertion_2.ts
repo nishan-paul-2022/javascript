@@ -1,43 +1,54 @@
-class Class01 {
-	method01(): void {
-		console.log('method-01 / class-01');
-	}
+interface Animal {
+	name: string;
 }
 
-class Class02 extends Class01 {
-	method01(): void {
-		console.log('method-01 / class-02');
-	}
-
-	method02(): void {
-		console.log('method-02 / class-02');
-	}
+interface Dog extends Animal {
+	breed: string;
 }
 
-type ClassType = Class01 | Class02;
-
-function IsClass02(inst: ClassType): inst is Class02 {
-	return inst instanceof Class02;
+function F01() {
+	const animal: Animal = { name: 'Spot' };
+	// animal.ID = 1604085;
+	console.log(animal);
 }
 
-function UseCase(inst: ClassType) {
-	if (IsClass02(inst)) {
-		console.log('typescript knows object is instance of class-02');
-		inst.method02();
-	} else {
-		console.log('typescript knows object is instance of class-01');
-		inst.method01();
-	}
+function F02() {
+	const dog: Dog = { name: 'Spot', breed: 'Husky' };
+	// dog.ID = 1604085;
+	console.log(dog);
 }
 
-const inst01 = new Class01();
-const inst02 = new Class02();
+function F03() {
+	const dog: Dog = { name: 'Spot', breed: 'Husky' };
+	const animal = dog as Animal;
+	// animal.breed = 'Husly';
+	console.log(animal);
+}
 
-inst01.method01();
-inst02.method01();
-inst02.method02();
-(inst01 as Class02).method01();
-(inst02 as Class01).method01();
+function F04() {
+	const animal: Animal = { name: 'Spot' };
+	const dog = animal as Dog;
+	dog.breed = 'Husky';
+	console.log(dog);
+}
 
-UseCase(inst01);
-UseCase(inst02);
+function F05() {
+	const dog: Dog = { name: 'Spot', breed: 'Husky' };
+	const animal = <Animal>dog;
+	// animal.breed = 'Husly';
+	console.log(animal);
+}
+
+function F06() {
+	const animal: Animal = { name: 'Spot' };
+	const dog = <Dog>animal;
+	dog.breed = 'Husky';
+	console.log(dog);
+}
+
+F01();
+F02();
+F03();
+F04();
+F05();
+F06();
