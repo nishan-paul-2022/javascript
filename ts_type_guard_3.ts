@@ -37,3 +37,5 @@ const inst21 = inst2 as Class1;
 
 InstanceChecking(inst12);
 InstanceChecking(inst21);
+
+/* type assertion doesn't work upon class instance */

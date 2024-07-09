@@ -29,3 +29,5 @@ inst12.method1();
 
 inst21.method1();
 // inst21.method2(); /* invalid */
+
+/* type assertion doesn't work upon class instance */

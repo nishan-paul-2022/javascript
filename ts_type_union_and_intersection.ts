@@ -100,7 +100,8 @@ TypeUnion5();
 TypeIntersection();
 
 /*
-Type intersections in TypeScript are used to combine multiple types into one. 
-This is particularly useful for combining object types, 
-but for primitive types or enumerator, intersections usually do not make sense because they result in an impossible type. 
-For example, intersection of string and number isn't valid because value can't be both string and number at the same time. */
+union for regular-object		: either one of them | both of them (merged)
+union for others				: either one of them
+
+intersection for regular-object	: both of them (merged)
+intersection for others			: invalid */
