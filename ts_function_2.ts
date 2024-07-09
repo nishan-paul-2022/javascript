@@ -1,3 +1,4 @@
+// default parameter
 function DaysInMonth(
 	month: number,
 	year: number = new Date().getFullYear()
@@ -26,16 +27,23 @@ function DaysInMonth(
 	}
 }
 
+// rest parameter
 function MaxPlusMin(...values: number[]): number {
 	const sum: number = Math.max(...values) + Math.min(...values);
 	console.log(sum);
 	return sum;
 }
 
+// return type is void when function returns nothing
+function ReturnNothing(x: number, y: number): void {
+	console.log(x + y);
+}
+
 DaysInMonth(2, 2021);
 DaysInMonth(2);
 MaxPlusMin(10, 20, 30);
 MaxPlusMin(10, 20, 30, 40, 50);
+ReturnNothing(10, 20);
 
 /*
 function declaration :

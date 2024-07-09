@@ -1,5 +1,6 @@
 type alphanumeric = number[] | number | string;
 
+// function overloading
 function add(x: number[], y: number[]): number[];
 function add(x: number, y: number): number;
 function add(x: string, y: string): string;
@@ -18,6 +19,7 @@ function add(x: alphanumeric, y: alphanumeric): alphanumeric {
 	return z;
 }
 
+// function overloading
 function mul(x: number, y: number): number;
 function mul(x: number, y: number, z: number): number;
 function mul(x: number, y: number, z?: number): number {
@@ -33,6 +35,7 @@ function mul(x: number, y: number, z?: number): number {
 	return value;
 }
 
+// method overloading
 class Counter {
 	count: number = 0;
 
