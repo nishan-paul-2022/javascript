@@ -17,7 +17,7 @@ class Class2 extends Class1 {
 const inst1 = new Class1();
 const inst2 = new Class2();
 const inst12 = inst1 as Class2;
-const inst21 = inst2 as Class1;
+const inst21 = <Class1>inst2;
 
 inst1.method1();
 

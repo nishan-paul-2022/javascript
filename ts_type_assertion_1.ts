@@ -3,6 +3,10 @@ function MathConstant(format: boolean): string | number {
 	return ans;
 }
 
+function ReturnUnknown(): unknown {
+	return "I'll be back";
+}
+
 function F01() {
 	const ans = MathConstant(true) as string;
 	console.log(ans.length);
@@ -10,19 +14,19 @@ function F01() {
 
 function F02() {
 	const ans = <number>MathConstant(false);
-	console.log(ans.toPrecision(2));
+	console.log(ans.toPrecision(5));
 }
 
 function F03() {
-	const someValue: unknown = 'Hello, TypeScript';
-	const strLength: number = (someValue as string).length;
-	console.log(`The length of the string is: ${strLength}`);
+	const value = ReturnUnknown();
+	const length: number = (value as string).length;
+	console.log(`length of string is: ${length}`);
 }
 
 function F04() {
-	const someValue: unknown = 'Hello, TypeScript';
-	const strLength: number = (<string>someValue).length;
-	console.log(`The length of the string is: ${strLength}`);
+	const value = ReturnUnknown();
+	const length: number = (<string>value).length;
+	console.log(`length of string is: ${length}`);
 }
 
 F01();
