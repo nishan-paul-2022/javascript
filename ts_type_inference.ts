@@ -134,6 +134,5 @@ F11();
 
 /*
 Type inference occurs when we initialize variables, set parameter with default values, and determine function return types.
-TypeScript uses the best common type algorithm to select the best candidate types that are compatible with all variables.
-TypeScript also uses contextual typing to infer types of variables based on the locations of the variables.
-*/
+TypeScript uses best common type algorithm to select best candidate types that are compatible with all variables.
+TypeScript also uses contextual typing to infer variable types based on variable locations. */

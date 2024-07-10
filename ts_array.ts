@@ -1,32 +1,32 @@
 function F01() {
-	const arr1: number[] = [1];
-	// arr1.push('a');
-	arr1.push(2);
-	console.log(arr1);
+	const arr: number[] = [1];
+	// arr.push('a');
+	arr.push(2);
+	console.log(arr);
 }
 
 function F02() {
-	const arr2: (number | string)[] = [1, 'a'];
-	arr2.push('b');
-	arr2.push(2);
-	// arr2.push(true);
-	console.log(arr2);
+	const arr: (number | string)[] = [1, 'a'];
+	arr.push('b');
+	arr.push(2);
+	// arr.push(true);
+	console.log(arr);
 }
 
 function F03() {
-	const arr3: [number, string] = [1, 'a']; // ensures values in initialization are in certain order
-	arr3.push('b');
-	arr3.push(2);
-	// arr3.push(true);
-	console.log(arr3);
+	const arr: [number, string] = [1, 'a']; // ensures values in initialization are in certain order
+	arr.push('b');
+	arr.push(2);
+	// arr.push(true);
+	console.log(arr);
 }
 
 function F04() {
-	const arr4: readonly [number, string] = [1, 'a'];
-	// arr4.push('b');
-	// arr4.push(2);
-	// arr4.push(true);
-	console.log(arr4);
+	const arr: readonly [number, string] = [1, 'a'];
+	// arr.push('b');
+	// arr.push(2);
+	// arr.push(true);
+	console.log(arr);
 }
 
 function F05() {

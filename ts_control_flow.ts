@@ -73,10 +73,10 @@ function FlowSwitch() {
 function FlowBreak() {
 	for (let i: number = 0; i < 10; i++) {
 		if (i === 2) {
-			continue; // Skip the rest of the loop when i is 2
+			continue; // skip rest of the loop when i is 2
 		}
 		if (i === 5) {
-			break; // Exit the loop when i is 5
+			break; // exit the loop when i is 5
 		}
 		console.log(`break and continue example: ${i}`);
 	}
