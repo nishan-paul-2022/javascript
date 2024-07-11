@@ -1,10 +1,6 @@
 /* eslint-disable no-fallthrough */
 
-const x = 10,
-	y = 20,
-	z = 30;
-const u = 0;
-const result = (x + y) / z + u;
+const result = 1;
 
 switch (result) {
 	case 1:
