@@ -9,18 +9,18 @@ class CustomError extends Error {
 }
 
 function Error01() {
-	const filePath = 'zmax.html';
-	let fileContent, fileHandle;
+	const filePath = 'filePath/fileName';
+	let fileContent, fileHandler;
 
 	try {
-		fileHandle = fs.openSync(filePath, 'r');
-		fileContent = fs.readFileSync(fileHandle, 'utf8');
+		fileHandler = fs.openSync(filePath, 'r');
+		fileContent = fs.readFileSync(fileHandler, 'utf8');
 	} catch (error) {
-		console.error('An error occurred:', error.message);
+		console.error(error);
 	} finally {
-		if (fileHandle) {
-			fs.closeSync(fileHandle);
-			console.log('File handle closed.');
+		if (fileHandler) {
+			fs.closeSync(fileHandler);
+			console.log('File handler closed');
 		}
 		if (fileContent) {
 			console.log('File content:', fileContent);
@@ -75,5 +75,5 @@ Error04();
 Error05();
 
 /*
-- auto throw => default error => error object => name and message
-- manual throw => custom error => any object */
+- auto throw // default error // error object // name and message
+- manual throw // custom error // any object */

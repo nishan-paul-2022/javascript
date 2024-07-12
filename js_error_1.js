@@ -1,38 +1,56 @@
 function Error01() {
-	const value = 1;
-	try {
-		const message = 'NON-NEGATIVE';
-		if (value >= 0) {
-			console.error(message);
-			throw message;
+	function NotNegative(value) {
+		try {
+			const error = 'NEGATIVE';
+			if (value < 0) {
+				console.error(value);
+				throw error;
+			} else {
+				const newValue = value * value;
+				console.log(newValue);
+			}
+		} catch (error) {
+			console.log(error);
 		}
+	}
+
+	const value = -2;
+	NotNegative(value);
+}
+
+function Error02() {
+	function NotNegative(value) {
+		const error = 'NEGATIVE';
+		if (value < 0) {
+			console.error(value);
+			throw error;
+		} else {
+			const newValue = value * value;
+			return newValue;
+		}
+	}
+
+	try {
+		const value = -3;
+		const newValue = NotNegative(value);
+		console.log(newValue);
 	} catch (error) {
 		console.log(error);
 	}
 }
 
-function Error02() {
-	const num = 0;
-	const error = 'CUSTOM-ERROR';
-	const message = () => {
-		if (num) {
-			throw error;
-		} else {
-			return num;
-		}
-	};
-	console.log(message());
-}
-
 function Error03() {
-	function Fn(num) {
-		num[0]++;
+	function DemoFunction(array) {
+		array.forEach((element) => {
+			console.log(element * element);
+		});
 	}
 
 	try {
-		Fn(Math.E);
-	} catch (w) {
-		console.log(w);
+		const value = Math.random();
+		DemoFunction(value);
+	} catch (error) {
+		console.log(error);
 	}
 }
 
@@ -41,10 +59,9 @@ Error02();
 Error03();
 
 /* 
-- using undeclared object / Reference Error
-- using undeclared method / Type Error
-- violating descriptor / Type Error
-- stack overflow / Range Error
-- missing notation / Syntax Error
-- error in eval expression / Eval Error 
-*/
+- using undeclared object 	: ReferenceError
+- using undeclared method 	: TypeError
+- violating descriptor 		: TypeError
+- stack overflow 			: RangeError
+- missing notation 			: SyntaxError
+- error in eval expression 	: EvalError */
