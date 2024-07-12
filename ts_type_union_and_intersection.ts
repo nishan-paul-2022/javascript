@@ -75,6 +75,36 @@ function TypeUnion5() {
 	console.log(entity3);
 }
 
+function TypeUnion6() {
+	type Shape =
+		| { kind: 'circle'; radius: number }
+		| { kind: 'square'; sideLength: number }
+		| { kind: 'triangle'; base: number; height: number };
+
+	function getArea(shape: Shape): number {
+		switch (shape.kind) {
+			case 'circle':
+				return Math.PI * shape.radius * shape.radius;
+			case 'square':
+				return shape.sideLength * shape.sideLength;
+			case 'triangle':
+				return (shape.base * shape.height) / 2;
+			default: {
+				const exhaustiveCheck: never = shape;
+				throw `unhandled case: ${exhaustiveCheck}`;
+			}
+		}
+	}
+
+	const myCircle: Shape = { kind: 'circle', radius: 10 };
+	const mySquare: Shape = { kind: 'square', sideLength: 10 };
+	const myTriangle: Shape = { kind: 'triangle', base: 10, height: 10 };
+
+	console.log(getArea(myCircle));
+	console.log(getArea(mySquare));
+	console.log(getArea(myTriangle));
+}
+
 function TypeIntersection() {
 	type Name = { name: string };
 	type Age = { age: number };
@@ -97,6 +127,7 @@ TypeUnion2();
 TypeUnion3();
 TypeUnion4();
 TypeUnion5();
+TypeUnion6();
 TypeIntersection();
 
 /*
