@@ -13,4 +13,4 @@ async function RandomFunction() {
 	return Math.PI;
 }
 
-module.exports = { Add, fName, dName, RandomFunction, message: 'FearIsATool' };
+module.exports = { Add, fName, dName, message: 'FearIsATool', RandomFunction };

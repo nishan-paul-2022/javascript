@@ -27,7 +27,7 @@ function ExampleThree() {
 		id: collegeId = 'NDC'
 	} = require('./node_module_1.cjs');
 
-	Add(10, 20);
+	Add(15, 25);
 	console.log(fileName);
 	console.log(dirName);
 	console.log(message);
@@ -35,13 +35,15 @@ function ExampleThree() {
 }
 
 async function ExampleFour() {
-	console.log('ExampleFour');
-	const value = await module1.RandomFunction();
-	console.log(value);
+	try {
+		const value = await module1.RandomFunction();
+		console.log(value);
+	} catch (error) {
+		console.log(error);
+	}
 }
 
 function ExampleFive() {
-	console.log('ExampleFive');
 	const promise = module1.RandomFunction();
 	promise
 		.then((resolve) => {
@@ -56,7 +58,8 @@ ExampleOne();
 ExampleTwo();
 ExampleThree();
 ExampleFour();
-// await ExampleFour(); /* invalid (no outside await in commonjs module) */
 ExampleFive();
 
-/* commonjs module isn't compatible for making aynchronous operation synchronous in module scope */
+/*
+- no outside await in commonjs module 
+- commonjs module isn't compatible for making aynchronous operation synchronous in module scope */
