@@ -1,4 +1,4 @@
-function TypeUnion1() {
+function Union01() {
 	type alphanumeric = string | number;
 
 	const value1: alphanumeric = '120';
@@ -8,34 +8,35 @@ function TypeUnion1() {
 	console.log(value2);
 }
 
-function TypeUnion2() {
-	type array = string[] | number[];
+function Union02() {
+	type alphanumeric = string | number;
 
-	const arr1: array = ['Alice', 'Bob'];
-	console.log(arr1);
+	const alphanumericSet: Set<alphanumeric> = new Set(['ubuntu', 120]);
 
-	const arr2: array = [1, 2, 3];
-	console.log(arr2);
+	alphanumericSet.add('a');
+	alphanumericSet.add(1);
+	alphanumericSet.add('b');
+	alphanumericSet.add(2);
 
-	/*
-	const arr3: array = ['Alice', 'Bob', 1, 2, 3];
-	console.log(arr3); */
+	console.log(alphanumericSet);
 }
 
-function TypeUnion3() {
-	type array = (string | number)[];
+function Union03() {
+	type alphanumeric = string | number;
 
-	const arr1: array = ['Alice', 'Bob'];
-	console.log(arr1);
+	const alphanumericMap: Map<alphanumeric, alphanumeric> = new Map([
+		['ubuntu', 120]
+	]);
 
-	const arr2: array = [1, 2, 3];
-	console.log(arr2);
+	alphanumericMap.set('a', 1);
+	alphanumericMap.set(2, 'b');
+	alphanumericMap.set('c', 'd');
+	alphanumericMap.set(3, 4);
 
-	const arr3: array = ['Alice', 'Bob', 1, 2, 3];
-	console.log(arr3);
+	console.log(alphanumericMap);
 }
 
-function TypeUnion4() {
+function Union04() {
 	enum Color {
 		red,
 		green,
@@ -60,7 +61,7 @@ function TypeUnion4() {
 	console.log(Size);
 }
 
-function TypeUnion5() {
+function Union05() {
 	type Person = { name: string };
 	type Animal = { species: string };
 	type Entity = Person | Animal;
@@ -75,7 +76,7 @@ function TypeUnion5() {
 	console.log(entity3);
 }
 
-function TypeUnion6() {
+function Union06() {
 	type Shape =
 		| { kind: 'circle'; radius: number }
 		| { kind: 'square'; sideLength: number }
@@ -105,7 +106,7 @@ function TypeUnion6() {
 	console.log(getArea(myTriangle));
 }
 
-function TypeIntersection() {
+function Intersection() {
 	type Name = { name: string };
 	type Age = { age: number };
 	type Constant = { PI: Math['PI']; E: Math['E'] };
@@ -122,16 +123,17 @@ function TypeIntersection() {
 	console.log(JSON.stringify(profile));
 }
 
-TypeUnion1();
-TypeUnion2();
-TypeUnion3();
-TypeUnion4();
-TypeUnion5();
-TypeUnion6();
-TypeIntersection();
+Union01();
+Union02();
+Union03();
+Union04();
+Union05();
+Union06();
+
+Intersection();
 
 /*
-union for regular-object		: either one of them | both of them (merged)
+union for regular-object		: either one of them | both of them (merged if possible)
 union for others				: either one of them
 
 intersection for regular-object	: both of them (merged)
