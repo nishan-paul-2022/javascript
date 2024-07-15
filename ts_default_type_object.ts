@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-types */
 /* eslint-disable arrow-body-style */
 
-// using `object` for any non-null object
 function F01() {
 	let value: object; // anything but primitive
 
@@ -21,13 +20,11 @@ function F01() {
 	value = null;
 	value = undefined;*/
 
-	console.log(JSON.stringify(value));
+	console.log(value);
 }
 
-// using `{}` for anything but null, undefined
 function F02() {
-	// NonNullable<unknown>
-	let value: {};
+	let value: {}; /* anything but null, undefined | NonNullable<unknown> */
 
 	value = 'ubuntu';
 	value = 120;
@@ -47,23 +44,41 @@ function F02() {
 }
 
 function F03() {
-	/* Record<string, number> */
-	type IndexNumberMap = { [index: string]: number };
+	type signature = { [index: string]: number }; /* Record<string, number> */
+	const value: signature = { name: 1, 1162036: 2 };
 
-	const value: IndexNumberMap = { name: 1, 1162036: 2 };
+	value[1162036] = 4;
+	value[Math.random()] = 7;
 
 	value.name = 3;
-	value[1162036] = 4;
 	value.location = 5;
 	value['ID'] = 6;
-	value[Math.random()] = 7;
-	// value[true] = 8; /* invalid */
-	// value[0] = '9'; /* invalid */
+
+	/*
+	value[true] = 8;
+	value[0] = '9'; */
 
 	console.log(JSON.stringify(value));
 }
 
 function F04() {
+	type signature = { [index: number]: number }; /* Record<number, number> */
+	const value: signature = { /* name: 1, */ 1162036: 2 };
+
+	value[1162036] = 4;
+	value[Math.random()] = 7;
+
+	/*
+	value.name = 3;
+	value.location = 5;
+	value['ID'] = 6; */
+
+	/*
+	value[true] = 8;
+	value[0] = '9'; */
+}
+
+function F05() {
 	const car = {
 		brand: 'Toyota',
 		model: 'Corolla',
@@ -77,7 +92,7 @@ function F04() {
 	console.log(JSON.stringify(car));
 }
 
-function F05() {
+function F06() {
 	type CarType = { brand: string; model: string; year: number };
 
 	const car: CarType = {
@@ -93,7 +108,7 @@ function F05() {
 	console.log(JSON.stringify(car));
 }
 
-function F06() {
+function F07() {
 	type CarType = { brand?: string; model: string; year: number };
 
 	const car: CarType = {
@@ -109,7 +124,7 @@ function F06() {
 	console.log(JSON.stringify(car));
 }
 
-function F07() {
+function F08() {
 	type CarType = {
 		brand: string;
 		readonly model: string;
@@ -136,6 +151,7 @@ F04();
 F05();
 F06();
 F07();
+F08();
 
 /* readonly type-modifier is only permitted on : 
 	- array of literal types 
