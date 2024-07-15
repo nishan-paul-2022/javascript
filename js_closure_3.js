@@ -48,14 +48,14 @@ function MemorizeFibo02() {
 	return FiboClosure;
 }
 
-function UseCase01() {
+function Usecase01() {
 	console.log(Fibo(5));
 	console.log(Fibo(10));
 	console.log(Fibo(15));
 	console.log(Fibo(20));
 }
 
-function UseCase02() {
+function Usecase02() {
 	const FiboClosure = MemorizeFibo01(Fibo);
 	console.log(FiboClosure(5));
 	console.log(FiboClosure(10));
@@ -63,7 +63,7 @@ function UseCase02() {
 	console.log(FiboClosure(20));
 }
 
-function UseCase03() {
+function Usecase03() {
 	const FiboClosure = MemorizeFibo02();
 	console.log(FiboClosure(5));
 	console.log(FiboClosure(10));
@@ -72,6 +72,6 @@ function UseCase03() {
 	console.log(FiboClosure(20));
 }
 
-UseCase01();
-UseCase02();
-UseCase03();
+Usecase01();
+Usecase02();
+Usecase03();

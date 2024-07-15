@@ -12,18 +12,18 @@ Constrcutor.staticMethod = () => {
 	console.log('Aww! You make me proud son!!');
 };
 
-function UseCase01() {
+function Usecase01() {
 	const value = Constrcutor('GO!');
 	console.log(value);
 }
 
-function UseCase02() {
+function Usecase02() {
 	const object = new Constrcutor();
 	console.log(object.x);
 	console.log(object.y);
 	// object.staticMethod(); /* invalid */
 }
 
-UseCase01();
-UseCase02();
+Usecase01();
+Usecase02();
 Constrcutor.staticMethod();

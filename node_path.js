@@ -1,9 +1,9 @@
 import path from 'path';
 
-const fileName = 'zmax.html';
-const fullDir = 'E:/CODE/MERN';
-const fullFile = 'E:/CODE/MERN/zmax.html';
-const fullFileWithNoise = 'E:/CODE//MERN//zmax.html';
+const fileName = 'fileName.extension';
+const fullDir = 'folder1/folder2/folder3';
+const fullFile = 'folder1/folder3/folder3/fileName.extension';
+const fullFileWithNoise = 'folder1/folder2/folder3//fileName.extension';
 
 const fileObject = path.parse(fullFile);
 const fileString = path.format(fileObject);
@@ -21,10 +21,10 @@ console.log(
 
 console.log('path.join(fullDir, fileName)', path.join(fullDir, fileName));
 
-// relative directory -> absolute directory
+// relative directory => absolute directory
 console.log('path.resolve(fileName)', path.resolve(fileName));
 
-// absolute directory -> relativedirectory
+// absolute directory => relative directory
 console.log(
 	'path.relative(fullDir, fullFile)',
 	path.relative(fullDir, fullFile)

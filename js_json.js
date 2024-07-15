@@ -9,14 +9,14 @@ const data = {
 };
 
 // usecase 1: basic usage
-function UseCase01() {
+function Usecase01() {
 	const string = JSON.stringify(data);
 	console.log('basic JSON string:', string);
 	console.log('JSON type:', typeof string);
 }
 
 // usecase 2: using a replacer function to filter properties
-function UseCase02() {
+function Usecase02() {
 	const string = JSON.stringify(data, (key, value) => {
 		if (key === 'age') {
 			return undefined; // exclude the 'age' property from the JSON
@@ -29,12 +29,12 @@ function UseCase02() {
 }
 
 // usecase 3: using the space parameter for indentation
-function UseCase03() {
+function Usecase03() {
 	const string = JSON.stringify(data, null, 4); // indent with 4 spaces
 	console.log('indented JSON string:', string);
 }
 
-function UseCase04() {
+function Usecase04() {
 	const data = {
 		name: 'Alice',
 		age: 25,
@@ -45,7 +45,7 @@ function UseCase04() {
 	console.log(string);
 }
 
-function UseCase05() {
+function Usecase05() {
 	const string =
 		'{"name": "Alice", "age": 25, "is": true, "auth": {"gmail": "paul@gmail.com", "id": 7}}';
 	const data = JSON.parse(string);
@@ -53,26 +53,26 @@ function UseCase05() {
 	console.log(data.auth);
 }
 
-function UseCase06() {
+function Usecase06() {
 	const data = ['Alice', 25, true, { gmail: 'paul@gmail.com', id: 7 }];
 	const string = JSON.stringify(data);
 	console.log(string);
 }
 
-function UseCase07() {
+function Usecase07() {
 	const string = '["Alice", 25, true, {"gmail": "paul@gmail.com", "id": 7}]';
 	const data = JSON.parse(string);
 	console.log(data);
 	console.log(data[2]);
 }
 
-UseCase01();
-UseCase02();
-UseCase03();
-UseCase04();
-UseCase05();
-UseCase06();
-UseCase07();
+Usecase01();
+Usecase02();
+Usecase03();
+Usecase04();
+Usecase05();
+Usecase06();
+Usecase07();
 
 /*
 	JSON 	: set of name-value pairs (regular object) | set of indexed values (array)

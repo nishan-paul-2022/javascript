@@ -64,20 +64,20 @@ class IterableClass03 {
 	}
 }
 
-async function UseCase01(IterableClass) {
+async function Usecase01(IterableClass) {
 	const iterable = new IterableClass(1, 2, 3);
 	for await (const i of iterable) {
 		console.log(i);
 	}
 }
 
-async function UseCase02(IterableClass) {
+async function Usecase02(IterableClass) {
 	const iterable = new IterableClass(1, 2, 3);
 	for await (const i of iterable) {
 		console.log(await i);
 	}
 }
 
-await UseCase01(IterableClass01);
-await UseCase02(IterableClass02);
-await UseCase02(IterableClass03);
+await Usecase01(IterableClass01);
+await Usecase02(IterableClass02);
+await Usecase02(IterableClass03);

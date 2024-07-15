@@ -25,7 +25,7 @@ function print(objectName) {
 
 // regular1 and regular2 are interconnected in terms of setting-member, nothing else
 // regular1 and regular2 don't behave in same way in terms of other characteristics
-function UseCase01() {
+function Usecase01() {
 	const regular1 = {
 		name: 'Paul',
 		id: 1604085,
@@ -48,7 +48,7 @@ function UseCase01() {
 	console.log(regular1 === regular2);
 }
 
-function UseCase02() {
+function Usecase02() {
 	let numbers1 = [0, 1, 2, 3];
 	numbers1 = new Proxy(numbers1, {
 		get: (target, prop) => {
@@ -83,7 +83,7 @@ function UseCase02() {
 	console.log(numbers1);
 }
 
-function UseCase03() {
+function Usecase03() {
 	let regular1 = {
 		name: 'Paul',
 		id: 1604085,
@@ -111,9 +111,9 @@ function UseCase03() {
 	print(regular1);
 }
 
-UseCase01();
-UseCase02();
-UseCase03();
+Usecase01();
+Usecase02();
+Usecase03();
 
 /*
 @Internal Method		@Handler Method				@Triggers when

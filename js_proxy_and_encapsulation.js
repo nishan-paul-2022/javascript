@@ -1,4 +1,4 @@
-function UseCase01() {
+function Usecase01() {
 	let regular1 = {
 		username: 'Paul',
 		_password: 'helloWorld'
@@ -78,4 +78,4 @@ function UseCase01() {
 	print(regular1);
 }
 
-UseCase01();
+Usecase01();

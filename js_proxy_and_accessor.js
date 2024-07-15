@@ -44,7 +44,7 @@ function print2(rootObj, protoObj) {
 	consoleLog(rootObj);
 }
 
-function UseCase01() {
+function Usecase01() {
 	const rootObj = new RandomClass();
 
 	const proxyObj1 = new Proxy(rootObj, {
@@ -63,7 +63,7 @@ function UseCase01() {
 	print1(proxyObj2);
 }
 
-function UseCase02() {
+function Usecase02() {
 	const rootObj1 = new RandomClass();
 	const proxyObj1 = new Proxy(rootObj1, {
 		get: function (target, property, receiver) {
@@ -88,5 +88,5 @@ function UseCase02() {
 	print2(rootObj2, proxyObj2);
 }
 
-UseCase01();
-UseCase02();
+Usecase01();
+Usecase02();

@@ -1,5 +1,5 @@
-function UseCase01(ins) {
-	console.log('\n UseCase - 01');
+function Usecase01(ins) {
+	console.log('\n Usecase - 01');
 
 	const keys = Object.keys(ins);
 	const values = Object.values(ins);
@@ -10,8 +10,8 @@ function UseCase01(ins) {
 	console.log(entries);
 }
 
-function UseCase02(ins) {
-	console.log('\n UseCase - 02');
+function Usecase02(ins) {
+	console.log('\n Usecase - 02');
 
 	const keys = ins.keys();
 	const values = ins.values();
@@ -54,14 +54,14 @@ const ins05 = new Map([
 	['oranges', 200]
 ]);
 
-UseCase01(ins01);
-UseCase01(ins02);
-UseCase01(ins03);
-// UseCase01(ins04); /* invalid */
-// UseCase01(ins05); /* invalid */
+Usecase01(ins01);
+Usecase01(ins02);
+Usecase01(ins03);
+// Usecase01(ins04); /* invalid */
+// Usecase01(ins05); /* invalid */
 
-// UseCase02(ins01); /* invalid */
-// UseCase02(ins02); /* invalid */
-// UseCase02(ins03); /* invalid */
-UseCase02(ins04);
-UseCase02(ins05);
+// Usecase02(ins01); /* invalid */
+// Usecase02(ins02); /* invalid */
+// Usecase02(ins03); /* invalid */
+Usecase02(ins04);
+Usecase02(ins05);

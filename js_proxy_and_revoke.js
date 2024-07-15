@@ -13,7 +13,7 @@ function printProxy(regular) {
 	}
 }
 
-function UseCase01() {
+function Usecase01() {
 	console.log('\n use case 01 :');
 	let regular = {
 		data: 'helloWorld'
@@ -25,7 +25,7 @@ function UseCase01() {
 	printProxy(regular);
 }
 
-function UseCase02() {
+function Usecase02() {
 	console.log('\n use case 02 :');
 	let regular = {
 		start: 1,
@@ -43,8 +43,8 @@ function UseCase02() {
 	printProxy(regular);
 }
 
-UseCase01();
-UseCase02();
+Usecase01();
+Usecase02();
 
 /*
 - Proxy.revocable(target, handler) 

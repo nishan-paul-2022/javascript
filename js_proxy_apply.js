@@ -7,7 +7,7 @@ function delay(callback, ms) {
 	return delayedCallback;
 }
 
-function UseCase01() {
+function Usecase01() {
 	const regular1 = {
 		location: 'dhaka',
 		method: function (firstName, lastName) {
@@ -43,4 +43,4 @@ function UseCase01() {
 	methodProxified3('King', 'SRK');
 }
 
-UseCase01();
+Usecase01();

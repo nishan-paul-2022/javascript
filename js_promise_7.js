@@ -54,7 +54,7 @@ const blue2 = async () => {
 	});
 };
 
-async function UseCase01() {
+async function Usecase01() {
 	console.log('\n - Usecase 01');
 
 	await Promise.resolve('E01').then(GetResolve);
@@ -78,37 +78,37 @@ async function UseCase01() {
 		.catch(GetReject);
 }
 
-async function UseCase02() {
+async function Usecase02() {
 	console.log('\n - Usecase 02');
 	await Promise.all([red1(), green1(), blue1()]).then(GetResolve);
 	await Promise.all([red1(), green1(), blue2()]).catch(GetReject);
 	await Promise.all([red1(), green2(), blue2()]).catch(GetReject);
 }
 
-async function UseCase03() {
+async function Usecase03() {
 	console.log('\n - Usecase 03');
 	await Promise.any([red1(), green1(), blue1()]).then(GetResolve);
 	await Promise.any([red2(), green2(), blue1()]).then(GetResolve);
 	await Promise.any([red2(), green2(), blue2()]).catch(GetReject);
 }
 
-async function UseCase04() {
+async function Usecase04() {
 	console.log('\n - Usecase 04');
 	await Promise.allSettled([red1(), green1(), blue1()]).then(GetResolve);
 	await Promise.allSettled([red2(), green2(), blue2()]).then(GetResolve);
 }
 
-async function UseCase05() {
+async function Usecase05() {
 	console.log('\n - Usecase 05');
 	await Promise.race([red1(), green1(), blue1()]).then(GetResolve);
 	await Promise.race([red2(), green2(), blue2()]).catch(GetReject);
 }
 
-await UseCase01();
-await UseCase02();
-await UseCase03();
-await UseCase04();
-await UseCase05();
+await Usecase01();
+await Usecase02();
+await Usecase03();
+await Usecase04();
+await Usecase05();
 
 /* 
 - Promise.resolve() 	// make resolved

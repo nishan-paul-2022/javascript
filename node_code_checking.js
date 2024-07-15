@@ -79,7 +79,7 @@ async function RunAllFiles(directory, fileNames, jsonData) {
 	}
 }
 
-const directory = 'E:/CODE/MERN';
+const directory = './';
 const jsonFile = path.join(directory, 'node_code_checking.json');
 const jsonData = await ReadJsonFile(jsonFile);
 const fileNames = await GetFileDirs(directory, jsonData);

@@ -1,4 +1,4 @@
-function UseCase01() {
+function Usecase01() {
 	const randFunction = () => {
 		this.name = 'helloWorld';
 	};
@@ -7,7 +7,7 @@ function UseCase01() {
 	// const randObject = new randFunction(); /* invalid */
 }
 
-function UseCase02() {
+function Usecase02() {
 	const randFunction = function () {
 		this.name = 'helloWorld';
 	};
@@ -16,7 +16,7 @@ function UseCase02() {
 	console.log(randObject.name);
 }
 
-function UseCase03() {
+function Usecase03() {
 	class RandomClass {
 		static name = 'helloWorld';
 		location = 'dhaka';
@@ -38,7 +38,7 @@ function UseCase03() {
 	// randObject.print02(); /* invalid */
 }
 
-function UseCase04() {
+function Usecase04() {
 	const randFunction = function () {
 		this.name = 'helloWorld';
 		console.log('ThankYou');
@@ -48,10 +48,10 @@ function UseCase04() {
 	console.log(randObject.name);
 }
 
-UseCase01();
-UseCase02();
-UseCase03();
-UseCase04();
+Usecase01();
+Usecase02();
+Usecase03();
+Usecase04();
 
 /*
 - function can construct object

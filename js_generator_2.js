@@ -48,14 +48,14 @@ function* GeneratePassword() {
 	yield* GenerateSequence(97, 122);
 }
 
-function UseCase01() {
+function Usecase01() {
 	const iterator = LetterGenerator();
 	for (const i of iterator) {
 		console.log(i);
 	}
 }
 
-function UseCase02() {
+function Usecase02() {
 	const iterator = EvenGenerator();
 	console.log(iterator.next());
 	console.log(iterator.next());
@@ -65,7 +65,7 @@ function UseCase02() {
 	}
 }
 
-function UseCase03() {
+function Usecase03() {
 	const iterator = LetterAndEvenGenerator();
 	console.log(iterator.next());
 	console.log(iterator.next());
@@ -75,7 +75,7 @@ function UseCase03() {
 	}
 }
 
-function UseCase04() {
+function Usecase04() {
 	const iterator = new EvenGeneratorLimited();
 	console.log(iterator.next());
 	console.log(iterator.next());
@@ -89,7 +89,7 @@ function UseCase04() {
 	}
 }
 
-function UseCase05() {
+function Usecase05() {
 	let str = '';
 	const iterator = GeneratePassword();
 	for (const value of iterator) {
@@ -98,8 +98,8 @@ function UseCase05() {
 	console.log(str);
 }
 
-UseCase01();
-UseCase02();
-UseCase03();
-UseCase04();
-UseCase05();
+Usecase01();
+Usecase02();
+Usecase03();
+Usecase04();
+Usecase05();

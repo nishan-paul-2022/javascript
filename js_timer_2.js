@@ -1,18 +1,18 @@
 import fs from 'fs';
 
 function welcome1() {
-	console.log('Welcome to JavaTpoint 1');
+	console.log('Welcome To JavaTpoint 1');
 }
 
 function welcome2() {
-	console.log('Welcome to JavaTpoint 2');
+	console.log('Welcome To JavaTpoint 2');
 }
 
 function welcome3() {
-	console.log('Welcome to JavaTpoint 3');
+	console.log('Welcome To JavaTpoint 3');
 }
 
-function UseCase01() {
+function Usecase01() {
 	const id1 = setTimeout(welcome1, 1000);
 	const id2 = setInterval(welcome2, 1000);
 	const id3 = setImmediate(welcome3);
@@ -22,10 +22,10 @@ function UseCase01() {
 }
 
 // Simulating an I/O operation (e.g. reading a file)
-function UseCase02() {
+function Usecase02() {
 	console.log('Start');
 
-	fs.readFile('zmax.txt', 'utf8', (err, data) => {
+	fs.readFile('./zmax.html', 'utf8', (error, data) => {
 		setTimeout(() => {
 			console.log('timeout1');
 		}, 0);
@@ -45,9 +45,9 @@ function UseCase02() {
 
 		setImmediate(() => {
 			console.log('immediate1');
-			fs.readFile('zmax.css', 'utf8', (err, data) => {
-				if (err) {
-					throw err;
+			fs.readFile('./zmax.css', 'utf8', (error, data) => {
+				if (error) {
+					throw error;
 				}
 				console.log(data);
 			});
@@ -61,8 +61,8 @@ function UseCase02() {
 			console.log('immediate2');
 		});
 
-		if (err) {
-			throw err;
+		if (error) {
+			throw error;
 		}
 		console.log(data);
 	});
@@ -78,8 +78,8 @@ function UseCase02() {
 	console.log('End');
 }
 
-function UseCase03() {
-	fs.readFile('zmax.html', 'utf8', (err, data) => {
+function Usecase03() {
+	fs.readFile('./zmax.js', 'utf8', (error, data) => {
 		setTimeout(() => {
 			console.log('SET-TIMEOUT');
 		}, 0);
@@ -93,15 +93,15 @@ function UseCase03() {
 			console.log('SET-IMMEDIATE');
 		});
 
-		if (err) {
-			console.log(err);
+		if (error) {
+			console.log(error);
 		} else {
 			console.log(data);
 		}
 	});
 }
 
-function UseCase04() {
+function Usecase04() {
 	console.log('START');
 
 	setTimeout(() => {
@@ -114,9 +114,12 @@ function UseCase04() {
 	console.log('END');
 }
 
-UseCase01();
-UseCase02();
-UseCase03();
-UseCase04();
+Usecase01();
+Usecase02();
+Usecase03();
+Usecase04();
 
-// precedence : 01. Immediate 02. TimeOut, Interval
+/*
+precedence : 
+	- Immediate 
+	- TimeOut and Interval */

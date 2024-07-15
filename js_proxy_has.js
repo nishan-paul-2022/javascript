@@ -42,7 +42,7 @@ Object.defineProperties(child, {
 Object.setPrototypeOf(parent, grandparent);
 Object.setPrototypeOf(child, parent);
 
-function UseCase01() {
+function Usecase01() {
 	console.log('\n use case 01 :');
 	console.log("'origin' in child :", 'origin' in child);
 	console.log("'identity' in child :", 'identity' in child);
@@ -54,7 +54,7 @@ function UseCase01() {
 	console.log("'toString' in child :", 'toString' in child);
 }
 
-function UseCase02() {
+function Usecase02() {
 	console.log('\n use case 02 :');
 	let range = {
 		start: 1,
@@ -73,5 +73,5 @@ function UseCase02() {
 	console.log("'data' in range :", 'data' in range);
 }
 
-UseCase01();
-UseCase02();
+Usecase01();
+Usecase02();

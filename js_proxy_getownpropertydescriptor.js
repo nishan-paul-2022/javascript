@@ -29,7 +29,7 @@ function print(objectName) {
 	console.log('\n');
 }
 
-function UseCase01() {
+function Usecase01() {
 	let regular1 = {};
 	regular1 = new Proxy(regular1, {
 		ownKeys: (_target) => {
@@ -39,7 +39,7 @@ function UseCase01() {
 	print(regular1);
 }
 
-function UseCase02() {
+function Usecase02() {
 	let regular1 = {};
 	regular1 = new Proxy(regular1, {
 		ownKeys: (_target) => {
@@ -57,5 +57,5 @@ function UseCase02() {
 	print(regular1);
 }
 
-UseCase01();
-UseCase02();
+Usecase01();
+Usecase02();

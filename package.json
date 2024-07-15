@@ -2,7 +2,7 @@
 	"name": "javascript",
 	"version": "1.0.0",
 	"description": "javascript",
-	"main": "zmax.html",
+	"main": "./zmax.html",
 	"scripts": {
 		"test": "echo 'error: no test specified' && exit 1",
 		"format": "npx prettier --write *.{html,css,json}",

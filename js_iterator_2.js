@@ -56,7 +56,7 @@ class IterableClass03 {
 	}
 }
 
-function UseCase(IterableClass) {
+function Usecase(IterableClass) {
 	const iterator = new IterableClass(1, 2, 3);
 	console.log(...iterator);
 	console.log({ ...iterator });
@@ -66,6 +66,6 @@ function UseCase(IterableClass) {
 	}
 }
 
-UseCase(IterableClass01);
-UseCase(IterableClass02);
-UseCase(IterableClass03);
+Usecase(IterableClass01);
+Usecase(IterableClass02);
+Usecase(IterableClass03);

@@ -34,13 +34,13 @@ function print2(map1) {
 	}
 }
 
-function UseCase01() {
+function Usecase01() {
 	console.log('\n - Usecase 01');
 	const randomObj = new RandomClass();
 	print1(randomObj);
 }
 
-function UseCase02() {
+function Usecase02() {
 	console.log('\n - Usecase 02');
 	const randomObj = new RandomClass();
 	const { getName, Name } = randomObj;
@@ -55,14 +55,14 @@ function UseCase02() {
 	}
 }
 
-function UseCase03() {
+function Usecase03() {
 	console.log('\n - Usecase 03');
 	let randomObj = new RandomClass();
 	randomObj = new Proxy(randomObj, {});
 	print1(randomObj);
 }
 
-function UseCase04() {
+function Usecase04() {
 	console.log('\n - Usecase 04');
 	let randomObj = new RandomClass();
 
@@ -81,20 +81,20 @@ function UseCase04() {
 	print1(randomObj);
 }
 
-function UseCase05() {
+function Usecase05() {
 	console.log('\n - Usecase 05');
 	const map1 = new Map([[1, 'a']]);
 	print2(map1);
 }
 
-function UseCase06() {
+function Usecase06() {
 	console.log('\n - Usecase 06');
 	let map1 = new Map([[1, 'a']]);
 	map1 = new Proxy(map1, {});
 	print2(map1);
 }
 
-function UseCase07() {
+function Usecase07() {
 	console.log('\n - Usecase 07');
 	let map1 = new Map([[1, 'a']]);
 
@@ -109,13 +109,13 @@ function UseCase07() {
 	print2(map1);
 }
 
-UseCase01();
-UseCase02();
-UseCase03();
-UseCase04();
-UseCase05();
-UseCase06();
-UseCase07();
+Usecase01();
+Usecase02();
+Usecase03();
+Usecase04();
+Usecase05();
+Usecase06();
+Usecase07();
 
 /*
 - map, set, weakmap, weakset, date, promise, private-member make use of internal-slot
