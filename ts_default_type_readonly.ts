@@ -1,72 +1,138 @@
 interface User {
-	id: number;
-	name: string;
+	ID: number;
 	email: { gmail: string };
 }
 
-function Usecase01() {
+type T = { ID: number };
+type U = number | T;
+
+const student: T = { ID: 1162036 };
+
+function F01() {
+	const value: U[] = [10, student];
+
+	value[0] = 20;
+	(value[1] as T).ID = 1604085;
+
+	console.log(value);
+	console.log(Object.isFrozen(value));
+}
+
+function F02() {
+	const value = Object.freeze([10, student]);
+
+	// value[0] = 20;
+	(value[1] as T).ID = 1604085;
+
+	console.log(value);
+	console.log(Object.isFrozen(value));
+}
+
+function F03() {
+	const value: Readonly<U[]> = [10, student];
+
+	// value[0] = 20;
+	(value[1] as T).ID = 1604085;
+
+	console.log(value);
+	console.log(Object.isFrozen(value));
+}
+
+function F04() {
+	const value: readonly U[] = [10, student];
+
+	// value[0] = 20;
+	(value[1] as T).ID = 1604085;
+
+	console.log(value);
+	console.log(Object.isFrozen(value));
+}
+
+function F05() {
+	const value = [10, student] as const;
+
+	// value[0] = 20;
+	(value[1] as T).ID = 1604085;
+
+	console.log(value);
+	console.log(Object.isFrozen(value));
+}
+
+function F06() {
 	const value: User = {
-		id: 1,
-		name: 'Alice',
+		ID: 1,
 		email: { gmail: 'alice@gmail.com' }
 	};
 
-	value.id = 2;
-	value.name = 'Dixson';
+	value.ID = 2;
 	value.email.gmail = 'dixson@gmail.com';
 
 	console.log(value);
+	console.log(Object.isFrozen(value));
 }
 
-function Usecase02() {
+function F07() {
+	const value = Object.freeze({
+		ID: 1,
+		email: { gmail: 'alice@gmail.com' }
+	});
+
+	// value.ID = 2;
+	value.email.gmail = 'dixson@gmail.com';
+
+	console.log(value);
+	console.log(Object.isFrozen(value));
+}
+
+function F08() {
 	const value: Readonly<User> = {
-		id: 1,
-		name: 'Alice',
+		ID: 1,
 		email: { gmail: 'alice@gmail.com' }
 	};
 
-	/*
-	value.id = 2;
-	value.name = 'Dixson'; */
+	// value.ID = 2;
 	value.email.gmail = 'dixson@gmail.com';
 
 	console.log(value);
+	console.log(Object.isFrozen(value));
 }
 
-function Usecase03() {
+function F09() {
 	const value = {
-		id: 1,
-		location: 'Dhaka'
+		ID: 1,
+		email: { gmail: 'alice@gmail.com' }
 	} as const;
 
-	/*
-	value.id = 2;
-	value.location = 'Chittagong'; */
+	// value.ID = 2;
+	// value.email.gmail = 'dixson@gmail.com';
 
 	console.log(value);
+	console.log(Object.isFrozen(value));
 }
 
-function Usecase04() {
-	const value = [10, 20] as const;
-
-	/*
-	value[0] = 100;
-	value[1] = 200; */
-
-	console.log(value);
-}
-
-Usecase01();
-Usecase02();
-Usecase03();
-Usecase04();
+F01();
+F02();
+F03();
+F04();
+F05();
+F06();
+F07();
+F08();
+F09();
 
 /* 
-Readonly<T>: makes all properties in T readonly 
+Object.freeze() :
+	- top level readonly
+	- makes all properties in object readonly
 
-'const' assertions can only be applied to :
-	- object literal	
-	- array
-	- string
-	- number
-	- boolean */
+Readonly<T> :
+	- top level readonly
+	- makes all properties in T readonly
+
+readonly modifier : 
+	- top level readonly
+	- permitted on literal and attribute
+
+'const' assertion : 
+	- root level readonly
+	- permitted on literal and attribute */

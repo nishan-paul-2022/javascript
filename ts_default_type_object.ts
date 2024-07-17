@@ -152,8 +152,3 @@ F05();
 F06();
 F07();
 F08();
-
-/* readonly type-modifier is only permitted on : 
-	- array of literal types 
-	- tuple of literal types 
-	- attribute */
