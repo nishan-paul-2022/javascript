@@ -57,17 +57,3 @@ ExampleWithAny03();
 processAny('ubuntu');
 processAny(120);
 processAny(true);
-
-/* 
-typescript configuration [ "strictNullChecks": true ]	| no implicit any
-linting 											 	| no explicit any  
-
-data type: 
-	primitive 	| non-primitive 
-	default		| user-defined
-	reusable	| non-reusable
-	alias		| interace
-	utility 	[ default + reusable ]
-
-primitive 		: stirng, number, boolean, bigint, symbol, null, undefined
-non-primitive 	: others */

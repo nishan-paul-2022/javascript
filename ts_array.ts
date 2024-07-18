@@ -83,3 +83,20 @@ F05();
 F06();
 F07();
 F08();
+
+/* 
+typescript configuration [ "strictNullChecks": true ]	| no implicit any
+linting 											 	| no explicit any  
+
+DATA TYPE : 
+	primitive 	| non-primitive 
+	default		| user-defined
+	reusable	| non-reusable
+	alias		| interace
+	utility 	[ default + reusable ]
+
+- primitive 		: stirng, number, boolean, bigint, symbol, null, undefined
+- non-primitive 	: others 
+
+- alias				: use for primitives, literals, unions, intersections, tuples, and when we need flexibility
+- interface			: use for defining object shapes, extending, and when we need declaration merging. */
