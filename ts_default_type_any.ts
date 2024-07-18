@@ -63,10 +63,11 @@ typescript configuration [ "strictNullChecks": true ]	| no implicit any
 linting 											 	| no explicit any  
 
 data type: 
-	primitive, non-primitive 
-	default, user-defined
-	reusable, non-reusable
-	utility (default + reusable)
+	primitive 	| non-primitive 
+	default		| user-defined
+	reusable	| non-reusable
+	alias		| interace
+	utility 	[ default + reusable ]
 
 primitive 		: stirng, number, boolean, bigint, symbol, null, undefined
-non-primitive 	: all others */
+non-primitive 	: others */

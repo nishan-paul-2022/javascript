@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-constant-condition */
 
 // Example: Function That Never Returns (Throws Error)
@@ -19,13 +20,13 @@ function F01() {
 
 // Example: Function That Never Returns (Contains Infinite Loop)
 function F02() {
-	function _infiniteLoopExample(): never {
+	function infiniteLoopExample(): never {
 		while (true) {
 			console.log('This loop never ends!');
 		}
 	}
 
-	// _infiniteLoopExample();
+	// infiniteLoopExample();
 }
 
 // Example: Variable That Never Contains Value (Exhaustive Type Checking)
@@ -75,15 +76,15 @@ function F04() {
 
 // Example: Variable That Never Contains Value (Exhaustive Type Checking)
 function F05() {
-	interface Dog {
+	type Dog = {
 		species: 'dog';
 		bark(): void;
-	}
+	};
 
-	interface Cat {
+	type Cat = {
 		species: 'cat';
 		meow(): void;
-	}
+	};
 
 	type Animal = Dog | Cat;
 

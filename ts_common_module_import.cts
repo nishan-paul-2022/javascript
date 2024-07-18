@@ -1,6 +1,6 @@
 const module1 = require('./ts_common_module_defined.cts');
 
-function ExampleOne() {
+function Example01() {
 	module1.Add(15, 25);
 	console.log(module1.fName);
 	console.log(module1.dName);
@@ -8,7 +8,7 @@ function ExampleOne() {
 	console.log(module1.RandomFunction());
 }
 
-function ExampleTwo() {
+function Example02() {
 	const module2 = require('./ts_common_module_defined.cts');
 
 	module2.Add(15, 25);
@@ -18,7 +18,7 @@ function ExampleTwo() {
 	console.log(module1.RandomFunction());
 }
 
-function ExampleThree() {
+function Example03() {
 	const {
 		Add,
 		fName: fileName,
@@ -34,7 +34,7 @@ function ExampleThree() {
 	console.log(collegeId);
 }
 
-async function ExampleFour() {
+async function Example04() {
 	try {
 		const value = await module1.RandomFunction();
 		console.log(value);
@@ -43,7 +43,7 @@ async function ExampleFour() {
 	}
 }
 
-function ExampleFive() {
+function Example05() {
 	const promise = module1.RandomFunction();
 	promise
 		.then((resolve: number) => {
@@ -54,11 +54,11 @@ function ExampleFive() {
 		});
 }
 
-ExampleOne();
-ExampleTwo();
-ExampleThree();
-ExampleFour();
-ExampleFive();
+Example01();
+Example02();
+Example03();
+Example04();
+Example05();
 
 /*
 - no outside await in commonjs module 

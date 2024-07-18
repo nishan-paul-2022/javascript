@@ -1,29 +1,29 @@
-interface User {
+type T = {
 	id?: number;
 	name?: string;
 	email?: string;
-}
+};
 
 function Usecase01() {
-	const value1: User = {
+	const value1: T = {
 		id: 1,
 		name: 'Alice',
 		email: 'alice@example.com'
 	};
 	console.log(value1);
 
-	const value2: User = { id: 1, name: 'Alice' };
+	const value2: T = { id: 1, name: 'Alice' };
 	console.log(value2);
 
-	const value3: User = { id: 1 };
+	const value3: T = { id: 1 };
 	console.log(value3);
 
-	const value4: User = {};
+	const value4: T = {};
 	console.log(value4);
 }
 
 function Usecase02() {
-	const value: Required<User> = {
+	const value: Required<T> = {
 		id: 1,
 		name: 'Alice',
 		email: 'alice@example.com'

@@ -1,4 +1,4 @@
-// Basic Usage of `Record`
+// basic usage of `Record`
 function showPlayerScores() {
 	type Scores = Record<string, number>;
 
@@ -13,7 +13,7 @@ function showPlayerScores() {
 	console.log(playerScores['charlie']);
 }
 
-// Example with Specific Keys
+// example with specific keys
 function showRoleDescriptions() {
 	type RoleDescriptions = Record<'admin' | 'user' | 'guest', string>;
 
@@ -28,7 +28,7 @@ function showRoleDescriptions() {
 	console.log(roles['guest']);
 }
 
-// Example with Nested Records
+// example with nested records
 function showTeamScores() {
 	type TeamScores = Record<string, Record<string, number>>;
 
@@ -49,7 +49,7 @@ function showTeamScores() {
 	console.log(teamScores['teamB']['dave']);
 }
 
-// Example with Enums
+// example with Enum
 function showRoleCounts() {
 	enum Role {
 		Admin = 'admin',
@@ -70,12 +70,12 @@ function showRoleCounts() {
 	console.log(roleCounts[Role.Guest]);
 }
 
-// Example with Complex Value Types
+// example with complex value types
 function showUsers() {
-	interface UserDetails {
+	type UserDetails = {
 		age: number;
 		email: string;
-	}
+	};
 
 	type Users = Record<string, UserDetails>;
 
@@ -90,10 +90,10 @@ function showUsers() {
 	console.log(users['bob']['email']);
 }
 
-// Example with Empty Object Type
+// example with empty object type
 function showEmptyObject() {
-	type empty = Record<string, never>;
-	const value: empty = {};
+	type Empty = Record<string, never>;
+	const value: Empty = {};
 	// const value: empty = { name: 'paul' }; // error: type '{ name: string }' is not assignable to type 'Record<string, never>'
 	console.log(JSON.stringify(value));
 }

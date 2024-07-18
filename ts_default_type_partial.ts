@@ -1,8 +1,8 @@
-interface Person {
+type Person = {
 	name: string;
 	age: number;
 	address: string;
-}
+};
 
 function Usecase01() {
 	const value: Person = { name: 'Jhon', age: 42, address: '89/B Dhaka' };
@@ -26,4 +26,4 @@ function Usecase02() {
 Usecase01();
 Usecase02();
 
-/* Partial<T>: makes all properties in T optional. */
+/* Partial<T>: makes all properties in T optional */

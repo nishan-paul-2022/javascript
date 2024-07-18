@@ -11,5 +11,5 @@ async function Usecase02(filename: string): Promise<void> {
 	console.log(content);
 }
 
-Usecase01('././zmax.txt');
-Usecase02('././zmax.txt');
+Usecase01('./zmax.txt');
+Usecase02('./zmax.txt');

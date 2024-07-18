@@ -1,7 +1,7 @@
 /* eslint-disable arrow-body-style */
 
 // 'unknown' allows every type of value with type checking and type assertion
-function ExampleWithUnknown01() {
+function Example01() {
 	let value: unknown;
 
 	value = 'ubuntu';
@@ -20,22 +20,22 @@ function ExampleWithUnknown01() {
 }
 
 // direct operations on 'unknown' are not allowed without type checking or assertion
-function ExampleWithUnknown02() {
+function Example02() {
 	const value: unknown = 'ubuntu';
 	console.log(value);
 	// value.method(); // error: Object is of type 'unknown'
 }
 
 // using type assertion with 'unknown'
-function ExampleWithUnknown03() {
+function Example03() {
 	const value: unknown = 'ubuntu';
 	const result: number = value as number; // no error, but use with caution
 	console.log(result);
 }
 
 // need to perform type checking or use type assertion to work with 'unknown'
-function processUnknown(value: unknown) {
-	console.log('Processing value:', value);
+function print(value: unknown) {
+	console.log('processing value:', value);
 
 	if (typeof value === 'string') {
 		console.log('string type:', value.toUpperCase());
@@ -46,10 +46,10 @@ function processUnknown(value: unknown) {
 	}
 }
 
-ExampleWithUnknown01();
-ExampleWithUnknown02();
-ExampleWithUnknown03();
+Example01();
+Example02();
+Example03();
 
-processUnknown('ubuntu');
-processUnknown(120);
-processUnknown(true);
+print('ubuntu');
+print(120);
+print(true);

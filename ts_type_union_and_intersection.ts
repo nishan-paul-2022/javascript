@@ -37,6 +37,19 @@ function Union03() {
 }
 
 function Union04() {
+	type T = 'success' | 'error' | 'loading';
+
+	const value1: T = 'success';
+	console.log(value1);
+
+	const value2: T = 'error';
+	console.log(value2);
+
+	const value3: T = 'loading';
+	console.log(value3);
+}
+
+function Union05() {
 	enum Color {
 		red,
 		green,
@@ -61,7 +74,7 @@ function Union04() {
 	console.log(Size);
 }
 
-function Union05() {
+function Union06() {
 	type Person = { name: string };
 	type Animal = { species: string };
 	type Entity = Person | Animal;
@@ -76,7 +89,7 @@ function Union05() {
 	console.log(entity3);
 }
 
-function Union06() {
+function Union07() {
 	type Shape =
 		| { kind: 'circle'; radius: number }
 		| { kind: 'square'; sideLength: number }
@@ -129,6 +142,7 @@ Union03();
 Union04();
 Union05();
 Union06();
+Union07();
 
 Intersection();
 

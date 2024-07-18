@@ -2,19 +2,19 @@
 
 require(`./node_module_3.cjs`);
 
-function ExampleOne() {
+function Example01() {
 	global.Add(33, 77);
 	console.log(global.fName);
 	console.log(global.dName);
 	global.RandomFunction();
 }
 
-function ExampleTwo() {
+function Example02() {
 	Add(100, 101);
 	console.log(fName);
 	console.log(dName);
 	RandomFunction();
 }
 
-ExampleOne();
-ExampleTwo();
+Example01();
+Example02();

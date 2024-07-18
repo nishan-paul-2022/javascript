@@ -24,4 +24,4 @@ if (process.stdout.isTTY) : console.log('running in terminal environment')
 
 node:tty module provides classes for terminal I/O streams in node.js
 for most cases, we can use process.stdin, process.stdout, process.stderr for terminal interactions
-node:tty module is useful for advanced scenarios requiring fine-grained control over terminal interactions. */
+node:tty module is useful for advanced scenarios requiring fine-grained control over terminal interactions */

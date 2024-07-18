@@ -1,19 +1,19 @@
 // if-else
 function FlowIf() {
-	const num: number = 10;
+	const value: number = 10;
 
-	if (num > 0) {
-		console.log(`${num} is positive`);
-	} else if (num < 0) {
-		console.log(`${num} is negative`);
+	if (value > 0) {
+		console.log(`${value} is positive`);
+	} else if (value < 0) {
+		console.log(`${value} is negative`);
 	} else {
-		console.log(`${num} is zero`);
+		console.log(`${value} is zero`);
 	}
 }
 
 // while
 function FlowWhile() {
-	let count: number = 0;
+	let count = 0;
 
 	while (count < 5) {
 		console.log(`while loop count: ${count}`);
@@ -23,12 +23,12 @@ function FlowWhile() {
 
 // do-while
 function FlowDoWhile() {
-	let doCount: number = 0;
+	let count = 0;
 
 	do {
-		console.log(`do-while loop count: ${doCount}`);
-		doCount++;
-	} while (doCount < 5);
+		console.log(`do-while loop count: ${count}`);
+		count++;
+	} while (count < 5);
 }
 
 // for
@@ -71,7 +71,7 @@ function FlowSwitch() {
 
 // break and continue
 function FlowBreak() {
-	for (let i: number = 0; i < 10; i++) {
+	for (let i = 0; i < 10; i++) {
 		if (i === 2) {
 			continue; // skip rest of the loop when i is 2
 		}

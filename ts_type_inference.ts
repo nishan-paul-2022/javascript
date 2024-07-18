@@ -92,15 +92,15 @@ function F09() {
 
 /* Types Inference : Intersection */
 function F10() {
-	interface Employee {
+	type Employee = {
 		name: string;
 		id: number;
-	}
+	};
 
-	interface Manager {
+	type Manager = {
 		name: string;
 		employees: Employee[];
-	}
+	};
 
 	const manager: Employee & Manager = {
 		name: 'Alice',

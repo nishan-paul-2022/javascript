@@ -44,8 +44,9 @@ function F02() {
 }
 
 function F03() {
-	type signature = { [index: string]: number }; /* Record<string, number> */
-	const value: signature = { name: 1, 1162036: 2 };
+	type T = { [index: string]: number }; /* Record<string, number> */
+
+	const value: T = { name: 1, 1162036: 2 };
 
 	value[1162036] = 4;
 	value[Math.random()] = 7;
@@ -62,8 +63,9 @@ function F03() {
 }
 
 function F04() {
-	type signature = { [index: number]: number }; /* Record<number, number> */
-	const value: signature = { /* name: 1, */ 1162036: 2 };
+	type T = { [index: number]: number }; /* Record<number, number> */
+
+	const value: T = { /* name: 1, */ 1162036: 2 };
 
 	value[1162036] = 4;
 	value[Math.random()] = 7;
@@ -93,9 +95,9 @@ function F05() {
 }
 
 function F06() {
-	type CarType = { brand: string; model: string; year: number };
+	type T = { brand: string; model: string; year: number };
 
-	const car: CarType = {
+	const car: T = {
 		brand: 'Toyota',
 		model: 'Corolla',
 		year: 2009
@@ -109,9 +111,9 @@ function F06() {
 }
 
 function F07() {
-	type CarType = { brand?: string; model: string; year: number };
+	type T = { brand?: string; model: string; year: number };
 
-	const car: CarType = {
+	const car: T = {
 		model: 'Corolla',
 		year: 2009
 	};
@@ -125,13 +127,13 @@ function F07() {
 }
 
 function F08() {
-	type CarType = {
+	type T = {
 		brand: string;
 		readonly model: string;
 		year: number;
 	};
 
-	const car: CarType = {
+	const car: T = {
 		brand: 'Toyota',
 		model: 'Corolla',
 		year: 2009

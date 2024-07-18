@@ -92,5 +92,11 @@ Usecase02();
 Usecase03();
 
 /*
-- declaration merging is supported by interface, enum, namespace, enum-namespace, interface-namespace
-- using default exports with namespaces, or inside namespace is not supported. */
+- declaration merging is supported by 
+	# interface-interface
+	# enum-enum
+	# namespace-namespace
+	# enum-namespace
+	# interface-namespace
+
+- using default exports with namespaces, or inside namespace is not supported */

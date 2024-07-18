@@ -1,19 +1,19 @@
 function F01() {
-	const arr: number[] = [120];
-	arr[0] = 220;
-	arr.push(320);
-	// arr.push('ubuntu');
-	// arr.push(true);
-	console.log(arr);
+	const values: number[] = [120];
+	values[0] = 220;
+	values.push(320);
+	// values.push('ubuntu');
+	// values.push(true);
+	console.log(values);
 }
 
 function F02() {
-	const arr: (number | string)[] = [120, 'paul'];
-	arr[0] = 220;
-	arr.push(320);
-	arr.push('ubuntu');
-	// arr.push(true);
-	console.log(arr);
+	const values: (number | string)[] = [120, 'paul'];
+	values[0] = 220;
+	values.push(320);
+	values.push('ubuntu');
+	// values.push(true);
+	console.log(values);
 }
 
 function F03() {
@@ -31,39 +31,39 @@ function F03() {
 }
 
 function F04() {
-	const arr: [number, string] = [120, 'paul']; // ensures values in initialization are in certain order and number
-	arr[0] = 220;
-	arr.push(320);
-	arr.push('ubuntu');
-	// arr.push(true);
-	console.log(arr);
+	const values: [number, string] = [120, 'paul']; // ensures values in initialization are in certain order and number
+	values[0] = 220;
+	values.push(320);
+	values.push('ubuntu');
+	// values.push(true);
+	console.log(values);
 }
 
 function F05() {
-	const arr: [number, string][] = [[120, 'paul']];
-	arr[0][0] = 220;
-	arr[0].push(320);
-	arr[0].push('ubuntu');
-	// arr[0].push(true);
-	console.log(arr);
+	const values: [number, string][] = [[120, 'paul']];
+	values[0][0] = 220;
+	values[0].push(320);
+	values[0].push('ubuntu');
+	// values[0].push(true);
+	console.log(values);
 }
 
 function F06() {
-	const arr: [number, string?] = [120];
-	arr[0] = 220;
-	arr.push(320);
-	arr.push('ubuntu');
-	// arr.push(true);
-	console.log(arr);
+	const values: [number, string?] = [120];
+	values[0] = 220;
+	values.push(320);
+	values.push('ubuntu');
+	// values.push(true);
+	console.log(values);
 }
 
 function F07() {
-	const arr: readonly [number, string] = [120, 'paul'];
-	// arr[0] = 220;
-	// arr.push(320);
-	// arr.push('ubuntu');
-	// arr.push(true);
-	console.log(arr);
+	const values: readonly [number, string] = [120, 'paul'];
+	// values[0] = 220;
+	// values.push(320);
+	// values.push('ubuntu');
+	// values.push(true);
+	console.log(values);
 }
 
 function F08() {

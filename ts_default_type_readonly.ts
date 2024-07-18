@@ -1,8 +1,7 @@
-interface User {
+type S = {
 	ID: number;
 	email: { gmail: string };
-}
-
+};
 type T = { ID: number };
 type U = number | T;
 
@@ -59,7 +58,7 @@ function F05() {
 }
 
 function F06() {
-	const value: User = {
+	const value: S = {
 		ID: 1,
 		email: { gmail: 'alice@gmail.com' }
 	};
@@ -85,7 +84,7 @@ function F07() {
 }
 
 function F08() {
-	const value: Readonly<User> = {
+	const value: Readonly<S> = {
 		ID: 1,
 		email: { gmail: 'alice@gmail.com' }
 	};

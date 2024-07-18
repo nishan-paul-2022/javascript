@@ -71,6 +71,7 @@ F04();
 F05();
 
 /*
-- enum is a object with read only property
-- enum comes in two flavors : string and numeric
+- enum is a sealed object
+- enum attribute can be string / number
+- enum is the only kind of value that can be used as type 
 - type annotation of a variable using enum means only the attribute value of that enum is valid for the variable */
