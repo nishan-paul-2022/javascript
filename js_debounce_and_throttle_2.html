@@ -7,47 +7,45 @@
 	</head>
 
 	<body>
-		<button type="button" onclick="DebounceFunc01()">
-			Debounce Previous
-		</button>
-		<button type="button" onclick="DebounceFunc02()">
+		<button type="button" onclick="Debounce01()">Debounce Previous</button>
+		<button type="button" onclick="Debounce02()">
 			Debounce Subsequent
 		</button>
-		<button type="button" onclick="DebounceFunc03(this.textContent)">
+		<button type="button" onclick="Debounce03(this.textContent)">
 			Debounce Subsequent Time Frame
 		</button>
 
 		<script>
-			function Func01() {
+			function F01() {
 				console.log('Debounce Previous');
 			}
 
-			function Func02() {
+			function F02() {
 				console.log('Debounce Subsequent');
 			}
 
-			function Func03(message) {
+			function F03(message) {
 				console.log(message);
 			}
 
-			function _DebouncePrevious(func, timeout) {
+			function DebouncePrevious(callback, timeout) {
 				let timer;
 				return () => {
 					if (timer) {
 						clearTimeout(timer);
 					}
 					timer = setTimeout(() => {
-						func();
+						callback();
 						timer = null;
 					}, timeout);
 				};
 			}
 
-			function _DebounceSubsequent(func, timeout) {
+			function DebounceSubsequent(callback, timeout) {
 				let timer;
 				return () => {
 					if (!timer) {
-						func();
+						callback();
 					} else {
 						clearTimeout(timer);
 					}
@@ -57,11 +55,11 @@
 				};
 			}
 
-			function _DebounceSubsequentTimeFrame(func, timeout) {
+			function DebounceSubsequentTimeFrame(callback, timeout) {
 				let timer;
 				return (message) => {
 					if (!timer) {
-						func(message);
+						callback(message);
 						timer = setTimeout(() => {
 							timer = null;
 						}, timeout);
@@ -71,9 +69,9 @@
 				};
 			}
 
-			const DebounceFunc01 = _DebouncePrevious(Func01, 3000);
-			const DebounceFunc02 = _DebounceSubsequent(Func02, 3000);
-			const DebounceFunc03 = _DebounceSubsequentTimeFrame(Func03, 3000);
+			const Debounce01 = DebouncePrevious(F01, 3000);
+			const Debounce02 = DebounceSubsequent(F02, 3000);
+			const Debounce03 = DebounceSubsequentTimeFrame(F03, 3000);
 		</script>
 	</body>
 </html>

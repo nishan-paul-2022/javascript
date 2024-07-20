@@ -135,11 +135,14 @@ F03();
 
 /* 
 main-function : engine [ has argument set ]
+
 root-function : root [ has engine as arguement ]
      - lets parent memorize engine
+
 parent-function : parent [ has argument set ]
      - lets child memorize arguments
      - invokes engine and returns result | returns child
+
 child-function : child [ has argument set ]
      - merge child arguments with parent arguments
      - invokes parent with merged arguments and stores return-value

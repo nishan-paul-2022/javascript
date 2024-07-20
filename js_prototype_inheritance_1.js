@@ -22,7 +22,7 @@ const honda = {
 const animal = {
 	ID: 'animal',
 	get fullName() {
-		const name = this.firstName + ' ' + this.lastName;
+		const name = `${this.firstName} ${this.lastName}`;
 		return name;
 	},
 
@@ -40,42 +40,42 @@ const lion = {
 	__proto__: animal
 };
 
-function Func01() {
+function F01() {
 	console.log(car);
 	console.log(bmw);
 	console.log(bmwE);
 	console.log(honda);
 }
 
-function Func02() {
+function F02() {
 	console.log(Object.keys(car));
 	console.log(Object.keys(bmw));
 	console.log(Object.keys(bmwE));
 	console.log(Object.keys(honda));
 }
 
-function Func03() {
+function F03() {
 	console.log(Object.values(car));
 	console.log(Object.values(bmw));
 	console.log(Object.values(bmwE));
 	console.log(Object.values(honda));
 }
 
-function Func04(obj) {
+function F04(obj) {
 	console.log(`\n\n`, obj);
 	for (const i in obj) {
 		console.log(`${i}: ${obj[i]}`);
 	}
 }
 
-function Func05() {
-	Func04(car);
-	Func04(bmw);
-	Func04(bmwE);
-	Func04(honda);
+function F05() {
+	F04(car);
+	F04(bmw);
+	F04(bmwE);
+	F04(honda);
 }
 
-function Func06(obj) {
+function F06(obj) {
 	console.log(`\n\n`, obj);
 	for (const i in obj) {
 		const noTamim = Object.prototype.hasOwnProperty.call(obj, i);
@@ -85,14 +85,14 @@ function Func06(obj) {
 	}
 }
 
-function Func07() {
-	Func06(car);
-	Func06(bmw);
-	Func06(bmwE);
-	Func06(honda);
+function F07() {
+	F06(car);
+	F06(bmw);
+	F06(bmwE);
+	F06(honda);
 }
 
-function Func08() {
+function F08() {
 	lion.fullName = 'jhon wick';
 	console.log(lion.fullName);
 
@@ -116,9 +116,9 @@ function Func08() {
 	lion.Sound();
 }
 
-Func01();
-Func02();
-Func03();
-Func05();
-Func07();
-Func08();
+F01();
+F02();
+F03();
+F05();
+F07();
+F08();

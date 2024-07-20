@@ -1,4 +1,4 @@
-function Func01() {
+function F01() {
 	const animal = {
 		stomach: [],
 		eat(food) {
@@ -14,13 +14,14 @@ function Func01() {
 		__proto__: animal
 	};
 
-	cat.eat('a');
+	cat.eat('rice');
 	console.log(cat.stomach);
-	dog.eat('b');
+
+	dog.eat('meat');
 	console.log(dog.stomach);
 }
 
-function Func02() {
+function F02() {
 	const animal = {
 		stomach: [],
 		eat(food) {
@@ -36,13 +37,14 @@ function Func02() {
 		__proto__: animal
 	};
 
-	cat.eat('a');
+	cat.eat('rice');
 	console.log(cat.stomach);
-	dog.eat('b');
+
+	dog.eat('meat');
 	console.log(dog.stomach);
 }
 
-function Func03() {
+function F03() {
 	const animal = {
 		eat(food) {
 			this.stomach = food;
@@ -57,13 +59,14 @@ function Func03() {
 		__proto__: animal
 	};
 
-	cat.eat('a');
+	cat.eat('rice');
 	console.log(cat.stomach);
-	dog.eat('b');
+
+	dog.eat('meat');
 	console.log(dog.stomach);
 }
 
-function Func04() {
+function F04() {
 	const animal = {
 		eat(food) {
 			this.stomach.push(food);
@@ -80,13 +83,14 @@ function Func04() {
 		__proto__: animal
 	};
 
-	cat.eat('a');
+	cat.eat('rice');
 	console.log(cat.stomach);
-	dog.eat('b');
+
+	dog.eat('meat');
 	console.log(dog.stomach);
 }
 
-Func01();
-Func02();
-Func03();
-Func04();
+F01();
+F02();
+F03();
+F04();

@@ -8,35 +8,35 @@
 
 	<body>
 		<script>
-			function case01() {
-				mistypedVariable = 17; // ReferenceError: mistypedVariable is not defined
+			function case1() {
+				variable = 17; // ReferenceError: variable is not defined
 			}
 
-			function case02() {
+			function case2() {
 				const object = { a: 1, a: 2 }; // SyntaxError: Duplicate data property in object literal not allowed
 			}
 
-			function case03() {
-				function foo() {
+			function case3() {
+				function random() {
 					console.log(this); // undefined
 				}
-				foo();
+				random();
 			}
 
-			function case04() {
-				function foo() {
+			function case4() {
+				function random() {
 					x = 10; // x becomes a global variable
 				}
-				foo();
+				random();
 				console.log(x); // 10
 			}
 
-			function case05() {
+			function case5() {
 				const x = 1;
 				delete x; // SyntaxError: Delete of an unqualified identifier in strict mode.
 			}
 
-			function case06() {
+			function case6() {
 				const object = {};
 				Object.defineProperty(object, 'x', {
 					value: 42,
@@ -46,7 +46,7 @@
 				console.log(object.x); // 42
 			}
 
-			function case07() {
+			function case7() {
 				const object = {};
 				Object.defineProperty(object, 'x', {
 					value: 42,
@@ -55,13 +55,13 @@
 				object.x = 9; // TypeError: Cannot assign to read-only property 'x' of object
 			}
 
-			case01();
-			case02();
-			case03();
-			case04();
-			case05();
-			case06();
-			case07();
+			case1();
+			case2();
+			case3();
+			case4();
+			case5();
+			case6();
+			case7();
 		</script>
 	</body>
 </html>

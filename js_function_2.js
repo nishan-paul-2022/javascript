@@ -69,30 +69,6 @@ function F03() {
 	console.log(value);
 }
 
-function F04() {
-	function v4(callback) {
-		callback(14);
-	}
-
-	const v1 = (x) => {
-		return console.log(x);
-	};
-	v1(10);
-
-	const v2 = function (x) {
-		console.log(x);
-	};
-	v2(11);
-
-	const v3 = function v4(x) {
-		console.log(x);
-	};
-	v3(12);
-
-	v4(v3);
-}
-
 F01();
 F02();
 F03();
-F04();

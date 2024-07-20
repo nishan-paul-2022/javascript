@@ -31,7 +31,7 @@ function Inheritance() {
 	];
 
 	for (const [[name1, v1], [name2, v2]] of classList) {
-		console.log('----------------------------------------------------');
+		console.log('-new-chapter-');
 		console.log(`members of ${name1} :`, Object.getOwnPropertyNames(v1));
 		console.log(`members of ${name2} :`, Object.getOwnPropertyNames(v2));
 		console.log(`${name2}.ID :`, v2.ID);
@@ -41,8 +41,9 @@ function Inheritance() {
 	}
 }
 
-// proto-chain of LionClass : AnimalClass => Function.prototype => Object.prototype
-// constructor-chain of LionClass : Function => Object
+/*
+proto-chain of LionClass : AnimalClass => Function.prototype => Object.prototype
+constructor-chain of LionClass : Function => Object */
 function LionClassChain() {
 	console.log(
 		'Object.getPrototypeOf(LionClass) === AnimalClass',
@@ -61,8 +62,9 @@ function LionClassChain() {
 	console.log('LionClass instanceof Object', LionClass instanceof Object);
 }
 
-// proto-chain of TigerClass : AnimalClass => Function.prototype => Object.prototype
-// constructor-chain of TigerClass : Function => Object
+/*
+proto-chain of TigerClass : AnimalClass => Function.prototype => Object.prototype
+constructor-chain of TigerClass : Function => Object */
 function TigerClassChain() {
 	console.log(
 		'Object.getPrototypeOf(TigerClass) === AnimalClass',
@@ -84,7 +86,7 @@ function TigerClassChain() {
 	console.log('TigerClass instanceof Object', TigerClass instanceof Object);
 }
 
-// proto-chain of lionObject : LionClass.prototype => AnimalClass.prototype => Grand.prototype => Object.prototype
+/* proto-chain of lionObject : LionClass.prototype => AnimalClass.prototype => Grand.prototype => Object.prototype */
 function LionObjectChain() {
 	console.log(
 		'Object.getPrototypeOf(lionObject) === LionClass.prototype',
@@ -110,7 +112,7 @@ function LionObjectChain() {
 	console.log('lionObject instanceof Object', lionObject instanceof Object);
 }
 
-// proto-chain of tigerObject : TigerClass.prototype => AnimalClass.prototype => Object.prototype
+/* proto-chain of tigerObject : TigerClass.prototype => AnimalClass.prototype => Object.prototype */
 function TigerObjectChain() {
 	console.log(
 		'Object.getPrototypeOf(tigerObject) === TigerClass.prototype :',
@@ -141,8 +143,8 @@ function TigerObjectChain() {
 
 Inheritance();
 
-LionClassChain(); // Function => Object
-TigerClassChain(); // Function => Object
+LionClassChain(); /* Function => Object */
+TigerClassChain(); /* Function => Object */
 
-LionObjectChain(); // LionClass.prototype => AnimalClass.prototype => Object.prototype
-TigerObjectChain(); // TigerClass.prototype => AnimalClass.prototype => Object.prototype
+LionObjectChain(); /* LionClass.prototype => AnimalClass.prototype => Object.prototype */
+TigerObjectChain(); /* TigerClass.prototype => AnimalClass.prototype => Object.prototype */

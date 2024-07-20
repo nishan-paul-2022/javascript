@@ -10,7 +10,7 @@
 		<script>
 			'use strict';
 
-			function case01() {
+			function case1() {
 				const inlineJS = `
 					let x = 1, y = 2; 
 					var z = x + y; 
@@ -28,8 +28,8 @@
 				EvalFunction(); */
 			}
 
-			function case02() {
-				class Class01 {
+			function case2() {
+				class Class1 {
 					__NID = 0;
 					_balance = 0;
 
@@ -43,14 +43,14 @@
 					}
 				}
 
-				const class01 = new Class01(12345, 10);
-				console.log(class01.GetNID);
-				// class01.GetNID = 6789; /* invalid */
-				console.log(class01.GetNID);
+				const ins1 = new Class1(12345, 10);
+				console.log(ins1.GetNID);
+				// ins1.GetNID = 6789; /* invalid */
+				console.log(ins1.GetNID);
 			}
 
-			function case03() {
-				class Class02 {
+			function case3() {
+				class Class2 {
 					constructor(firstName, lastName, age, height, weight) {
 						this.firstName = firstName;
 						this.lastName = lastName;
@@ -60,7 +60,7 @@
 					}
 
 					FullName() {
-						const fullName = this.firstName + ' ' + this.lastName;
+						const fullName = `${this.firstName} ${this.lastName}`;
 						console.log(fullName);
 					}
 
@@ -71,17 +71,17 @@
 					}
 				}
 
-				const class02 = new Class02('bat', 'man', 27, 6.1, 77);
+				const ins2 = new Class2('bat', 'man', 27, 6.1, 77);
 				/* invalid */
 				/* 	
-				with (class02) {
+				with (ins2) {
 					FullName();
 					FullPhysiology();
 					console.log(firstName);
 				} */
 			}
 
-			function case04() {
+			function case4() {
 				const x = 10;
 				console.log(x);
 				// delete x; /* invalid */
@@ -94,8 +94,8 @@
 				Gotham();
 			}
 
-			function case05() {
-				class Class03 {
+			function case5() {
+				class Class3 {
 					constructor() {
 						(this.name = 'paul'),
 							(this.age = 27),
@@ -111,52 +111,52 @@
 					}
 				}
 
-				class Class04 extends Class03 {
+				class Class4 extends Class3 {
 					skilSet = 'JS';
 					profession = 'MERN developer';
 				}
 
-				const class03 = new Class03();
-				class03.PrintBio();
-				delete class03.name;
-				class03.PrintBio();
-				delete class03.PrintBio;
-				// class03.PrintBio(); /* invalid */
+				const ins3 = new Class3();
+				ins3.PrintBio();
+				delete ins3.name;
+				ins3.PrintBio();
+				delete ins3.PrintBio;
+				// ins3.PrintBio(); /* invalid */
 
-				const class04 = new Class04();
-				console.log(class04.skilSet);
-				console.log(class04.age);
-				delete class04.age;
-				console.log(class04.age);
-				console.log(class04.xyz);
+				const ins4 = new Class4();
+				console.log(ins4.skilSet);
+				console.log(ins4.age);
+				delete ins4.age;
+				console.log(ins4.age);
+				console.log(ins4.xyz);
 			}
 
-			function case06() {
-				const class05 = {};
-				Object.defineProperty(class05, 'name', {
+			function case6() {
+				const ins5 = {};
+				Object.defineProperty(ins5, 'name', {
 					value: 'paul',
 					writable: true,
 					configurable: true
 				});
 
-				Object.defineProperty(class05, 'age', {
+				Object.defineProperty(ins5, 'age', {
 					value: 27,
 					writable: false,
 					configurable: false
 				});
 
-				class05.name = 'Rolex';
-				// class05.age = 24; /* invalid */
-				console.log(class05.name);
-				console.log(class05.age);
+				ins5.name = 'Rolex';
+				// ins5.age = 24; /* invalid */
+				console.log(ins5.name);
+				console.log(ins5.age);
 
-				console.log(delete class05.name);
-				// console.log(delete class05.age); /* invalid */
-				console.log(class05.name);
-				console.log(class05.age);
+				console.log(delete ins5.name);
+				// console.log(delete ins5.age); /* invalid */
+				console.log(ins5.name);
+				console.log(ins5.age);
 			}
 
-			function case07() {
+			function case7() {
 				const arr = [11, 22, 33, 44, 55];
 				// delete arr; /* invalid */
 				console.log(arr);
@@ -168,13 +168,13 @@
 				console.log(Math.E);
 			}
 
-			case01();
-			case02();
-			case03();
-			case04();
-			case05();
-			case06();
-			case07();
+			case1();
+			case2();
+			case3();
+			case4();
+			case5();
+			case6();
+			case7();
 
 			/*
 			'use strict' directive is only recognized at the beginning of a regular script or a function
@@ -182,15 +182,15 @@
 			in eval, only variable that can be used outside eval, is var [ loose mode ]
 
 			function in global scope, this refers :
-			- [ loose mode ] global object (window in browser / global in node)
-			- [ strict mode ] undefined
+				- [ loose mode ] global object (window in browser / global in node)
+				- [ strict mode ] undefined
 
 			semantic rules of strict mode :
-			- can't violate descriptor 
-			- can't delete anything but object member 
-			- can't use with statement 
-			- no redeclaration 
-			- no octal escape character */
+				- can't violate descriptor 
+				- can't delete anything but object member 
+				- can't use with statement 
+				- no redeclaration 
+				- no octal escape character */
 		</script>
 	</body>
 </html>
