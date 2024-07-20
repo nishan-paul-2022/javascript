@@ -1,5 +1,5 @@
 class AnimalClass {
-	id = '1162036';
+	ID = '1162036';
 }
 AnimalClass.number = '1604085';
 AnimalClass.prototype.location = 'Gotham';
@@ -34,10 +34,10 @@ function Inheritance() {
 		console.log('----------------------------------------------------');
 		console.log(`members of ${name1} :`, Object.getOwnPropertyNames(v1));
 		console.log(`members of ${name2} :`, Object.getOwnPropertyNames(v2));
-		console.log(`${name2}.id :`, v2.id);
+		console.log(`${name2}.ID :`, v2.ID);
 		console.log(`${name1}.number :`, v1.number);
 		console.log(`${name1}.prototype.location :`, v1.prototype.location);
-		console.log(`${name1}.prototype.id :`, v1.prototype.id);
+		console.log(`${name1}.prototype.ID :`, v1.prototype.ID);
 	}
 }
 

@@ -105,10 +105,10 @@ function UsingReflect06() {
 function UsingReflect07() {
 	const userDefined = new SayHello();
 
-	Reflect.set(SayHello, 'id', 'Swag'); // SayHello.id = 'Swag'
+	Reflect.set(SayHello, 'ID', 'Swag'); // SayHello.ID = 'Swag'
 	console.log(Reflect.get(SayHello, 'name')); // console.log(SayHello.name)
 	console.log(Reflect.get(SayHello, 'length')); // console.log(SayHello.length)
-	console.log(Reflect.get(SayHello, 'id')); // console.log(SayHello.id)
+	console.log(Reflect.get(SayHello, 'ID')); // console.log(SayHello.ID)
 
 	Reflect.set(userDefined, 'location', 'america'); // userDefined.location = 'america'
 	console.log(Reflect.get(userDefined, 'location')); // console.log(userDefined.location)

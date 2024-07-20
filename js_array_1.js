@@ -5,44 +5,45 @@ function callback(acc, val, idx, arr) {
 }
 
 function ArrayConcat() {
-	const arr1 = [1, 2];
-	const arr2 = [3, 4];
-	const arr3 = arr1 + arr2;
-	const arr4 = arr1.concat(arr2);
+	const array1 = [1, 2];
+	console.log(array1);
+	console.log(`${array1}`);
+	console.log(array1.toString());
 
-	console.log(arr1);
-	console.log(`${arr1}`);
-	console.log(arr1.toString());
-	console.log(arr3);
-	console.log(arr4);
-	console.log(typeof arr3);
-	console.log(typeof arr4);
+	const array2 = [3, 4];
+	const array3 = array1 + array2;
+	console.log(array3);
+	console.log(typeof array3);
+
+	const array4 = array1.concat(array2);
+	console.log(array4);
+	console.log(typeof array4);
 }
 
 function ArrayConversion() {
-	const number = ['z', 'a', 'm', 'd', 'i'];
-	console.log(number.toString());
-	console.log(number.join(' '));
+	const array = ['z', 'a', 'm', 'd', 'i'];
+	console.log(array.toString());
+	console.log(array.join(' '));
 
-	number.name = 'number array';
-	number.sepStr = function (sep) {
+	array.name = 'number array';
+	array.sepStr = function (sep) {
 		const str = this.join(sep);
 		console.log(str);
 	};
 
-	console.log(number);
-	console.log(number.name);
-	number.sepStr('-');
+	console.log(array);
+	console.log(array.name);
+	array.sepStr('-');
 }
 
 function DeleteAndInsert() {
-	const number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-	const delElems = number.splice(0, 2, ...[101, 102, 103]);
-	console.log(number);
+	const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+	const delElems = array.splice(0, 2, ...[101, 102, 103]);
+	console.log(array);
 	console.log(delElems);
 
-	number.splice(7);
-	console.log(number);
+	array.splice(7);
+	console.log(array);
 }
 
 function StringToArray() {
@@ -54,62 +55,62 @@ function StringToArray() {
 }
 
 function HigherOrderMethods() {
-	const number = [
+	const array = [
 		1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
 	];
 
-	console.log(number.length);
+	console.log(array.length);
 
-	const numberMap = number.map((n) => {
+	const arrayMap = array.map((n) => {
 		return n * 10;
 	});
-	console.log(numberMap);
+	console.log(arrayMap);
 
-	const numberFilter = number.filter((n) => {
+	const arrayFilter = array.filter((n) => {
 		return n % 2;
 	});
-	console.log(numberFilter);
+	console.log(arrayFilter);
 
-	const numberSome = number.some((n) => {
+	const arraySome = array.some((n) => {
 		return n < 0;
 	});
-	console.log(numberSome);
+	console.log(arraySome);
 
-	const numberEvery = number.every((n) => {
+	const arrayEvery = array.every((n) => {
 		return n > 0;
 	});
-	console.log(numberEvery);
+	console.log(arrayEvery);
 
-	const numberFind = number.find((n) => {
+	const arrayFind = array.find((n) => {
 		return n % 5 === 0;
 	});
-	console.log(numberFind);
+	console.log(arrayFind);
 
-	const idxFind = number.findIndex((n) => {
+	const idxFind = array.findIndex((n) => {
 		return n % 5 === 0;
 	});
 	console.log(idxFind);
 
-	const numberReduce = number.reduce(callback, 0); // left to right
-	console.log(numberReduce);
+	const arrayReduce = array.reduce(callback, 0); // left to right
+	console.log(arrayReduce);
 
-	const numberReduceRight = number.reduceRight(callback, 0); // right to left
-	console.log(numberReduceRight);
+	const arrayReduceRight = array.reduceRight(callback, 0); // right to left
+	console.log(arrayReduceRight);
 
-	number.forEach((n) => {
+	array.forEach((n) => {
 		return console.log(n * 11);
 	});
 
-	console.log(number.indexOf(1));
+	console.log(array.indexOf(1));
 
-	console.log(number.lastIndexOf(1));
+	console.log(array.lastIndexOf(1));
 }
 
 function ArrayKey() {
-	const number = [11, 22, 33];
-	console.log(number['0']);
-	console.log(number['1']);
-	console.log(number['2']);
+	const array = [11, 22, 33];
+	console.log(array['0']);
+	console.log(array['1']);
+	console.log(array['2']);
 }
 
 function ArrayIteration() {

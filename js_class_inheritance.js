@@ -11,7 +11,7 @@ class Parent {
 		console.log(`PARENT ${sum} and ${this.company}`);
 	}
 
-	Hello() {
+	Greeting() {
 		console.log('helloFromTheOtherSide');
 	}
 
@@ -19,7 +19,7 @@ class Parent {
 
 	static str = 'OK';
 
-	static Func = function () {
+	static Love = function () {
 		console.log('hello World');
 	};
 }
@@ -30,7 +30,7 @@ class Child extends Parent {
 		this.u = u;
 		this.v = v;
 		this.w = w;
-		this.company = 'FINGERCORE';
+		this.company = 'N.P';
 	}
 
 	Identity() {
@@ -47,14 +47,14 @@ parent.Identity();
 child.Identity();
 Parent.prototype.Identity.call(child);
 
-Parent.prototype.Hello();
+Parent.prototype.Greeting();
 Parent.prototype.x = 10;
 console.log(Parent.prototype.x);
 
 console.log(Parent.obj.i);
 console.log(Parent.obj.f);
 console.log(Parent.str);
-Parent.Func();
+Parent.Love();
 
 console.log(Parent.prototype.str);
 

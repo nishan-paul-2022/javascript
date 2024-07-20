@@ -39,7 +39,7 @@ function Usecase04() {
 		name: 'Alice',
 		age: 25,
 		is: true,
-		auth: { gmail: 'paul@gmail.com', id: 7 }
+		auth: { gmail: 'paul@gmail.com', ID: 7 }
 	};
 	const string = JSON.stringify(data);
 	console.log(string);
@@ -47,20 +47,20 @@ function Usecase04() {
 
 function Usecase05() {
 	const string =
-		'{"name": "Alice", "age": 25, "is": true, "auth": {"gmail": "paul@gmail.com", "id": 7}}';
+		'{"name": "Alice", "age": 25, "is": true, "auth": {"gmail": "paul@gmail.com", "ID": 7}}';
 	const data = JSON.parse(string);
 	console.log(data);
 	console.log(data.auth);
 }
 
 function Usecase06() {
-	const data = ['Alice', 25, true, { gmail: 'paul@gmail.com', id: 7 }];
+	const data = ['Alice', 25, true, { gmail: 'paul@gmail.com', ID: 7 }];
 	const string = JSON.stringify(data);
 	console.log(string);
 }
 
 function Usecase07() {
-	const string = '["Alice", 25, true, {"gmail": "paul@gmail.com", "id": 7}]';
+	const string = '["Alice", 25, true, {"gmail": "paul@gmail.com", "ID": 7}]';
 	const data = JSON.parse(string);
 	console.log(data);
 	console.log(data[2]);

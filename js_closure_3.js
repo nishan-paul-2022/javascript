@@ -6,12 +6,12 @@ function Fibo(n) {
 	}
 }
 
-function MemorizeFibo01(Fn) {
+function MemorizeFibo01(callback) {
 	const fiboStore = {};
 	const FiboClosure = function (n) {
 		const isOwn = Object.prototype.hasOwnProperty.call(fiboStore, n);
 		if (!isOwn) {
-			fiboStore[n] = Fn(n);
+			fiboStore[n] = callback(n);
 		}
 		return fiboStore[n];
 	};

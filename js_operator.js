@@ -5,7 +5,7 @@ function Example01() {
 	class ClassA {}
 
 	const user = {
-		id: 1,
+		ID: 1,
 		name: 'John',
 		address: {
 			details: {

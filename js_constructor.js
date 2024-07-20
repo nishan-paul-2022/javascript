@@ -75,7 +75,7 @@ const BankAccount2 = (function () {
 	return BankAccount;
 })();
 
-function Gn(BankAccount) {
+function DetailsAboutAccount(BankAccount) {
 	const myAccount = new BankAccount('123456789', 1000);
 	console.log(myAccount.getBalance()); // Output: 1000
 
@@ -88,9 +88,7 @@ function Gn(BankAccount) {
 	console.log(myAccount.calculateInterest(0.05)); // Output: 40 (5% interest on 800)
 
 	console.log(myAccount.calculateInterest); // undefined (The private method is not accessible from outside)
-
-	console.log('\n\n\n');
 }
 
-Gn(BankAccount1);
-Gn(BankAccount2);
+DetailsAboutAccount(BankAccount1);
+DetailsAboutAccount(BankAccount2);

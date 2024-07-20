@@ -1,16 +1,16 @@
 function ArrayCreation() {
-	const number1 = [1, 5, 10, 7, 2, 0];
-	const number2 = new Array(5);
+	const array1 = [1, 5, 10, 7, 2, 0];
+	const array2 = new Array(5);
 
-	number2[2] = Math.PI;
-	number2[7] = Math.E;
+	array2[2] = Math.PI;
+	array2[7] = Math.E;
 
-	console.log(number1);
-	console.log(number2);
-	console.log(Array.isArray(number1));
-	console.log(Array.isArray(number2));
-	console.log(number1 instanceof Array);
-	console.log(number2 instanceof Array);
+	console.log(array1);
+	console.log(array2);
+	console.log(Array.isArray(array1));
+	console.log(Array.isArray(array2));
+	console.log(array1 instanceof Array);
+	console.log(array2 instanceof Array);
 }
 
 function ArrayMethods() {
@@ -42,21 +42,21 @@ function ArrayMethods() {
 }
 
 function ArraySort1() {
-	const number = [1, 5, 10, 7, 2, 0];
+	const array = [1, 5, 10, 7, 2, 0];
 
 	// number will be treated as string
-	console.log(number.sort());
+	console.log(array.sort());
 
 	// value        | order
 	// positive     | 2nd arg
 	// not-positive | 1st arg
 	console.log(
-		number.sort((a, b) => {
+		array.sort((a, b) => {
 			return a - b;
 		})
 	);
 	console.log(
-		number.sort((a, b) => {
+		array.sort((a, b) => {
 			return b - a;
 		})
 	);
@@ -94,9 +94,9 @@ function KnuthShuffle() {
 }
 
 function MaxMinArray() {
-	const number2 = [17, 1, -29, 5, 10, 29, 7, -15, 2, 0, -6];
-	console.log(Math.max(...number2));
-	console.log(Math.min(...number2));
+	const array2 = [17, 1, -29, 5, 10, 29, 7, -15, 2, 0, -6];
+	console.log(Math.max(...array2));
+	console.log(Math.min(...array2));
 	// best approach would be user-defined fucntion instead of built-in function
 }
 

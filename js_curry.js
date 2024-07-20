@@ -57,53 +57,53 @@ function Root(Engine) {
 	function Parent(...argParent) {
 		function Child(...argChild) {
 			const argLatest = argParent.concat(argChild);
-			const cValue = Parent(...argLatest);
-			return cValue;
+			const currentValue = Parent(...argLatest);
+			return currentValue;
 		}
 
-		const nParent = argParent.length;
-		const nEngine = Engine.length;
-		let pValue;
+		const parentLength = argParent.length;
+		const engineLength = Engine.length;
+		let previousValue;
 
-		if (nParent >= nEngine) {
-			pValue = Engine(...argParent);
+		if (parentLength >= engineLength) {
+			previousValue = Engine(...argParent);
 		} else {
-			pValue = Child;
+			previousValue = Child;
 		}
 
-		return pValue;
+		return previousValue;
 	}
 
 	return Parent;
 }
 
 // currying function (improvised)
-function RootImprovised(Engine, nEngine) {
+function RootImprovised(Engine, engineLength) {
 	function Parent(...argParent) {
 		function Child(...argChild) {
 			const argLatest = argParent.concat(argChild);
-			const cValue = Parent(...argLatest);
-			return cValue;
+			const currentValue = Parent(...argLatest);
+			return currentValue;
 		}
 
-		const nParent = argParent.length;
-		let pValue;
+		const parentLength = argParent.length;
+		let previousValue;
 
-		if (nParent >= nEngine) {
-			pValue = Engine(...argParent);
+		if (parentLength >= engineLength) {
+			previousValue = Engine(...argParent);
 		} else {
-			pValue = Child;
+			previousValue = Child;
 		}
 
-		return pValue;
+		return previousValue;
 	}
 
 	return Parent;
 }
 
-function Fn() {
-	const cCalculateTotalTax = Root(CalculateTotalTax);
-	const result = cCalculateTotalTax(1000)(2, 3, 4)(5, 6, 7, 8)(9, 10, 11)(
+function F01() {
+	const curried = Root(CalculateTotalTax);
+	const result = curried(1000)(2, 3, 4)(5, 6, 7, 8)(9, 10, 11)(
 		12,
 		13,
 		14,
@@ -113,25 +113,25 @@ function Fn() {
 	console.log(result);
 }
 
-function Gn() {
-	const cSum = Root(Sum);
-	const result = cSum(1, 2)(3);
+function F02() {
+	const curried = Root(Sum);
+	const result = curried(1, 2)(3);
 	console.log(result);
 }
 
-function Hn() {
-	const arrValues = [1, 2, 3, 4, 5, 6, 7];
-	const n = arrValues.length;
-	const cMul = RootImprovised(Mul, n);
-	const result1 = cMul(1, 2)(3, 4)(5, 6, 7);
-	const result2 = Mul(...arrValues);
+function F03() {
+	const array = [1, 2, 3, 4, 5, 6, 7];
+	const n = array.length;
+	const curried = RootImprovised(Mul, n);
+	const result1 = curried(1, 2)(3, 4)(5, 6, 7);
+	const result2 = Mul(...array);
 	console.log(result1);
 	console.log(result2);
 }
 
-Fn();
-Gn();
-Hn();
+F01();
+F02();
+F03();
 
 /* 
 main-function : engine [ has argument set ]
@@ -143,5 +143,4 @@ parent-function : parent [ has argument set ]
 child-function : child [ has argument set ]
      - merge child arguments with parent arguments
      - invokes parent with merged arguments and stores return-value
-     - returns return-value 
-*/
+     - returns return-value */

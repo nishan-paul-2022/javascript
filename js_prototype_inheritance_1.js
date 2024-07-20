@@ -20,7 +20,7 @@ const honda = {
 };
 
 const animal = {
-	id: 'animal',
+	ID: 'animal',
 	get fullName() {
 		const name = this.firstName + ' ' + this.lastName;
 		return name;
@@ -31,12 +31,12 @@ const animal = {
 	},
 
 	Sound() {
-		console.log(this.id);
+		console.log(this.ID);
 	}
 };
 
 const lion = {
-	id: 'lion',
+	ID: 'lion',
 	__proto__: animal
 };
 
@@ -109,10 +109,10 @@ function Func08() {
 	delete lion.Sound; // delete operation
 	lion.Sound();
 
-	delete lion.id;
+	delete lion.ID;
 	lion.Sound();
 
-	delete lion.id;
+	delete lion.ID;
 	lion.Sound();
 }
 

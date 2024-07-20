@@ -1,4 +1,4 @@
-class ClassA {
+class Class1 {
 	address = '89/B';
 
 	house = '3/4';
@@ -13,11 +13,11 @@ class ClassA {
 	}
 }
 
-class ClassB {
+class Class2 {
 	static bio = 'MERN';
 
 	constructor() {
-		this.name = 'Paul';
+		this.name = 'paul';
 		this.address = '3/4';
 	}
 
@@ -30,47 +30,48 @@ class ClassB {
 	}
 
 	static get Bio() {
-		return ClassB.bio;
+		return Class2.bio;
 	}
 
 	static set Bio(bio) {
-		ClassB.bio = bio;
+		Class2.bio = bio;
 	}
 }
 
-function Func01() {
-	const classA = new ClassA();
-	console.log(classA.address);
-	console.log(classA.house);
-
-	console.log(classA.FullAddress);
-	classA.FullAddress = '4/5';
-	console.log(classA.FullAddress);
-}
-
-function Func02() {
-	const classB = new ClassB();
-	classB.name = 'Bateman';
-	console.log(classB.name);
-
-	console.log(ClassB.Bio);
-	ClassB.Bio = 'Javascript';
-	console.log(ClassB.Bio);
-}
-
-function Func03() {
-	class Rabbit {
-		constructor(id) {
-			this.id = id;
-		}
+class Class3 {
+	constructor(ID) {
+		this.ID = ID;
 	}
+}
 
-	const rabbitArray = Array.from({ length: 3 }, (_notUsed, index) => {
-		return new Rabbit(index);
+function F01() {
+	const instance = new Class1();
+	console.log(instance.address);
+	console.log(instance.house);
+
+	console.log(instance.FullAddress);
+	instance.FullAddress = '4/5';
+	console.log(instance.FullAddress);
+}
+
+function F02() {
+	const instance = new Class2();
+	instance.name = 'Batman';
+	console.log(instance.name);
+
+	console.log(Class2.Bio);
+	Class2.Bio = 'JS';
+	console.log(Class2.Bio);
+}
+
+function F03() {
+	const array = Array.from({ length: 3 }, (_notUsed, index) => {
+		return new Class3(index);
 	});
-	console.log(rabbitArray);
+
+	console.log(array);
 }
 
-Func01();
-Func02();
-Func03();
+F01();
+F02();
+F03();

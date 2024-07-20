@@ -15,16 +15,16 @@ function Positive(value) {
 	}
 }
 
-function Filter(lValues, Fn) {
-	console.log(Fn);
-	for (const i of lValues) {
-		if (Fn(i)) {
+function Filter(values, callback) {
+	console.log(callback);
+	for (const i of values) {
+		if (callback(i)) {
 			console.log(i);
 		}
 	}
 }
 
-const lValues = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5];
-Filter(lValues, NonNegative);
-Filter(lValues, Negative);
-Filter(lValues, Positive);
+const values = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5];
+Filter(values, NonNegative);
+Filter(values, Negative);
+Filter(values, Positive);

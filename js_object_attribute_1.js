@@ -1,7 +1,7 @@
 function ObjectKey01() {
 	class A {
 		constructor() {
-			this.name = 'Paul';
+			this.name = 'paul';
 		}
 
 		PrintValues() {
@@ -36,7 +36,7 @@ function ObjectKey02() {
 		1: 'hello',
 		true: 'world',
 		title: 'TDK',
-		id: 'fear'
+		ID: 'fear'
 	};
 
 	console.log(object[1]);
@@ -48,9 +48,9 @@ function ObjectKey02() {
 	console.log(object['title']);
 	console.log(object.title);
 
-	// console.log(object[id]); /* invalid syntax */
-	console.log(object['id']);
-	console.log(object.id);
+	// console.log(object[ID]); /* invalid syntax */
+	console.log(object['ID']);
+	console.log(object.ID);
 }
 
 function ObjectKey03() {
@@ -58,7 +58,7 @@ function ObjectKey03() {
 		[1]: 'hello',
 		[true]: 'world',
 		['title']: 'TDK'
-		// [id]: "fear" /* invalid syntax */
+		// [ID]: "fear" /* invalid syntax */
 	};
 
 	console.log(object[1]);

@@ -64,7 +64,7 @@ function CheckKey() {
 
 function ObjectProperties() {
 	class Class {
-		id = 1604085;
+		ID = 1604085;
 		constructor() {
 			console.log('class: Class');
 		}

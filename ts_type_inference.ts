@@ -33,7 +33,7 @@ function F04() {
 	// numbers1.push('5'); // error: argument of type 'string' is not assignable to parameter of type 'number'.
 	console.log(numbers1);
 
-	const numbers2 = [1, 2, '3', '4']; // numbers is inferred to be a number[]
+	const numbers2 = [1, 2, '3', '4']; // numbers is inferred to be a (number | string)[]
 	numbers2.push(5); // valid
 	numbers2.push('5'); // valid
 	// numbers2.push(true); // error: argument of type 'boolean' is not assignable to parameter of type 'number | string'.

@@ -24,14 +24,14 @@ function Example03() {
 		fName: fileName,
 		dName: dirName,
 		message,
-		id: collegeId = 'NDC'
+		ID: collegeID = 'NDC'
 	} = require('./node_module_1.cjs');
 
 	Add(15, 25);
 	console.log(fileName);
 	console.log(dirName);
 	console.log(message);
-	console.log(collegeId);
+	console.log(collegeID);
 }
 
 async function Example04() {

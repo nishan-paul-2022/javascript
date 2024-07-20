@@ -4,10 +4,10 @@ function* LetterGenerator() {
 }
 
 function* EvenGenerator() {
-	let num = -2;
+	let value = -2;
 	while (true) {
-		num += 2;
-		yield num;
+		value += 2;
+		yield value;
 	}
 }
 
@@ -17,12 +17,12 @@ function* LetterAndEvenGenerator() {
 }
 
 class EvenGeneratorLimited {
-	num = -2;
+	value = -2;
 
 	next() {
-		this.num += 2;
-		if (this.num <= 20) {
-			return { value: this.num, done: false };
+		this.value += 2;
+		if (this.value <= 20) {
+			return { value: this.value, done: false };
 		} else {
 			return { value: undefined, done: true };
 		}

@@ -6,10 +6,10 @@ const completeUl = document.getElementById('complete-items');
 function shiftTask() {
 	const li = this.parentNode;
 	const ul = li.parentNode;
-	const id = ul.getAttribute('id');
-	if (id === 'incomplete-items') {
+	const status = ul.getAttribute('id');
+	if (status === 'incomplete-items') {
 		completeUl.appendChild(li);
-	} else if (id === 'complete-items') {
+	} else if (status === 'complete-items') {
 		todoUl.appendChild(li);
 	}
 }
