@@ -1,4 +1,5 @@
 /* eslint-disable no-func-assign */
+
 import util from 'util';
 
 function UtilFormat() {

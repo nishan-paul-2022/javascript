@@ -6,7 +6,7 @@ console.log(typeof dName);
 console.log(typeof fName);
 
 /* 
-//	global variable (string) 	: __filename, __dirname
+//	global variable			 	: __filename (string) | __dirname (string)
 	global class 				: Buffer
 	global object 				: console, process
 	global function (timer) 	:
