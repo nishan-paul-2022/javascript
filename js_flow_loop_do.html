@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<script>
+			function F01() {
+				let value = 10;
+				while(value--) {
+					console.log(value);
+				}
+			}
+
+			function F02() {
+				const message = 'enter a positive number';
+
+				let userInput;
+				do {
+					const value = prompt(message);
+					userInput = parseInt(value);
+				} while (isNaN(userInput) || userInput <= 0);
+
+				console.log('u entered a valid positive number:', userInput);
+			}
+
+			F01();
+			F02();
+		</script>
+	</body>
+</html>
