@@ -1,47 +1,55 @@
-function FuncA() {
-	console.log('function declaration');
+function F01(x, y) {
+	console.log('regular function');
+	const z = x + y;
+	console.log(z);
+	return z;
 }
 
-const FuncB = function (/* x, y, z */) {
-	console.log(arguments.length);
-	console.log('function expression');
+const F02 = function (x, y) {
+	console.log('anonymous function');
+	const z = x + y;
+	console.log(z);
+	return z;
 };
 
-const FuncC = () => {
-	return console.log('arrow function');
-};
-
-const FuncD = (x, y) => {
-	x++;
-	y--;
-	console.log(x + y);
+const F03 = (x, y) => {
 	console.log('arrow function');
+	const z = x + y;
+	console.log(z);
+	return z;
 };
 
-const FuncE = new Function(
+const F05 = new Function(
 	'x',
 	'y',
-	"var z=x*y; let v=x+y; console.log(z); console.log(v); console.log('function constrcutor'); return 'ALL OK'"
+	`
+	console.log('constrcutor function');
+	const z = x + y;
+	console.log(z);
+	return z;`
 );
 
-const FuncF = (x) => {
-	return console.log(x ** 2);
-};
+function F06(x, y) {
+	const z = (function () {
+		console.log('self invoking anonymous function');
+		const z = x + y;
+		console.log(z);
+		return z;
+	})();
 
-FuncA();
-FuncB(1, 2, 3);
-FuncC();
-FuncD(11, 22);
-FuncE(111, 222);
-FuncF(9);
+	return z;
+}
 
-(function () {
-	const a = 100;
-	const b = 200;
-	console.log(a + b);
-	console.log('self invoking anonymous function');
-})();
+console.log(F01);
 
-console.log(FuncB);
-console.log(FuncB.toString());
-console.log(FuncE());
+console.log(F01.toString());
+
+console.log(F01(10, 20));
+
+console.log(F02(10, 20));
+
+console.log(F03(10, 20));
+
+console.log(F05(10, 20));
+
+console.log(F06(10, 20));

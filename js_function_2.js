@@ -1,90 +1,98 @@
-class ExA {
-	constructor(firstName, lastName, age) {
-		this.firstName = firstName;
-		this.lastName = lastName;
+class Class1 {
+	constructor(name, age, height, weight) {
+		this.name = name;
 		this.age = age;
+		this.height = height;
+		this.weight = weight;
 	}
 
-	get Age() {
-		return this.age;
+	get bio() {
+		const body = {
+			age: this.age,
+			height: this.height,
+			weight: this.weight
+		};
+		return body;
 	}
 
-	set Age(age) {
-		this.age = age;
-		// return this.age; /* invalid */
-	}
-
-	get FullName() {
-		return this.firstName + ' ' + this.lastName;
-	}
-
-	FINGERCORE() {
-		console.log('HELLO FROM FINGERCORE');
+	set bio(body) {
+		this.age = body.age;
+		this.height = body.height;
+		this.weight = body.weight;
 	}
 }
 
-function Hello(x, y, z) {
-	this.x = x;
-	this.y = y;
-	this.z = z;
-	this.w = {
-		name: 'Paul',
-		age: 27,
-		height: 5.5,
-		weight: 52
+function Class2(name, age, height, weight) {
+	this.name = name;
+	this.age = age;
+	this.height = height;
+	this.weight = weight;
+	this.slogan = {
+		message: 'my life, my rules'
 	};
 }
 
-function NamedFunction() {
-	function func(callback) {
+function F01() {
+	const instance = new Class1('paul', 27, 5.5, 57);
+
+	instance.slogan = {
+		message: 'my life, my rules'
+	};
+
+	instance.bio = {
+		age: 32,
+		height: 5.5,
+		weight: 70
+	};
+
+	console.log(instance.name);
+	console.log(instance.age);
+	console.log(instance.height);
+	console.log(instance.weight);
+	console.log(instance.bio);
+	console.log(instance.slogan.message);
+}
+
+function F02() {
+	const instance = new Class2('paul', 27, 5.5, 57);
+
+	console.log(instance.name);
+	console.log(instance.age);
+	console.log(instance.height);
+	console.log(instance.weight);
+	console.log(instance.slogan.message);
+}
+
+function F03() {
+	const instance = new Function('x', 'y', 'z', 'return x+y+z;');
+	const value = instance(1, 2, 3);
+	console.log(value);
+}
+
+function F04() {
+	function v4(callback) {
 		callback(14);
 	}
 
-	const func01 = (x) => {
+	const v1 = (x) => {
 		return console.log(x);
 	};
-	const func02 = function (x) {
-		console.log(x);
-	};
-	const func03 = function func(x) {
-		console.log(x);
-	};
+	v1(10);
 
-	func01(10);
-	func02(11);
-	func03(12);
-	func(func03);
+	const v2 = function (x) {
+		console.log(x);
+	};
+	v2(11);
+
+	const v3 = function v4(x) {
+		console.log(x);
+	};
+	v3(12);
+
+	v4(v3);
 }
 
-const hello = new Hello(1, 2, 3);
-console.log(hello.x);
-console.log(hello.y);
-console.log(hello.z);
-console.log(hello.w.name);
-console.log(typeof hello);
-console.log(typeof hello.w);
-
-const world = new Function('x', 'y', 'z', 'return x+y+z;');
-console.log(world(1, 2, 3));
-console.log(typeof world);
-
-const exa = new ExA('Nishan', 'Paul', 27);
-exa.why = {
-	message: 'my life, my rules'
-};
-exa.Age = 24;
-console.log(exa.Age);
-console.log(exa.FullName);
-console.log(exa.why.message);
-exa.FINGERCORE();
-
-const exb = {
-	name: 'Paul',
-	age: 27,
-	height: 5.5,
-	weight: 27
-};
-console.log(exb.name);
-console.log(exb.age);
-
-NamedFunction();
+F01();
+F02();
+F03();
+F04();
