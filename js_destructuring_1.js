@@ -55,8 +55,8 @@ function F04() {
 
 function F05() {
 	const array = [1, 2, 3, 4, 5];
-	const [_i, _j, _k, ...m] = array;
-	console.log(m);
+	const [_x1, _x2, _x3, ...values] = array;
+	console.log(values);
 
 	const { length, forEach } = array;
 	console.log(length);
@@ -66,11 +66,11 @@ function F05() {
 }
 
 function F06() {
-	const array = [1, 2, 3, 4, 5];
-	const [_i, _j, ...m] = array;
-	console.log(m);
+	const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+	const [_x1, _x2, ...values] = array;
+	console.log(values);
 
-	const [_p, _q, ...{ length }] = array; // object destructuring within array destructuring
+	const [_x3, _x4, ...{ length }] = array; // object destructuring within array destructuring
 	console.log(length);
 }
 

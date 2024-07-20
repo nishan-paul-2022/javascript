@@ -33,7 +33,7 @@ async function GetFileDirs(directory, jsonData) {
 
 	const fileNames = fileNameSet.filter((fileName) => {
 		const isValidFile = fileName.match(/.*\.(js|ts|mjs|mts)$/);
-		const isNodeRunFile = fileName === 'node_check_code.js';
+		const isNodeRunFile = fileName === 'node_code_checking.js';
 		const isDone =
 			fileName in jsonData.files && jsonData.files[fileName] === true;
 		const isValid = isValidFile && !isNodeRunFile && !isDone;
