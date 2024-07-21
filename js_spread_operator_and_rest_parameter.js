@@ -1,5 +1,5 @@
 /* arguments */
-function ArgumentsExample() {
+function ArgumentsExample01() {
 	let sum = 0;
 	for (const i of arguments) {
 		sum += i;
@@ -7,14 +7,20 @@ function ArgumentsExample() {
 	console.log(sum);
 }
 
-/* spread operator */
-function SpreadExample(a, b, c) {
-	console.log('a, b, c:', a, b, c);
+/* arguments */
+function ArgumentsExample02() {
+	const result = [].join.call(arguments, '');
+	console.log(result);
 }
 
 /* rest parameter */
 function RestExample(...args) {
 	console.log('args:', args);
+}
+
+/* spread operator */
+function SpreadExample(a, b, c) {
+	console.log('a, b, c:', a, b, c);
 }
 
 function SpreadWithArray() {
@@ -114,9 +120,12 @@ function SpreadWithGenerator() {
 
 const array = [1, 2, 3];
 
-ArgumentsExample(1, 2, 3, 4, 5);
-SpreadExample(...array);
+ArgumentsExample01(1, 2, 3, 4, 5);
+ArgumentsExample02(1, 2, 3, 4, 5);
+
 RestExample(1, 2, 3);
+
+SpreadExample(...array);
 SpreadWithArray();
 SpreadWithObject();
 SpreadWithClassAndFunction();

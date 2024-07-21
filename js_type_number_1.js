@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-loss-of-precision */
 /* eslint-disable eqeqeq */
 
-function function01() {
+function F01() {
 	const num1 = 123;
 	const num2 = new Number(123);
 	const num3 = new Number(123);
@@ -16,7 +15,7 @@ function function01() {
 	console.log(num3 === num4);
 }
 
-function function02() {
+function F02() {
 	console.log('MAX_VALUE :', Number.MAX_VALUE); // 2^1024
 	console.log('MIN_VALUE :', Number.MIN_VALUE); // -2^-1023
 	console.log('MAX_SAFE_INTEGER :', Number.MAX_SAFE_INTEGER); // +(2^53-1)
@@ -30,7 +29,7 @@ function function02() {
 }
 
 /* hexa */
-function function03() {
+function F03() {
 	const num5 = 0x32;
 
 	// argument of toString() is the base of output string-number and it is optional
@@ -42,7 +41,7 @@ function function03() {
 	console.log(num5.toString(2));
 }
 
-function function04() {
+function F04() {
 	const v0 = Math.random() / Infinity;
 	const v1 = Math.random() / 0;
 	const v2 = Math.random() / -Infinity;
@@ -66,7 +65,7 @@ function function04() {
 	console.log('0/Infinity :', v9);
 }
 
-function function05() {
+function F05() {
 	const pattern = 'hello';
 	const flag = 'gi';
 	const regex1 = new RegExp(pattern, flag);
@@ -98,7 +97,7 @@ function function05() {
 	console.log(typeof symbol1.valueOf());
 }
 
-function function06() {
+function F06() {
 	console.log(Number());
 	console.log(Number(''));
 	console.log(Number([]));
@@ -131,133 +130,27 @@ function function06() {
 	console.log(parseInt('10', 36));
 }
 
-function function07() {
-	const num7 = 925.1256;
+// numeric literal and escape character
+function F07() {
+	console.log(0b10);
+	console.log(0o10);
+	console.log(10);
+	console.log(0x10);
 
-	// number of digit
-	console.log('\ntoPrecision :');
-	console.log(num7.toPrecision()); // as it is
-	console.log(num7.toPrecision(2));
-	console.log(num7.toPrecision(4));
-	console.log(num7.toPrecision(6));
-
-	// number of fractional digit
-	console.log('\ntoFixed :');
-	console.log(num7.toFixed()); // 0
-	console.log(num7.toFixed(0));
-	console.log(num7.toFixed(2));
-	console.log(num7.toFixed(4));
-	console.log(num7.toFixed(6));
-
-	// number of fractional digit in scientific number
-	console.log('\ntoExponential :');
-	console.log(num7.toExponential()); // as it is, but in scientific
-	console.log(num7.toExponential(0));
-	console.log(num7.toExponential(2));
-	console.log(num7.toExponential(4));
-	console.log(num7.toExponential(6));
+	// console.log('\101'); /* invalid */
+	console.log('\x41');
+	console.log('\u{41}');
+	console.log('\u{1F604}');
+	console.log('\u{1F449}');
 }
 
-function function08() {
-	const num8 = 123456789123456789;
-	console.log(isFinite(1 / 0));
-	console.log(isNaN(0 / 0));
-	console.log(Number.isInteger(num8));
-	console.log(Number.isSafeInteger(num8));
-}
-
-function function09() {
-	let num9 = 12345n;
-	const num10 = 5n;
-	const num11 = BigInt(2);
-	const num12 = BigInt(12345);
-
-	console.log(num9 + num10);
-	console.log(num9 - num10);
-	console.log(num9 * num10);
-	console.log(num9 / num10);
-	console.log(num9 << num11);
-	console.log(num9 >> num11);
-	console.log(num10 ** 2n);
-	console.log(num9 % BigInt('4'));
-
-	console.log(0b101n);
-	console.log(0o757n);
-	console.log(125n);
-	console.log(0x32n);
-
-	console.log(num9 === num12);
-	console.log(++num9);
-}
-
-function function10() {
-	const u0 = [];
-	const u1 = new Array(5);
-	const u2 = [1, 2, 3];
-	console.log(u0);
-	console.log(u1);
-	console.log(u2);
-
-	const v0 = [];
-	const v1 = Array(5);
-	const v2 = [1, 2, 3];
-	console.log(v0);
-	console.log(v1);
-	console.log(v2);
-}
-
-// creating an array from an iterable
-function function11() {
-	const myIterable = {
-		values: [1, 2, 3],
-		multiplier: 2,
-		getValue: function (value) {
-			return value ** this.multiplier;
-		}
-	};
-
-	const newArray = Array.from(
-		myIterable.values,
-		myIterable.getValue,
-		myIterable
-	);
-
-	console.log(newArray);
-}
-
-// numeric separator _
-function function12() {
-	const num13 = 1_000_000_000;
-	const num14 = 1000000000;
-	console.log(num13 === num14);
-}
-
-/* octal */
-function function13() {
-	const num15 = 0o32;
-
-	// argument of toString() is the base of output string-number and it is optional
-	console.log(num15.toString(32));
-	console.log(num15.toString(16));
-	console.log(num15.toString(12));
-	console.log(num15.toString(10));
-	console.log(num15.toString(8));
-	console.log(num15.toString(2));
-}
-
-function01();
-function02();
-function03();
-function04();
-function05();
-function06();
-function07();
-function08();
-function09();
-function10();
-function11();
-function12();
-function13();
+F01();
+F02();
+F03();
+F04();
+F05();
+F06();
+F07();
 
 /*
 comparing (loose / strict) two objects always returns false
@@ -273,3 +166,13 @@ anything can be converted to string using : objectName.toString()
 base can be 2 to 36
 
 bigint always works with signed number */
+
+/*
+- binary number literal
+- octal number literal
+- hexa number literal
+- octal escape character / ASCII code
+- hexa escape character / ASCII code
+- unicode escape sequence (hexa value) / Unicode 
+
+[ strict mode does not support octal escape character ] */

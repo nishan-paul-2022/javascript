@@ -3,15 +3,15 @@ import fs from 'fs';
 
 function Zip() {
 	const gzip = zlib.createGzip();
-	const inFile = fs.createReadStream('./zmax.js');
-	const outFile = fs.createWriteStream('./zmax.js.gz');
+	const inFile = fs.createReadStream('./zmax.txt');
+	const outFile = fs.createWriteStream('./zmax.txt.gz');
 	inFile.pipe(gzip).pipe(outFile);
 }
 
 function UnZip() {
 	const unzip = zlib.createUnzip();
-	const inFile = fs.createReadStream('./zmax.js.gz');
-	const outFile = fs.createWriteStream('./zmax.js');
+	const inFile = fs.createReadStream('./zmax.txt.gz');
+	const outFile = fs.createWriteStream('./zmax.txt');
 	inFile.pipe(unzip).pipe(outFile);
 }
 

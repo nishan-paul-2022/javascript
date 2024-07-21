@@ -1,21 +1,21 @@
 import fs from 'fs';
 
-function welcome1() {
-	console.log('Welcome To JavaTpoint 1');
+function greeting1() {
+	console.log('hello from the other side 01');
 }
 
-function welcome2() {
-	console.log('Welcome To JavaTpoint 2');
+function greeting2() {
+	console.log('hello from the other side 02');
 }
 
-function welcome3() {
-	console.log('Welcome To JavaTpoint 3');
+function greeting3() {
+	console.log('hello from the other side 03');
 }
 
 function Usecase01() {
-	const id1 = setTimeout(welcome1, 1000);
-	const id2 = setInterval(welcome2, 1000);
-	const id3 = setImmediate(welcome3);
+	const id1 = setTimeout(greeting1, 1000);
+	const id2 = setInterval(greeting2, 1000);
+	const id3 = setImmediate(greeting3);
 	clearTimeout(id1);
 	clearInterval(id2);
 	clearImmediate(id3);
@@ -23,11 +23,11 @@ function Usecase01() {
 
 // Simulating an I/O operation (e.g. reading a file)
 function Usecase02() {
-	console.log('Start');
+	console.log('START');
 
 	fs.readFile('./zmax.html', 'utf8', (error, data) => {
 		setTimeout(() => {
-			console.log('timeout1');
+			console.log('TIMEOUT 01');
 		}, 0);
 
 		let i = 0;
@@ -40,12 +40,12 @@ function Usecase02() {
 		}, 0);
 
 		setTimeout(() => {
-			console.log('timeout2');
+			console.log('TIMEOUT 02');
 		}, 0);
 
 		setImmediate(() => {
-			console.log('immediate1');
-			fs.readFile('./zmax.css', 'utf8', (error, data) => {
+			console.log('IMMEDIATE 01');
+			fs.readFile('./zmax.txt', 'utf8', (error, data) => {
 				if (error) {
 					throw error;
 				}
@@ -54,11 +54,11 @@ function Usecase02() {
 		});
 
 		setTimeout(() => {
-			console.log('timeout3');
+			console.log('TIMEOUT 03');
 		}, 0);
 
 		setImmediate(() => {
-			console.log('immediate2');
+			console.log('IMMEDIATE 02');
 		});
 
 		if (error) {
@@ -75,11 +75,11 @@ function Usecase02() {
 		console.log('FILE-SET-IMMEDIATE');
 	});
 
-	console.log('End');
+	console.log('END');
 }
 
 function Usecase03() {
-	fs.readFile('./zmax.js', 'utf8', (error, data) => {
+	fs.readFile('./zmax.txt', 'utf8', (error, data) => {
 		setTimeout(() => {
 			console.log('SET-TIMEOUT');
 		}, 0);

@@ -1,4 +1,5 @@
 /* eslint-disable no-prototype-builtins */
+
 class Animal {}
 
 class Dog {}
@@ -7,12 +8,12 @@ function RandomFunction(arg1, arg2, arg3) {
 	return arg1 + arg2 + arg3;
 }
 
-function SayHello(_x, _y) {
+function marvel(_x, _y) {
 	this.title = 'WinterSoldier';
 	this.location = 'USA';
 }
 
-function UsingReflect01() {
+function Usecase01() {
 	const array = [1, 2, 3];
 	const regular1 = { a: 1 };
 	const regular2 = {
@@ -42,7 +43,7 @@ function UsingReflect01() {
 	console.log('array.length', array.length);
 }
 
-function UsingReflect02() {
+function Usecase02() {
 	const args = [10, 20, 30];
 
 	const result1 = RandomFunction(...args);
@@ -57,7 +58,7 @@ function UsingReflect02() {
 	console.log('result3:', result3);
 }
 
-function UsingReflect03() {
+function Usecase03() {
 	const regular = { a: 1, b: 2, c: 3 };
 
 	// regular.hasOwnProperty = '';
@@ -70,14 +71,14 @@ function UsingReflect03() {
 	console.log(Reflect.apply(Object.prototype.hasOwnProperty, regular, ['a']));
 }
 
-function UsingReflect04() {
+function Usecase04() {
 	const person = { name: 'Alice', age: 30 };
 	const propName = 'age';
 	Reflect.deleteProperty(person, propName);
 	console.log(person);
 }
 
-function UsingReflect05() {
+function Usecase05() {
 	Reflect.setPrototypeOf(Dog.prototype, Animal.prototype);
 	console.log(
 		'Reflect.getPrototypeOf(Dog.prototype) === Animal.prototype :',
@@ -92,7 +93,7 @@ function UsingReflect05() {
 	);
 }
 
-function UsingReflect06() {
+function Usecase06() {
 	const array = [10, 20, 30];
 	const index = 1;
 	const element1 = Reflect.get(array, index);
@@ -102,26 +103,26 @@ function UsingReflect06() {
 	console.log(element2);
 }
 
-function UsingReflect07() {
-	const userDefined = new SayHello();
+function Usecase07() {
+	const userDefined = new marvel();
 
-	Reflect.set(SayHello, 'ID', 'Swag'); // SayHello.ID = 'Swag'
-	console.log(Reflect.get(SayHello, 'name')); // console.log(SayHello.name)
-	console.log(Reflect.get(SayHello, 'length')); // console.log(SayHello.length)
-	console.log(Reflect.get(SayHello, 'ID')); // console.log(SayHello.ID)
+	Reflect.set(marvel, 'ID', 'Swag'); // marvel.ID = 'Swag'
+	console.log(Reflect.get(marvel, 'name')); // console.log(marvel.name)
+	console.log(Reflect.get(marvel, 'length')); // console.log(marvel.length)
+	console.log(Reflect.get(marvel, 'ID')); // console.log(marvel.ID)
 
 	Reflect.set(userDefined, 'location', 'america'); // userDefined.location = 'america'
 	console.log(Reflect.get(userDefined, 'location')); // console.log(userDefined.location)
 	console.log(Reflect.get(userDefined, 'title')); // console.log(userDefined.title)
 }
 
-UsingReflect01();
-UsingReflect02();
-UsingReflect03();
-UsingReflect04();
-UsingReflect05();
-UsingReflect06();
-UsingReflect07();
+Usecase01();
+Usecase02();
+Usecase03();
+Usecase04();
+Usecase05();
+Usecase06();
+Usecase07();
 
 /*
 Reflect.get(object, member)
