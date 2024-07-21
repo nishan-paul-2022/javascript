@@ -1,16 +1,14 @@
 type User = {
-	name: string;
 	ID: number;
-	city: string;
+	name: string;
+	email: string;
 	age: number;
 	height: number;
 	weight: number;
 };
 
-type UserBio = Pick<User, 'age' | 'height' | 'weight'>;
-
-function getUserBio(user: User): UserBio {
-	const userBio = {
+function getUserBio<T>(user: User): T {
+	const userBio = <T>{
 		age: user.age,
 		height: user.height,
 		weight: user.weight
@@ -19,41 +17,45 @@ function getUserBio(user: User): UserBio {
 }
 
 function F01() {
-	const user: Pick<User, 'name'> = { name: 'Bruce' };
-	console.log('pick (name):', user);
+	type T = Pick<User, 'ID'>;
+	const user: T = { ID: 1162036 };
+	console.log('pick (ID):', user);
 }
 
 function F02() {
-	const user: Pick<User, 'name' | 'ID' | 'city'> = {
-		name: 'Bruce',
+	type T = Pick<User, 'ID' | 'name' | 'email'>;
+	const user: T = {
 		ID: 1162036,
-		city: 'Dhaka'
+		name: 'Bruce',
+		email: 'bruce@gmail.com'
 	};
-	console.log('pick (name | ID | city):', user);
+	console.log('pick (ID | name | email):', user);
 }
 
 function F03() {
-	const user: Pick<User, keyof User> = {
-		name: 'Bruce',
+	type T = Pick<User, keyof User>;
+	const user: T = {
 		ID: 1162036,
-		city: 'Dhaka',
+		name: 'Bruce',
+		email: 'bruce@gmail.com',
 		age: 27,
 		height: 5.5,
 		weight: 70
 	};
-	console.log('pick (name | ID | city | age | height | weight):', user);
+	console.log('pick (ID | name | email | age | height | weight):', user);
 }
 
 function F04() {
 	const user: User = {
-		name: 'Bruce',
 		ID: 1162036,
-		city: 'Dhaka',
+		name: 'Bruce',
+		email: 'bruce@gmail.com',
 		age: 27,
 		height: 5.5,
 		weight: 70
 	};
-	const userBio = getUserBio(user);
+	type T = Pick<User, 'age' | 'height' | 'weight'>;
+	const userBio = getUserBio<T>(user);
 	console.log('pick (age | height | weight):', userBio);
 }
 

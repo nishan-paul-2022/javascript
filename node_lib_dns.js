@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import dns from 'dns';
 
 // Retrieves the list of IP addresses of the DNS servers used by the system.
@@ -48,7 +50,7 @@ function reverse() {
 	});
 }
 
-/*-------------------------------------------------------------------------------------------------*/
+/*-----new-chapter-01-----*/
 
 // Resolves a hostname to an array of resource records based on the query type (rrtype).
 function resolve() {
@@ -80,7 +82,7 @@ function resolve6() {
 	});
 }
 
-/*-------------------------------------------------------------------------------------------------*/
+/*-----new-chapter-02-----*/
 
 // Resolves a hostname to an array of mail exchange records.
 function resolveMx() {
@@ -132,10 +134,10 @@ function resolveCname() {
 	});
 }
 
-/*-------------------------------------------------------------------------------------------------*/
+/*-----new-chapter-03-----*/
 
 // Resolves a hostname to an array of service records.
-function _resolveSrv() {
+function resolveSrv() {
 	dns.resolveSrv('_http._tcp.google.com', (err, srvRecords) => {
 		if (err) {
 			throw err;
@@ -145,7 +147,7 @@ function _resolveSrv() {
 }
 
 // Resolves an IP address to an array of reverse DNS records (PTR records).
-function _resolvePtr() {
+function resolvePtr() {
 	dns.resolvePtr('8.8.8.8', (err, ptrRecords) => {
 		if (err) {
 			throw err;
@@ -170,5 +172,5 @@ resolveSoa(); // start of authority record
 resolveTxt(); // textual record
 resolveCname(); // canonical name record
 
-// _resolveSrv(); // service record
-// _resolvePtr(); // reverse DNS record
+// resolveSrv(); // service record
+// resolvePtr(); // reverse DNS record

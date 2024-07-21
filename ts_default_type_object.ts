@@ -2,7 +2,7 @@
 /* eslint-disable arrow-body-style */
 
 function F01() {
-	let value: object; // anything but primitive
+	let value: object; /* anything but primitive */
 
 	value = [1, 2, 3];
 	value = {};
@@ -24,7 +24,7 @@ function F01() {
 }
 
 function F02() {
-	let value: {}; /* anything but null, undefined | NonNullable<unknown> */
+	let value: {}; /* anything but null/undefined | NonNullable<unknown> */
 
 	value = 'ubuntu';
 	value = 120;
