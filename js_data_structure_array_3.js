@@ -47,10 +47,30 @@ function Reference() {
 	console.log(number2);
 }
 
+// generate array from iterable
+function ArrayFromIterable() {
+	const myIterable = {
+		values: [2, 3, 4],
+		multiplier: 2,
+		getValue: function (value) {
+			return value ** this.multiplier;
+		}
+	};
+
+	const array = Array.from(
+		myIterable.values,
+		myIterable.getValue,
+		myIterable
+	);
+
+	console.log(array);
+}
+
 Trim();
 TypedArray();
 CopyWithin();
 Reference();
+ArrayFromIterable();
 
 /* 	
 TypedArray	: Int8Array, Uint8Array, Float32Array, ...
