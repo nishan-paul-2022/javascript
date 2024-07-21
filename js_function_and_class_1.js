@@ -63,12 +63,5 @@ function F02() {
 	console.log(instance.slogan.message);
 }
 
-function F03() {
-	const instance = new Function('x', 'y', 'z', 'return x+y+z;');
-	const value = instance(1, 2, 3);
-	console.log(value);
-}
-
 F01();
 F02();
-F03();

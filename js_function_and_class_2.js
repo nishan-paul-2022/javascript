@@ -1,12 +1,11 @@
 function FunctionAndClass(message) {
-	//  null | undefined | false | 0 | ''
 	if (message) {
 		console.log(message);
 		const random = Math.random();
 		return random;
 	}
 
-	this.x = 'hello';
+	this.x = 'ubuntu';
 	this.y = 120;
 	this.z = true;
 	this.print = function () {
