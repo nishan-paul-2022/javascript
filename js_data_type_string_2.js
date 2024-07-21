@@ -5,13 +5,13 @@ function CheckObject(str) {
 	console.log(`isExtensible: ${isE}, isSealed: ${isS}, isFrozen: ${isF}`);
 }
 
-function StringAutoPrototype(str) {
+function AutoPrototype(str) {
 	console.log(Object.getPrototypeOf(str));
 	console.log(Object.getPrototypeOf(str) === String.prototype);
 	console.log(str);
 }
 
-function StringManualPrototype(str) {
+function ManualPrototype(str) {
 	const parent = { identity: 'parent object' };
 	Object.setPrototypeOf(str, parent);
 	console.log(Object.getPrototypeOf(str));
@@ -19,25 +19,19 @@ function StringManualPrototype(str) {
 	console.log(str);
 }
 
-function StringBehaviour1() {
-	const literal = 'hello';
-	const object = new String('hello');
-	CheckObject(literal);
-	CheckObject(object);
+function BehaviourCheckObject(strLiteral, strInstance) {
+	CheckObject(strLiteral);
+	CheckObject(strInstance);
 }
 
-function StringBehaviour2() {
-	const literal = 'hello';
-	const object = new String('hello');
-	StringAutoPrototype(literal);
-	StringAutoPrototype(object);
+function BehaviourAutoPrototype(strLiteral, strInstance) {
+	AutoPrototype(strLiteral);
+	AutoPrototype(strInstance);
 }
 
-function StringBehaviour3() {
-	const literal = 'hello';
-	const object = new String('hello');
-	StringManualPrototype(literal);
-	StringManualPrototype(object);
+function BehaviourManualPrototype(strLiteral, strInstance) {
+	ManualPrototype(strLiteral);
+	ManualPrototype(strInstance);
 }
 
 function TaggedTemplateLiteral() {
@@ -57,10 +51,11 @@ function UnicodeCharacter() {
 	console.log('\u{1F449}');
 }
 
-StringBehaviour1();
-StringBehaviour2();
-StringBehaviour3();
+const strLiteral = 'hello';
+const strInstance = new String('hello');
 
+BehaviourCheckObject(strLiteral, strInstance);
+BehaviourAutoPrototype(strLiteral, strInstance);
+BehaviourManualPrototype(strLiteral, strInstance);
 TaggedTemplateLiteral();
-
 UnicodeCharacter();
