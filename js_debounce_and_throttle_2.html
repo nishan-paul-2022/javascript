@@ -4,74 +4,98 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<style>
+			.container {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+
+			.div {
+				position: relative;
+				width: 30%;
+				height: 200px;
+				border: 1px solid black;
+			}
+
+			.count {
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				transform: translate(-50%, 0);
+				width: 100%;
+				text-align: center;
+				color: black;
+				font-size: 20px;
+			}
+		</style>
 	</head>
 
 	<body>
-		<button type="button" onclick="Debounce01()">Debounce Previous</button>
-		<button type="button" onclick="Debounce02()">
-			Debounce Subsequent
-		</button>
-		<button type="button" onclick="Debounce03(this.textContent)">
-			Debounce Subsequent Time Frame
-		</button>
-
+		<div class="container">
+			<div id="basic" class="div">
+				<h1 class="count">0</h1>
+			</div>
+			<div id="throttling" class="div">
+				<h1 class="count">0</h1>
+			</div>
+			<div id="debouncing" class="div">
+				<h1 class="count">0</h1>
+			</div>
+		</div>
 		<script>
-			function F01() {
-				console.log('Debounce Previous');
-			}
-
-			function F02() {
-				console.log('Debounce Subsequent');
-			}
-
-			function F03(message) {
-				console.log(message);
-			}
-
-			function DebouncePrevious(callback, timeout) {
+			function ThrottlingDecorator(tCount) {
 				let timer;
-				return () => {
+
+				function Throttling() {
+					if (!timer) {
+						tCount.textContent = parseInt(tCount.textContent) + 1;
+						timer = setTimeout(() => {
+							timer = null;
+						}, 1000);
+					}
+				}
+
+				return Throttling;
+			}
+
+			function DebouncingDecorator(dCount) {
+				let timer;
+
+				function Debouncing() {
 					if (timer) {
 						clearTimeout(timer);
 					}
 					timer = setTimeout(() => {
-						callback();
+						dCount.textContent = parseInt(dCount.textContent) + 1;
 						timer = null;
-					}, timeout);
-				};
+					}, 1000);
+				}
+
+				return Debouncing;
 			}
 
-			function DebounceSubsequent(callback, timeout) {
-				let timer;
-				return () => {
-					if (!timer) {
-						callback();
-					} else {
-						clearTimeout(timer);
-					}
-					timer = setTimeout(() => {
-						timer = null;
-					}, timeout);
-				};
-			}
+			// basic
+			const basic = document.querySelector('#basic');
+			const bCount = document.querySelector('#basic > h1');
+			basic.addEventListener('click', () => {
+				bCount.textContent = parseInt(bCount.textContent) + 1;
+			});
 
-			function DebounceSubsequentTimeFrame(callback, timeout) {
-				let timer;
-				return (message) => {
-					if (!timer) {
-						callback(message);
-						timer = setTimeout(() => {
-							timer = null;
-						}, timeout);
-					} else {
-						console.log('rest time');
-					}
-				};
-			}
+			// throttling
+			const throttling = document.querySelector('#throttling');
+			const tCount = throttling.querySelector('h1');
+			const Throttling = ThrottlingDecorator(tCount);
+			throttling.addEventListener('click', Throttling);
 
-			const Debounce01 = DebouncePrevious(F01, 3000);
-			const Debounce02 = DebounceSubsequent(F02, 3000);
-			const Debounce03 = DebounceSubsequentTimeFrame(F03, 3000);
+			// debouncing
+			const debouncing = document.querySelector('#debouncing');
+			const dCount = debouncing.querySelector('h1');
+			const Debouncing = DebouncingDecorator(dCount);
+			debouncing.addEventListener('click', Debouncing);
 		</script>
 	</body>
 </html>
+
+<!-- throttle / maintain minimum time gap between two subsequent events -->
+<!-- debounce / cancel previous event and proceed latest one if minimum time gap is not maintained between two subsequent events -->
