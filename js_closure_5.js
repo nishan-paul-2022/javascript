@@ -1,106 +1,45 @@
-import { setTimeout as setTimeoutPromise } from 'timers/promises';
+function F01() {
+	function makeNewEngine(callback) {
+		const array = [];
 
-function Func01() {
-	function spy(func) {
-		const arr = [];
-		const func1 = function (...values) {
-			arr.push(...values);
-			func1.argList = arr;
-			func(...values);
-		};
+		function wrapper(...values) {
+			array.push(...values);
+			wrapper.argList = array;
+			callback(...values);
+		}
 
-		return func1;
+		return wrapper;
 	}
 
-	function work(...values) {
-		const sum = values.reduce((sum, currvalue) => {
-			return sum + currvalue;
+	function engine(...values) {
+		const sum = values.reduce((sum, current) => {
+			return sum + current;
 		});
 		console.log(sum);
 	}
 
-	const workMod = spy(work);
-	workMod(1, 2); // 3
-	workMod(4, 5); // 9
-	workMod(6, 7, 8); // 9
+	const newEngine = makeNewEngine(engine);
 
-	for (const arg of workMod.argList) {
+	newEngine(1, 2); // 3
+	newEngine(4, 5); // 9
+	newEngine(6, 7, 8); // 9
+
+	newEngine.argList.forEach((arg) => {
 		console.log(arg);
-	}
+	});
 }
 
-function Func02() {
-	function delay(f) {
-		return function (message, ms) {
-			setTimeout(f, ms, message);
-		};
-	}
-
-	const delayAlert = delay(console.log);
-	delayAlert('test', 3000); // shows "test" after 1000ms
-}
-
-function Func03() {
-	function Debounce(func, ms) {
-		let timer;
-		return (message) => {
-			if (timer) {
-				clearTimeout(timer);
-			}
-
-			timer = setTimeout(() => {
-				func(message);
-				clearTimeout(timer);
-			}, ms);
-		};
-	}
-
-	const log = Debounce(console.log, 3000);
-	log('a');
-	log('b');
-	log('c');
-	log('d');
-}
-
-async function Func04() {
-	function Throttle(func, ms) {
-		let text = null;
-		let isThrottled = false;
-
-		function Wrapper(message) {
-			if (isThrottled) {
-				text = message;
-				isThrottled = true;
-				return;
-			}
-			isThrottled = true;
-			func(message);
-			setTimeout(() => {
-				isThrottled = false;
-				if (text) {
-					Wrapper(text);
-					text = null;
-				}
-			}, ms);
+function F02() {
+	function delay(callback) {
+		function wrapper(message, ms) {
+			setTimeout(callback, ms, message);
 		}
-
-		return Wrapper;
+		return wrapper;
 	}
 
-	const log = Throttle(console.log, 1000);
-	log('a');
-	log('b');
-	log('c');
-	await setTimeoutPromise(5000);
-	log('d');
-	log('e');
-	await setTimeoutPromise(5000);
-	log('f');
-	log('g');
-	log('h');
+	const delayLog = delay(console.log);
+	delayLog('hello, sir!', 3000); // logs "test" after 1000ms
 }
 
-Func01();
-Func02();
-Func03();
-Func04();
+F01();
+F02();

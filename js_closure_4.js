@@ -1,34 +1,39 @@
-const worker = {
-	someMethod() {
+const engine = {
+	predefined() {
 		return [1];
 	},
 
-	slow(...x) {
-		console.log('Called with ' + x);
-		return x.concat(this.someMethod());
+	createNewValues(...values) {
+		console.log(`called including ${values}`);
+
+		const prevValues = this.predefined();
+		const newValues = values.concat(prevValues);
+
+		return newValues;
 	}
 };
 
-function CachingDecorator(func) {
+function CachingDecorator(callback) {
 	const cache = new Map();
-	return function (...x) {
-		const key = x.join('');
+
+	function random(...values) {
+		const key = values.join('');
+
 		if (cache.has(key)) {
-			return cache.get(key);
+			const value = cache.get(key);
+			return value;
 		}
-		const result = func.apply(this, x); // "this" is passed correctly now
+
+		const result = callback.apply(this, values); // "this" is passed correctly now
 		cache.set(key, result);
+
 		return result;
-	};
+	}
+
+	return random;
 }
 
-function BorrowMethod() {
-	const result = [].join.call(arguments, '');
-	console.log(result);
-}
-
-worker.slow = CachingDecorator(worker.slow); // now make it caching
-console.log(worker.slow(2)); // works
-console.log(worker.slow(2, 3)); // works
-console.log(worker.slow(2, 3)); // works, doesn't call the original (cached)
-BorrowMethod(1, 2, 3, 4, 5);
+engine.createNewValues = CachingDecorator(engine.createNewValues); // now make it cached
+console.log(engine.createNewValues(2)); // do calculate
+console.log(engine.createNewValues(2, 3)); // do calculate
+console.log(engine.createNewValues(2, 3)); // don't calculate (cached)

@@ -1,26 +1,26 @@
-function Fibo(n) {
+function fibonacci(n) {
 	if (n <= 2) {
 		return n - 1;
 	} else {
-		return Fibo(n - 1) + Fibo(n - 2);
+		return fibonacci(n - 1) + fibonacci(n - 2);
 	}
 }
 
-function MemorizeFibo01(callback) {
+function memorize01(callback) {
 	const fiboStore = {};
-	const FiboClosure = function (n) {
+	const fibo = function (n) {
 		const isOwn = Object.prototype.hasOwnProperty.call(fiboStore, n);
 		if (!isOwn) {
 			fiboStore[n] = callback(n);
 		}
 		return fiboStore[n];
 	};
-	return FiboClosure;
+	return fibo;
 }
 
-function MemorizeFibo02() {
+function memorize02() {
 	const fiboStore = {};
-	const FiboClosure = function (n) {
+	const fibo = function (n) {
 		const isOwn = Object.prototype.hasOwnProperty.call(fiboStore, n);
 		if (!isOwn) {
 			if (n <= 2) {
@@ -35,41 +35,43 @@ function MemorizeFibo02() {
 					n - 2
 				);
 				if (!isOwn1) {
-					fiboStore[n - 1] = FiboClosure(n - 1);
+					fiboStore[n - 1] = fibo(n - 1);
 				}
 				if (!isOwn2) {
-					fiboStore[n - 2] = FiboClosure(n - 2);
+					fiboStore[n - 2] = fibo(n - 2);
 				}
 				fiboStore[n] = fiboStore[n - 1] + fiboStore[n - 2];
 			}
 		}
 		return fiboStore[n];
 	};
-	return FiboClosure;
+	return fibo;
 }
 
 function Usecase01() {
-	console.log(Fibo(5));
-	console.log(Fibo(10));
-	console.log(Fibo(15));
-	console.log(Fibo(20));
+	console.log(fibonacci(5));
+	console.log(fibonacci(10));
+	console.log(fibonacci(15));
+	console.log(fibonacci(20));
 }
 
 function Usecase02() {
-	const FiboClosure = MemorizeFibo01(Fibo);
-	console.log(FiboClosure(5));
-	console.log(FiboClosure(10));
-	console.log(FiboClosure(15));
-	console.log(FiboClosure(20));
+	const fibo = memorize01(fibonacci);
+
+	console.log(fibo(5));
+	console.log(fibo(10));
+	console.log(fibo(15));
+	console.log(fibo(20));
 }
 
 function Usecase03() {
-	const FiboClosure = MemorizeFibo02();
-	console.log(FiboClosure(5));
-	console.log(FiboClosure(10));
-	console.log(FiboClosure(15));
-	console.log(FiboClosure(20));
-	console.log(FiboClosure(20));
+	const fibo = memorize02();
+
+	console.log(fibo(5));
+	console.log(fibo(10));
+	console.log(fibo(15));
+	console.log(fibo(20));
+	console.log(fibo(20));
 }
 
 Usecase01();
