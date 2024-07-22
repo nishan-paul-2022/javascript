@@ -47,21 +47,34 @@ function Reference() {
 	console.log(number2);
 }
 
-// generate array from iterable
-function ArrayFromIterable() {
-	const myIterable = {
+function ArrayFrom01() {
+	const values = [2, 3, 4];
+
+	function callback(value, index) {
+		const score = value ** this.exponent + index ** this.exponent;
+		return score;
+	}
+
+	const context = {
+		exponent: 2
+	};
+
+	const array = Array.from(values, callback, context);
+
+	console.log(array);
+}
+
+function ArrayFrom02() {
+	const account = {
+		exponent: 2,
 		values: [2, 3, 4],
-		multiplier: 2,
-		getValue: function (value) {
-			return value ** this.multiplier;
+		callback: function (value, index) {
+			const score = value ** this.exponent + index ** this.exponent;
+			return score;
 		}
 	};
 
-	const array = Array.from(
-		myIterable.values,
-		myIterable.getValue,
-		myIterable
-	);
+	const array = Array.from(account.values, account.callback, account);
 
 	console.log(array);
 }
@@ -70,7 +83,8 @@ Trim();
 TypedArray();
 CopyWithin();
 Reference();
-ArrayFromIterable();
+ArrayFrom01();
+ArrayFrom02();
 
 /* 	
 TypedArray	: Int8Array, Uint8Array, Float32Array, ...
