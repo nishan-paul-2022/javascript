@@ -19,45 +19,41 @@
 				/* counter-reset: header 2 subheader 3; */
 			}
 
-			h1 {
+			h2 {
 				margin: 10px;
 				padding: 10px;
 				border: 1px solid black;
 			}
 
-			h1::before {
+			h2::before {
 				counter-increment: header;
 				content: counter(header) '. ';
 			}
 
-			h2::before {
+			h3::before {
 				counter-increment: subheader;
 				content: counter(header) '.' counter(subheader) '. ';
-			}
-
-			.large {
-				font-size: xx-large;
 			}
 		</style>
 	</head>
 
 	<body>
-		<h3 class="large">CSS Counter Function</h3>
+		<h1>CSS Function : Counter</h1>
 
-		<h1>HTML</h1>
-		<h2>CSS</h2>
-		<h2>JS</h2>
-		<h2>NODE</h2>
-		<h2>SASS</h2>
+		<h2>HTML</h2>
+		<h3>CSS</h3>
+		<h3>JS</h3>
+		<h3>NODE</h3>
+		<h3>SASS</h3>
 
-		<h1>TAILWIND</h1>
-		<h2>REACT</h2>
-		<h2>NEXT</h2>
-		<h2>EXPRESS</h2>
+		<h2>TAILWIND</h2>
+		<h3>REACT</h3>
+		<h3>NEXT</h3>
+		<h3>EXPRESS</h3>
 
-		<h1>NEST</h1>
-		<h2>POSTGRESQL</h2>
-		<h2>MONGODB</h2>
+		<h2>NEST</h2>
+		<h3>POSTGRESQL</h3>
+		<h3>MONGODB</h3>
 	</body>
 </html>
 

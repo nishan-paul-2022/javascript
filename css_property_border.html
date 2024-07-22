@@ -6,47 +6,39 @@
 		<title>Document</title>
 		<style>
 			body {
-				margin: 10px;
+				margin: 10px 200px;
 				padding: 10px;
 				font-family: 'Courier New', Courier, monospace;
 				background-color: #f0f0f0;
-			}
-
-			.example-section {
-				margin-bottom: 40px;
-				overflow: hidden;
-			}
-
-			.example-section h2 {
-				margin-bottom: 10px;
 				text-align: center;
 			}
 
+			.example-section {
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
 			.example-code {
-				background-color: #f0f0f0;
-				padding: 10px;
-				margin-bottom: 10px;
-				overflow-x: auto;
 				box-sizing: border-box;
-				width: calc(25% - 20px);
-				float: left;
-				margin-right: 20px;
+				margin: 10px;
+				padding: 10px;
+				width: calc(100% / 3);
+				background-color: #f0f0f0;
+				overflow-x: auto;
 			}
 
 			.example-code div {
-				width: 100px;
-				height: 100px;
-			}
-
-			.example-section::after {
-				clear: both;
+				height: 300px;
 			}
 		</style>
 	</head>
 
 	<body>
+		<h1>CSS Border Example</h1>
+
 		<div class="example-section">
-			<h2>CSS Border Example</h2>
 			<div class="example-code">
 				<h3>Basic Border</h3>
 				<div style="border: 2px solid black"></div>
@@ -59,14 +51,9 @@
 				<h3>Double Border</h3>
 				<div style="border: 3px double black"></div>
 			</div>
-			<div class="example-code">
-				<h3>Colored Border</h3>
-				<div style="border: 2px solid red"></div>
-			</div>
 		</div>
 
 		<div class="example-section">
-			<h2>CSS Border Width Example</h2>
 			<div class="example-code">
 				<h3>Thin Border</h3>
 				<div style="border: 1px solid black"></div>
@@ -82,7 +69,6 @@
 		</div>
 
 		<div class="example-section">
-			<h2>CSS Border Color Example</h2>
 			<div class="example-code">
 				<h3>Red Border</h3>
 				<div style="border: 2px solid red"></div>
@@ -98,27 +84,38 @@
 		</div>
 
 		<div class="example-section">
-			<h2>CSS Border Shorthand Example</h2>
 			<div class="example-code">
-				<h3>Shorthand Border</h3>
+				<h3>All Border</h3>
 				<div style="border: 2px solid black"></div>
 			</div>
 			<div class="example-code">
-				<h3>Shorthand Border Sides</h3>
+				<h3>Top & Left Border</h3>
 				<div
 					style="
 						border: 2px solid black;
-						border-top: 2px dotted green;
+						border-top: 2px dotted red;
 						border-left: 10px double blue;
+					"></div>
+			</div>
+			<div class="example-code">
+				<h3>Bottom & Right Border</h3>
+				<div
+					style="
+						border: 2px solid black;
+						border-bottom: 2px dashed red;
+						border-right: 10px groove blue;
 					"></div>
 			</div>
 		</div>
 
 		<div class="example-section">
-			<h2>CSS Rounded Border Example</h2>
 			<div class="example-code">
 				<h3>Rounded Border</h3>
 				<div style="border: 2px solid black; border-radius: 10px"></div>
+			</div>
+			<div class="example-code">
+				<h3>Oval Border</h3>
+				<div style="border: 2px solid black; border-radius: 35%"></div>
 			</div>
 			<div class="example-code">
 				<h3>Circle Border</h3>

@@ -10,6 +10,7 @@
 				padding: 20px;
 				width: 40%;
 				font-family: 'Courier New', Courier, monospace;
+				font-size: small;
 				background-color: #f0f0f0;
 				text-transform: uppercase;
 				border: 1px solid black;
@@ -20,26 +21,32 @@
 				text-align: center;
 			}
 
-			ul.a {
-				list-style-type: circle;
+			ol.general {
 				list-style-position: outside;
 			}
 
-			ul.b {
-				list-style-type: square;
+			ul.general {
 				list-style-position: inside;
 			}
 
-			ol.c {
+			ol.upper-roman {
 				list-style-type: upper-roman;
 			}
 
-			ol.d {
+			ol.lower-alpha {
 				list-style-type: lower-alpha;
 			}
 
-			.no-bullets {
+			ol.none {
 				list-style-type: none;
+			}
+
+			ul.circle {
+				list-style-type: circle;
+			}
+
+			ul.square {
+				list-style-type: square;
 			}
 		</style>
 	</head>
@@ -47,32 +54,56 @@
 	<body>
 		<h1>CSS List Example</h1>
 
-		<h2>Unordered Lists</h2>
-		<ul class="a">
-			<li>Item 1</li>
-			<li>Item 2</li>
-		</ul>
+		<div>
+			<h2>List</h2>
+			<ol class="general">
+				<li>Item 2a</li>
+				<li>Item 2b</li>
+			</ol>
+			<ul class="general">
+				<li>Item 1</li>
+				<li>Item 2</li>
+			</ul>
+		</div>
 
-		<ul class="b">
-			<li>Item 1</li>
-			<li>Item 2</li>
-		</ul>
+		<div>
+			<h2>Ordered Lists (upper-roman)</h2>
+			<ol class="upper-roman">
+				<li>Item 1</li>
+				<li>Item 2</li>
+			</ol>
+		</div>
 
-		<h2>Ordered Lists</h2>
-		<ol class="c">
-			<li>Item 1</li>
-			<li>Item 2</li>
-		</ol>
+		<div>
+			<h2>Ordered Lists (lower-alpha)</h2>
+			<ol class="lower-alpha">
+				<li>Item 1</li>
+				<li>Item 2</li>
+			</ol>
+		</div>
 
-		<ol class="d">
-			<li>Item 1</li>
-			<li>Item 2</li>
-		</ol>
+		<div>
+			<h2>Ordered Lists (none)</h2>
+			<ul class="none">
+				<li>Item 1</li>
+				<li>Item 2</li>
+			</ul>
+		</div>
 
-		<h2>No Bullets</h2>
-		<ul class="no-bullets">
-			<li>Item 1</li>
-			<li>Item 2</li>
-		</ul>
+		<div>
+			<h2>Unordered Lists (circle)</h2>
+			<ul class="circle">
+				<li>Item 1</li>
+				<li>Item 2</li>
+			</ul>
+		</div>
+
+		<div>
+			<h2>Unordered Lists (square)</h2>
+			<ul class="square">
+				<li>Item 1</li>
+				<li>Item 2</li>
+			</ul>
+		</div>
 	</body>
 </html>

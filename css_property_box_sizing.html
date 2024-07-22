@@ -25,23 +25,19 @@
 				margin: 0 auto;
 			}
 
-			h1 {
-				margin-bottom: 20px;
-			}
-
 			/* common styles for all boxes */
 			.box {
-				width: 200px;
-				height: 100px;
 				margin: 10px auto;
 				padding: 20px;
+				width: 200px;
+				height: 100px;
 				border: 10px solid #333;
 				background-color: #ddd;
 			}
 
 			/* box with content-box (default) */
 			.content-box {
-				/* Box size includes only content, padding and border are added outside */
+				/* box size includes only content, padding and border are added outside */
 				box-sizing: content-box;
 			}
 
@@ -60,8 +56,9 @@
 	</head>
 
 	<body>
+		<h1>CSS Box Sizing Example</h1>
+
 		<div class="container">
-			<h1>CSS Box Sizing Example</h1>
 			<div class="box content-box">Content Box</div>
 			<div class="box border-box">Border Box</div>
 			<div class="box inherit-box">Inherit Box</div>
