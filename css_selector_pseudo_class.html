@@ -5,6 +5,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
+			body {
+				margin: 10px 400px;
+				padding: 10px;
+				font-family: 'Courier New', Courier, monospace;
+				background-color: #f0f0f0;
+				text-align: center;
+			}
+
 			/* :nth-child(2n+1) selects odd-numbered elements */
 			li:nth-child(2n + 1) {
 				background-color: lightgray;
@@ -62,10 +70,20 @@
 			div:only-of-type {
 				background-color: gray;
 			}
+
+			q:lang(en) {
+				quotes: '%%' '%%';
+			}
+
+			q.batman-begins {
+				quotes: '**' '**';
+			}
 		</style>
 	</head>
 
 	<body>
+		<h1>CSS Selector : Pseudo Class</h1>
+
 		<ul>
 			<li>Item 1</li>
 			<li>Item 2</li>
@@ -100,31 +118,62 @@
 		</div>
 
 		<div>
-			<div>Hello, how are you?</div>
+			<div>hello, how are you?</div>
 			<sapn>I'm doing well, thanks!</sapn>
-			<p>Hey there! What's up?</p>
-			<h4>Not much, just working on a project.</h4>
+			<p>hey there! What's up?</p>
+			<h4>not much, just working on a project.</h4>
 		</div>
 
 		<div>
-			<div>Hello, how are you?</div>
+			<div>hello, how are you?</div>
 			<div>I'm doing well, thanks!</div>
+		</div>
+
+		<div>
+			<p>
+				<q lang="en">
+					BATMAN IS ALL OF US… HE IS OUR RAGE AT INJUSTICE… HE STANDS
+					ALONE, AS WE ALL WISH WE COULD, IN THE FACE OF A CORRUPT
+					SYSTEM WHICH WISHES TO OPPRESS AND EXPLOIT… HE IS THAT
+					BROKEN CHILD, SEARCHING THE DARK ALLEYS OF THE HUMAN SOUL TO
+					BRING BALANCE TO THE WORLD.
+				</q>
+			</p>
+
+			<p>
+				<q class="batman-begins">
+					A VIGILANTE IS JUST A MAN LOST IN THE SCRAMBLE FOR HIS OWN
+					GRATIFICATION. HE CAN BE DESTROYED OR LOCKED UP. BUT IF YOU
+					MAKE YOURSELF MORE THAN JUST A MAN, IF YOU DEVOTE YOURSELF
+					TO AN IDEAL, AND IF THEY CAN'T STOP YOU, THEN YOU BECOME
+					SOMETHING ELSE ENTIRELY.
+				</q>
+			</p>
 		</div>
 	</body>
 </html>
 
-<!-- 	# descriptor: nunber | 2n+1 | 2n
+<!-- 
+# pseudo-class is the state of an element and state can be :     
+	root 
+	child(descriptor), type(descriptor)
+	hover, lang(value), not(selector), empty
+	link, visited, active, target
+	focus, checked, valid, invalid, in-range, out-of-range, optional, required, read-only, read-write, disabled, enabled
 
-		# considering siblings of all types
-			- nth-child(descriptor)
-			- nth-last-child(descriptor)
-			- first-child 
-			- last-child
-			- only-child
+# descriptor: nunber | 2n+1 | 2n
 
-		# considering siblings of same type
-			- nth-of-type(descriptor)
-			- nth-last-of-type(descriptor)
-			- first-of-type
-			- last-of-type
-			- only-of-type -->
+# considering siblings of all types
+	- nth-child(descriptor)
+	- nth-last-child(descriptor)
+	- first-child 
+	- last-child
+	- only-child
+
+# considering siblings of same type
+	- nth-of-type(descriptor)
+	- nth-last-of-type(descriptor)
+	- first-of-type
+	- last-of-type
+	- only-of-type 
+-->

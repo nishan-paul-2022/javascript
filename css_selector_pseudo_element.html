@@ -5,41 +5,61 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
-			/* style ::before pseudo-element */
+			body {
+				margin: 10px 250px;
+				padding: 10px;
+				font-family: 'Courier New', Courier, monospace;
+				background-color: #f0f0f0;
+				text-align: center;
+			}
+
+			p {
+				font-size: xx-large;
+			}
+			
 			p::before {
-				content: 'Before: ';
+				content: 'MISSION : ';
 				color: blue;
 			}
 
-			/* style ::after pseudo-element */
 			p::after {
-				content: ' :After';
+				content: ' : IMPOSSIBLE';
 				color: red;
 			}
 
-			/* style ::first-line pseudo-element */
 			p::first-line {
-				font-weight: bold;
+				font-weight: bolder;
 			}
 
-			/* style ::selection pseudo-element */
 			p::selection {
-				background-color: yellow;
-				color: black;
+				background-color: rgb(202, 133, 255);
+				color: rgb(235, 255, 231);
 			}
 		</style>
 	</head>
 
 	<body>
-		<p>This is a sample text for pseudo-elements. This is 2nd line.</p>
+		<h1>CSS Selector : Pseudo Element</h1>
+
+		<p>
+			JOHN IS A MAN OF FOCUS, COMMITMENT, SHEER WILL. SOMETHING YOU KNOW
+			VERY LITTLE ABOUT. I ONCE SAW HIM KILL THREE MEN IN A BAR, WITH A
+			PENCIL. WITH A FUCKING. PENCIL. THEN SUDDENLY ONE DAY HE ASKED TO
+			LEAVE. IT'S OVER A WOMAN, OF COURSE. SO I MADE A DEAL WITH HIM. I
+			GAVE HIM AN IMPOSSIBLE TASK. A JOB NO ONE COULD HAVE PULLED OFF. THE
+			BODIES HE BURIED THAT DAY LAID THE FOUNDATION OF WHAT WE ARE NOW.
+			AND THEN MY SON, A FEW DAYS AFTER HIS WIFE DIED, YOU STEAL HIS CAR
+			AND KILL HIS FUCKING DOG.
+		</p>
 	</body>
 </html>
 
 <!-- 
-	before
-	after
-	first-line;
-	first-character;
-	selection
-	marker
+list of pseudo-element
+	- before
+	- after
+	- first-line;
+	- first-character;
+	- selection
+	- marker
 -->

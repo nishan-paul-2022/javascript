@@ -5,13 +5,24 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
-			div.static {
+			body {
+				margin: 10px;
+				padding: 20px 200px;
+				font-family: 'Courier New', Courier, monospace;
+				background-color: #f0f0f0;
+			}
+
+			h1 {
+				text-align: center;
+			}
+
+			.static {
 				position: static;
 				padding: 5px;
 				border: 3px solid #73ad21;
 			}
 
-			div.relative {
+			.relative {
 				position: relative;
 				padding: 5px;
 				width: 400px;
@@ -19,7 +30,7 @@
 				border: 3px solid #73ad21;
 			}
 
-			div.absolute {
+			.absolute {
 				position: absolute;
 				top: 80px;
 				right: 0;
@@ -29,7 +40,7 @@
 				border: 3px solid #73ad21;
 			}
 
-			div.fixed {
+			.fixed {
 				position: fixed;
 				bottom: 0;
 				right: 0;
@@ -38,7 +49,7 @@
 				border: 3px solid #73ad21;
 			}
 
-			div.sticky {
+			.sticky {
 				position: -webkit-sticky;
 				position: sticky;
 				top: 0;
@@ -46,10 +57,20 @@
 				background-color: #cae8ca;
 				border: 2px solid #4caf50;
 			}
+
+			.space-padding {
+				padding-bottom: 2000px;
+			}
+
+			.clipping {
+				clip-path: circle(60%);
+			}
 		</style>
 	</head>
 
 	<body>
+		<h1>CSS Position Example</h1>
+
 		<div class="static">position: static;</div>
 		<br />
 
@@ -65,8 +86,8 @@
 		<div class="sticky">position: sticky;</div>
 		<br />
 
-		<div style="padding-bottom: 2000px">
-			<h1 style="clip-path: circle(64%)">hello world</h1>
+		<div class="space-padding">
+			<h2 class="clipping">hello world</h2>
 			<p>
 				In this example, the sticky element sticks to the top of the
 				page (top: 0), when you reach its scroll position.
@@ -90,20 +111,22 @@
 	</body>
 </html>
 
-<!--# position : 
-		- static      / default-position 
-		- relative    / in respect of default-position 
-		- absolute    / in respect of first-positioned-ancestor
-		- fixed       / in respect of document 
-		- sticky      / relative and fixed 
+<!--
+# position : 
+	- static		| default-position 
+	- relative    	| in respect of default-position 
+	- absolute    	| in respect of first-positioned-ancestor
+	- fixed       	| in respect of document 
+	- sticky      	| relative and fixed 
 
-	# some properties are applicable for elements who are positioned (not static) :
-		- top
-		- bottom
-		- left 
-		- right
-		- z-index
+# some properties are applicable for elements who are positioned (not static) :
+	- top
+	- bottom
+	- left 
+	- right
+	- z-index
 
-	# every property can have initial value and inherit value :
-		- initial   / sets default value to corrsponding property in element
-		- inherit   / inherits value of corrsponding property from parent-element to child-element -->
+# every property can have initial value and inherit value :
+	- initial		| sets default value to corrsponding property in element
+	- inherit   	| inherits value of corrsponding property from parent-element to child-element 
+-->

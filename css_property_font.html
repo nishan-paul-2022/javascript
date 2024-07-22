@@ -8,14 +8,11 @@
 			rel="stylesheet"
 			href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple" />
 		<style>
-			:root {
-				font-family: Arial, sans-serif;
-			}
-
 			body {
-				background-color: #f4f4f9;
 				margin: 0;
 				padding: 20px;
+				font-family: 'Courier New', Courier, monospace;
+				background-color: #f0f0f0;
 				text-align: center;
 			}
 
@@ -43,12 +40,15 @@
 			.arial {
 				font-family: Arial, sans-serif;
 			}
+
 			.verdana {
 				font-family: Verdana, sans-serif;
 			}
+
 			.tahoma {
 				font-family: Tahoma, sans-serif;
 			}
+
 			.trebuchet {
 				font-family: 'Trebuchet MS', sans-serif;
 			}
@@ -56,9 +56,11 @@
 			.times {
 				font-family: 'Times New Roman', serif;
 			}
+
 			.georgia {
 				font-family: Georgia, serif;
 			}
+
 			.garamond {
 				font-family: Garamond, serif;
 			}
@@ -137,7 +139,8 @@
 	</head>
 
 	<body>
-		<h2>CSS Font Examples</h2>
+		<h1>CSS Font Example</h1>
+
 		<div class="container">
 			<div class="section">
 				<h2>Sans-serif:</h2>
@@ -245,7 +248,7 @@
 			</div>
 
 			<div class="section">
-				<h2>Google Font Examples</h2>
+				<h2>Google Font Example</h2>
 				<div class="google-font">
 					<div class="font-effect-neon">Neon</div>
 					<div class="font-effect-outline">Outline</div>
@@ -257,21 +260,21 @@
 			</div>
 
 			<div class="section">
-				<h2>Font Style Examples</h2>
+				<h2>Font Style Example</h2>
 				<div class="normal-text">This is normal text.</div>
 				<div class="italic-text">This is italic text.</div>
 				<div class="oblique-text">This is oblique text.</div>
 			</div>
 
 			<div class="section">
-				<h2>Font Weight Examples</h2>
+				<h2>Font Weight Example</h2>
 				<div class="normal-weight">This is normal weight text.</div>
 				<div class="bold-weight">This is bold weight text.</div>
 				<div class="bolder-weight">This is bolder weight text.</div>
 			</div>
 
 			<div class="section">
-				<h2>Font Variant Examples</h2>
+				<h2>Font Variant Example</h2>
 				<div class="normal-variant">This is normal variant text.</div>
 				<div class="small-caps-variant">
 					This is small-caps variant text.
@@ -279,7 +282,7 @@
 			</div>
 
 			<div class="section">
-				<h2>Font Shorthand Examples</h2>
+				<h2>Font Shorthand Example</h2>
 				<div class="shorthand-example1">
 					This is a shorthand example with 20px Arial, sans-serif.
 				</div>
@@ -452,55 +455,70 @@
 	</body>
 </html>
 
-<!--	The following list are the best generic-font-families and web-safe-fonts for HTML and CSS:
-			sans-serif :
-				- Arial 
-				- Verdana 
-				- Tahoma 
-				- Trebuchet MS 
-			serif :
-				- Times New Roman 
-				- Georgia 
-				- Garamond
-			monospace :
-				- Courier New 
-			cursive :
-				- Brush Script MT 
+<!--
+# font is shorthand property for setting :
+	- font-style
+	- font-variant
+	- font-weight
+	- font-size
+	- line-height
+	- font-family 
+-->
 
-		[ :root should have variables and font properties, cause font is by-default defined in root ]
-		[ * should have box-model properties, cause box-model properties cascade but not impact ]
-		[ body should have globally applicable styles ]
+<!--
+# following list are the best generic-font-families and web-safe-fonts for HTML and CSS :
+	sans-serif :
+		- Arial 
+		- Verdana 
+		- Tahoma 
+		- Trebuchet MS 
+	serif :
+		- Times New Roman 
+		- Georgia 
+		- Garamond
+	monospace :
+		- Courier New 
+	cursive :
+		- Brush Script MT 
+-->
 
-		[ if we don't specify font size, default size for normal text is 16px (1em) ]
+<!--
+# font + element
+	- px is defined size
+	- % is percentage of parent
 
-		(font + element)
-			[ px is defined size ]
-			[ % is percentage of parent ]
+# font
+	- em is multiple of parent-element font-size
+	- rem is multiple of root-element font-size
 
-		(font) 
-			[ em is multiple of parent-element font-size  ]
-			[ rem is multiple of root-element font-size ]
+# element
+	- vw is viewport width
+	- vh is viewport height
 
-		(element)
-			[ vw is viewport width ]
-			[ vh is viewport height ]
+- :root should have variables and font properties, cause font is by default defined in root
+- * should have box-model properties, cause box-model properties cascade but not impact
+- body should have globally applicable styles
 
-		[ responsive design : rem and vw ] 
-		
-		font-pairing :
-			- Find font pairings that complement each other for harmony.
-			- Use fonts from the same superfamily to ensure compatibility.
-			- Contrast fonts effectively to highlight their differences.
-			- Establish hierarchy by selecting one dominant font.
-		
-		popular font-pairing :
-			Georgia and Verdana
-			Helvetica and Garamond
-			Merriweather and Open Sans
-			Ubuntu and Lora
-			Abril Fatface and Poppins
-			Cinzel and Fauna One
-			Fjalla One and Libre Baskerville
-			Space Mono and Muli
-			Spectral and Rubik
-			Oswald and Noto Sans -->
+[ if we don't specify font size, default size for normal text is 16px (1em) ]
+[ responsive design demands rem and vw ] 
+-->
+
+<!--
+# font-pairing :
+	- find font pairings that complement each other for harmony.
+	- use fonts from the same superfamily to ensure compatibility.
+	- contrast fonts effectively to highlight their differences.
+	- establish hierarchy by selecting one dominant font.
+
+# popular font-pairing :
+	Georgia and Verdana
+	Helvetica and Garamond
+	Merriweather and Open Sans
+	Ubuntu and Lora
+	Abril Fatface and Poppins
+	Cinzel and Fauna One
+	Fjalla One and Libre Baskerville
+	Space Mono and Muli
+	Spectral and Rubik
+	Oswald and Noto Sans 
+-->

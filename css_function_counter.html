@@ -4,15 +4,25 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
-	</head>
-
-	<body>
 		<style>
 			body {
+				margin: 10px;
+				padding: 10px 500px;
+				font-family: 'Courier New', Courier, monospace;
+				font-size: small;
+				background-color: #f0f0f0;
+				text-align: center;
+
 				counter-set: header 27;
 				counter-reset: subheader;
 				/* counter-set: header subheader; */
 				/* counter-reset: header 2 subheader 3; */
+			}
+
+			h1 {
+				margin: 10px;
+				padding: 10px;
+				border: 1px solid black;
 			}
 
 			h1::before {
@@ -24,28 +34,37 @@
 				counter-increment: subheader;
 				content: counter(header) '.' counter(subheader) '. ';
 			}
+
+			.large {
+				font-size: xx-large;
+			}
 		</style>
-		<h1>hello</h1>
-		<h2>html</h2>
-		<h2>css</h2>
-		<h2>sass</h2>
-		<h2>tailwind</h2>
+	</head>
 
-		<h1>world</h1>
-		<h2>typescript</h2>
-		<h2>react</h2>
-		<h2>express</h2>
+	<body>
+		<h3 class="large">CSS Counter Function</h3>
 
-		<h1>MERN</h1>
-		<h2>full</h2>
-		<h2>stack</h2>
+		<h1>HTML</h1>
+		<h2>CSS</h2>
+		<h2>JS</h2>
+		<h2>NODE</h2>
+		<h2>SASS</h2>
+
+		<h1>TAILWIND</h1>
+		<h2>REACT</h2>
+		<h2>NEXT</h2>
+		<h2>EXPRESS</h2>
+
+		<h1>NEST</h1>
+		<h2>POSTGRESQL</h2>
+		<h2>MONGODB</h2>
 	</body>
 </html>
 
 <!-- 
-	counter-set
-	counter-reset
-	counter-increment
-	counter()
-	content 
+# counter-set
+# counter-reset
+# counter-increment
+# counter()
+# content 
 -->

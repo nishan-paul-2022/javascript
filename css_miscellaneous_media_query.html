@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			body {
+				margin: 10px;
+				padding: 10px 40px;
+				font-family: 'Courier New', Courier, monospace;
+				font-size: larger;
+				background-color: #f0f0f0;
+				/* text-align: center; */
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>CSS Miscellaneous : Media Query</h1>
+		<pre>
+            <b>
+            @media optional-quantifier optional-media-type and ((media-feature) quantifier (media-feature))
+            </b>
+
+            <b>optional-quantifier</b>
+                - not
+                - only (making query older browser compatible)
+                
+            <b>optional-media-type</b>
+                - screen
+                - speech
+                - print
+                - all
+                
+            <b>media-feature</b>
+                - min-width: 100px
+                - max-width: 100px
+                - min-height: 100px
+                - max-height: 100px
+                - orientation: landascape
+                - orientation: portait
+                
+            <b>quantifier</b>
+                - and
+                - or
+                
+            <b>@media screen and (max-width: 900px) and (min-width: 600px), (min-width: 1100px)</b>
+            <b>@media screen and ((max-width: 900px) and (min-width: 600px)), (min-width: 1100px)</b>
+            <b>@media screen and (((max-width: 900px) and (min-width: 600px)) or (min-width: 1100px))</b>
+            
+            <b>@media screen and (min-width: 400px) and (max-width: 800px)</b>
+            <b>@media screen and (min-width: 400px) and (not (min-width: 800px))</b>
+            
+            [ optional-quantifier can be used only with optional-media-type ]
+        </pre>
+	</body>
+</html>

@@ -5,50 +5,65 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
-			/* Group Combinator: Select both h1 and p elements */
+			body {
+				margin: 10px 250px;
+				padding: 10px;
+				font-family: 'Courier New', Courier, monospace;
+				background-color: #f0f0f0;
+			}
+
+			/* group combinator: Select both h1 and p elements */
 			h1,
 			p {
 				color: blue;
 			}
 
-			/* All Combinator: Select elements with both .highlight and .bold classes */
+			/* all combinator: select elements with both .highlight and .bold classes */
 			.highlight.bold {
 				background-color: yellow;
 			}
 
-			/* Descendant Combinator: Select span elements inside div elements */
+			/* descendant combinator: select span elements inside div elements */
 			div span {
 				font-weight: bold;
 			}
 
-			/* Child Combinator: Select direct children li elements of ul */
+			/* child combinator: select direct children li elements of ul */
 			ul > li {
 				list-style-type: square;
 			}
 
-			/* Adjacent Sibling Combinator: Select the p element immediately following h2 */
+			/* adjacent sibling combinator: select the p element immediately following h2 */
 			h2 + p {
 				color: green;
 			}
 
-			/* General Sibling Combinator: Select all p elements that are siblings of h3 */
+			/* general Sibling combinator: select all p elements that are siblings of h3 */
 			h3 ~ p {
 				color: blueviolet;
 			}
 
-			/* Wildcard with Adjacent Sibling Combinator: Select any element immediately following any other element */
+			/* wildcard with adjacent Sibling combinator: select any element immediately following any other element */
 			* + * {
 				margin-top: 10px;
 			}
 
-			/* Wildcard with General Sibling Combinator: Select any element that is a sibling of any other element */
+			/* wildcard with General sibling combinator: select any element that is a sibling of any other element */
 			* ~ * {
-				border: 1px dashed gray;
+				border: 1px solid black;
+				padding: 10px;
+			}
+
+			.large {
+				font-size: xx-large;
+				text-align: center;
 			}
 		</style>
 	</head>
 
 	<body>
+		<h4 class="large">CSS Selector : Combinator</h4>
+
 		<h1>Group Combinator Example</h1>
 		<p>This is a paragraph styled with the group combinator.</p>
 

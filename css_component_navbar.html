@@ -5,81 +5,76 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
-			:root {
-				font-family: 'Courier New', monospace;
-			}
-
 			body {
 				margin: 0;
 				padding: 0;
+				font-family: 'Courier New', Courier, monospace;
 			}
 
-			/* NAVIGATION BAR*/
 			#navbar {
-				display: flex;
-				list-style-type: none;
-				position: fixed;
 				top: 0;
 				margin: 0;
 				padding: 0;
 				background-color: #f1f1f1;
+				list-style-type: none;
+				display: flex;
+				position: fixed;
 				overflow: auto;
 				line-height: 2;
 				transition: all 1s;
 			}
 
 			#navbar.horizontal {
-				flex-direction: row;
 				width: 100%;
 				height: auto;
+				flex-direction: row;
 			}
 
 			#navbar.vertical {
-				flex-direction: column;
 				width: 25%;
 				height: 100%;
+				flex-direction: column;
 			}
 
 			.link {
-				display: block;
-				color: #000;
 				padding: 8px 16px;
+				color: #000;
 				text-decoration: none;
+				display: block;
 			}
 
 			.active {
-				background-color: #04aa6d;
 				color: white;
+				background-color: #04aa6d;
 			}
 
 			.link:hover:not(.active) {
-				background-color: #555;
 				color: white;
+				background-color: #555;
 			}
 
 			#toggle {
-				background-color: #f1f1f1;
-				color: black;
-				padding: 8px 16px;
 				margin: 5px 10px;
+				padding: 8px 16px;
+				color: black;
+				background-color: #f1f1f1;
 				cursor: pointer;
 				border-radius: 5px;
 			}
 
 			#toggle:hover {
-				background-color: #010101;
 				color: white;
+				background-color: #010101;
 			}
 
-			/* CONTENT */
 			#content {
+				height: 100vh;
+				background-color: lightblue;
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
 				text-align: center;
-				height: 100vh;
-				background-color: lightblue;
 				line-height: 1.6;
 				font-weight: bold;
 				transition: margin-left 0.3s;
@@ -105,10 +100,10 @@
 		</ul>
 
 		<div id="content" class="vertical">
-			MEAN is a source-available Javascript software stack for building
-			dynamic web sites and web applications. A variation known as MERN
-			replaces Angular with React.js front-end, and another named MEVN use
-			Vue.js as front-end
+			Sunt in culpa qui officia deserunt mollit anim id est laborum
+			consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+			labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+			exercitation ullamco.
 		</div>
 
 		<script>

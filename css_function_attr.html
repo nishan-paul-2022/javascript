@@ -4,43 +4,56 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
-	</head>
-
-	<body>
 		<style>
+			body {
+				margin: 10px;
+				padding: 40px;
+				font-family: 'Courier New', Courier, monospace;
+				color: blueviolet;
+				background-color: #f0f0f0;
+				text-align: center;
+			}
+
+			a,
+			div {
+				margin: 10px;
+				padding: 10px;
+				border: 1px solid black;
+			}
+
 			a {
 				text-decoration: none;
+				display: block;
 			}
 
 			a::after {
 				content: ' [ ' attr(href) ' ] ';
 			}
 
-			.set-div::before {
-				content: attr(data-message) ': ';
+			div::before {
+				content: attr(data-message) '! ';
 			}
 		</style>
+	</head>
+
+	<body>
+		<h1>CSS Attribute Function</h1>
 
 		<a
-			href="https://www.youtube.com/watch?v=mqqft2x_Aa4&ab_channel=WarnerBros.Pictures"
-			class="set-a-content">
-			Batman
+			href="https://www.youtube.com/watch?v=mqqft2x_Aa4&ab_channel=WarnerBros.Pictures">
+			BATMAN
 		</a>
-		<br />
 
 		<a
-			href="https://www.youtube.com/watch?v=Div0iP65aZo&ab_channel=20thCenturyStudios"
-			class="set-a-content">
-			Wolverine
+			href="https://www.youtube.com/watch?v=Div0iP65aZo&ab_channel=20thCenturyStudios">
+			WOLVERINE
 		</a>
-		<br />
 
 		<a
-			href="https://www.youtube.com/watch?v=7SlILk2WMTI&ab_channel=MarvelEntertainment"
-			class="set-a-content">
-			Winter Soldier
+			href="https://www.youtube.com/watch?v=7SlILk2WMTI&ab_channel=MarvelEntertainment">
+			WINTER SOLDIER
 		</a>
 
-		<div class="set-div" data-message="HelloWorld">Empty!</div>
+		<div data-message="HELLO">SIR</div>
 	</body>
 </html>

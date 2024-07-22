@@ -5,10 +5,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
-			:root {
-				font-family: Arial, sans-serif;
-				background-color: #f0f8ff;
-				color: #333;
+			body {
+				margin: 10px;
+				padding: 10px;
+				font-family: 'Courier New', Courier, monospace;
+				background-color: #f0f0f0;
 				text-align: center;
 			}
 
@@ -25,38 +26,38 @@
 				padding: 0;
 			}
 
-			/* Styles for elements with a title attribute */
+			/* styles for elements with a title attribute */
 			[title] {
 				border: 2px solid #000;
 				background-color: lightgreen;
 			}
 
-			/* Styles for elements with a data-role attribute equal to 'admin' */
+			/* styles for elements with a data-role attribute equal to 'admin' */
 			[data-role='admin'] {
 				font-weight: bolder;
 			}
 
-			/* Styles for elements with a data-role attribute containing the substring 'user' */
+			/* styles for elements with a data-role attribute containing the substring 'user' */
 			[data-role*='user'] {
 				text-decoration: underline;
 			}
 
-			/* Styles for elements with a data-role attribute containing the word 'guest' */
+			/* styles for elements with a data-role attribute containing the word 'guest' */
 			[data-role~='guest'] {
 				font-style: italic;
 			}
 
-			/* Styles for elements with a data-lang attribute starting with 'en' followed by a hyphen or nothing */
+			/* styles for elements with a data-lang attribute starting with 'en' followed by a hyphen or nothing */
 			[data-lang|='en'] {
 				color: blue;
 			}
 
-			/* Styles for elements with a data-id attribute starting with 'item' */
+			/* styles for elements with a data-id attribute starting with 'item' */
 			[data-id^='item'] {
 				border: 2px solid white;
 			}
 
-			/* Styles for elements with a data-id attribute ending with '5' */
+			/* styles for elements with a data-id attribute ending with '5' */
 			[data-id$='5'] {
 				border: 2px solid red;
 			}
@@ -64,7 +65,7 @@
 	</head>
 
 	<body>
-		<h1>attribute selectors example</h1>
+		<h1>CSS Selector : Attribute</h1>
 
 		<div class="container" title="Container Element">
 			<p data-role="admin" data-id="item1">Admin User</p>

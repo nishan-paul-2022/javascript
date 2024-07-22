@@ -5,41 +5,49 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
+			body {
+				margin: 10px;
+				padding: 10px;
+				font-family: 'Courier New', Courier, monospace;
+				background-color: #f0f0f0;
+				text-align: center;
+				text-transform: uppercase;
+			}
+
 			.boundary {
 				border: 2px solid black;
 				margin: 10px;
 				padding: 10px;
 			}
 
-			div.first {
+			.first {
 				background: rgba(4, 170, 109, 0.1);
 			}
 
-			div.second {
+			.second {
 				background: rgba(4, 170, 109, 0.3);
 			}
 
-			div.third {
+			.third {
 				background: rgba(4, 170, 109, 0.6);
 			}
 
-			div.fourth {
+			.fourth {
 				background: rgba(4, 170, 109, 1);
 			}
 
-			div.background {
+			.background {
 				background: url('https://picsum.photos/400/300?random=1') repeat;
-				border: 2px solid black;
 			}
 
-			div.transbox {
+			.transbox {
 				margin: 30px;
 				background-color: #ffffff;
 				border: 1px solid black;
 				opacity: 0.3;
 			}
 
-			div.transbox p {
+			.transbox p {
 				margin: 5%;
 				font-weight: bold;
 				color: #000000;
@@ -48,6 +56,8 @@
 	</head>
 
 	<body>
+		<h1>CSS Opacity Example</h1>
+
 		<div class="boundary">
 			<div style="opacity: 0.1">
 				<p>10% opacity</p>
@@ -78,7 +88,7 @@
 			</div>
 		</div>
 
-		<div class="background">
+		<div class="boundary background">
 			<div class="transbox">
 				<p>This is some text that is placed in the transparent box.</p>
 			</div>

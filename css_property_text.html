@@ -5,37 +5,33 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
+			html {
+				padding: 10px 200px;
+			}
+
 			body {
-				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-				background-color: #f0f4f8;
-				color: #333;
-				margin: 0;
-				padding: 20px;
+				margin: 10px;
+				padding: 10px;
+				border: 1px solid black;
+				border-radius: 8px;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+				font-family: 'Courier New', Courier, monospace;
 				line-height: 1.6;
+				background-color: #f0f0f0;
 			}
 
 			h1,
 			h3 {
 				text-align: center;
-				margin-top: 40px;
-			}
-
-			.container {
-				max-width: 900px;
-				margin: 0 auto;
-				padding: 20px;
-				background: #fff;
-				border-radius: 8px;
-				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 			}
 
 			.example {
-				margin-bottom: 30px;
+				margin-bottom: 20px;
 			}
 
 			.example h3 {
 				margin-bottom: 10px;
-				color: #4caf50;
+				color: #3b52b1;
 			}
 
 			.text-sample {
@@ -46,91 +42,91 @@
 			}
 
 			.center-uppercase {
-				/* Centers the text horizontally */
+				/* centers the text horizontally */
 				text-align: center;
-				/* Transforms all characters to uppercase */
+				/* transforms all characters to uppercase */
 				text-transform: uppercase;
-				/* Sets the text color to a shade of green */
+				/* sets the text color to a shade of green */
 				color: #4caf50;
 			}
 
 			.indent-justify-spacing {
-				/* Indents the first line of the paragraph by 50px */
+				/* indents the first line of the paragraph by 50px */
 				text-indent: 50px;
-				/* Aligns the text to both left and right edges */
+				/* aligns the text to both left and right edges */
 				text-align: justify;
-				/* Sets the amount of space between letters */
+				/* sets the amount of space between letters */
 				letter-spacing: 3px;
 			}
 
 			.no-decoration {
-				/* Removes any text decoration (like underline, overline, etc.) */
+				/* removes any text decoration (like underline, overline, etc.) */
 				text-decoration: none;
 			}
 
 			.decoration {
-				/* Specifies the type of decoration (underline in this case) */
+				/* specifies the type of decoration (underline in this case) */
 				text-decoration-line: underline;
-				/* Sets the color of the text decoration */
+				/* sets the color of the text decoration */
 				text-decoration-color: red;
-				/* Specifies the style of the text decoration (wavy line) */
+				/* specifies the style of the text decoration (wavy line) */
 				text-decoration-style: wavy;
-				/* Specifies the thickness of the text decoration */
+				/* specifies the thickness of the text decoration */
 				text-decoration-thickness: 2px;
 			}
 
 			.alignment {
-				/* Aligns the text to the right */
+				/* aligns the text to the right */
 				text-align: right;
-				/* Aligns the last line of a block element to the left */
+				/* aligns the last line of a block element to the left */
 				text-align-last: left;
-				/* Sets the direction of the text to right-to-left */
+				/* sets the direction of the text to right-to-left */
 				direction: rtl;
-				/* Overrides the bidirectional algorithm (used for mixed content with different text directions) */
+				/* overrides the bidirectional algorithm (used for mixed content with different text directions) */
 				unicode-bidi: bidi-override;
-				/* Aligns the element to the middle of the line height */
+				/* aligns the element to the middle of the line height */
 				vertical-align: middle;
 			}
 
 			.uppercase {
-				/* Transforms all characters to uppercase */
+				/* transforms all characters to uppercase */
 				text-transform: uppercase;
 			}
 
 			.lowercase {
-				/* Transforms all characters to lowercase */
+				/* transforms all characters to lowercase */
 				text-transform: lowercase;
 			}
 
 			.capitalize {
-				/* Capitalizes the first letter of each word */
+				/* capitalizes the first letter of each word */
 				text-transform: capitalize;
 			}
 
 			.text-spacing {
-				/* Indents the first line of the paragraph by 30px */
+				/* indents the first line of the paragraph by 30px */
 				text-indent: 30px;
-				/* Sets the amount of space between letters */
+				/* sets the amount of space between letters */
 				letter-spacing: 3px;
-				/* Sets the amount of space between lines of text */
+				/* sets the amount of space between lines of text */
 				line-height: 1.5;
-				/* Sets the amount of space between words */
+				/* sets the amount of space between words */
 				word-spacing: 7px;
-				/* Preserves whitespace in the text (new lines and spaces) */
+				/* preserves whitespace in the text (new lines and spaces) */
 				white-space: pre-line;
 			}
 
 			.shadow {
-				/* Adds a shadow effect to the text */
-				text-shadow: 2px 2px 4px #000000;
+				/* adds a shadow effect to the text */
+				text-shadow: 2px 2px 4px black;
 			}
 		</style>
 	</head>
 
 	<body>
-		<div class="container">
-			<h1>CSS Text Properties Demonstration</h1>
+		<h1>CSS Text Example</h1>
 
+		<div>
 			<div class="example">
 				<h3>Text Alignment and Transformation</h3>
 				<p class="text-sample center-uppercase">

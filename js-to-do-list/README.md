@@ -1,4 +1,3 @@
 ## Copyright
 
-This project is a fork of https://github.com/learnwithsumit/todo-app-with-dom.
-Based on the original work of Sumit Saha.
+This project is based on the original work of Sumit Saha https://github.com/learnwithsumit/todo-app-with-dom.

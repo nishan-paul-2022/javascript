@@ -6,7 +6,15 @@
 		<title>Document</title>
 		<style>
 			body {
-				border: 1px solid black;
+				margin: 10px;
+				padding: 10px;
+				font-family: 'Courier New', Courier, monospace;
+				background-color: #f0f0f0;
+			}
+
+			h1,
+			h4 {
+				text-align: center;
 			}
 
 			.container {
@@ -49,12 +57,12 @@
 	</head>
 
 	<body>
-		<h1>Z-index Example</h1>
+		<h1>CSS z-index Example</h1>
 
-		<p>
+		<h4>
 			An element with greater stack order is always above an element with
 			a lower stack order.
-		</p>
+		</h4>
 
 		<div class="container">
 			<div class="black-box">Black box (z-index: 1)</div>
@@ -64,7 +72,9 @@
 	</body>
 </html>
 
-<!-- if multiple positioned-elements overlap each other without a z-index specified, stack-order will be on basis of appearance-order -->
-<!-- relative 	/ in terms of view, under the container -->
-<!-- absolute 	/ in terms of view, outside the container -->
-<!-- fixed 		/ in terms of view, outside the container -->
+<!-- 
+if multiple positioned-elements overlap each other without a z-index specified, stack-order will be on basis of appearance-order
+	relative 	| in terms of view, under the container
+	absolute 	| in terms of view, outside the container
+	fixed 		| in terms of view, outside the container 
+-->

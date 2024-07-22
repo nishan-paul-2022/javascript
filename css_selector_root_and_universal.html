@@ -6,9 +6,9 @@
 		<title>Document</title>
 		<style>
 			:root {
-				--color-red: rgb(249, 138, 161);
-				--color-green: rgb(106, 236, 106);
-				--color-blue: rgb(70, 70, 246);
+				--color-one: rgb(214, 198, 254);
+				--color-two: rgb(0, 0, 0);
+				--color-three: rgb(112, 112, 241);
 			}
 
 			* {
@@ -17,43 +17,43 @@
 
 			html {
 				font-size: 62.5%;
-				background-color: lightgreen;
+				background-color: rgb(200, 230, 254);
 			}
 
 			body {
 				margin: 1vw;
 				padding: 2vw;
 				font:
-					italic normal bolder 2rem/2 'Courier New',
+					normal small-caps bolder 2rem/2 'Courier New',
 					Courier,
 					monospace;
 				text-align: center;
-				background-color: lightblue;
+				background-color: #f0f0f0;
 			}
 
 			h1 {
-				background-color: var(--color-red);
+				background-color: var(--color-one);
 			}
 
 			div {
 				margin: 3vw;
 				padding: 3vw;
-				border: 0.2vw solid var(--color-green);
+				border: 0.2vw solid var(--color-two);
 			}
 
 			p {
-				color: var(--color-blue);
+				color: var(--color-three);
 			}
 		</style>
 	</head>
 
 	<body>
-		<h1>:root selector and * selector</h1>
+		<h1>CSS Selector : Root & Universal</h1>
 
 		<div>
 			<p>
-				This paragraph is inside a container div and is styled using the
-				universal selector and CSS variables defined in the :root
+				This paragraph is inside a div containerand is styled using 
+				universal selector and CSS variables defined in :root
 				pseudo-class.
 			</p>
 
@@ -62,24 +62,26 @@
 	</body>
 </html>
 
-<!--in case of html document, html is the root | https://blog.timonwa.com/all-vs-root-vs-html-vs-body-selectors 
+<!--
+[ in case of html document, html is the root | https://blog.timonwa.com/all-vs-root-vs-html-vs-body-selectors ]
 
-	:root 	: 
-		Represents the highest level of the document tree, 
-		typically used to define global CSS variables.
-		Common Properties: --variable-name (CSS custom properties)
+-	:root 
+		represents the highest level of the document tree
+		commonly used to define global CSS variables
+		common properties: --variable-name (CSS custom properties)
 
-	*		: 
-		The universal selector applies to all elements in the document, 
-		commonly used to set global styles.
-		Common Properties: box-sizing, margin, padding
+-	* 
+		universal selector applies to all elements in the document 
+		commonly used to set global styles
+		common properties: box-sizing, margin, padding
 
-	html	: 
-		Targets the root HTML element of the document, 
-		used for setting global styles like base font size and background color.
-		Common Properties: font-size, background-color, line-height.
+-	html
+		represents the root element (html) of the document
+		used for setting global styles like base font size and background color
+		common properties: font-size, background-color, line-height
 
-	body	: 
-		Targets the body element, where the main content of the document resides, 
-		typically used for overall page styling.
-		Common Properties: margin, padding, font-family, color, background-color.	-->
+-	body
+		represents the body element, where the main content of the document resides
+		commonly used for overall page styling
+		common properties: margin, padding, font-family, color, background-color
+-->
