@@ -1,9 +1,4 @@
-import calculate, {
-	add,
-	sub,
-	mul,
-	div
-} from './ts_es_module_javascript_defined.js';
+import calculate, { add, sub, mul, div } from './ts_module_3.js';
 
 const addition = add(5, 3);
 const subtraction = sub(5, 3);
