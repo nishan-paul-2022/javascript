@@ -1,4 +1,5 @@
-import fs = require('fs');
+import fs from 'fs';
+// import * as fs from 'fs';
 
 function Usecase01(filename: string): void {
 	const content = fs.readFileSync(filename).toString();
@@ -11,5 +12,5 @@ async function Usecase02(filename: string): Promise<void> {
 	console.log(content);
 }
 
-Usecase01('./zmax.txt');
-Usecase02('./zmax.txt');
+Usecase01('./sample.txt');
+await Usecase02('./sample.txt');

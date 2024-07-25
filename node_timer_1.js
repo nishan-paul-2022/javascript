@@ -45,7 +45,7 @@ function Usecase02() {
 
 		setImmediate(() => {
 			console.log('IMMEDIATE 01');
-			fs.readFile('./zmax.txt', 'utf8', (error, data) => {
+			fs.readFile('./sample.txt', 'utf8', (error, data) => {
 				if (error) {
 					throw error;
 				}
@@ -79,7 +79,7 @@ function Usecase02() {
 }
 
 function Usecase03() {
-	fs.readFile('./zmax.txt', 'utf8', (error, data) => {
+	fs.readFile('./sample.txt', 'utf8', (error, data) => {
 		setTimeout(() => {
 			console.log('SET-TIMEOUT');
 		}, 0);
