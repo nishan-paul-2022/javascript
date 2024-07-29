@@ -6,11 +6,18 @@
 		<title>Document</title>
 		<style>
 			body {
-				margin: 10px;
-				padding: 10px;
-				font-family: 'Courier New', Courier, monospace;
 				background-color: #f0f0f0;
+			}
+
+			.container {
+				margin: 10px 300px;
+				padding: 10px 40px;
+				border-radius: 10px;
+				font-family: 'Courier New', Courier, monospace;
+				font-size: x-large;
+				background-color: #ffffff;
 				text-align: center;
+				text-transform: uppercase;
 			}
 
 			/* apply border-box globally for better box model handling */
@@ -20,16 +27,11 @@
 				box-sizing: border-box;
 			}
 
-			.container {
-				max-width: 800px;
-				margin: 0 auto;
-			}
-
 			/* common styles for all boxes */
 			.box {
 				margin: 10px auto;
 				padding: 20px;
-				width: 200px;
+				width: 600px;
 				height: 100px;
 				border: 10px solid #333;
 				background-color: #ddd;
@@ -56,9 +58,9 @@
 	</head>
 
 	<body>
-		<h1>CSS Box Sizing Example</h1>
-
 		<div class="container">
+			<h1>CSS Box Sizing Example</h1>
+
 			<div class="box content-box">Content Box</div>
 			<div class="box border-box">Border Box</div>
 			<div class="box inherit-box">Inherit Box</div>
