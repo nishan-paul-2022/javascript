@@ -6,21 +6,64 @@
 		<title>Document</title>
 		<style>
 			body {
-				margin: 10px;
-				padding: 0 300px;
 				font-family: 'Courier New', Courier, monospace;
-				font-size: larger;
-				background-color: #f0f0f0;
 			}
 
 			h1 {
 				text-align: center;
+			}
+
+			.box {
+				width: 100px;
+				height: 100px;
+				margin: 5px 20px;
+				display: inline-block;
+				color: white;
+				text-align: center;
+				line-height: 100px;
+				transition: background-color 0.3s ease;
+			}
+
+			@media screen and (min-width: 600px) and (max-width: 900px), (min-width: 1100px) {
+				.box1 {
+					background-color: red;
+				}
+			}
+
+			@media screen and ((min-width: 600px) and (max-width: 900px)), (min-width: 1100px) {
+				.box2 {
+					background-color: green;
+				}
+			}
+
+			@media screen and (((min-width: 600px) and (max-width: 900px)) or (min-width: 1100px)) {
+				.box3 {
+					background-color: blue;
+				}
+			}
+
+			@media screen and (min-width: 400px) and (max-width: 800px) {
+				.box4 {
+					background-color: blueviolet;
+				}
+			}
+
+			@media screen and (min-width: 400px) and (not (min-width: 800px)) {
+				.box5 {
+					background-color: aqua;
+				}
 			}
 		</style>
 	</head>
 
 	<body>
 		<h1>CSS Miscellaneous : Media Query</h1>
+
+		<div class="box box1">Box 1</div>
+		<div class="box box2">Box 2</div>
+		<div class="box box3">Box 3</div>
+		<div class="box box4">Box 4</div>
+		<div class="box box5">Box 5</div>
 
 		<pre>
             <b>@media optional-quantifier optional-media-type and ((media-feature) quantifier (media-feature))</b>
@@ -47,9 +90,9 @@
                 - and
                 - or
                 
-            <b>@media screen and (max-width: 900px) and (min-width: 600px), (min-width: 1100px)</b>
-            <b>@media screen and ((max-width: 900px) and (min-width: 600px)), (min-width: 1100px)</b>
-            <b>@media screen and (((max-width: 900px) and (min-width: 600px)) or (min-width: 1100px))</b>
+            <b>@media screen and (min-width: 600px) and (max-width: 900px), (min-width: 1100px)</b>
+            <b>@media screen and ((min-width: 600px) and (max-width: 900px)), (min-width: 1100px)</b>
+            <b>@media screen and (((min-width: 600px) and (max-width: 900px)) or (min-width: 1100px))</b>
             
             <b>@media screen and (min-width: 400px) and (max-width: 800px)</b>
             <b>@media screen and (min-width: 400px) and (not (min-width: 800px))</b>
