@@ -6,11 +6,14 @@
 		<title>Document</title>
 		<style>
 			body {
-				margin: 10px;
+				margin: 10px 100px;
 				padding: 10px;
 				font-family: 'Courier New', Courier, monospace;
 				font-weight: bolder;
+				border: 1px solid black;
+				border-radius: 10px;
 				background-color: #f0f0f0;
+				text-transform: uppercase;
 			}
 
 			h1 {
@@ -25,31 +28,55 @@
 				color: black;
 				text-align: center;
 			}
+
+			.inline {
+				display: inline;
+				background-color: lightblue;
+			}
+
+			.inline-block {
+				display: inline-block;
+				background-color: gray;
+				width: auto;
+			}
+
+			.block {
+				display: block;
+				background-color: lightgreen;
+				width: auto;
+			}
+
+			.contents {
+				display: contents;
+				background-color: aqua;
+			}
+
+			.none {
+				display: none;
+				background-color: blueviolet;
+			}
 		</style>
 	</head>
 
 	<body>
-		<h1>CSS Display Example 02</h1>
+		<h1>CSS Property : Display 02</h1>
 
 		<!-- 01. inline -->
-		<div class="box" style="display: inline; background-color: lightblue">
-			Inline (div)
-		</div>
-
-		<!-- 02. block -->
-		<span class="box" style="display: block; background-color: lightgreen">
-			Block (span)
-		</span>
+		<div class="box inline">Inline (div)</div>
 
 		<!-- 03. inline-block -->
-		<div class="box" style="display: inline-block; background-color: gray">
-			Inline-block (div)
-		</div>
+		<div class="box inline-block">Inline-Block (div)</div>
+
+		<!-- 02. block -->
+		<span class="box block"> Block (span) </span>
 
 		<!-- 04. contents -->
-		<div class="box" style="display: contents; background-color: aqua">
-			The element itself does not generate any boxes, but its children and
-			pseudo-elements still generate boxes as normal.
+		<div class="box contents">
+			This element itself does not generate any boxes, but its children
+			and pseudo-elements still generate boxes as normal.
 		</div>
+
+		<!-- 05. none -->
+		<div class="box none">display : none [ hide and remove ]</div>
 	</body>
 </html>
