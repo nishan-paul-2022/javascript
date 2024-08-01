@@ -5,28 +5,31 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Input Types Example</title>
 		<style>
-			html {
-				margin: 20px 320px;
-				padding: 20px;
+			* {
+				font-family: 'Courier New', Courier, monospace;
 			}
 
 			body {
-				font-family: 'Courier New', Courier, monospace;
-				background-color: #f8f9fa;
-				color: #333;
-				margin: 0;
-				padding: 0;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				min-height: 100vh;
+				background-color: #f0f0f0;
 			}
 
-			form {
-				background-color: #fff;
+			.container {
+				margin: 20px 350px;
 				padding: 20px;
 				border-radius: 8px;
 				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+				color: #333;
+				background-color: #f9f9f9;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			h1 {
+				text-align: center;
+			}
+
+			form {
 				display: flex;
 				flex-wrap: wrap;
 				gap: 20px;
@@ -55,12 +58,22 @@
 			input,
 			select,
 			textarea {
+				background-color: #ddd;
+			}
+
+			input,
+			select,
+			textarea {
 				display: block;
 				width: calc(100% - 22px);
 				margin: 5px 0 10px 0;
 				padding: 10px;
 				border: 1px solid #ddd;
 				border-radius: 4px;
+			}
+
+			input[type='search'] {
+				width: 100%;
 			}
 
 			input[type='checkbox'],
@@ -85,7 +98,7 @@
 			input[type='submit']:hover,
 			input[type='reset']:hover,
 			input[type='button']:hover {
-				background-color: #0056b3;
+				background-color: #396ba0;
 			}
 
 			textarea {
@@ -95,103 +108,117 @@
 	</head>
 
 	<body>
-		<form>
-			<fieldset>
-				<legend>Text Inputs</legend>
+		<h1>HTML Tag : Form</h1>
 
-				<label for="text">Text:</label>
-				<input type="text" id="text" name="text" />
+		<div class="container">
+			<form>
+				<fieldset>
+					<legend>Text Input</legend>
 
-				<label for="password">Password:</label>
-				<input type="password" id="password" name="password" />
+					<label for="text">Text:</label>
+					<input type="text" name="text" />
 
-				<label for="email">Email:</label>
-				<input type="email" id="email" name="email" />
+					<label for="password">Password:</label>
+					<input type="password" name="password" />
 
-				<label for="url">URL:</label>
-				<input type="url" id="url" name="url" />
+					<label for="email">Email:</label>
+					<input type="email" name="email" />
 
-				<label for="tel">Telephone:</label>
-				<input type="tel" id="tel" name="tel" />
-			</fieldset>
+					<label for="url">URL:</label>
+					<input type="url" name="url" />
 
-			<fieldset>
-				<legend>Number and Range Inputs</legend>
+					<label for="tel">Telephone:</label>
+					<input type="tel" name="tel" />
+				</fieldset>
 
-				<label for="number">Number:</label>
-				<input type="number" id="number" name="number" />
+				<fieldset>
+					<legend>Date Input</legend>
 
-				<label for="range">Range:</label>
-				<input type="range" id="range" name="range" />
-			</fieldset>
+					<label for="date">Date:</label>
+					<input type="date" name="date" />
 
-			<fieldset>
-				<legend>Date and Time Inputs</legend>
+					<label for="month">Month:</label>
+					<input type="month" name="month" />
 
-				<label for="date">Date:</label>
-				<input type="date" id="date" name="date" />
+					<label for="week">Week:</label>
+					<input type="week" name="week" />
 
-				<label for="month">Month:</label>
-				<input type="month" id="month" name="month" />
+					<label for="time">Time:</label>
+					<input type="time" name="time" />
 
-				<label for="week">Week:</label>
-				<input type="week" id="week" name="week" />
+					<label for="datetime-local">Datetime Local:</label>
+					<input
+						type="datetime-local"
+						id="datetime-local"
+						name="datetime-local" />
+				</fieldset>
 
-				<label for="time">Time:</label>
-				<input type="time" id="time" name="time" />
+				<fieldset>
+					<legend>Select Input</legend>
 
-				<label for="datetime-local">Datetime Local:</label>
-				<input
-					type="datetime-local"
-					id="datetime-local"
-					name="datetime-local" />
-			</fieldset>
+					<label for="color">Color:</label>
+					<input type="color" name="color" />
 
-			<fieldset>
-				<legend>Miscellaneous Inputs</legend>
+					<label for="checkbox">Checkbox:</label>
+					<input type="checkbox" name="checkbox" />
+					<input type="checkbox" name="checkbox" />
+					<input type="checkbox" name="checkbox" />
 
-				<label for="search">Search:</label>
-				<input type="search" id="search" name="search" />
+					<label for="radio">Radio:</label>
+					<input type="radio" name="radio" />
+					<input type="radio" name="radio" />
+					<input type="radio" name="radio" />
 
-				<label for="color">Color:</label>
-				<input type="color" id="color" name="color" />
+					<label for="select">Select:</label>
+					<select name="select">
+						<option value="option1">Option 1</option>
+						<option value="option2">Option 2</option>
+						<option value="option3">Option 3</option>
+					</select>
 
-				<label for="checkbox">Checkbox:</label>
-				<input type="checkbox" id="checkbox" name="checkbox" />
+					<label for="file">File:</label>
+					<input type="file" name="file" />
+				</fieldset>
 
-				<label for="radio">Radio:</label>
-				<input type="radio" id="radio" name="radio" />
+				<fieldset>
+					<legend>Button Input</legend>
 
-				<label for="file">File:</label>
-				<input type="file" id="file" name="file" />
-			</fieldset>
+					<input type="submit" name="submit" />
 
-			<fieldset>
-				<legend>Buttons and Textarea</legend>
+					<input type="reset" name="reset" />
 
-				<label for="submit">Submit:</label>
-				<input type="submit" id="submit" name="submit" />
+					<input
+						type="button"
+						id="button"
+						name="button"
+						value="Click Me" />
 
-				<label for="reset">Reset:</label>
-				<input type="reset" id="reset" name="reset" />
+					<input type="image" src="./favicon.png" alt="" />
+				</fieldset>
 
-				<label for="button">Button:</label>
-				<input
-					type="button"
-					id="button"
-					name="button"
-					value="Click Me" />
+				<fieldset>
+					<legend>Number Input</legend>
 
-				<label for="textarea">Textarea:</label>
-				<textarea id="textarea" name="textarea"></textarea>
+					<label for="number">Number:</label>
+					<input type="number" name="number" />
 
-				<label for="select">Select:</label>
-				<select id="select" name="select">
-					<option value="option1">Option 1</option>
-					<option value="option2">Option 2</option>
-					<option value="option3">Option 3</option>
-				</select>
-			</fieldset>
-		</form>
+					<label for="range">Range:</label>
+					<input type="range" name="range" />
+				</fieldset>
+
+				<fieldset>
+					<legend>Miscellaneous Input</legend>
+
+					<label for="search">Search:</label>
+					<input type="search" name="search" />
+
+					<label for="textarea">Textarea:</label>
+					<textarea name="textarea"></textarea>
+
+					<label for="hidden">Hidden:</label>
+					<input type="hidden" name="hidden" />
+				</fieldset>
+			</form>
+		</div>
 	</body>
 </html>
