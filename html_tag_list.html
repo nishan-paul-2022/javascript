@@ -1,41 +1,86 @@
 <!doctype html>
-<html>
-	<head lang="en">
+<html lang="en">
+	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=2.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<style>
+			body {
+				background-color: #f0f0f0;
+			}
+
+			.container {
+				margin: 20px 400px;
+				padding: 20px;
+				font-family: 'Courier New', Courier, monospace;
+				font-size: small;
+				background-color: #ffffff;
+				text-transform: uppercase;
+				border: 1px solid black;
+				border-radius: 5px;
+			}
+
+			h1 {
+				text-align: center;
+			}
+		</style>
 	</head>
 
 	<body>
-		<!-- square | circle | bullet -->
-		<ul type="bullet">
-			<li>bat</li>
-			<li>cat</li>
-			<li>panther</li>
-			<li>ant</li>
-			<li>wolverine</li>
-		</ul>
+		<div class="container">
+			<h1>HTML Tag : List</h1>
 
-		<ol type="I" start="5">
-			<li>super</li>
-			<li>wonder</li>
-			<li>captain</li>
-			<li>marvel</li>
-			<li>black</li>
-		</ol>
+			<div>
+				<h2>Ordered List</h2>
+				<ol>
+					<li>First item</li>
+					<li>Second item</li>
+					<li>Third item</li>
+				</ol>
+			</div>
 
-		<dl>
-			<dt>Superman</dt>
-			<dd>Man of Steel</dd>
+			<div>
+				<h2>Unordered List</h2>
+				<ul>
+					<li>First item</li>
+					<li>Second item</li>
+					<li>Third item</li>
+				</ul>
+			</div>
 
-			<dt>Batman</dt>
-			<dd>The Dark Knight</dd>
+			<div>
+				<h2>Description List</h2>
+				<dl>
+					<dt>Term : HTML</dt>
+					<dd>Markup language for creating web page</dd>
 
-			<dt>Captain America</dt>
-			<dd>I can do this all day</dd>
+					<dt>Term : CSS</dt>
+					<dd>Stylesheet language for styling web page</dd>
 
-			<dt>Ironman</dt>
-			<dd>I'm Ironman</dd>
-		</dl>
+					<dt>Term : JS</dt>
+					<dd>Programming language for developing web page</dd>
+				</dl>
+			</div>
+
+			<div>
+				<h2>Nested List</h2>
+				<ul>
+					<li>
+						First item
+						<ul>
+							<li>Sub-item 1</li>
+							<li>Sub-item 2</li>
+						</ul>
+					</li>
+					<li>
+						Second item
+						<ul>
+							<li>Sub-item 1</li>
+							<li>Sub-item 2</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</body>
 </html>
