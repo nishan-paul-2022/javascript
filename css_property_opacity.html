@@ -6,34 +6,25 @@
 		<title>Document</title>
 		<style>
 			body {
-				margin: 10px;
-				padding: 10px;
-				font-family: 'Courier New', Courier, monospace;
 				background-color: #f0f0f0;
-				text-align: center;
+			}
+
+			.container {
+				margin: 20px 350px;
+				padding: 20px;
+				font-family: 'Courier New', Courier, monospace;
+				font-size: small;
+				background-color: #ffffff;
 				text-transform: uppercase;
+				text-align: center;
+				border: 1px solid black;
+				border-radius: 5px;
 			}
 
 			.boundary {
 				border: 2px solid black;
 				margin: 10px;
 				padding: 10px;
-			}
-
-			.first {
-				background: rgba(4, 170, 109, 0.1);
-			}
-
-			.second {
-				background: rgba(4, 170, 109, 0.3);
-			}
-
-			.third {
-				background: rgba(4, 170, 109, 0.6);
-			}
-
-			.fourth {
-				background: rgba(4, 170, 109, 1);
 			}
 
 			.background {
@@ -46,51 +37,47 @@
 				border: 1px solid black;
 				opacity: 0.3;
 			}
-
-			.transbox p {
-				margin: 5%;
-				font-weight: bold;
-				color: #000000;
-			}
 		</style>
 	</head>
 
 	<body>
-		<h1>CSS Opacity Example</h1>
+		<div class="container">
+			<h1>CSS Property : Opacity</h1>
 
-		<div class="boundary">
-			<div style="opacity: 0.1">
-				<p>10% opacity</p>
+			<div class="boundary">
+				<div style="opacity: 0.1">
+					<p>10% opacity</p>
+				</div>
+				<div style="opacity: 0.3">
+					<p>30% opacity</p>
+				</div>
+				<div style="opacity: 0.6">
+					<p>60% opacity</p>
+				</div>
+				<div style="opacity: 1">
+					<p>100% opacity</p>
+				</div>
 			</div>
-			<div style="opacity: 0.3">
-				<p>30% opacity</p>
-			</div>
-			<div style="opacity: 0.6">
-				<p>60% opacity</p>
-			</div>
-			<div style="opacity: 1">
-				<p>100% opacity</p>
-			</div>
-		</div>
 
-		<div class="boundary">
-			<div class="first">
-				<p>10% opacity</p>
+			<div class="boundary">
+				<div style="background: rgba(4, 170, 109, 0.1)">
+					<p>10% opacity</p>
+				</div>
+				<div style="background: rgba(4, 170, 109, 0.3)">
+					<p>30% opacity</p>
+				</div>
+				<div style="background: rgba(4, 170, 109, 0.6)">
+					<p>60% opacity</p>
+				</div>
+				<div style="background: rgba(4, 170, 109, 1)">
+					<p>100% opacity</p>
+				</div>
 			</div>
-			<div class="second">
-				<p>30% opacity</p>
-			</div>
-			<div class="third">
-				<p>60% opacity</p>
-			</div>
-			<div class="fourth">
-				<p>100% opacity</p>
-			</div>
-		</div>
 
-		<div class="boundary background">
-			<div class="transbox">
-				<p>This is some text that is placed in the transparent box.</p>
+			<div class="boundary background">
+				<div class="transbox">
+					<p>This is some text that is placed inside transparent box.</p>
+				</div>
 			</div>
 		</div>
 	</body>
