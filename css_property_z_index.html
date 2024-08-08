@@ -19,17 +19,17 @@
 
 			.container {
 				position: relative;
+				margin-top: 50px;
 				border: 1px solid black;
+				font-weight: bold;
 			}
 
-			.black-box {
+			.blue-box {
 				position: relative;
-				/* position: absolute; */
-				/* position: fixed; */
 				z-index: 1;
-				border: 2px solid black;
-				height: 100px;
+				background: lightskyblue;
 				margin: 30px;
+				height: 100px;
 			}
 
 			/* gray box will be above green box */
@@ -37,21 +37,21 @@
 				position: absolute;
 				z-index: 3;
 				background: lightgray;
-				height: 60px;
 				width: 70%;
-				left: 50px;
+				height: 60px;
 				top: 50px;
+				left: 50px;
 			}
 
-			/* green box will be above black box */
+			/* green box will be above blue box */
 			.green-box {
 				position: absolute;
 				z-index: 2;
 				background: lightgreen;
 				width: 35%;
-				left: 270px;
-				top: -15px;
 				height: 100px;
+				top: -15px;
+				left: 270px;
 			}
 		</style>
 	</head>
@@ -65,7 +65,7 @@
 		</h4>
 
 		<div class="container">
-			<div class="black-box">Black box (z-index: 1)</div>
+			<div class="blue-box">Black box (z-index: 1)</div>
 			<div class="gray-box">Gray box (z-index: 3)</div>
 			<div class="green-box">Green box (z-index: 2)</div>
 		</div>
