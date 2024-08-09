@@ -5,15 +5,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
-			body {
-				margin: 10px;
-				padding: 10px;
-				font-family: 'Courier New', Courier, monospace;
-				background-color: #f0f0f0;
-				text-align: center;
-				text-transform: uppercase;
-			}
-
 			*,
 			*::before,
 			*::after {
@@ -23,14 +14,14 @@
 			}
 
 			body {
-				margin: 0;
-				padding: 0;
+				font-family: 'Courier New', Courier, monospace;
+				text-align: center;
+				text-transform: uppercase;
 			}
 
 			/* styles for elements with a title attribute */
 			[title] {
-				border: 2px solid #000;
-				background-color: lightgreen;
+				border: 1px solid #000;
 			}
 
 			/* styles for elements with a data-role attribute equal to 'admin' */
@@ -55,12 +46,12 @@
 
 			/* styles for elements with a data-id attribute starting with 'item' */
 			[data-id^='item'] {
-				border: 2px solid white;
+				background-color: lightgray;
 			}
 
 			/* styles for elements with a data-id attribute ending with '5' */
 			[data-id$='5'] {
-				border: 2px solid red;
+				letter-spacing: 5px;
 			}
 		</style>
 	</head>
@@ -68,11 +59,11 @@
 	<body>
 		<h1>CSS Selector : Attribute</h1>
 
-		<div class="container" title="Container Element">
-			<p data-role="admin" data-id="item1">Admin User</p>
-			<p data-role="user" data-id="item2">Regular User</p>
-			<p data-role="guest user" data-id="item3">Guest User</p>
-			<p data-lang="en-US" data-id="item4">English (US)</p>
+		<div title="Container" class="container" >
+			<p data-id="item1" data-role="admin">Admin User</p>
+			<p data-id="item2" data-role="user">Regular User</p>
+			<p data-id="item3" data-role="guest user">Guest User</p>
+			<p data-id="item4" data-lang="en-US">English (US)</p>
 			<p data-id="item5">Item 5</p>
 		</div>
 	</body>
