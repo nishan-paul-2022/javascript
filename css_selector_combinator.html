@@ -5,8 +5,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
+			/* wildcard with general sibling combinator: select any element that is a sibling of any other element */
+			* ~ * {
+				margin: 10px;
+				padding: 10px;
+				border: 1px solid black;
+				border-radius: 10px;
+			}
+
 			body {
-				margin: 10px 250px;
+				margin: 10px 225px;
 				padding: 10px;
 				font-family: 'Courier New', Courier, monospace;
 				background-color: #f0f0f0;
@@ -14,6 +22,12 @@
 
 			h1 {
 				text-align: center;
+			}
+
+			hr {
+				margin: 30px;
+				padding: 0;
+				box-shadow: 0 0 5px;
 			}
 
 			/* group combinator: Select both h2 and p elements */
@@ -46,17 +60,6 @@
 			h4 ~ p {
 				color: blueviolet;
 			}
-
-			/* wildcard with adjacent Sibling combinator: select any element immediately following any other element */
-			* + * {
-				margin-top: 10px;
-			}
-
-			/* wildcard with General sibling combinator: select any element that is a sibling of any other element */
-			* ~ * {
-				border: 1px solid black;
-				padding: 10px;
-			}
 		</style>
 	</head>
 
@@ -65,32 +68,34 @@
 
 		<h2>Group Combinator Example</h2>
 		<p>This is a paragraph styled with the group combinator.</p>
+		<hr>
 
 		<div class="highlight bold">All Combinator Example</div>
+		<hr>
 
 		<div>
 			<span>Descendant Combinator Example</span>
 		</div>
+		<hr>
 
 		<ul>
 			<li>Child Combinator Example 1</li>
 			<li>Child Combinator Example 2</li>
 		</ul>
+		<hr>
 
 		<h3>Adjacent Sibling Combinator Example</h3>
 		<p>
 			This paragraph is immediately after an h3 element and is styled with
 			the adjacent sibling combinator.
 		</p>
+		<hr>
 
 		<h4>General Sibling Combinator Example</h4>
 		<p>
 			This paragraph is a sibling of the h4 element and is styled with the
 			general sibling combinator.
 		</p>
-		<p>Another paragraph sibling of the h4 element.</p>
-
-		<div>Wildcard Adjacent Sibling Example</div>
-		<div>Wildcard General Sibling Example</div>
+		<p>Another paragraph which is a sibling of same h4 element.</p>
 	</body>
 </html>
