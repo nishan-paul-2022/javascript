@@ -9,18 +9,15 @@
 				margin: 10px 400px;
 				padding: 10px;
 				font-family: 'Courier New', Courier, monospace;
-				background-color: #f0f0f0;
 				text-align: center;
+				box-shadow: 0 0 5px black;
+				border-radius: 1%;
 			}
 
-			/* :nth-child(2n+1) selects odd-numbered elements */
-			li:nth-child(2n + 1) {
-				background-color: lightgray;
-			}
-
-			/* :nth-child(2n) selects even-numbered elements */
-			li:nth-child(2n) {
-				background-color: lightblue;
+			hr {
+				margin: 30px;
+				border: 1px solid black;
+				/* box-shadow: 0 0 5px; */
 			}
 
 			/* :first-child selects the first child of its parent */
@@ -35,48 +32,58 @@
 
 			/* :nth-child() selects elements based on their position among siblings */
 			li:nth-child(2) {
-				color: red;
+				letter-spacing: 5px;
 			}
 
-			/* Selects odd paragraphs using :nth-of-type(2n+1) */
-			p:nth-of-type(2n + 1) {
-				background-color: lightblue;
+			/* :nth-child(2n+1) selects odd-numbered elements */
+			li:nth-child(2n + 1) {
+				background-color: rgb(100, 100, 255);
 			}
 
-			/* Selects even paragraphs using :nth-of-type(2n) */
-			p:nth-of-type(2n) {
+			/* :nth-child(2n) selects even-numbered elements */
+			li:nth-child(2n) {
 				background-color: lightgray;
 			}
 
 			/* :first-of-type selects the first element of a specific type among siblings */
 			p:first-of-type {
-				font-style: italic;
+				font-weight: bold;
 			}
 
 			/* :last-of-type selects the last element of a specific type among siblings */
 			p:last-of-type {
-				text-transform: uppercase;
+				text-decoration: underline;
 			}
 
-			/* :nth-of-type() selects elements of a specific type based on their position among siblings */
+			/* :nth-of-type selects elements of a specific type based on their position among siblings */
 			p:nth-of-type(2) {
-				color: green;
+				letter-spacing: 5px;
+			}
+
+			/* :nth-of-type(2n+1) selects odd elements of a specific type based on their position among siblings */
+			p:nth-of-type(2n + 1) {
+				background-color: rgb(100, 100, 255);
+			}
+
+			/* :nth-of-type(2n+1) selects even elements of a specific type based on their position among siblings */
+			p:nth-of-type(2n) {
+				background-color: lightgray;
 			}
 
 			h4:nth-last-of-type(2n + 1) {
-				font-style: italic;
+				background-color: rgb(100, 100, 255);
+			}
+
+			h4:nth-last-of-type(2n) {
+				background-color: lightgray;
 			}
 
 			div:only-of-type {
-				background-color: gray;
+				background-color: red;
 			}
 
 			q:lang(en) {
-				quotes: '%%' '%%';
-			}
-
-			q.batman-begins {
-				quotes: '**' '**';
+				quotes: '%' '%';
 			}
 		</style>
 	</head>
@@ -89,67 +96,39 @@
 			<li>Item 2</li>
 			<li>Item 3</li>
 			<li>Item 4</li>
-			<li>Item 5</li>
-			<li>Item 6</li>
-			<li>Item 7</li>
-			<li>Item 8</li>
 		</ul>
+		<hr />
 
 		<div>
 			<p>Paragraph 1</p>
 			<p>Paragraph 2</p>
 			<p>Paragraph 3</p>
 			<p>Paragraph 4</p>
-			<p>Paragraph 5</p>
-			<p>Paragraph 6</p>
-			<p>Paragraph 7</p>
-			<p>Paragraph 8</p>
 		</div>
+		<hr />
 
 		<div>
 			<h4>Header 1</h4>
 			<h4>Header 2</h4>
 			<h4>Header 3</h4>
 			<h4>Header 4</h4>
-			<h4>Header 5</h4>
-			<h4>Header 6</h4>
-			<h4>Header 7</h4>
-			<h4>Header 8</h4>
 		</div>
+		<hr />
 
 		<div>
-			<div>hello, how are you?</div>
-			<sapn>I'm doing well, thanks!</sapn>
-			<p>hey there! What's up?</p>
-			<h4>not much, just working on a project.</h4>
+			<div>Only Div of This Generation</div>
 		</div>
+		<hr />
 
-		<div>
-			<div>hello, how are you?</div>
-			<div>I'm doing well, thanks!</div>
-		</div>
-
-		<div>
-			<p>
-				<q lang="en">
-					BATMAN IS ALL OF US… HE IS OUR RAGE AT INJUSTICE… HE STANDS
-					ALONE, AS WE ALL WISH WE COULD, IN THE FACE OF A CORRUPT
-					SYSTEM WHICH WISHES TO OPPRESS AND EXPLOIT… HE IS THAT
-					BROKEN CHILD, SEARCHING THE DARK ALLEYS OF THE HUMAN SOUL TO
-					BRING BALANCE TO THE WORLD.
-				</q>
-			</p>
-
-			<p>
-				<q class="batman-begins">
-					A VIGILANTE IS JUST A MAN LOST IN THE SCRAMBLE FOR HIS OWN
-					GRATIFICATION. HE CAN BE DESTROYED OR LOCKED UP. BUT IF YOU
-					MAKE YOURSELF MORE THAN JUST A MAN, IF YOU DEVOTE YOURSELF
-					TO AN IDEAL, AND IF THEY CAN'T STOP YOU, THEN YOU BECOME
-					SOMETHING ELSE ENTIRELY.
-				</q>
-			</p>
-		</div>
+		<p>
+			<q lang="en">
+				Batman is all of us… He is our rage at injustice… He stands
+				alone, as we all wish we could, in the face of a corrupt system
+				which wishes to oppress and exploit… He is that broken child,
+				searching the dark alleys of the human soul to bring balance to
+				the world.
+			</q>
+		</p>
 	</body>
 </html>
 
