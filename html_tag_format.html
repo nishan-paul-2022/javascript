@@ -6,36 +6,89 @@
 		<title>Document</title>
 		<style>
 			body {
-				margin: 40px;
-				padding: 40px;
-				border: 2px solid black;
-				border-radius: 4px;
-				font-size: 20px;
 				font-family: 'Courier New', Courier, monospace;
+				font-size: large;
+				background-color: #f0f0f0;
 				text-align: center;
+			}
+
+			.container {
+				margin: 20px 300px;
+				padding: 20px;
+				border: 1px solid;
+				border-radius: 10px;
+				background-color: #f9f9f9;
+				text-transform: uppercase;
+			}
+
+			code {
+				background-color: #f4f4f4;
+				padding: 2px 4px;
+				border-radius: 4px;
+			}
+
+			kbd {
+				background-color: #eee;
+				border: 1px solid #ccc;
+				padding: 2px 4px;
+				border-radius: 4px;
+			}
+
+			samp {
+				background-color: #f4f4f4;
+				padding: 2px 4px;
+				border-radius: 4px;
 			}
 		</style>
 	</head>
 
 	<body>
-		<b>1</b>
-		<hr />
+		<h1>HTML Tag : Format</h1>
 
-		<i>2</i>
-		<hr />
+		<div class="container">
+			<p>This is a <b>bold</b> text example.</p>
+			<hr />
 
-		<sub>3</sub>
-		<hr />
+			<p>This is a <strong>strongly emphasized</strong> text example.</p>
+			<hr />
 
-		<sup>4</sup>
-		<hr />
+			<p>This is an <i>italicized</i> text example.</p>
+			<hr />
 
-		<del>5</del>
-		<hr />
+			<p>This text has been <ins>inserted</ins> into the document.</p>
+			<hr />
 
-		<ins>6</ins>
-		<hr />
+			<p>This text has been <del>deleted</del> from the document.</p>
+			<hr />
 
-		<small>7</small>
+			<p>This is a <small>smaller text</small> example.</p>
+			<hr />
+
+			<p>Chemical formula for water: H<sub>2</sub>O</p>
+			<hr />
+
+			<p>Einstein's famous equation: E = mc<sup>2</sup></p>
+			<hr />
+
+			<p>This is an example of inline <code>code</code> element.</p>
+			<hr />
+
+			<p>
+				To save your work, press <kbd>Ctrl</kbd> + <kbd>S</kbd> on your
+				keyboard.
+			</p>
+			<hr />
+
+			<p>
+				Mathematical equation: <var>x</var> + <var>y</var> =
+				<var>z</var>
+			</p>
+			<hr />
+
+			<p>
+				Sample output from a computer program:
+				<samp>Hello, World!</samp>
+			</p>
+		</div>
 	</body>
 </html>
