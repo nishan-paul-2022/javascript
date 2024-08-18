@@ -5,101 +5,73 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
-			:root {
-				font-family: Arial, sans-serif;
-			}
-
 			body {
-				background-color: #f4f4f9;
+				font-family: 'Courier New', Courier, monospace;
+				text-align: center;
 				color: #333;
-				margin: 0;
-				padding: 20px;
+				background-color: #f0f0f0;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				justify-content: center;
 			}
 
-			h1 {
-				text-align: center;
-				color: #4caf50;
-				margin-bottom: 40px;
-			}
-
-			.iframe-container {
-				width: 100%;
-				max-width: 800px;
-				background-color: #fff;
+			.container {
+				width: 800px;
+				margin: 10px;
 				padding: 20px;
+				background-color: #fff;
+				box-shadow: 0 0 5px;
 				border-radius: 10px;
-				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-				margin-bottom: 20px;
 			}
 
-			.iframe-container iframe {
+			.container iframe {
 				width: 100%;
-				height: 315px;
+				height: 300px;
 				border: none;
-				border-radius: 8px;
-				margin-bottom: 10px;
-			}
-
-			.iframe-container:last-child {
-				margin-bottom: 0;
-			}
-
-			.iframe-container h2 {
-				font-size: 1.2em;
-				color: #555;
-				margin-top: 0;
-				margin-bottom: 10px;
 			}
 		</style>
 	</head>
 
 	<body>
-		<h1>Embedding Content Example</h1>
+		<h1>HTML Tag : IFrame</h1>
 
-		<div class="iframe-container">
-			<h2>Embedding a Video</h2>
+		<div class="container">
+			<h2>Embedding Video</h2>
 			<iframe
-				src="https://www.youtube.com/embed/2g811Eo7K8U"
+				src="https://www.youtube.com/embed/Cg1CStyHiz0"
 				title="YouTube video player"
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 				allowfullscreen>
 			</iframe>
 		</div>
-		<hr />
 
-		<div class="iframe-container">
-			<h2>Embedding a Map</h2>
+		<div class="container">
+			<h2>Embedding Map</h2>
 			<iframe
 				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.464432304397!2d-73.98542838429004!3d40.7488176793289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258f46d73b22f%3A0xe9d2cb92bde994c9!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1569213310805!5m2!1sen!2sus"
 				allowfullscreen>
 			</iframe>
 		</div>
-		<hr />
 
-		<div class="iframe-container">
+		<div class="container">
 			<h2>Embedding Facebook Post</h2>
 			<iframe
-				src="https://www.facebook.com/plugins/post.php?href=https://www.facebook.com/ashikurrahman.rupom.12/posts/4069523656608366&show_text=true&width=552"
+				src="https://www.facebook.com/plugins/post.php?href=https://www.facebook.com/nishanpaul2014/posts/3867825403502960"
 				allowfullscreen="true"
 				allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
 			</iframe>
 		</div>
-		<hr />
 
-		<div class="iframe-container">
+		<div class="container">
 			<h2>Embedding External Web Content</h2>
 			<iframe src="https://www.wikipedia.org/" allowfullscreen></iframe>
 		</div>
-		<hr />
 
-		<div class="iframe-container">
-			<h2>Embedding an Instagram Reel</h2>
+		<div class="container">
+			<h2>Embedding Instagram Reel</h2>
 			<iframe
-				src="https://www.instagram.com/reel/C7bN4N9IDpq/embed"
+				src="https://www.instagram.com/reel/C7q5MBdymH0/embed"
 				allowfullscreen>
 			</iframe>
 		</div>
