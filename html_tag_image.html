@@ -4,43 +4,91 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<link rel="shortcut icon" href="./favicon.png" type="image/x-icon" />
 		<style>
 			body {
-				margin: 20px;
-				padding: 20px;
+				font-family: 'Courier New', Courier, monospace;
+				text-align: center;
+			}
+
+			.container {
+				margin: 10px;
+				padding: 10px;
 				display: flex;
-				align-items: center;
 				justify-content: center;
+				align-items: center;
+			}
+
+			.img-container {
+				width: 30vw;
+				margin: 10px;
+				padding: 10px;
+				box-shadow: 0 0 5px;
+				border-radius: 10px;
+			}
+
+			img {
+				width: 100%;
 			}
 
 			figcaption {
-				margin-top: 10px;
 				font:
-					normal bold normal 12px/1.5 'Courier New',
+					normal bold normal 15px/2 'Courier New',
 					Courier,
 					monospace;
-				text-align: center;
 			}
 		</style>
 	</head>
 
 	<body>
-		<img
-			src="https://picsum.photos/400/300?random=1"
-			alt="random"
-			height="250px"
-			width="250px" />
+		<h1>HTML Tag : Image</h1>
 
-		<figure>
-			<img src="https://picsum.photos/400/300?random=1" alt="random" />
-			<figcaption>random</figcaption>
-		</figure>
+		<div class="container">
+			<div class="img-container">
+				<figure>
+					<img
+						src="https://placehold.co/400x300/aqua/white/png?text=HELLO+SIR&font=courier"
+						alt="placeholder image" />
+					<figcaption>Placeholder</figcaption>
+				</figure>
+			</div>
 
-		<figure>
-			<img
-				src="https://placehold.co/250x250/aqua/white/png?text=Hello+World&font=roboto"
-				alt="placeholder" />
-			<figcaption>placeholder</figcaption>
-		</figure>
+			<div class="img-container">
+				<figure>
+					<img
+						src="https://picsum.photos/400/300?random=1"
+						alt="random image" />
+					<figcaption>Random</figcaption>
+				</figure>
+			</div>
+
+			<div class="img-container">
+				<figure>
+					<picture>
+						<source
+							media="(min-width:900px)"
+							srcset="https://picsum.photos/400/300?random=2" />
+
+						<source
+							media="(min-width: 600px)"
+							srcset="https://picsum.photos/400/300?random=3" />
+
+						<img
+							src="https://picsum.photos/400/300?random=4"
+							alt="random" />
+					</picture>
+					<figcaption>Random</figcaption>
+				</figure>
+			</div>
+		</div>
+
+		<script>
+			const images = document.getElementsByTagName('img');
+			for (const i of images) {
+				i.addEventListener('error', (event) => {
+					event.target.src = './favicon.png';
+				});
+			}
+		</script>
 	</body>
 </html>
