@@ -5,16 +5,21 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
-			html {
-				padding: 20px;
+			body {
+				font-family: 'Courier New', Courier, monospace;
+				background-color: #f0f0f0;
+				text-align: center;
 			}
 
-			body {
-				width: 50%;
-				margin: auto;
-				padding: 10px;
-				border: 1px solid black;
-				text-align: center;
+			.container {
+				margin: 20px 300px;
+				padding: 20px;
+				font-family: 'Courier New', Courier, monospace;
+				font-size: large;
+				background-color: #fff;
+				text-transform: uppercase;
+				box-shadow: 0 0 5px;
+				border-radius: 5px;
 			}
 
 			p {
@@ -24,28 +29,28 @@
 		</style>
 	</head>
 	<body>
-		<div>
-			<h1>Paragraph</h1>
+		<h1>HTML Tag : Paragraph</h1>
 
+		<div class="container">
 			<div>
 				Paragraph is a block-element.
 				<hr />
-				Unlike other block-elements, it doesn't support both inline and
-				block.
+
+				Unlike other block-elements, paragraph doesn't support both
+				inline and block.
 				<hr />
-				It supports only inline.
+
+				Paragraph supports only inline.
 				<hr />
+
 				Using block element inside paragraph leads to unpredictable
 				rendering.
 				<hr />
+
 				So, it is semantically incorrect.
-				<hr />
 			</div>
 
-			<p>
-				This is a paragraph with an <span>inline element</span> inside
-				it.
-			</p>
+			<p>This is a paragraph with an <q>inline element</q> inside it.</p>
 
 			<!-- <p>This is a paragraph incorrectly containing a <div>block element</div> inside it.</p> -->
 		</div>
