@@ -5,16 +5,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
-			:root {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				min-height: 100vh;
-				margin: 0;
-				background-color: #f4f4f9;
+			body {
+				font-family: 'Courier New', Courier, monospace;
+				background-color: #f0f0f0;
+				text-align: center;
 			}
 
-			.table-container {
+			.container {
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -49,7 +46,9 @@
 	</head>
 
 	<body>
-		<div class="table-container">
+		<h1>HTML Tag : Table</h1>
+
+		<div class="container">
 			<table>
 				<caption>
 					Table Caption
@@ -57,7 +56,7 @@
 
 				<colgroup>
 					<col span="2" />
-					<col span="2" style="background-color: #00ff00" />
+					<col span="2" style="background-color: lightgreen" />
 				</colgroup>
 
 				<thead>
