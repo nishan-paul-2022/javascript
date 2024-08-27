@@ -5,26 +5,26 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
+			/* apply border-box globally for better box model handling */
+			*,
+			*::before,
+			*::after {
+				box-sizing: border-box;
+			}
+
 			body {
+				font-family: 'Courier New', Courier, monospace;
 				background-color: #f0f0f0;
+				text-align: center;
 			}
 
 			.container {
 				margin: 10px 300px;
 				padding: 10px 40px;
 				border-radius: 10px;
-				font-family: 'Courier New', Courier, monospace;
 				font-size: x-large;
-				background-color: #ffffff;
-				text-align: center;
+				background-color: #fff;
 				text-transform: uppercase;
-			}
-
-			/* apply border-box globally for better box model handling */
-			*,
-			*::before,
-			*::after {
-				box-sizing: border-box;
 			}
 
 			/* common styles for all boxes */
@@ -58,9 +58,9 @@
 	</head>
 
 	<body>
-		<div class="container">
-			<h1>CSS Box Sizing Example</h1>
+		<h1>CSS Property : Box Sizing</h1>
 
+		<div class="container">
 			<div class="box content-box">Content Box</div>
 			<div class="box border-box">Border Box</div>
 			<div class="box inherit-box">Inherit Box</div>
