@@ -24,7 +24,7 @@
 			h1 {
 				text-align: center;
 			}
-			
+
 			.inline {
 				display: inline;
 			}
@@ -40,10 +40,10 @@
 			.inline,
 			.inline-block,
 			.block {
-				margin: 2px;
-				padding: 5px;
 				width: 100px;
 				height: 100px;
+				margin: 2px;
+				padding: 5px;
 				border: 1px solid blue;
 				background-color: yellow;
 			}
@@ -56,27 +56,28 @@
 		<div class="container">
 			<h2>display: inline</h2>
 			<div>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-				consequat scelerisque elit sit amet consequat. Aliquam erat
-				volutpat. <span class="inline">Aliquam</span>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				Vestibulum consequat scelerisque elit sit amet consequat.
+				Aliquam erat volutpat. <span class="inline">Aliquam</span>
 				<span class="inline">venenatis</span> gravida nisl sit amet
 				facilisis. Nullam cursus fermentum velit sed laoreet.
 			</div>
 
 			<h2>display: inline-block</h2>
 			<div>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-				consequat scelerisque elit sit amet consequat. Aliquam erat
-				volutpat. <span class="inline-block">Aliquam</span>
-				<span class="inline-block">venenatis</span> gravida nisl sit amet
-				facilisis. Nullam cursus fermentum velit sed laoreet.
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				Vestibulum consequat scelerisque elit sit amet consequat.
+				Aliquam erat volutpat.
+				<span class="inline-block">Aliquam</span>
+				<span class="inline-block">venenatis</span> gravida nisl sit
+				amet facilisis. Nullam cursus fermentum velit sed laoreet.
 			</div>
 
 			<h2>display: block</h2>
 			<div>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-				consequat scelerisque elit sit amet consequat. Aliquam erat
-				volutpat. <span class="block">Aliquam</span>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				Vestibulum consequat scelerisque elit sit amet consequat.
+				Aliquam erat volutpat. <span class="block">Aliquam</span>
 				<span class="block">venenatis</span> gravida nisl sit amet
 				facilisis. Nullam cursus fermentum velit sed laoreet.
 			</div>
@@ -85,28 +86,28 @@
 </html>
 
 <!--
-	# display		: inline  | block  | inline-block | contents | none | flex | grid | inline-flex | inline-grid
-	# visibility	: visible | hidden | collapse
+# display		: inline  | block  | inline-block | contents | none | flex | grid | inline-flex | inline-grid
+# visibility	: visible | hidden | collapse
 
-	- display		: none 		| hide and remove
-	- visibility	: hidden 	| hide and not remove
-	- visibility	: collapse	| hide and remove
+- display		: none 		| hide and remove
+- visibility	: hidden 	| hide and not remove
+- visibility	: collapse	| hide and remove
 
-	# visibility in table element : can only use 'collapse' to hide
-	# visibility in other element : can only use 'hidden' to hide
+# visibility in table element : can only use 'collapse' to hide
+# visibility in other element : can only use 'hidden' to hide
 
-	- inside inline-element 	  : can't use block-element
-	- inside block-element        : can use both block-element and inline-element
-	- exception	(paragraph)		  : can't use block-element
+- inside inline-element 	  : can't use block-element
+- inside block-element        : can use both block-element and inline-element
+- exception	(paragraph)		  : can't use block-element
 
-	# block-element  : starts on a new line and takes up the full width available
-	# inline-element : doesn't start on a new line and only takes up as much width as necessary
+# block-element  : starts on a new line and takes up the full width available
+# inline-element : doesn't start on a new line and only takes up as much width as necessary
 
-	- block supports 		  	  : height, width, margin, padding
-	- inline-block supports 	  : height, width, margin, padding
-	- inline supports 	          : margin (horizontal), padding (horizontal)
+- block supports 		  	  : height, width, margin, padding
+- inline-block supports 	  : height, width, margin, padding
+- inline supports 	          : margin (horizontal), padding (horizontal)
 
-	[
-	Changing display property of an element only changes how the element is displayed, not semantic rules.
-	So, an inline-element with display: block, is not allowed to have block-element inside. ]
+[
+Changing display property of an element only changes how the element is displayed, not semantic rules.
+So, an inline-element with display: block, is not allowed to have block-element inside. ]
 -->
