@@ -6,17 +6,23 @@
 		<title>Document</title>
 		<style>
 			body {
-				margin: 10px 100px;
-				padding: 10px;
 				font-family: 'Courier New', Courier, monospace;
 				font-size: small;
-				border: 1px solid black;
-				border-radius: 10px;
 				background-color: #f0f0f0;
 			}
 
 			h1 {
 				text-align: center;
+			}
+
+			.container {
+				margin: 10px 100px;
+				padding: 10px;
+				font-family: 'Courier New', Courier, monospace;
+				font-size: small;
+				box-shadow: 0 0 5px;
+				border-radius: 5px;
+				background-color: #fff;
 			}
 
 			.inline {
@@ -47,31 +53,33 @@
 	<body>
 		<h1>CSS Property : Display 01</h1>
 
-		<h2>display: inline</h2>
-		<div>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-			consequat scelerisque elit sit amet consequat. Aliquam erat
-			volutpat. <span class="inline">Aliquam</span>
-			<span class="inline">venenatis</span> gravida nisl sit amet
-			facilisis. Nullam cursus fermentum velit sed laoreet.
-		</div>
+		<div class="container">
+			<h2>display: inline</h2>
+			<div>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+				consequat scelerisque elit sit amet consequat. Aliquam erat
+				volutpat. <span class="inline">Aliquam</span>
+				<span class="inline">venenatis</span> gravida nisl sit amet
+				facilisis. Nullam cursus fermentum velit sed laoreet.
+			</div>
 
-		<h2>display: inline-block</h2>
-		<div>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-			consequat scelerisque elit sit amet consequat. Aliquam erat
-			volutpat. <span class="inline-block">Aliquam</span>
-			<span class="inline-block">venenatis</span> gravida nisl sit amet
-			facilisis. Nullam cursus fermentum velit sed laoreet.
-		</div>
+			<h2>display: inline-block</h2>
+			<div>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+				consequat scelerisque elit sit amet consequat. Aliquam erat
+				volutpat. <span class="inline-block">Aliquam</span>
+				<span class="inline-block">venenatis</span> gravida nisl sit amet
+				facilisis. Nullam cursus fermentum velit sed laoreet.
+			</div>
 
-		<h2>display: block</h2>
-		<div>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-			consequat scelerisque elit sit amet consequat. Aliquam erat
-			volutpat. <span class="block">Aliquam</span>
-			<span class="block">venenatis</span> gravida nisl sit amet
-			facilisis. Nullam cursus fermentum velit sed laoreet.
+			<h2>display: block</h2>
+			<div>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+				consequat scelerisque elit sit amet consequat. Aliquam erat
+				volutpat. <span class="block">Aliquam</span>
+				<span class="block">venenatis</span> gravida nisl sit amet
+				facilisis. Nullam cursus fermentum velit sed laoreet.
+			</div>
 		</div>
 	</body>
 </html>

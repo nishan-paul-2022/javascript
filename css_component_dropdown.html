@@ -9,6 +9,19 @@
 				margin: 1vw;
 				padding: 1vw;
 				font-family: 'Courier New', Courier, monospace;
+				background-color: #f0f0f0;
+			}
+
+			h1 {
+				text-align: center;
+			}
+
+			.container {
+				margin: 10px 20px;
+				padding: 50px 10px;
+				box-shadow: 0 0 5px;
+				border-radius: 10px;
+				background-color: #fff;
 			}
 
 			.navbar {
@@ -90,65 +103,71 @@
 	</head>
 
 	<body>
-		<ul class="navbar">
-			<li class="navbar__item">
-				<a
-					class="navbar__link"
-					href="https://picsum.photos/400/300?random=1">
-					Home
-				</a>
-			</li>
+		<h1>CSS Component : Dropdown</h1>
 
-			<li class="navbar__item">
-				<a
-					class="navbar__link"
-					href="https://picsum.photos/400/300?random=2">
-					News
-				</a>
-			</li>
+		<div class="container">
+			<ul class="navbar">
+				<li class="navbar__item">
+					<a
+						class="navbar__link"
+						href="https://picsum.photos/400/300?random=1">
+						Home
+					</a>
+				</li>
 
-			<li class="navbar__item">
-				<a class="navbar__link" href="javascript:void(0)">Dropdown</a>
-				<div class="dropdown">
+				<li class="navbar__item">
 					<a
-						class="dropdown__link"
-						href="https://picsum.photos/400/300?random=3">
-						Link 1
+						class="navbar__link"
+						href="https://picsum.photos/400/300?random=2">
+						News
 					</a>
-					<a
-						class="dropdown__link"
-						href="https://picsum.photos/400/300?random=4">
-						Link 2
-					</a>
-					<a
-						class="dropdown__link"
-						href="https://picsum.photos/400/300?random=5">
-						Link 3
-					</a>
-				</div>
-			</li>
+				</li>
 
-			<li class="navbar__item">
-				<img
-					class="navbar__image"
-					src="https://picsum.photos/400/300?random=6"
-					alt="random" />
-				<div class="dropdown">
+				<li class="navbar__item">
+					<a class="navbar__link" href="javascript:void(0)"
+						>Dropdown</a
+					>
+					<div class="dropdown">
+						<a
+							class="dropdown__link"
+							href="https://picsum.photos/400/300?random=3">
+							Link 1
+						</a>
+						<a
+							class="dropdown__link"
+							href="https://picsum.photos/400/300?random=4">
+							Link 2
+						</a>
+						<a
+							class="dropdown__link"
+							href="https://picsum.photos/400/300?random=5">
+							Link 3
+						</a>
+					</div>
+				</li>
+
+				<li class="navbar__item">
 					<img
-						class="dropdown__image"
-						src="https://picsum.photos/400/300?random=7"
+						class="navbar__image"
+						src="https://picsum.photos/400/300?random=6"
 						alt="random" />
-					<div class="dropdown__content">Random</div>
-				</div>
-			</li>
+					<div class="dropdown">
+						<img
+							class="dropdown__image"
+							src="https://picsum.photos/400/300?random=7"
+							alt="random" />
+						<div class="dropdown__content">Random</div>
+					</div>
+				</li>
 
-			<li class="navbar__item navbar__item--last">
-				<a
-					class="navbar__link"
-					href="https://picsum.photos/400/300?random=8">
-					Rules
-				</a>
-			</li>
-		</ul>
+				<li class="navbar__item navbar__item--last">
+					<a
+						class="navbar__link"
+						href="https://picsum.photos/400/300?random=8">
+						Rules
+					</a>
+				</li>
+			</ul>
+		</div>
 	</body>
 </html>
