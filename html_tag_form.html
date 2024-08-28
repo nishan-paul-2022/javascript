@@ -16,8 +16,8 @@
 			.container {
 				margin: 20px 350px;
 				padding: 20px;
-				border-radius: 8px;
-				box-shadow: 0 2px 5px;
+				box-shadow: 0 0 5px;
+				border-radius: 5px;
 				color: #333;
 				background-color: #fff;
 				display: flex;
@@ -36,23 +36,23 @@
 			}
 
 			fieldset {
-				border: 1px solid black;
-				border-radius: 8px;
-				padding: 20px;
-				flex: 1 1 calc(50% - 40px);
 				box-sizing: border-box;
+				padding: 20px;
+				border: 1px solid black;
+				border-radius: 10px;
+				flex: 1 1 calc(50% - 40px);
 			}
 
 			legend {
+				padding: 0 10px;
 				font-size: 1.2em;
 				font-weight: bold;
-				padding: 0 10px;
 			}
 
 			label {
-				display: block;
 				margin-top: 10px;
 				font-weight: bold;
+				display: block;
 			}
 
 			input,
@@ -64,12 +64,12 @@
 			input,
 			select,
 			textarea {
-				display: block;
 				width: calc(100% - 22px);
 				margin: 5px 0 10px 0;
 				padding: 10px;
 				border: 1px solid #ddd;
 				border-radius: 4px;
+				display: block;
 			}
 
 			input[type='search'] {
@@ -88,11 +88,11 @@
 			input[type='submit'],
 			input[type='reset'],
 			input[type='button'] {
-				background-color: #007bff;
-				color: white;
-				cursor: pointer;
-				border: none;
 				padding: 10px 20px;
+				border: none;
+				color: white;
+				background-color: #007bff;
+				cursor: pointer;
 			}
 
 			input[type='submit']:hover,
