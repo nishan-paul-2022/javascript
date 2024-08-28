@@ -28,18 +28,18 @@
 
 			/* style top navigation bar */
 			.top-nav {
-				overflow: hidden;
 				background-color: #333;
+				overflow: hidden;
 			}
 
 			/* style topnav links */
 			.top-nav a {
-				float: left;
-				display: block;
-				color: #f2f2f2;
-				text-align: center;
 				padding: 14px 16px;
+				text-align: center;
 				text-decoration: none;
+				color: #f2f2f2;
+				display: block;
+				float: left;
 			}
 
 			.top-nav a:last-child {
@@ -48,8 +48,8 @@
 
 			/* change color on hover */
 			.top-nav a:hover {
-				background-color: #ddd;
 				color: black;
+				background-color: #ddd;
 			}
 
 			/* left column */
@@ -65,33 +65,33 @@
 
 			.left-column,
 			.right-column {
-				float: left;
 				background-color: #f1f1f1;
+				float: left;
 			}
 
-			/* fake image */
-			.fake-image {
-				background-color: #aaa;
+			/* demo image */
+			.demo-img {
 				width: 100%;
 				padding: 20px;
+				background-color: #aaa;
 			}
 
 			/* add a card effect for articles */
 			.card {
-				background-color: white;
 				padding: 20px;
 				margin-top: 20px;
+				background-color: white;
 			}
 
-			.left-column > .card > .fake-image {
+			.left-column > .card > .demo-img {
 				height: 200px;
 			}
 
-			.right-column > .card:first-child > .fake-image {
+			.right-column > .card:first-child > .demo-img {
 				height: 150px;
 			}
 
-			.right-column > .card:nth-child(2) > .fake-image:not(:first-child) {
+			.right-column > .card:nth-child(2) > .demo-img:not(:first-child) {
 				margin-top: 10px;
 			}
 
@@ -104,27 +104,27 @@
 
 			/* footer */
 			.footer {
+				margin-top: 20px;
 				padding: 20px;
 				text-align: center;
 				background: #ddd;
-				margin-top: 20px;
 			}
 
 			/* responsive layout - when screen is less than 800px wide, columns stack on top of each other instead of next to each other */
 			@media screen and (max-width: 800px) {
 				.left-column,
 				.right-column {
-					float: none;
 					width: 100%;
 					padding: 0;
+					float: none;
 				}
 			}
 
 			/* responsive layout - when screen is less than 400px wide, navigation links stack on top of each other instead of next to each other */
 			@media screen and (max-width: 400px) {
 				.top-nav a {
-					float: none;
 					width: 100%;
+					float: none;
 				}
 			}
 		</style>
@@ -147,7 +147,7 @@
 				<div class="card">
 					<h2>TITLE HEADING</h2>
 					<h5>Title description, Dec 7, 2017</h5>
-					<div class="fake-image">Image</div>
+					<div class="demo-img">Image</div>
 					<p>Some text..</p>
 					<p>
 						Sunt in culpa qui officia deserunt mollit anim id est
@@ -160,7 +160,7 @@
 				<div class="card">
 					<h2>TITLE HEADING</h2>
 					<h5>Title description, Sep 2, 2017</h5>
-					<div class="fake-image">Image</div>
+					<div class="demo-img">Image</div>
 					<p>Some text..</p>
 					<p>
 						Sunt in culpa qui officia deserunt mollit anim id est
@@ -174,7 +174,7 @@
 			<div class="right-column">
 				<div class="card">
 					<h2>About Me</h2>
-					<div class="fake-image">Image</div>
+					<div class="demo-img">Image</div>
 					<p>
 						Some text about me in culpa qui officia deserunt mollit
 						anim..
@@ -183,13 +183,13 @@
 
 				<div class="card">
 					<h3>Popular Post</h3>
-					<div class="fake-image">
+					<div class="demo-img">
 						<p>Image</p>
 					</div>
-					<div class="fake-image">
+					<div class="demo-img">
 						<p>Image</p>
 					</div>
-					<div class="fake-image">
+					<div class="demo-img">
 						<p>Image</p>
 					</div>
 				</div>
