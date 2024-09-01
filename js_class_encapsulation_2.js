@@ -1,4 +1,4 @@
-class Profile {
+class UserProfile {
 	#name;
 	#age;
 	#height;
@@ -29,19 +29,25 @@ class Profile {
 	}
 
 	fullBio() {
-		console.log(this.#ID, this.#name, this.#age, this.#height);
+		console.log(
+			this.#ID,
+			this.#name,
+			this.#age,
+			this.#height,
+			this.#weight
+		);
 	}
 }
 
-const user = new Profile('Logan', 27, 5.5, 57);
-
 function F01() {
+	const user = new UserProfile('Logan', 27, 5.5, 57);
 	user.currentAge = 35;
 	console.log(user.currentAge);
 	user.fullBio();
 }
 
 function F02() {
+	const user = new UserProfile('Logan', 27, 5.5, 57);
 	user.currentWeight = 70;
 	console.log(user.currentWeight);
 	user.fullBio();
