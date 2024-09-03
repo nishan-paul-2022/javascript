@@ -13,7 +13,7 @@ const engine = {
 	}
 };
 
-function CachingDecorator(callback) {
+function cachingDecorator(callback) {
 	const cache = new Map();
 
 	function random(...values) {
@@ -33,7 +33,11 @@ function CachingDecorator(callback) {
 	return random;
 }
 
-engine.createNewValues = CachingDecorator(engine.createNewValues); // now make it cached
-console.log(engine.createNewValues(2)); // do calculate
-console.log(engine.createNewValues(2, 3)); // do calculate
-console.log(engine.createNewValues(2, 3)); // don't calculate (cached)
+function Usecase() {
+	engine.createNewValues = cachingDecorator(engine.createNewValues); // now make it cached
+	console.log(engine.createNewValues(2)); // do calculate
+	console.log(engine.createNewValues(2, 3)); // do calculate
+	console.log(engine.createNewValues(2, 3)); // don't calculate (cached)
+}
+
+Usecase();

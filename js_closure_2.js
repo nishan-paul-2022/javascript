@@ -1,69 +1,54 @@
-function F01() {
-	function firstName(fname) {
-		const lastName = function (lname) {
-			const fullName = `${fname} ${lname}`;
-			console.log(fullName);
-		};
-		return lastName;
-	}
-
-	const lastName = firstName('Logan');
-	lastName('Paul');
-	lastName('Das');
+function Add(x, y) {
+	console.log(x + y);
 }
 
-function F02() {
-	function IntegrationConstant(c) {
-		function Add(x, y) {
-			const ans = x + y;
-			console.log(ans + c);
-		}
-
-		function Sub(x, y) {
-			const ans = x - y;
-			console.log(ans + c);
-		}
-
-		function Mul(x, y) {
-			const ans = x * y;
-			console.log(ans + c);
-		}
-
-		function Div(x, y) {
-			const ans = x / y;
-			console.log(ans + c);
-		}
-
-		const arithmetic = {
-			Add: Add,
-			Sub: Sub,
-			Mul: Mul,
-			Div: Div
-		};
-
-		return arithmetic;
-	}
-
-	const arithmetic = IntegrationConstant(10);
-
-	arithmetic.Add(15, 25);
-	arithmetic.Sub(15, 25);
-	arithmetic.Mul(15, 25);
-	arithmetic.Div(15, 25);
+function EnhanceAddFunction(z) {
+	const AddWithDefault = function (x) {
+		Add(x, z);
+	};
+	return AddWithDefault;
 }
 
-function F03() {
+function firstName(fname) {
+	const lastName = function (lname) {
+		const fullName = `${fname} ${lname}`;
+		console.log(fullName);
+	};
+	return lastName;
+}
+
+function IntegrationConstant(c) {
 	function Add(x, y) {
-		console.log(x + y);
+		const ans = x + y;
+		console.log(ans + c);
 	}
 
-	function EnhanceAddFunction(z) {
-		const AddWithDefault = function (x) {
-			Add(x, z);
-		};
-		return AddWithDefault;
+	function Sub(x, y) {
+		const ans = x - y;
+		console.log(ans + c);
 	}
 
+	function Mul(x, y) {
+		const ans = x * y;
+		console.log(ans + c);
+	}
+
+	function Div(x, y) {
+		const ans = x / y;
+		console.log(ans + c);
+	}
+
+	const arithmetic = {
+		Add,
+		Sub,
+		Mul,
+		Div
+	};
+
+	return arithmetic;
+}
+
+function Usecase01() {
 	const AddWithPI = EnhanceAddFunction(Math.PI);
 	const AddWithE = EnhanceAddFunction(Math.E);
 	const AddWithRandom = EnhanceAddFunction(Math.random());
@@ -73,8 +58,22 @@ function F03() {
 	AddWithRandom(10);
 }
 
-F01();
-F02();
-F03();
+function Usecase02() {
+	const lastName = firstName('Logan');
+	lastName('Paul');
+	lastName('Chowdhury');
+}
+
+function Usecase03() {
+	const arithmetic = IntegrationConstant(10);
+	arithmetic.Add(15, 25);
+	arithmetic.Sub(15, 25);
+	arithmetic.Mul(15, 25);
+	arithmetic.Div(15, 25);
+}
+
+Usecase01();
+Usecase02();
+Usecase03();
 
 /* predefined behaviour */

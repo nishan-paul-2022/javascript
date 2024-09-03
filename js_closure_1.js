@@ -22,18 +22,18 @@ const H = (function () {
 	return I;
 })();
 
-function F01() {
+function Usecase01() {
 	const G = F();
 	G();
 	G();
 	G();
 }
 
-function F02() {
+function Usecase02() {
 	H();
 	H();
 	H();
 }
 
-F01();
-F02();
+Usecase01();
+Usecase02();

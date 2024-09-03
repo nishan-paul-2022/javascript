@@ -1,4 +1,4 @@
-function F01() {
+function Usecase01() {
 	function makeNewEngine(callback) {
 		const array = [];
 
@@ -29,7 +29,7 @@ function F01() {
 	});
 }
 
-function F02() {
+function Usecase02() {
 	function delay(callback) {
 		function wrapper(message, ms) {
 			setTimeout(callback, ms, message);
@@ -41,5 +41,5 @@ function F02() {
 	delayLog('hello, sir!', 3000); // logs "test" after 1000ms
 }
 
-F01();
-F02();
+Usecase01();
+Usecase02();
