@@ -4,30 +4,46 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<style>
+			* {
+				font-family: 'Courier New', Courier, monospace;
+			}
+
+			body {
+				text-align: center;
+			}
+
+			button {
+				margin: 10px;
+				padding: 10px 20px;
+				font-size: 16px;
+				cursor: pointer;
+			}
+		</style>
 	</head>
 
 	<body>
-		<h2>History API</h2>
+		<h1>BOM : History</h1>
 
-		<button onclick="myFunction1()">Back</button>
-		<button onclick="myFunction2()">Forward</button>
-		<button onclick="myFunction3()">Go Back 2 Pages</button>
-		<button onclick="myFunction4()">Go Forward 2 Pages</button>
+		<button onclick="back01()">Back</button>
+		<button onclick="forward01()">Forward</button>
+		<button onclick="back02()">Go Back 2 Pages</button>
+		<button onclick="forward02()">Go Forward 2 Pages</button>
 
 		<script>
-			function myFunction1() {
+			function back01() {
 				window.history.back();
 			}
 
-			function myFunction2() {
+			function forward01() {
 				window.history.forward();
 			}
 
-			function myFunction3() {
+			function back02() {
 				window.history.go(-2);
 			}
 
-			function myFunction4() {
+			function forward02() {
 				window.history.go(2);
 			}
 
