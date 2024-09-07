@@ -1,20 +1,20 @@
-async function holdMyBear() {
-	const promise = new Promise((SetResolve, SetReject) => {
+async function engine() {
+	const promise = new Promise((resolve, reject) => {
 		try {
 			setTimeout(() => {
-				console.log('have patience');
-				SetResolve('success');
+				console.log('patience');
+				resolve('success');
 			}, 5000);
 		} catch (error) {
 			const message = error.message;
 			console.log(message);
-			SetReject(message);
+			reject(message);
 		}
 	});
 	return promise;
 }
 
-function F01() {
+function Usecase01() {
 	function debounce(callback, ms) {
 		let timer;
 		function wrapper(message) {
@@ -38,7 +38,7 @@ function F01() {
 	debounceLog('d');
 }
 
-async function F02() {
+async function Usecase02() {
 	function throttle(callback, ms) {
 		let text = null;
 		let isThrottled = false;
@@ -68,16 +68,16 @@ async function F02() {
 	throttleLog('a');
 	throttleLog('b');
 	throttleLog('c');
-	await holdMyBear();
+	await engine();
 
 	throttleLog('d');
 	throttleLog('e');
-	await holdMyBear();
+	await engine();
 
 	throttleLog('f');
 	throttleLog('g');
 	throttleLog('h');
 }
 
-F01();
-F02();
+Usecase01();
+Usecase02();

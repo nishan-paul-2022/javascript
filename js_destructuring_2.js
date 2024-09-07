@@ -1,5 +1,5 @@
 // destructuring with alias and default value
-function F01() {
+function Usecase01() {
 	const object = { ID: 1, name: 'paul', city: 'Dhaka' };
 
 	const {
@@ -15,14 +15,14 @@ function F01() {
 	console.log(address);
 }
 
-function F02() {
+function Usecase02() {
 	const object = { i: undefined, j: null };
 	const { i: undef, j: nul } = object;
 	console.log(undef);
 	console.log(nul);
 }
 
-function F03() {
+function Usecase03() {
 	const object = {
 		a: 1,
 		b: 2,
@@ -40,7 +40,7 @@ function F03() {
 	console.log(a, b, c, d, e, f);
 }
 
-function F04() {
+function Usecase04() {
 	const object = {
 		a: 1,
 		b: {
@@ -72,7 +72,7 @@ function F04() {
 }
 
 // computed property name : using literal as peoperty name
-function F05() {
+function Usecase05() {
 	const key = 'success';
 	const isBatman = 'is-Batman';
 
@@ -107,8 +107,8 @@ function F05() {
 	Antman();
 }
 
-F01();
-F02();
-F03();
-F04();
-F05();
+Usecase01();
+Usecase02();
+Usecase03();
+Usecase04();
+Usecase05();

@@ -1,4 +1,4 @@
-function F01() {
+function Usecase01() {
 	const x = 1,
 		y = 2,
 		z = 3;
@@ -9,7 +9,7 @@ function F01() {
 	return object;
 }
 
-function F02() {
+function Usecase02() {
 	const object = {
 		x: 1,
 		y: 2,
@@ -21,7 +21,7 @@ function F02() {
 	console.log(z);
 }
 
-function F03() {
+function Usecase03() {
 	let m = 10,
 		n = 20;
 	[n, m] = [m, n]; // array destrcuturing
@@ -33,7 +33,7 @@ function F03() {
 	console.log(array);
 }
 
-function F04() {
+function Usecase04() {
 	const array1 = [1, 2, 3, 4, 5];
 	const [i, j, k] = array1; // array destrcuturing usign array literal
 	console.log(`${i} ${j} ${k}`);
@@ -53,7 +53,7 @@ function F04() {
 	console.log(address);
 }
 
-function F05() {
+function Usecase05() {
 	const array = [1, 2, 3, 4, 5];
 	const [_x1, _x2, _x3, ...values] = array;
 	console.log(values);
@@ -65,7 +65,7 @@ function F05() {
 	});
 }
 
-function F06() {
+function Usecase06() {
 	const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 	const [_x1, _x2, ...values] = array;
 	console.log(values);
@@ -74,22 +74,14 @@ function F06() {
 	console.log(length);
 }
 
-F01();
-F02();
-F03();
-F04();
-F05();
-F06();
+Usecase01();
+Usecase02();
+Usecase03();
+Usecase04();
+Usecase05();
+Usecase06();
 
 /*	
-string is not mutable, but reassignable
-indexing / natural
-member access / square bracket notation using string | dot notation using identifier
-container / value
-identifier / literal or object
-OBJECT - MEMBER ( PROPERTY | METHOD )
-MEMBER - KEY : VALUE
-KEY : identifier | literal | variable
-
-shorthand property name is a syntactic sugar
-computed property name is a syntactic feature */
+- string is immutable, but reassignable
+- shorthand property name is a syntactic sugar
+- computed property name is a syntactic feature */
