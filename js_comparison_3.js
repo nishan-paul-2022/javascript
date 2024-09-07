@@ -1,14 +1,5 @@
 /* eslint-disable eqeqeq */
 
-function SymbolAndSymbolComparison() {
-	const uid1 = Symbol('id');
-	const uid2 = Symbol('id');
-	const uid3 = uid1;
-	console.log(uid1 == uid2);
-	console.log(uid1 == uid3);
-	console.log(uid1 === uid3);
-}
-
 function StringAndStringComparison() {
 	const str1 = 'hello';
 	const str2 = 'hello';
@@ -18,6 +9,28 @@ function StringAndStringComparison() {
 	console.log(str1 === str3);
 	console.log(str1 == str4);
 	console.log(str1 === str4);
+}
+
+function NumberAndNummberComparison() {
+	const num1 = 1;
+	const num2 = 1;
+	const num3 = num1;
+	const num4 = new Number(1);
+	console.log(num1 === num2);
+	console.log(num1 === num3);
+	console.log(num1 == num4);
+	console.log(num1 === num4);
+}
+
+function BooleanAndBooleanComparison() {
+	const bool1 = true;
+	const bool2 = true;
+	const bool3 = bool1;
+	const bool4 = new Boolean(true);
+	console.log(bool1 === bool2);
+	console.log(bool1 === bool3);
+	console.log(bool1 == bool4);
+	console.log(bool1 === bool4);
 }
 
 function ArrayAndArrayComparison() {
@@ -42,7 +55,8 @@ function ObjectAndObjectComparison() {
 	console.log(obj1 === obj4);
 }
 
-SymbolAndSymbolComparison();
 StringAndStringComparison();
+NumberAndNummberComparison();
+BooleanAndBooleanComparison();
 ArrayAndArrayComparison();
 ObjectAndObjectComparison();
