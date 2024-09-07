@@ -4,21 +4,42 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<style>
+			* {
+				font-family: 'Courier New', Courier, monospace;
+			}
+
+			body {
+				text-align: center;
+			}
+
+			button {
+				margin: 10px;
+				padding: 10px 20px;
+				font-size: 16px;
+				cursor: pointer;
+			}
+		</style>
 	</head>
 
 	<body>
+		<h1>BOM : Navigator</h1>
+		
+		<button onclick="load()">Get Current System Info</button>
+
 		<script>
-			// Navigator properties
-			console.log('App Version: ', navigator.appVersion); // deprecated
-			console.log('App Name: ', navigator.appName); // deprecated
-			console.log('App Code Name: ', navigator.appCodeName); // deprecated
-			console.log('Product Name of Browser Engine: ', navigator.product); // deprecated
-			console.log('Cookies Enabled: ', navigator.cookieEnabled);
-			console.log('Platform: ', navigator.platform);
-			console.log('User Agent: ', navigator.userAgent);
-			console.log('Language: ', navigator.language);
-			console.log('Online Status: ', navigator.onLine);
-			console.log('Java Enabled: ', navigator.javaEnabled());
+			function load() {
+				console.log('App Version: ', navigator.appVersion); // deprecated
+				console.log('App Name: ', navigator.appName); // deprecated
+				console.log('App Code Name: ', navigator.appCodeName); // deprecated
+				console.log('Product Name of Browser Engine: ', navigator.product); // deprecated
+				console.log('Cookies Enabled: ', navigator.cookieEnabled);
+				console.log('Platform: ', navigator.platform);
+				console.log('User Agent: ', navigator.userAgent);
+				console.log('Language: ', navigator.language);
+				console.log('Online Status: ', navigator.onLine);
+				console.log('Java Enabled: ', navigator.javaEnabled());
+			}
 		</script>
 	</body>
 </html>

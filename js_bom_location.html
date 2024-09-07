@@ -4,11 +4,35 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<style>
+			* {
+				font-family: 'Courier New', Courier, monospace;
+			}
+
+			body {
+				text-align: center;
+			}
+
+			button {
+				margin: 10px;
+				padding: 10px 20px;
+				font-size: 16px;
+				cursor: pointer;
+			}
+		</style>
 	</head>
 
 	<body>
+		<h1>BOM : Location</h1>
+
+		<button onclick="load()">Load New Document</button>
+
 		<script>
-			// Location properties and methods
+			// load a new document (navigate to a new URL)
+			function load() {
+				location.assign('https://www.example.com');
+			}
+
 			console.log('Current URL: ', location.href);
 			console.log('Domain Name: ', location.hostname);
 			console.log('Path and Filename: ', location.pathname);

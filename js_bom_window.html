@@ -5,13 +5,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
-			body {
-				font-family: Arial, sans-serif;
-				text-align: center;
+			* {
+				font-family: 'Courier New', Courier, monospace;
 			}
 
-			.container {
-				margin-top: 50px;
+			body {
+				text-align: center;
 			}
 
 			button {
@@ -24,6 +23,8 @@
 	</head>
 
 	<body>
+		<h1>BOM : Window</h1>
+
 		<p>
 			Inner Width of Browser Window: <span id="innerWidth"></span> pixels
 		</p>
@@ -44,13 +45,15 @@
 		</div>
 
 		<script>
-			// Inner height and width of browser window
+			// inner width of browser window
 			document.getElementById('innerWidth').textContent =
 				window.innerWidth;
+
+			// inner height browser window
 			document.getElementById('innerHeight').textContent =
 				window.innerHeight;
 
-			// Open a new window
+			// open a new window
 			function openWindow() {
 				window.open(
 					'https://www.example.com',
@@ -59,45 +62,43 @@
 				);
 			}
 
-			// Close the current window
+			// close the current window
 			function closeWindow() {
 				window.close();
 			}
 
-			// Move the current window to coordinates (100, 100)
+			// move the current window to coordinates (100, 100)
 			function moveWindow() {
 				window.moveTo(100, 100);
 			}
 
-			// Resize the current window to width 400 and height 300
+			// resize the current window to width 400 and height 300
 			function resizeWindow() {
 				window.resizeTo(400, 300);
 			}
 
-			// Show an alert dialog
+			// show an alert dialog
 			function showAlert() {
-				window.alert('This is an alert message!');
+				window.alert('alert message');
 			}
 
-			// Show a confirmation dialog
+			// show a confirmation dialog
 			function showConfirm() {
-				const result = window.confirm(
-					'Are you sure you want to proceed?'
-				);
+				const result = window.confirm('you want to proceed?');
 				if (result) {
-					console.log('User clicked OK');
+					console.log('user clicked OK');
 				} else {
-					console.log('User clicked Cancel');
+					console.log('user clicked Cancel');
 				}
 			}
 
-			// Show a prompt dialog
+			// show a prompt dialog
 			function showPrompt() {
-				const input = window.prompt('Please enter your name:');
+				const input = window.prompt('please enter your name:');
 				if (input) {
-					console.log('User entered:', input);
+					console.log('user entered:', input);
 				} else {
-					console.log('User cancelled the prompt');
+					console.log('user cancelled the prompt');
 				}
 			}
 		</script>

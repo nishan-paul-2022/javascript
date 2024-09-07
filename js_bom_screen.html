@@ -5,13 +5,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
-			body {
-				font-family: Arial, sans-serif;
-				text-align: center;
+			* {
+				font-family: 'Courier New', Courier, monospace;
 			}
 
-			.container {
-				margin-top: 50px;
+			body {
+				text-align: center;
 			}
 
 			button {
@@ -24,13 +23,12 @@
 	</head>
 
 	<body>
-		<div class="container">
-			<button onclick="screenSize()">Screen Size</button>
-		</div>
+		<h1>BOM : Screen</h1>
+
+		<button onclick="screenInfo()">Get Current Screen Info</button>
 
 		<script>
-			// Screen properties
-			function screenSize() {
+			function screenInfo() {
 				console.log('Screen Width: ', screen.width);
 				console.log('Screen Height: ', screen.height);
 				console.log('Available Screen Width: ', screen.availWidth);

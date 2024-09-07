@@ -4,19 +4,26 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<style>
+			body {
+				font-family: 'Courier New', Courier, monospace;
+				text-align: center;
+			}
+		</style>
 	</head>
 
 	<body>
-		<h2>Storage API</h2>
+		<h1>BOM : Storage</h1>
 
 		<p id="demo1"></p>
 		<p id="demo2"></p>
 
 		<script>
-			localStorage.setItem('firstName', 'John');
-			sessionStorage.setItem('lastName', 'Wick');
+			localStorage.setItem('firstName', 'TOM');
 			document.getElementById('demo1').innerHTML =
 				localStorage.getItem('firstName');
+
+			sessionStorage.setItem('lastName', 'CRUISE');
 			document.getElementById('demo2').innerHTML =
 				sessionStorage.getItem('lastName');
 
