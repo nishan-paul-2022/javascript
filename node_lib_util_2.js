@@ -22,7 +22,7 @@ function PromiseBasedFunction(arg1, arg2) {
 }
 
 function CallbackExecute(callbackified) {
-	callbackified('./zmax.html', 'utf-8', (error, data) => {
+	callbackified('./sample.txt', 'utf-8', (error, data) => {
 		if (error) {
 			console.error(error);
 		} else {
@@ -32,7 +32,7 @@ function CallbackExecute(callbackified) {
 }
 
 function PromiseExecute1(promisifiedFunction) {
-	promisifiedFunction('./zmax.html', 'utf-8')
+	promisifiedFunction('./sample.txt', 'utf-8')
 		.then((resolve) => {
 			console.log(resolve);
 		})
@@ -43,7 +43,7 @@ function PromiseExecute1(promisifiedFunction) {
 
 async function PromiseExecute2(promisifiedFunction) {
 	try {
-		const resolve = await promisifiedFunction('./zmax.html', 'utf-8');
+		const resolve = await promisifiedFunction('./sample.txt', 'utf-8');
 		console.log(resolve);
 	} catch (reject) {
 		console.log(reject);

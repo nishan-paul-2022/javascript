@@ -4,7 +4,7 @@ const mailAuthentication = {
 	service: 'gmail',
 	auth: {
 		user: 'nishanpaul12011996se@gmail.com',
-		pass: 'nzmnqerwruwzudco' // app-password, not regular password
+		pass: 'nzmnqerwruwzudco' // app password, not regular password
 	}
 };
 
@@ -12,8 +12,8 @@ const mailOptions = {
 	from: 'nishanpaul12011996se@gmail.com',
 	to: 'np007mlf@gmail.com, udntnomeyt@gmail.com',
 	subject: 'sending email using node.js',
-	html: '<div>hello, <b>Batman</b></div>'
-	// text: 'hello, Batman'
+	html: '<div>hello, <b>Paul</b></div>'
+	// text: 'hello, Paul'
 };
 
 const callback = (error, info) => {

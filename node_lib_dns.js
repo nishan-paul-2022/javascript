@@ -50,7 +50,7 @@ function reverse() {
 	});
 }
 
-/*-----new-chapter-01-----*/
+/*--- new-chapter-01 ---*/
 
 // Resolves a hostname to an array of resource records based on the query type (rrtype).
 function resolve() {
@@ -82,7 +82,7 @@ function resolve6() {
 	});
 }
 
-/*-----new-chapter-02-----*/
+/*--- new-chapter-02 ---*/
 
 // Resolves a hostname to an array of mail exchange records.
 function resolveMx() {
@@ -134,7 +134,7 @@ function resolveCname() {
 	});
 }
 
-/*-----new-chapter-03-----*/
+/*--- new-chapter-03 ---*/
 
 // Resolves a hostname to an array of service records.
 function resolveSrv() {
