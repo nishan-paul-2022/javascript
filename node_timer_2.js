@@ -1,10 +1,10 @@
 import {
-	setTimeout as setTimeoutPro,
-	setImmediate as setImmediatePro,
-	setInterval as setIntervalPro
+	setTimeout as timeout,
+	setImmediate as immediate,
+	setInterval as interval
 } from 'timers/promises';
 
-function* setIntervalProGenerator(interval, value) {
+function* intervalGenerator(interval, value) {
 	while (1) {
 		yield new Promise((resolve) => {
 			setTimeout(() => {
@@ -14,7 +14,7 @@ function* setIntervalProGenerator(interval, value) {
 	}
 }
 
-function setIntervalProIterator01(interval, value) {
+function intervalIterator01(interval, value) {
 	return {
 		next: () => {
 			return new Promise((resolve) => {
@@ -37,7 +37,7 @@ function setIntervalProIterator01(interval, value) {
 	};
 }
 
-function setIntervalProIterator02(interval, value) {
+function intervalIterator02(interval, value) {
 	return {
 		next: function () {
 			return this[Symbol.iterator]().next().value;
@@ -61,20 +61,22 @@ function setIntervalProIterator02(interval, value) {
 }
 
 async function AsyncSetImmediate() {
-	const value = await setImmediatePro('asynchronous immediate');
+	const value = await immediate('asynchronous immediate');
 	console.log(value);
 }
 
 async function AsyncSetTimeout() {
-	const value = await setTimeoutPro(3000, 'asynchronous timeout');
+	const value = await timeout(3000, 'asynchronous timeout');
 	console.log(value);
 }
 
 async function AsyncSetInterval01() {
-	const iterator = setIntervalPro(1000, Date.now());
+	const iterator = interval(1000, Date.now());
+
 	console.log(iterator);
 	console.log(iterator.next());
 	console.log(await iterator.next());
+
 	for await (const value of iterator) {
 		const currentTime = Date.now();
 		if (currentTime - value > 6000) {
@@ -85,9 +87,11 @@ async function AsyncSetInterval01() {
 }
 
 async function AsyncSetInterval02() {
-	const iterator = setIntervalProGenerator(1000, Date.now());
+	const iterator = intervalGenerator(1000, Date.now());
+
 	console.log(iterator);
 	console.log(iterator.next());
+
 	for await (const value of iterator) {
 		const currentTime = Date.now();
 		if (currentTime - value > 6000) {
@@ -98,10 +102,12 @@ async function AsyncSetInterval02() {
 }
 
 async function AsyncSetInterval03() {
-	const iterator = setIntervalProIterator01(1000, Date.now());
+	const iterator = intervalIterator01(1000, Date.now());
+
 	console.log(iterator);
 	console.log(iterator.next());
 	console.log(await iterator.next());
+
 	for await (const value of iterator) {
 		const currentTime = Date.now();
 		if (currentTime - value > 6000) {
@@ -112,10 +118,12 @@ async function AsyncSetInterval03() {
 }
 
 async function AsyncSetInterval04() {
-	const iterator = setIntervalProIterator02(1000, Date.now());
+	const iterator = intervalIterator02(1000, Date.now());
+
 	console.log(iterator);
 	console.log(iterator.next());
 	console.log(await iterator.next());
+
 	for await (const value of iterator) {
 		const currentTime = Date.now();
 		if (currentTime - value > 6000) {
@@ -126,7 +134,9 @@ async function AsyncSetInterval04() {
 }
 
 await AsyncSetImmediate();
+
 await AsyncSetTimeout();
+
 await AsyncSetInterval01();
 await AsyncSetInterval02();
 await AsyncSetInterval03();

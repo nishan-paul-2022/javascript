@@ -1,6 +1,6 @@
 import {
-	setImmediate as setImmediatePro,
-	setTimeout as setTimeoutPro
+	setImmediate as immediate,
+	setTimeout as timeout
 } from 'timers/promises';
 
 function RegularTimer01() {
@@ -27,6 +27,7 @@ function RegularTimer01() {
 
 function RegularTimer02() {
 	const array = [1, 2, 3, 4, 5];
+
 	array.equation = function (n) {
 		if (n >= 0 && n < this.length) {
 			console.log(this[n]);
@@ -40,17 +41,17 @@ function RegularTimer02() {
 }
 
 async function Immediate() {
-	const msg = await setImmediatePro('promise / immediate');
+	const msg = await immediate('promise / immediate');
 	console.log(msg);
 }
 
 async function Timeout01() {
-	const msg = await setTimeoutPro(3000, 'peomise / timeout');
+	const msg = await timeout(3000, 'peomise / timeout');
 	console.log(msg);
 }
 
 function Timeout02() {
-	setTimeoutPro(5000, 'foobar')
+	timeout(5000, 'foobar')
 		.then(console.log)
 		.catch((err) => {
 			console.error(err.name);
@@ -61,7 +62,7 @@ function Timeout03() {
 	const controller = new AbortController();
 	const signal = controller.signal;
 
-	setTimeoutPro(5000, 'TIMEOUT 03', { signal })
+	timeout(5000, 'TIMEOUT 03', { signal })
 		.then(console.log)
 		.catch((err) => {
 			console.error(err.name);
@@ -75,7 +76,9 @@ function Timeout03() {
 
 RegularTimer01();
 RegularTimer02();
+
 Immediate();
+
 Timeout01();
 Timeout02();
 Timeout03();

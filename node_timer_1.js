@@ -16,16 +16,17 @@ function Usecase01() {
 	const id1 = setTimeout(greeting1, 1000);
 	const id2 = setInterval(greeting2, 1000);
 	const id3 = setImmediate(greeting3);
+
 	clearTimeout(id1);
 	clearInterval(id2);
 	clearImmediate(id3);
 }
 
-// Simulating an I/O operation (e.g. reading a file)
+// simulating an I/O operation (e.g. reading a file)
 function Usecase02() {
 	console.log('START');
 
-	fs.readFile('./zmax.html', 'utf8', (error, data) => {
+	fs.readFile('./sample.txt', 'utf8', (error, data) => {
 		setTimeout(() => {
 			console.log('TIMEOUT 01');
 		}, 0);
@@ -120,6 +121,6 @@ Usecase03();
 Usecase04();
 
 /*
-precedence : 
-	- Immediate 
-	- TimeOut and Interval */
+precedence of timer : 
+- Immediate 
+- TimeOut and Interval */
