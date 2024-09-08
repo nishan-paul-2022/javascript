@@ -68,7 +68,7 @@ function Example() {
 				value: 'i-am-vengeance'
 			}
 		});
-		regular._password = 'fear-is-a-Tool';
+		regular._password = 'fear-is-a-tool';
 		console.log(regular._password);
 		delete regular._password;
 	} catch (error) {
