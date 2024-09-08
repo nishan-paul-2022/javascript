@@ -2,7 +2,7 @@
 
 const result = Math.abs(Math.round(1));
 
-function F01() {
+function Usecase01() {
 	switch (result) {
 		case 1:
 			console.log('HELLO 1');
@@ -32,7 +32,7 @@ function F01() {
 	}
 }
 
-function F02() {
+function Usecase02() {
 	if (result >= 1 && result <= 3) {
 		console.log('value: 1-3');
 	} else if (result === 4) {
@@ -48,5 +48,5 @@ function F02() {
 	}
 }
 
-F01();
-F02();
+Usecase01();
+Usecase02();

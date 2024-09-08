@@ -6,7 +6,7 @@ const value = {
 	age: 1
 };
 
-// This is equivalent to `value.name = "FINLAND"`.
+/* equivalent to `value.name = "FINLAND"` */
 with (value) {
 	name = 'FINLAND';
 }

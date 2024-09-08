@@ -1,4 +1,4 @@
-function case1() {
+function Usecase01() {
 	function F(x, y) {
 		console.log('regular function');
 		const z = x + y;
@@ -12,7 +12,7 @@ function case1() {
 	console.log(F.toString());
 }
 
-function case2() {
+function Usecase02() {
 	function F(x, y) {
 		console.log('constructor function');
 
@@ -36,7 +36,7 @@ function case2() {
 	instance.print();
 }
 
-function case3() {
+function Usecase03() {
 	const F = new Function(
 		'x',
 		'y',
@@ -51,7 +51,7 @@ function case3() {
 	console.log(value);
 }
 
-function case4() {
+function Usecase04() {
 	const F = (x, y) => {
 		console.log('arrow function expression');
 		const z = x + y;
@@ -63,7 +63,7 @@ function case4() {
 	console.log(value);
 }
 
-function case5() {
+function Usecase05() {
 	const F = function (x, y) {
 		console.log('anonymous function expression');
 		const z = x + y;
@@ -75,7 +75,7 @@ function case5() {
 	console.log(value);
 }
 
-function case6() {
+function Usecase06() {
 	const F = function useless(x, y) {
 		console.log('named function expression');
 		const z = x + y;
@@ -88,7 +88,7 @@ function case6() {
 	// useless(); /* invalid */
 }
 
-function case7() {
+function Usecase07() {
 	function F(x, y) {
 		const z = (function () {
 			console.log('self invoking anonymous function expression');
@@ -104,40 +104,40 @@ function case7() {
 	console.log(value);
 }
 
-case1();
-case2();
-case3();
-case4();
-case5();
-case6();
-case7();
+Usecase01();
+Usecase02();
+Usecase03();
+Usecase04();
+Usecase05();
+Usecase06();
+Usecase07();
 
 /* 
-	function : function signature and function implementation
+function : function signature and function implementation
 
-	- function expression / not reusable 
-		:: anonymous function expression 
-		:: arrow function expression 
-		:: named function expression 
+- function expression / not reusable 
+	:: anonymous function expression 
+	:: arrow function expression 
+	:: named function expression 
 
-	- function declaration / reusable 
-		:: regular function 
-		:: constructor function 
-		:: constructor 
-		:: static / non-static method 
-		:: static / non-static accessor (getter / setter) 
-		:: function object 
-		:: function variable 
+- function declaration / reusable 
+	:: regular function 
+	:: constructor function 
+	:: constructor 
+	:: static / non-static method 
+	:: static / non-static accessor (getter / setter) 
+	:: function object 
+	:: function variable 
 
-	@ recursive function : function calling function itself
+@ recursive function : function calling function itself
 
-	@ nested function / closure : function within function 
-		# main concept behind closure : child function can access all members of parent function
-		:: static member
-		:: data encapsulation
-		:: predefined beahviour of function
-		:: memorization
-		:: currying 
+@ nested function / closure : function within function 
+	# main concept behind closure : child function can access all members of parent function
+	:: static member
+	:: data encapsulation
+	:: predefined beahviour of function
+	:: memorization
+	:: currying 
 
-	@ nested function-calling : funtion calling function 
-		:: callback hell : callback within callback */
+@ nested function-calling : funtion calling function 
+	:: callback hell : callback within callback */

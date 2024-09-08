@@ -42,7 +42,7 @@ function User(name, birthday) {
 	});
 }
 
-function TestCase01() {
+function Usecase01() {
 	const person = new Person('Logan', 'Paul');
 
 	console.log(person.fullName);
@@ -55,7 +55,7 @@ function TestCase01() {
 	console.log(person.fullName);
 }
 
-function TestCase02() {
+function Usecase02() {
 	const user = new User('John', new Date(1992, 6, 1));
 
 	console.log(user.name);
@@ -63,13 +63,13 @@ function TestCase02() {
 	console.log(user.age);
 }
 
-TestCase01();
-TestCase02();
+Usecase01();
+Usecase02();
 
 /*
-# after we make an object non-configuarable, 
+after we make an object non-configuarable, 
 	- we can change the value of writable from true to false (not vice-versa)
 	- we can't change the value of enumerable  
 	- we can't change the value of configuarable
 
-# writable is not relevant for accessor */
+writable is irrelevant for accessor */

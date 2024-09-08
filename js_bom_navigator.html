@@ -24,7 +24,7 @@
 
 	<body>
 		<h1>BOM : Navigator</h1>
-		
+
 		<button onclick="load()">Get Current System Info</button>
 
 		<script>
@@ -32,7 +32,10 @@
 				console.log('App Version: ', navigator.appVersion); // deprecated
 				console.log('App Name: ', navigator.appName); // deprecated
 				console.log('App Code Name: ', navigator.appCodeName); // deprecated
-				console.log('Product Name of Browser Engine: ', navigator.product); // deprecated
+				console.log(
+					'Product Name of Browser Engine: ',
+					navigator.product
+				); // deprecated
 				console.log('Cookies Enabled: ', navigator.cookieEnabled);
 				console.log('Platform: ', navigator.platform);
 				console.log('User Agent: ', navigator.userAgent);

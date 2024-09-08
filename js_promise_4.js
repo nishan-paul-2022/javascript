@@ -30,45 +30,39 @@ async function SettlePromise(flag) {
 	}
 }
 
-function Promise_Example_01() {
-	console.log('Promise_Example_01');
+function Usecase01() {
 	const promise = CreatePromise(1);
 	promise.then(GetResolve, GetReject);
 }
 
-async function Promise_Example_02() {
-	console.log('Promise_Example_02');
+async function Usecase02() {
 	const promise = CreatePromise(2);
 	promise.then(GetResolve, GetReject);
 }
 
-function Promise_Example_03() {
-	console.log('Promise_Example_03');
+function Usecase03() {
 	const promise = SettlePromise(3);
 	promise.then(GetResolve, GetReject);
 }
 
-function Promise_Example_04() {
-	console.log('Promise_Example_04');
+function Usecase04() {
 	const promise = SettlePromise(4);
 	promise.then(GetResolve, GetReject);
 }
 
-function Promise_Example_05() {
-	console.log('Promise_Example_05');
+function Usecase05() {
 	const promise = SettlePromise(5);
 	promise.then(GetResolve).catch(GetReject);
 }
 
-function Promise_Example_06() {
-	console.log('Promise_Example_06');
+function Usecase06() {
 	const promise = SettlePromise(6);
 	promise.then(GetResolve).catch(GetReject);
 }
 
-Promise_Example_01();
-Promise_Example_02();
-Promise_Example_03();
-Promise_Example_04();
-Promise_Example_05();
-Promise_Example_06();
+Usecase01();
+Usecase02();
+Usecase03();
+Usecase04();
+Usecase05();
+Usecase06();

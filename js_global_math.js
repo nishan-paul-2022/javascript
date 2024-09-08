@@ -1,4 +1,3 @@
-// Properties
 function MathProperty() {
 	console.log('Math Properties:', {
 		E: Math.E,
@@ -12,7 +11,6 @@ function MathProperty() {
 	});
 }
 
-// Methods
 function MathMethod() {
 	console.log('Math Methods:', {
 		Sin: Math.sin(Math.PI / 2),

@@ -117,5 +117,4 @@ await Usecase05();
 - Promise.all() 		// all resolved
 - Promise.any() 		// any resolved
 - Promise.allSettled() 	// all settled
-- Promise.race() 		// any settled
-*/
+- Promise.race() 		// any settled */

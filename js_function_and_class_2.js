@@ -17,6 +17,8 @@ FunctionAndClass.method = () => {
 	console.log('make me proud son');
 };
 
+FunctionAndClass.code = '007';
+
 function Usecase01() {
 	const value = FunctionAndClass('hello, sir');
 	console.log(value);
@@ -30,6 +32,11 @@ function Usecase02() {
 	value.print();
 }
 
+function Usecase03() {
+	FunctionAndClass.method();
+	console.log(FunctionAndClass.code);
+}
+
 Usecase01();
 Usecase02();
-FunctionAndClass.method();
+Usecase03();

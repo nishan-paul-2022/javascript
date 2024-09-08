@@ -57,4 +57,4 @@ ForInLoop(array);
 ForInLoop(regular1);
 ForInLoop(regular2);
 
-/* iterable-object supports for-of-loop, non-iterable doesn't */
+/* iterable object supports for-of-loop, non-iterable doesn't */

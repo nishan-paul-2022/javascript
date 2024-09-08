@@ -79,15 +79,14 @@ LIST OF KEYWORDS (VALID) :
 	- enum */
 
 /*
-LIST OF KEYWORDS (INVALID) :
+# LIST OF INVALID KEYWORDS :
 	- native	
 	- package, synchronized, transient, volatile
-	- byte, short, int, long, float, double, char */
+	- byte, short, int, long, float, double, char 
 
-/*
-	- function can construct object
-	- method can contribute object
-	- arrow-function can't create object or contribute object
-	- 'this' refers to created-object or contributed-object 
-	- function and method can have 'this'
-	- arrow-function can't have 'this' */
+# function can construct object
+# method can contribute object
+# arrow-function can't create object or contribute object
+# 'this' refers to created-object or contributed-object 
+# function and method can have 'this'
+# arrow-function can't have 'this' */

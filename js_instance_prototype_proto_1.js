@@ -219,63 +219,60 @@ FunctionObjectChain(); // RandomFunction.prototype => Object.prototype
 ClassObjectChain(); // RandomClass.prototype => Object.prototype
 
 /*
-    # CATEGORY OF OBJECT 
+# CATEGORY OF OBJECT 
+	@meta-constructor           : Function 
 
-        @meta-constructor           : Function 
+	@mid-constructor 
+	regular-constructor         : Object
+	special-constructor			: String, Number, Boolean, BigInt, Symbol, Array, RegExp, Date ...
+	defined-constructor    		: class, function ...
 
-        @mid-constructor 
-        regular-constructor         : Object
-        special-constructor			: String, Number, Boolean, BigInt, Symbol, Array, RegExp, Date ...
-        defined-constructor    		: class, function ...
+	@end-object 
+	regular-object              : [ using regular-constructor ]
+	special-object          	: [ using special-constructor ]
+	defined-object         		: [ using defined-constructor ]
 
-        @end-object 
-        regular-object              : [ using regular-constructor ]
-        special-object          	: [ using special-constructor ]
-        defined-object         		: [ using defined-constructor ]
+# prototype [ prototype of child ]  
+	- auto-set using built-in regular-object 
+	- read-only, so manual-set is invalid
+	- Object.prototype is an exception, cause __proto__ is null
 
-    # prototype [ prototype of child ]  
-        - auto-set using built-in regular-object 
-		- read-only, so manual-set is invalid
-        - Object.prototype is an exception, cause __proto__ is null
+# __proto__ [ prototype of own ]
+	- auto-set using constructor.prototype
+	- not read-only, so manual-set is valid
+	- manual-set can be done using any object
 
-    # __proto__ [ prototype of own ]
-        - auto-set using constructor.prototype
-		- not read-only, so manual-set is valid
-        - manual-set can be done using any object
+# prototype, __proto__ and __proto__ chain [ by default ]
+	@meta-constructor
+	prototype   : Function.prototype
+	__proto__   : Function.prototype
+	chain       : Function.prototype => Object.prototype
 
-    # prototype, __proto__ and __proto__ chain [ by default ]
+	@mid-constructor 
+	prototype   : mid-constructor.prototype 
+	__proto__   : Function.prototype
+	chain       : Function.prototype => Object.prototype
 
-        @meta-constructor
-        prototype   : Function.prototype
-        __proto__   : Function.prototype
-        chain       : Function.prototype => Object.prototype
+	@end-object 
+	__proto__   : mid-constructor.prototype
+	chain       : mid-constructor.prototype => Object.prototype
 
-        @mid-constructor 
-        prototype   : mid-constructor.prototype 
-        __proto__   : Function.prototype
-        chain       : Function.prototype => Object.prototype
+# Class1 extends Class2  
+	1. Class1.__proto__ = Class2 
+	2. Class1.prototype.__proto__ = Class2.prototype
+	3. Object.defineProperties(Class1.prototype, Object.getOwnPropertyDescriptors(new Class2()))
 
-        @end-object 
-        __proto__   : mid-constructor.prototype
-        chain       : mid-constructor.prototype => Object.prototype
+# constructor property    : which constructor can contain / create the container object
+# typeof operator         : string, number, boolean, bigint, symbol, undefined (primitive) | function, object (reference)
+# instanceof operator     : proto-chain => constructor-chain [ 1st operand is reference and 2nd operand is constructor ]
 
-    # Class1 extends Class2  
-		1. Class1.__proto__ = Class2 
-		2. Class1.prototype.__proto__ = Class2.prototype
-		3. Object.defineProperties(Class1.prototype, Object.getOwnPropertyDescriptors(new Class2()))
-
-    # constructor property    : which constructor can contain / create the container object
-    # typeof operator         : string, number, boolean, bigint, symbol, undefined (primitive) | function, object (reference)
-    # instanceof operator     : proto-chain => constructor-chain [ 1st operand is reference and 2nd operand is constructor ]
-
-    # FOOTNOTE
-		- Function.constructor === Function
-		- Function.prototype === Function.__proto__
-        - constructor.prototype.__proto__ === Object.prototype 
-		- Object.prototype.__proto__ === null
-		- in case of inheritance, __proto__ chain forms and end of chain is always Object.prototype
-        - Object.prototype is the root of everything and Function is the creator of everything
-		- Object.prototype 		: constructor, toString, valueOf [ object ]
-		- Function.prototype	: name, length, prototype, call, apply, bind [ constructor ]
-		- built-in members are non-enumerable
-*/
+# FOOTNOTE
+	- Function.constructor === Function
+	- Function.prototype === Function.__proto__
+	- constructor.prototype.__proto__ === Object.prototype 
+	- Object.prototype.__proto__ === null
+	- in case of inheritance, __proto__ chain forms and end of chain is always Object.prototype
+	- Object.prototype is the root of everything and Function is the creator of everything
+	- Object.prototype 		: constructor, toString, valueOf [ object ]
+	- Function.prototype	: name, length, prototype, call, apply, bind [ constructor ]
+	- built-in members are non-enumerable */

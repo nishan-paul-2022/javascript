@@ -118,7 +118,7 @@ ObjectAndThis();
 - colon assign : instance = { attribute: value }
 - context is represented by 'this' keyword
 - context can be used inside, 
-	: function [ indicating container object ]
-	: method [ indicating container object ]
-	: static method [ indicating container class ]
+	# function [ indicating container object ]
+	# method [ indicating container object ]
+	# static method [ indicating container class ]
 - context can't be used inside arrow-function and arrow-method */

@@ -1,4 +1,4 @@
-class Class1 {
+class Profile1 {
 	constructor(name, age, height, weight) {
 		this.name = name;
 		this.age = age;
@@ -22,7 +22,7 @@ class Class1 {
 	}
 }
 
-function Class2(name, age, height, weight) {
+function Profile2(name, age, height, weight) {
 	this.name = name;
 	this.age = age;
 	this.height = height;
@@ -32,8 +32,8 @@ function Class2(name, age, height, weight) {
 	};
 }
 
-function F01() {
-	const instance = new Class1('paul', 27, 5.5, 57);
+function Usecase01() {
+	const instance = new Profile1('paul', 27, 5.5, 57);
 
 	instance.slogan = {
 		message: 'my life, my rules'
@@ -53,8 +53,8 @@ function F01() {
 	console.log(instance.slogan.message);
 }
 
-function F02() {
-	const instance = new Class2('paul', 27, 5.5, 57);
+function Usecase02() {
+	const instance = new Profile2('paul', 27, 5.5, 57);
 
 	console.log(instance.name);
 	console.log(instance.age);
@@ -63,5 +63,5 @@ function F02() {
 	console.log(instance.slogan.message);
 }
 
-F01();
-F02();
+Usecase01();
+Usecase02();

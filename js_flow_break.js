@@ -1,6 +1,6 @@
 /* eslint-disable no-unreachable */
 
-function F01() {
+function Usecase01() {
 	labelName: {
 		console.log(1);
 		console.log(2);
@@ -11,7 +11,7 @@ function F01() {
 	}
 }
 
-function F02() {
+function Usecase02() {
 	for (let i = 0; i <= 10; i++) {
 		if (i === 5) {
 			break;
@@ -20,7 +20,7 @@ function F02() {
 	}
 }
 
-function F03() {
+function Usecase03() {
 	for (let i = 0; i <= 10; i++) {
 		if (i === 5) {
 			continue;
@@ -29,9 +29,9 @@ function F03() {
 	}
 }
 
-F01();
-F02();
-F03();
+Usecase01();
+Usecase02();
+Usecase03();
 
 /* 
 - break exits loop | switch | scope

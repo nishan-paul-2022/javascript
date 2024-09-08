@@ -118,17 +118,18 @@ Example04();
 Example05();
 
 /* 
-- postfix 
-- prefix 
-- not 
-- unary 
-- arithmatic 
-- shift 
-- relational 
-- comparison
-- bitwise 
-- logical 
-- conditional 
-- assignment
+TYPES OF OPERATOR :
+	- postfix 
+	- prefix 
+	- not 
+	- unary 
+	- arithmatic 
+	- shift 
+	- relational 
+	- comparison
+	- bitwise 
+	- logical 
+	- conditional 
+	- assignment
  
 JS uses 32 bits bitwise-operands */

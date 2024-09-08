@@ -10,7 +10,7 @@
 		<script>
 			'use strict';
 
-			function case1() {
+			function Usecase01() {
 				const inlineJS = `
 					let x = 1, y = 2; 
 					var z = x + y; 
@@ -22,13 +22,12 @@
 
 				eval(inlineJS);
 				/* reference error */
-				/*
-				console.log(x);
-				console.log(z);
-				EvalFunction(); */
+				// console.log(x);
+				// console.log(z);
+				// EvalFunction();
 			}
 
-			function case2() {
+			function Usecase02() {
 				class Class1 {
 					__NID = 0;
 					_balance = 0;
@@ -49,7 +48,7 @@
 				console.log(ins1.GetNID);
 			}
 
-			function case3() {
+			function Usecase03() {
 				class Class2 {
 					constructor(firstName, lastName, age, height, weight) {
 						this.firstName = firstName;
@@ -81,7 +80,7 @@
 				} */
 			}
 
-			function case4() {
+			function Usecase04() {
 				const x = 10;
 				console.log(x);
 				// delete x; /* invalid */
@@ -94,7 +93,7 @@
 				Gotham();
 			}
 
-			function case5() {
+			function Usecase05() {
 				class Class3 {
 					constructor() {
 						(this.name = 'paul'),
@@ -131,7 +130,7 @@
 				console.log(ins4.xyz);
 			}
 
-			function case6() {
+			function Usecase06() {
 				const ins5 = {};
 				Object.defineProperty(ins5, 'name', {
 					value: 'paul',
@@ -156,7 +155,7 @@
 				console.log(ins5.age);
 			}
 
-			function case7() {
+			function Usecase07() {
 				const arr = [11, 22, 33, 44, 55];
 				// delete arr; /* invalid */
 				console.log(arr);
@@ -168,13 +167,13 @@
 				console.log(Math.E);
 			}
 
-			case1();
-			case2();
-			case3();
-			case4();
-			case5();
-			case6();
-			case7();
+			Usecase01();
+			Usecase02();
+			Usecase03();
+			Usecase04();
+			Usecase05();
+			Usecase06();
+			Usecase07();
 
 			/*
 			'use strict' directive is only recognized at the beginning of a regular script or a function

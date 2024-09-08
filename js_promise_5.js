@@ -428,13 +428,15 @@ async function ReturnOfFinally03() {
 
 ReturnOfFunction01();
 ReturnOfFunction02();
+
 ReturnOfThenCatch01();
 ReturnOfThenCatch02();
 ReturnOfThenCatch03();
 ReturnOfThenCatch04();
 ReturnOfThenCatch05();
+
 ReturnOfFinally01();
 ReturnOfFinally02();
 ReturnOfFinally03();
 
-// Unhandled-Promise-Rejection is an error
+/* unhandled-promise-rejection is an error */

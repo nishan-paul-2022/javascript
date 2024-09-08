@@ -38,5 +38,4 @@ await HandleThennable(ReturnPromise);
 
 /*
 - promise is async 
-- every method in promise is async 
-*/
+- every method in promise is async */

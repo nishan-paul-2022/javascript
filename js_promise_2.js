@@ -1,20 +1,20 @@
-function fetchUserData() {
+function FetchUserData() {
 	const promise = new Promise((SetResolve, _SetReject) => {
 		setTimeout(() => {
 			const data = { name: 'John', age: 30 };
 			SetResolve(data);
-			console.log('fetchUserData');
+			console.log('FetchUserData');
 		}, 2000);
 	});
 	return promise;
 }
 
-function fetchProductData() {
+function FetchProductData() {
 	const promise = new Promise((_SetResolve, SetReject) => {
 		setTimeout(() => {
 			const data = { productName: 'Smart Phone', price: 500 };
 			SetReject(data);
-			console.log('fetchProductData');
+			console.log('FetchProductData');
 		}, 4000);
 	});
 	return promise;
@@ -22,19 +22,19 @@ function fetchProductData() {
 
 async function HandleUserData() {
 	try {
-		const userData = await fetchUserData();
+		const userData = await FetchUserData();
 		console.log('User Data:', userData);
 	} catch (error) {
-		console.error('Error fetching data:', error);
+		console.error('Error Fetching Data:', error);
 	}
 }
 
 async function HandleProductData() {
 	try {
-		const productData = await fetchProductData();
+		const productData = await FetchProductData();
 		console.log('Product Data:', productData);
 	} catch (error) {
-		console.error('Error fetching data:', error);
+		console.error('Error Fetching Data:', error);
 	}
 }
 

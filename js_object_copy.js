@@ -149,7 +149,8 @@ CopyByCreate02();
 CopyByCreate03();
 CopyByDefineProperties();
 
-/* OBJECT COPY
+/* 
+MECHANISM TO COPY OBJECT
 
 for-loop-in 				: 	enumerable, 		member, 	own + inherited,	named
 spread, rest, assign, log 	: 	enumerable, 		member, 	own,				named + symbolic
