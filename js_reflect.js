@@ -8,7 +8,7 @@ function RandomFunction(arg1, arg2, arg3) {
 	return arg1 + arg2 + arg3;
 }
 
-function marvel(_x, _y) {
+function Hero(_x, _y) {
 	this.title = 'WinterSoldier';
 	this.location = 'USA';
 }
@@ -104,16 +104,16 @@ function Usecase06() {
 }
 
 function Usecase07() {
-	const userDefined = new marvel();
+	const hero = new Hero();
 
-	Reflect.set(marvel, 'ID', 'Swag'); // marvel.ID = 'Swag'
-	console.log(Reflect.get(marvel, 'name')); // console.log(marvel.name)
-	console.log(Reflect.get(marvel, 'length')); // console.log(marvel.length)
-	console.log(Reflect.get(marvel, 'ID')); // console.log(marvel.ID)
+	Reflect.set(Hero, 'ID', 'Swag'); // Hero.ID = 'Swag'
+	console.log(Reflect.get(Hero, 'name')); // console.log(Hero.name)
+	console.log(Reflect.get(Hero, 'length')); // console.log(Hero.length)
+	console.log(Reflect.get(Hero, 'ID')); // console.log(Hero.ID)
 
-	Reflect.set(userDefined, 'location', 'america'); // userDefined.location = 'america'
-	console.log(Reflect.get(userDefined, 'location')); // console.log(userDefined.location)
-	console.log(Reflect.get(userDefined, 'title')); // console.log(userDefined.title)
+	Reflect.set(hero, 'location', 'america'); // hero.location = 'america'
+	console.log(Reflect.get(hero, 'location')); // console.log(hero.location)
+	console.log(Reflect.get(hero, 'title')); // console.log(hero.title)
 }
 
 Usecase01();
@@ -131,5 +131,4 @@ Reflect.ownKeys(object)
 Reflect.deleteProperty(object, member)
 Reflect.getPrototypeOf(object)
 Reflect.setPrototypeOf(object1, object2)
-Reflect.apply(function, context, array of argument)
-*/
+Reflect.apply(function, context, array of argument) */

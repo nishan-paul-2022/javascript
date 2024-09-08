@@ -1,4 +1,4 @@
-function ExampleImmediate() {
+function ExampleOfImmediate() {
 	console.log(1);
 	console.log(2);
 	console.log(3);
@@ -13,7 +13,7 @@ function ExampleImmediate() {
 	console.log(7);
 }
 
-function ExampleInterval() {
+function ExampleOfInterval() {
 	console.log(1);
 	console.log(2);
 	console.log(3);
@@ -34,7 +34,7 @@ function ExampleInterval() {
 	console.log(7);
 }
 
-function ExampleTimeout() {
+function ExampleOfTimeout() {
 	console.log(1);
 	console.log(2);
 	console.log(3);
@@ -49,6 +49,6 @@ function ExampleTimeout() {
 	console.log(7);
 }
 
-ExampleImmediate(); // immediate invoke
-ExampleInterval(); // interval before repeated invoke
-ExampleTimeout(); // time gap before invoke
+ExampleOfImmediate(); // immediate invoke
+ExampleOfInterval(); // interval before repeated invoke
+ExampleOfTimeout(); // time gap before invoke

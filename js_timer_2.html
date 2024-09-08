@@ -5,11 +5,26 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
+			* {
+				font-family: 'Courier New', Courier, monospace;
+				font-size: xx-large;
+			}
+			
+			body {
+				margin: 50px 400px;
+				text-align: center;
+			}
+
 			.notification {
 				background-color: #f5f5f5;
 				padding: 10px;
 				border: 1px solid #ccc;
 				display: none;
+			}
+
+			button {
+				margin: 10px;
+				cursor: pointer;
 			}
 		</style>
 	</head>
@@ -19,10 +34,10 @@
 			This is a notification message.
 		</div>
 
-		<button onclick="showNotification()">Show Notification</button>
+		<button onclick="notification()">Show Notification</button>
 
 		<script>
-			function showNotification() {
+			function notification() {
 				const notification = document.getElementById('notification');
 				notification.style.display = 'block';
 

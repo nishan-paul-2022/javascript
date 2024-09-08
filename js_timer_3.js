@@ -1,5 +1,5 @@
 function displayNotification(message) {
-	console.log('New Message: ' + message);
+	console.log('New Message: ', message);
 }
 
 let immediateId;

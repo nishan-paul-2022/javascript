@@ -89,7 +89,7 @@
 				console.log(y);
 			}
 
-			// Declaration -> Initilization -> Utilization
+			/* declaration => initilization => utilization */
 			function DIU() {
 				const object = {
 					i: 1,
@@ -111,20 +111,27 @@
 			DIU();
 
 			/*
-			for every declaration, scope defines : visibilitty, accessibility, lifespan
+			scope defines visibilitty, accessibility, lifespan for every declaration
 
 			global scope [ script element in html ]
 			module scope [ document ]
-			local scope [ declaration (class and function) ]
-			block scope [ control flow structure | any independent curly brace pair ]
-			declaration -> initilization -> utilization | let and const follow | var doesn't follow
-			declaration -> utilization | class follows | function doesn't follow
-			var, let, const, function have hositing | class doesn't have hoisting
-			block scope : let, const, class follow | var doesn't follow
-			function : doesn't follow block scope (loose mode) | follows block scope (strict mode)
+			local scope  [ declaration (class and function) ]
+			block scope  [ control flow structure | any independent curly brace pair ]
+
+			declaration => initilization => utilization [ let and const follow | var doesn't follow ]
+			declaration => utilization 					[ class follows | function doesn't follow ]
+
+			- var, let, const, function have hositing
+			- class doesn't have hoisting
+
+			- let, const, class follow block scope 
+			- var doesn't follow block scope 
+
+			- function follows block scope in strict mode
+			- function doesn't follow block scope in loose mode
 
 			property : supports direct utilization (value will be undefined)
-			method : doesn't support direct utilization (needs declaration / intialization first) */
+			method   : doesn't support direct utilization (needs declaration / intialization first) */
 		</script>
 	</body>
 </html>

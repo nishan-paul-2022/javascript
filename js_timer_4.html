@@ -1,58 +1,90 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-	</head>
 
-	<body>
-		<h1>Timeout Delay</h1>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+	<style>
+		* {
+			font-family: 'Courier New', Courier, monospace;
+			font-size: xx-large;
+		}
 
-		<button type="button" id="run">Run</button>
+		body {
+			margin: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
 
-		<table>
-			<thead>
-				<tr>
-					<th>count</th>
-					<th>now</th>
-					<th>delay</th>
-				</tr>
-			</thead>
-			<tbody id="log"></tbody>
-		</table>
+		table {
+			margin-top: 10px;
+			border-collapse: collapse;
+			text-align: center;
+		}
 
-		<script>
-			function ClosureTimer() {
-				let counter = 0;
-				let last = new Date().getMilliseconds();
+		th,
+		td {
+			border: 1px solid black;
+			padding: 5px 10px;
+		}
 
-				function Timer() {
-					const now = new Date().getMilliseconds();
-					const log = document.querySelector('#log');
-					const logRow = log.insertRow();
-					logRow.insertCell().textContent = ++counter;
-					logRow.insertCell().textContent = now;
-					logRow.insertCell().textContent = now - last;
-					last = now;
-					if (counter < 10) {
-						setTimeout(Timer, 0);
-					}
-				}
+		h1 {
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
 
-				return Timer;
-			}
+<body>
+	<h1>Timeout Delay</h1>
 
-			function Run() {
+	<button type="button" id="run">Run</button>
+
+	<table>
+		<thead>
+			<tr>
+				<th>count</th>
+				<th>now</th>
+				<th>delay</th>
+			</tr>
+		</thead>
+		<tbody id="log"></tbody>
+	</table>
+
+	<script>
+		function ClosureTimer() {
+			let counter = 0;
+			let last = new Date().getMilliseconds();
+
+			function Timer() {
+				const now = new Date().getMilliseconds();
 				const log = document.querySelector('#log');
-				while (log.lastElementChild) {
-					log.removeChild(log.lastElementChild);
+				const logRow = log.insertRow();
+				logRow.insertCell().textContent = ++counter;
+				logRow.insertCell().textContent = now;
+				logRow.insertCell().textContent = now - last;
+				last = now;
+				if (counter < 10) {
+					setTimeout(Timer, 0);
 				}
-				const Timer = ClosureTimer();
-				setTimeout(Timer, 0);
 			}
 
-			document.querySelector('#run').addEventListener('click', Run);
-		</script>
-	</body>
+			return Timer;
+		}
+
+		function Run() {
+			const log = document.querySelector('#log');
+			while (log.lastElementChild) {
+				log.removeChild(log.lastElementChild);
+			}
+			const Timer = ClosureTimer();
+			setTimeout(Timer, 0);
+		}
+
+		document.querySelector('#run').addEventListener('click', Run);
+	</script>
+</body>
+
 </html>

@@ -4,16 +4,33 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<style>
+			* {
+				font-family: 'Courier New', Courier, monospace;
+				font-size: xx-large;
+			}
+		
+			body {
+				margin: 50px 200px;
+				padding: 50px;
+				border: 1px solid black;
+				text-align: center;
+			}
+		
+			button {
+				cursor: pointer;
+			}
+		</style>
 	</head>
 
 	<body>
 		<form name="form" id="id01">
 			<input type="text" name="text" id="id02" />
-			<input type="submit" onclick="documentForms()" />
+			<input type="submit" onclick="getFormValue()" />
 		</form>
 
 		<script>
-			function documentForms() {
+			function getFormValue() {
 				const v1 = document.forms[0].children[0].value;
 				const v2 = document.forms[0][0].value;
 				const v3 = document.forms['form'].children['text'].value;
