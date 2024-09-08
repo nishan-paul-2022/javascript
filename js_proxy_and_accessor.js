@@ -1,5 +1,5 @@
 class RandomClass {
-	location = 'gotham';
+	location = 'Gotham';
 
 	getLocation() {
 		return this.location;
@@ -14,7 +14,7 @@ class RandomClass {
 	}
 }
 
-function consoleLog(object) {
+function log(object) {
 	console.log(
 		`
         object.location / ${object.location}, 
@@ -24,48 +24,48 @@ function consoleLog(object) {
 	);
 }
 
-function print1(protoObj) {
-	const endObj = {
-		__proto__: protoObj
+function print1(proto) {
+	const end = {
+		__proto__: proto
 	};
 
-	consoleLog(endObj);
-	endObj.Location = 'dhaka';
-	consoleLog(endObj);
+	log(end);
+	end.Location = 'Dhaka';
+	log(end);
 }
 
-function print2(rootObj, protoObj) {
-	const endObj = {
-		__proto__: protoObj
+function print2(root, proto) {
+	const end = {
+		__proto__: proto
 	};
 
-	endObj.Location = 'dhaka';
-	consoleLog(endObj);
-	consoleLog(rootObj);
+	end.Location = 'Dhaka';
+	log(end);
+	log(root);
 }
 
 function Usecase01() {
-	const rootObj = new RandomClass();
+	const root = new RandomClass();
 
-	const proxyObj1 = new Proxy(rootObj, {
+	const proxy1 = new Proxy(root, {
 		get(target, prop) {
 			return target[prop];
 		}
 	});
 
-	const proxyObj2 = new Proxy(rootObj, {
+	const proxy2 = new Proxy(root, {
 		get(target, prop, receiver) {
 			return Reflect.get(target, prop, receiver);
 		}
 	});
 
-	print1(proxyObj1);
-	print1(proxyObj2);
+	print1(proxy1);
+	print1(proxy2);
 }
 
 function Usecase02() {
-	const rootObj1 = new RandomClass();
-	const proxyObj1 = new Proxy(rootObj1, {
+	const root1 = new RandomClass();
+	const proxy1 = new Proxy(root1, {
 		get: function (target, property, receiver) {
 			return Reflect.get(target, property, receiver);
 		},
@@ -74,8 +74,8 @@ function Usecase02() {
 		}
 	});
 
-	const rootObj2 = new RandomClass();
-	const proxyObj2 = new Proxy(rootObj2, {
+	const root2 = new RandomClass();
+	const proxy2 = new Proxy(root2, {
 		get: function (target, property, receiver) {
 			return Reflect.get(target, property, receiver);
 		},
@@ -84,8 +84,8 @@ function Usecase02() {
 		}
 	});
 
-	print2(rootObj1, proxyObj1);
-	print2(rootObj2, proxyObj2);
+	print2(root1, proxy1);
+	print2(root2, proxy2);
 }
 
 Usecase01();

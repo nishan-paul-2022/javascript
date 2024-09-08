@@ -7,9 +7,9 @@ function delay(callback, ms) {
 	return delayedCallback;
 }
 
-function Usecase01() {
+function Example() {
 	const regular1 = {
-		location: 'dhaka',
+		location: 'Dhaka',
 		method: function (firstName, lastName) {
 			console.log(
 				`Hello, ${firstName} ${lastName} from ${this.location}`
@@ -43,4 +43,4 @@ function Usecase01() {
 	methodProxified3('King', 'SRK');
 }
 
-Usecase01();
+Example();

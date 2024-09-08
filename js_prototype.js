@@ -4,21 +4,21 @@ function FunctionObject(x, y, z) {
 	this.z = z;
 }
 
-function Example01() {
+function Usecase01() {
 	Function.prototype.functionMember = (origin) => {
 		console.log(origin, ': Function.prototype.functionMember');
 	};
 	Array.functionMember('Array');
 }
 
-function Example02() {
+function Usecase02() {
 	Function.prototype.functionMember = (origin) => {
 		console.log(origin, ': Function.prototype.functionMember');
 	};
 	FunctionObject.functionMember('FunctionObject');
 }
 
-function Example03() {
+function Usecase03() {
 	Array.prototype.arrayMember = (origin) => {
 		console.log(origin, ': Array.prototype.arrayMember');
 	};
@@ -26,7 +26,7 @@ function Example03() {
 	arrayObject.arrayMember('arrayObject');
 }
 
-function Example04() {
+function Usecase04() {
 	FunctionObject.prototype.functionObjectMember = function (origin) {
 		console.log(origin, ': FunctionObject.prototype.functionObjectMember');
 	};
@@ -34,15 +34,15 @@ function Example04() {
 	userDefinedObject.functionObjectMember('userDefinedObject');
 }
 
-function Example05() {
+function Usecase05() {
 	const functionObject = function () {};
 	console.log(Object.getOwnPropertyDescriptor(functionObject, 'prototype'));
 	console.log(Object.getOwnPropertyDescriptor(Function, 'prototype'));
 	console.log(Object.getOwnPropertyDescriptor(Array, 'prototype'));
 }
 
-Example01();
-Example02();
-Example03();
-Example04();
-Example05();
+Usecase01();
+Usecase02();
+Usecase03();
+Usecase04();
+Usecase05();

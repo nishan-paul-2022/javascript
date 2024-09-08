@@ -1,35 +1,35 @@
 function RootAndProxy1() {
-	const rootObj = { a: 1 };
-	const proxyObj = new Proxy(rootObj, {});
-	proxyObj.a = 100;
-	console.log(rootObj.a);
-	console.log(rootObj === proxyObj);
+	const root = { a: 1 };
+	const proxy = new Proxy(root, {});
+	proxy.a = 100;
+	console.log(root.a);
+	console.log(root === proxy);
 }
 
 function RootAndProxy2() {
-	const rootObj = {
+	const root = {
 		a: 1,
 		print() {
 			console.log(this.a);
 		}
 	};
-	const proxyObj = new Proxy(rootObj, {});
-	proxyObj.print();
+	const proxy = new Proxy(root, {});
+	proxy.print();
 }
 
 function RootAndProxy3() {
-	const rootObj = {
+	const root = {
 		a: 1,
 		print() {
 			console.log(this.a);
 		}
 	};
-	const proxyObj = new Proxy(rootObj, {
+	const proxy = new Proxy(root, {
 		get(target, prop) {
 			return target[prop];
 		}
 	});
-	proxyObj.print();
+	proxy.print();
 }
 
 RootAndProxy1();

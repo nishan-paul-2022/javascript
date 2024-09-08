@@ -43,7 +43,6 @@ Object.setPrototypeOf(parent, grandparent);
 Object.setPrototypeOf(child, parent);
 
 function Usecase01() {
-	console.log('\n use case 01 :');
 	console.log("'origin' in child :", 'origin' in child);
 	console.log("'identity' in child :", 'identity' in child);
 	console.log("'name' in child :", 'name' in child);
@@ -55,11 +54,10 @@ function Usecase01() {
 }
 
 function Usecase02() {
-	console.log('\n use case 02 :');
 	let range = {
 		start: 1,
 		end: 10,
-		data: 'helloWorld'
+		data: 'HelloWorld'
 	};
 
 	range = new Proxy(range, {

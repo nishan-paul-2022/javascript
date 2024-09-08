@@ -1,14 +1,14 @@
-function Usecase01() {
-	let regular1 = {
+function Example() {
+	let regular = {
 		username: 'paul',
-		_password: 'helloWorld'
+		_password: 'HelloWorld'
 	};
 
-	for (const i in regular1) {
-		const isOwn = Object.prototype.hasOwnProperty.call(regular1, i);
+	for (const i in regular) {
+		const isOwn = Object.prototype.hasOwnProperty.call(regular, i);
 		const isPrivate = i.startsWith('_');
 		if (isOwn && isPrivate) {
-			Object.defineProperties(regular1, {
+			Object.defineProperties(regular, {
 				[i]: {
 					enumerable: false
 				}
@@ -16,7 +16,7 @@ function Usecase01() {
 		}
 	}
 
-	regular1 = new Proxy(regular1, {
+	regular = new Proxy(regular, {
 		ownKeys: (target) => {
 			const arr1 = Object.getOwnPropertyNames(target).filter((prop) => {
 				const isPrivate = prop.startsWith('_');
@@ -63,19 +63,19 @@ function Usecase01() {
 	});
 
 	try {
-		Object.defineProperties(regular1, {
+		Object.defineProperties(regular, {
 			_password: {
-				value: 'vengeance'
+				value: 'i-am-vengeance'
 			}
 		});
-		regular1._password = 'fearIsATool';
-		console.log(regular1._password);
-		delete regular1._password;
+		regular._password = 'fear-is-a-Tool';
+		console.log(regular._password);
+		delete regular._password;
 	} catch (error) {
 		console.log(error.message);
 	}
 
-	print(regular1);
+	console.log(regular);
 }
 
-Usecase01();
+Example();

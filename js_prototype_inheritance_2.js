@@ -1,4 +1,4 @@
-function F01() {
+function Usecase01() {
 	const animal = {
 		stomach: [],
 		eat(food) {
@@ -6,22 +6,22 @@ function F01() {
 		}
 	};
 
-	const cat = {
+	const lion = {
 		__proto__: animal
 	};
 
-	const dog = {
+	const tiger = {
 		__proto__: animal
 	};
 
-	cat.eat('rice');
-	console.log(cat.stomach);
+	lion.eat('almond milk');
+	console.log(lion.stomach);
 
-	dog.eat('meat');
-	console.log(dog.stomach);
+	tiger.eat('red meat');
+	console.log(tiger.stomach);
 }
 
-function F02() {
+function Usecase02() {
 	const animal = {
 		stomach: [],
 		eat(food) {
@@ -29,68 +29,68 @@ function F02() {
 		}
 	};
 
-	const cat = {
+	const lion = {
 		__proto__: animal
 	};
 
-	const dog = {
+	const tiger = {
 		__proto__: animal
 	};
 
-	cat.eat('rice');
-	console.log(cat.stomach);
+	lion.eat('almond milk');
+	console.log(lion.stomach);
 
-	dog.eat('meat');
-	console.log(dog.stomach);
+	tiger.eat('red meat');
+	console.log(tiger.stomach);
 }
 
-function F03() {
+function Usecase03() {
 	const animal = {
 		eat(food) {
 			this.stomach = food;
 		}
 	};
 
-	const cat = {
+	const lion = {
 		__proto__: animal
 	};
 
-	const dog = {
+	const tiger = {
 		__proto__: animal
 	};
 
-	cat.eat('rice');
-	console.log(cat.stomach);
+	lion.eat('almond milk');
+	console.log(lion.stomach);
 
-	dog.eat('meat');
-	console.log(dog.stomach);
+	tiger.eat('red meat');
+	console.log(tiger.stomach);
 }
 
-function F04() {
+function Usecase04() {
 	const animal = {
 		eat(food) {
 			this.stomach.push(food);
 		}
 	};
 
-	const cat = {
+	const lion = {
 		stomach: [],
 		__proto__: animal
 	};
 
-	const dog = {
+	const tiger = {
 		stomach: [],
 		__proto__: animal
 	};
 
-	cat.eat('rice');
-	console.log(cat.stomach);
+	lion.eat('almond milk');
+	console.log(lion.stomach);
 
-	dog.eat('meat');
-	console.log(dog.stomach);
+	tiger.eat('red meat');
+	console.log(tiger.stomach);
 }
 
-F01();
-F02();
-F03();
-F04();
+Usecase01();
+Usecase02();
+Usecase03();
+Usecase04();

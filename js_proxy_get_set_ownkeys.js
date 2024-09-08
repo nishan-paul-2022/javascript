@@ -1,26 +1,24 @@
 // ownKeys : returns all own members
-function print(objectName) {
-	console.log('objectName :', objectName); // filter (enumerable, member, own, named + symbolic)
+function print(object) {
+	console.log('object :', object); // filter (enumerable, member, own, named + symbolic)
 
-	console.log('{ ...objectName } :', { ...objectName }); // ownKeys, filter (enumerable, member, own, named + symbolic)
+	console.log('{ ...object } :', { ...object }); // ownKeys, filter (enumerable, member, own, named + symbolic)
 
-	console.log('Object.keys(objectName) :', Object.keys(objectName)); // ownKeys, filter (enumerable, member, own, named)
+	console.log('Object.keys(object) :', Object.keys(object)); // ownKeys, filter (enumerable, member, own, named)
 
 	// ownKeys, filter (non + enumerable, member, own, named)
 	// ownKeys, filter (non + enumerable, member, own, symbolic)
 	console.log(
 		'getOwnProperty :',
-		Object.getOwnPropertyNames(objectName).concat(
-			Object.getOwnPropertySymbols(objectName)
+		Object.getOwnPropertyNames(object).concat(
+			Object.getOwnPropertySymbols(object)
 		)
 	);
 
 	// ownKeys, filter (enumerable, member, own, named) [ object and prototype chain ]
-	for (const i in objectName) {
-		console.log(i, ':', objectName[i]);
+	for (const i in object) {
+		console.log(i, ':', object[i]);
 	}
-
-	console.log('\n');
 }
 
 // regular1 and regular2 are interconnected in terms of setting-member, nothing else
@@ -49,8 +47,8 @@ function Usecase01() {
 }
 
 function Usecase02() {
-	let numbers1 = [0, 1, 2, 3];
-	numbers1 = new Proxy(numbers1, {
+	let numbers = [0, 1, 2, 3];
+	numbers = new Proxy(numbers, {
 		get: (target, prop) => {
 			if (prop in target) {
 				return target[prop];
@@ -69,22 +67,22 @@ function Usecase02() {
 		}
 	});
 
-	console.log(numbers1[3]);
-	console.log(numbers1[4]);
-	numbers1[5] = 100;
+	console.log(numbers[3]);
+	console.log(numbers[4]);
+	numbers[5] = 100;
 
 	try {
-		// numbers1[6] = '200'; // not a number
-		numbers1.push('200'); // not a number
+		// numbers[6] = '200'; /* not a number */
+		numbers.push('200'); /* not a number */
 	} catch (error) {
 		console.log(error.message);
 	}
 
-	console.log(numbers1);
+	console.log(numbers);
 }
 
 function Usecase03() {
-	let regular1 = {
+	let regular = {
 		name: 'paul',
 		ID: 1604085,
 		_location: 'Dhaka',
@@ -95,9 +93,9 @@ function Usecase03() {
 		}
 	};
 
-	print(regular1);
+	print(regular);
 
-	regular1 = new Proxy(regular1, {
+	regular = new Proxy(regular, {
 		ownKeys: (target) => {
 			const arr1 = Object.getOwnPropertyNames(target).filter((key) => {
 				const isPrivate = key.startsWith('_');
@@ -108,7 +106,7 @@ function Usecase03() {
 		}
 	});
 
-	print(regular1);
+	print(regular);
 }
 
 Usecase01();
@@ -139,5 +137,4 @@ defineProperty (target, prop)
 deleteProperty (target, prop)
 getOwnPropertyDescriptor
 has (target, prop) 
-apply (target, thisArg, argList)
-*/
+apply (target, thisArg, argList) */

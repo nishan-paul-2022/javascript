@@ -1,47 +1,38 @@
-// ownKeys : returns all own members
-function print(objectName) {
-	console.log('objectName :', objectName); // filter (enumerable, member, own, named + symbolic)
+function print(object) {
+	console.log('object :', object);
+	console.log('{ ...object } :', { ...object });
+	console.log('Object.keys(object) :', Object.keys(object));
 
-	console.log('{ ...objectName } :', { ...objectName }); // ownKeys, filter (enumerable, member, own, named + symbolic)
-
-	console.log('Object.keys(objectName) :', Object.keys(objectName)); // ownKeys, filter (enumerable, member, own, named)
-
-	// ownKeys, filter (non + enumerable, member, own, named)
-	// ownKeys, filter (non + enumerable, member, own, symbolic)
 	console.log(
 		'getOwnProperty :',
-		Object.getOwnPropertyNames(objectName).concat(
-			Object.getOwnPropertySymbols(objectName)
+		Object.getOwnPropertyNames(object).concat(
+			Object.getOwnPropertySymbols(object)
 		)
 	);
 
-	// ownKeys, filter (non + enumerable, member, own, named + symbolic)
 	console.log(
 		'getOwnPropertyDescriptors :',
-		Object.getOwnPropertyDescriptors(objectName)
+		Object.getOwnPropertyDescriptors(object)
 	);
 
-	// ownKeys, filter (enumerable, member, own, named) [ object and prototype chain ]
-	for (const i in objectName) {
-		console.log(i, ':', objectName[i]);
+	for (const i in object) {
+		console.log(i, ':', object[i]);
 	}
-
-	console.log('\n');
 }
 
 function Usecase01() {
-	let regular1 = {};
-	regular1 = new Proxy(regular1, {
+	let regular = {};
+	regular = new Proxy(regular, {
 		ownKeys: (_target) => {
 			return ['a', 'b', 'c'];
 		}
 	});
-	print(regular1);
+	print(regular);
 }
 
 function Usecase02() {
-	let regular1 = {};
-	regular1 = new Proxy(regular1, {
+	let regular = {};
+	regular = new Proxy(regular, {
 		ownKeys: (_target) => {
 			return ['a', 'b', 'c'];
 		},
@@ -54,7 +45,7 @@ function Usecase02() {
 			};
 		}
 	});
-	print(regular1);
+	print(regular);
 }
 
 Usecase01();

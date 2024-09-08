@@ -1,26 +1,27 @@
-const car = {
-	cycles: 4,
+const vehicle = {
+	wheels: 4,
 	windows: 6,
-	lookingGlass: 2
+	mirrors: 2
 };
 
-const bmw = {
-	engine: 'V8',
-	__proto__: car
+const bmwPetrol = {
+	engineType: 'petrol',
+	__proto__: vehicle
 };
 
-const bmwE = {
-	energy: 'electric',
-	__proto__: bmw
+const bmwElectric = {
+	fuelType: 'electric',
+	__proto__: bmwPetrol
 };
 
-const honda = {
-	engine: 'Chrome',
-	__proto__: car
+const hondaPetrol = {
+	engineType: 'petrol',
+	__proto__: vehicle
 };
 
-const animal = {
-	ID: 'animal',
+const creature = {
+	id: 'creature',
+
 	get fullName() {
 		const name = `${this.firstName} ${this.lastName}`;
 		return name;
@@ -30,95 +31,90 @@ const animal = {
 		[this.firstName, this.lastName] = name.split(' ');
 	},
 
-	Sound() {
-		console.log(this.ID);
+	makeSound() {
+		console.log(this.id);
 	}
 };
 
-const lion = {
-	ID: 'lion',
-	__proto__: animal
+const animal = {
+	id: 'animal',
+	__proto__: creature
 };
 
-function F01() {
-	console.log(car);
-	console.log(bmw);
-	console.log(bmwE);
-	console.log(honda);
-}
-
-function F02() {
-	console.log(Object.keys(car));
-	console.log(Object.keys(bmw));
-	console.log(Object.keys(bmwE));
-	console.log(Object.keys(honda));
-}
-
-function F03() {
-	console.log(Object.values(car));
-	console.log(Object.values(bmw));
-	console.log(Object.values(bmwE));
-	console.log(Object.values(honda));
-}
-
-function F04(obj) {
-	console.log(`\n\n`, obj);
-	for (const i in obj) {
-		console.log(`${i}: ${obj[i]}`);
+function logAllProperties(obj) {
+	console.log(obj);
+	for (const prop in obj) {
+		console.log(`${prop}: ${obj[prop]}`);
 	}
 }
 
-function F05() {
-	F04(car);
-	F04(bmw);
-	F04(bmwE);
-	F04(honda);
-}
-
-function F06(obj) {
-	console.log(`\n\n`, obj);
-	for (const i in obj) {
-		const noTamim = Object.prototype.hasOwnProperty.call(obj, i);
-		if (noTamim) {
-			console.log(`${i}: ${obj[i]}`);
+function logOwnProperties(obj) {
+	console.log(obj);
+	for (const prop in obj) {
+		if (Object.prototype.hasOwnProperty.call(obj, prop)) {
+			console.log(`${prop}: ${obj[prop]}`);
 		}
 	}
 }
 
-function F07() {
-	F06(car);
-	F06(bmw);
-	F06(bmwE);
-	F06(honda);
+function logVehicles() {
+	console.log(vehicle);
+	console.log(bmwPetrol);
+	console.log(bmwElectric);
+	console.log(hondaPetrol);
 }
 
-function F08() {
-	lion.fullName = 'jhon wick';
-	console.log(lion.fullName);
+function logVehicleKeys() {
+	console.log(Object.keys(vehicle));
+	console.log(Object.keys(bmwPetrol));
+	console.log(Object.keys(bmwElectric));
+	console.log(Object.keys(hondaPetrol));
+}
 
-	animal.Sound();
+function logVehicleValues() {
+	console.log(Object.values(vehicle));
+	console.log(Object.values(bmwPetrol));
+	console.log(Object.values(bmwElectric));
+	console.log(Object.values(hondaPetrol));
+}
 
-	lion.Sound();
+function logAllVehicleProperties() {
+	logAllProperties(vehicle);
+	logAllProperties(bmwPetrol);
+	logAllProperties(bmwElectric);
+	logAllProperties(hondaPetrol);
+}
 
-	lion.Sound = () => {
-		// write operation
-		console.log('WTF!');
+function logOwnVehicleProperties() {
+	logOwnProperties(vehicle);
+	logOwnProperties(bmwPetrol);
+	logOwnProperties(bmwElectric);
+	logOwnProperties(hondaPetrol);
+}
+
+function demonstrateAnimalObject() {
+	animal.fullName = 'Blue Whale';
+	console.log(animal.fullName);
+
+	creature.makeSound();
+
+	animal.makeSound();
+
+	animal.makeSound = () => {
+		console.log('roar');
 	};
-	lion.Sound();
+	animal.makeSound();
 
-	delete lion.Sound; // delete operation
-	lion.Sound();
+	delete animal.makeSound;
+	animal.makeSound();
 
-	delete lion.ID;
-	lion.Sound();
-
-	delete lion.ID;
-	lion.Sound();
+	delete animal.id;
+	animal.makeSound();
 }
 
-F01();
-F02();
-F03();
-F05();
-F07();
-F08();
+logVehicles();
+logVehicleKeys();
+logVehicleValues();
+logAllVehicleProperties();
+logOwnVehicleProperties();
+demonstrateAnimalObject();

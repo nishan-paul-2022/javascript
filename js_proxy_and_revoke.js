@@ -1,5 +1,5 @@
-function printProxy(regular) {
-	console.log('\n - print proxy');
+function logProxy(regular) {
+	console.log('\n - log proxy');
 	try {
 		console.log('regular :', regular);
 		console.log('regular.data :', regular.data);
@@ -14,23 +14,21 @@ function printProxy(regular) {
 }
 
 function Usecase01() {
-	console.log('\n use case 01 :');
 	let regular = {
-		data: 'helloWorld'
+		data: 'HelloWorld'
 	};
 	const proxyRe = Proxy.revocable(regular, {});
 	regular = proxyRe.proxy;
-	printProxy(regular);
+	logProxy(regular);
 	proxyRe.revoke();
-	printProxy(regular);
+	logProxy(regular);
 }
 
 function Usecase02() {
-	console.log('\n use case 02 :');
 	let regular = {
 		start: 1,
 		end: 10,
-		data: 'helloWorld'
+		data: 'HelloWorld'
 	};
 	const proxyRe = Proxy.revocable(regular, {
 		has(target, prop) {
@@ -38,9 +36,9 @@ function Usecase02() {
 		}
 	});
 	regular = proxyRe.proxy;
-	printProxy(regular);
+	logProxy(regular);
 	proxyRe.revoke();
-	printProxy(regular);
+	logProxy(regular);
 }
 
 Usecase01();
