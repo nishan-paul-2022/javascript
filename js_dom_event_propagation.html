@@ -4,10 +4,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
+			* {
+				font-family: 'Courier New', Courier, monospace;
+			}
+
+			body {
+				margin: 10px 500px;
+			}
+
 			.component {
 				border: 1px solid black;
 				margin: 5px;
 				padding: 5px;
+			}
+
+			button, [type="checkbox"] {
+				cursor: pointer;
 			}
 		</style>
 	</head>
@@ -15,14 +27,14 @@
 	<body onclick="alert('BODY')">
 		<div id="root" class="component">
 			<div id="container">
-				<button id="content">button</button>
+				<button id="content">Button</button>
 			</div>
 		</div>
 
 		<div id="unordered-list" class="component"></div>
 
 		<div id="ordered-list" class="component">
-			<p>paragraph</p>
+			<p>Paragraph</p>
 			<ol>
 				<li>A</li>
 				<li>B</li>
@@ -34,10 +46,10 @@
 
 		<div class="component">
 			<ul id="item-list">
-				<li>item 01</li>
-				<li>item 02</li>
-				<li>item 03</li>
-				<li>item 04</li>
+				<li>Item 01</li>
+				<li>Item 02</li>
+				<li>Item 03</li>
+				<li>Item 04</li>
 			</ul>
 		</div>
 
@@ -79,12 +91,12 @@
 				const unorderedList = document.createElement('ul');
 				const paragraph = document.createElement('p');
 
-				paragraph.textContent = 'paragraph';
+				paragraph.textContent = 'Paragraph';
 				unorderedList.appendChild(paragraph);
 
 				for (let i = 0; i < 10; i++) {
 					const listItem = document.createElement('li');
-					listItem.textContent = `line ${i + 1}`;
+					listItem.textContent = `Line ${i + 1}`;
 					unorderedList.appendChild(listItem);
 				}
 
@@ -149,7 +161,7 @@
 					.getElementById('check-box')
 					.addEventListener('click', (event) => {
 						event.preventDefault();
-						alert('preventDefault wont let you check this');
+						alert("preventDefault won't let you check this");
 					});
 			}
 

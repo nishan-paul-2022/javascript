@@ -5,26 +5,41 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
+			* {
+				font-family: 'Courier New', Courier, monospace;
+				font-size: x-large;
+			}
+
+			body {
+				margin: 50px 400px;
+				text-align: center;
+			}
+
 			.color {
-				background-color: aqua;
-				padding: 10px;
 				margin: 10px;
+				padding: 10px;
+				background-color: aqua;
 			}
 
 			.font {
-				font-family: 'Courier New', Courier, monospace;
-				font-size: large;
 				border: 2px solid gray;
+				font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+				font-style: italic;
 			}
 
 			.size1 {
-				height: 120px;
 				width: 240px;
+				height: 120px;
 			}
 
 			.size2 {
-				height: 240px;
 				width: 120px;
+				height: 240px;
+			}
+
+			button {
+				margin: 10px;
+				cursor: pointer;
 			}
 		</style>
 	</head>
@@ -40,16 +55,16 @@
 			translate="no"
 			dir="ltr"
 			title="Interstellar">
-			hello world
+			Hello Sir
 		</div>
 
-		<button id="id02" class="color font" disabled>radhe</button>
+		<button id="id02" class="color font" disabled>Gotham</button>
 
-		<button onclick="toggle()" class="color font">toggle</button>
+		<button onclick="toggle()" class="color font">Toggle Color</button>
 
-		<button onclick="styleSize()">style</button>
+		<button onclick="styleSize()">Change Size</button>
 
-		<p id="id03" class="color font">paragraph</p>
+		<p id="id03" class="color font">Paragraph</p>
 
 		<div id="id04"></div>
 

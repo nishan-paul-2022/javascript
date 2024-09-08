@@ -5,17 +5,34 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
+			* {
+				font-family: 'Courier New', Courier, monospace;
+				font-size: x-large;
+			}
+		
+			body {
+				margin: 50px 250px;
+				padding: 50px;
+				border: 1px solid black;
+				text-align: center;
+			}
+
 			.border {
-				border: 2px solid black;
-				padding: 10px;
 				margin-bottom: 10px;
+				padding: 10px;
+				border: 1px solid black;
+			}
+
+			button {
+				margin: 10px;
+				cursor: pointer;
 			}
 		</style>
 	</head>
 
 	<body>
 		<div id="parent" class="border">
-			<code id="child">hello world!</code>
+			<code id="child">May I Come In Sir !</code>
 		</div>
 
 		<button onclick="InsertBefore()">Insert Before</button>
@@ -41,16 +58,16 @@
 
 			function InsertAdjacentElement() {
 				const p1 = document.createElement('p');
-				p1.textContent = 'new element 01';
+				p1.textContent = 'New Element 01';
 
 				const p2 = document.createElement('p');
-				p2.textContent = 'new element 02';
+				p2.textContent = 'New Element 02';
 
 				const p3 = document.createElement('p');
-				p3.textContent = 'new element 03';
+				p3.textContent = 'New Element 03';
 
 				const p4 = document.createElement('p');
-				p4.textContent = 'new element 04';
+				p4.textContent = 'New Element 04';
 
 				parent.insertAdjacentElement('beforebegin', p1);
 				parent.insertAdjacentElement('afterbegin', p2);
@@ -60,16 +77,16 @@
 
 			function ReplaceChildren() {
 				const h1 = document.createElement('h1');
-				h1.textContent = 'heading';
+				h1.textContent = 'Heading';
 
 				const pre = document.createElement('pre');
-				pre.textContent = 'preformat';
+				pre.textContent = 'Preformat';
 
-				parent.replaceChildren('text node', pre, h1);
+				parent.replaceChildren('Text Node', pre, h1);
 			}
 
 			function AppendChild() {
-				element.textContent = 'append child element';
+				element.textContent = 'Append Child Element';
 				parent.appendChild(element);
 			}
 
@@ -79,13 +96,13 @@
 
 			function ReplaceChild1() {
 				const replacementChildElem = document.createElement('p');
-				replacementChildElem.textContent = 'replacement child element';
+				replacementChildElem.textContent = 'Replacement Child Element';
 				parent.replaceChild(replacementChildElem, child);
 			}
 
 			function ReplaceChild2() {
 				const replacementChildElem = document.createElement('p');
-				replacementChildElem.textContent = 'replacement child element';
+				replacementChildElem.textContent = 'Replacement Child Element';
 				parent.replaceChild(replacementChildElem, parent.firstChild);
 			}
 		</script>

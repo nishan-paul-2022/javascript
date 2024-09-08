@@ -4,6 +4,19 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<style>
+			* {
+				font-family: 'Courier New', Courier, monospace;
+				font-size: xx-large;
+			}
+		
+			body {
+				margin: 50px 200px;
+				padding: 50px;
+				border: 1px solid black;
+				text-align: center;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -16,11 +29,11 @@
 			// Create and add elements to the fragment
 			for (let i = 1; i <= 5; i++) {
 				const div = document.createElement('div');
-				div.textContent = `Item ${i}`;
+				div.textContent = `ITEM ${i}`;
 				fragment.appendChild(div);
 			}
 
-			const textNode = document.createTextNode('text');
+			const textNode = document.createTextNode('TEXT');
 			const commentNode = document.createComment('comment');
 
 			fragment.appendChild(textNode);

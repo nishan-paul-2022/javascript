@@ -4,6 +4,19 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<style>
+			* {
+				font-family: 'Courier New', Courier, monospace;
+				font-size: xx-large;
+			}
+		
+			body {
+				margin: 50px 600px;
+				padding: 50px;
+				border: 1px solid black;
+				text-align: center;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -11,18 +24,19 @@
 			const table = document.createElement('table');
 			const tbody = document.createElement('tbody');
 
-			const newRow1 = tbody.insertRow();
-			const newRow2 = tbody.insertRow();
+			const rowsData = [
+				['11/', '12/', '13/', '14/'],
+				['21/', '22/', '23/', '24/'],
+				['31/', '32/', '33/', '34/']
+			];
 
-			const newCell1 = newRow1.insertCell();
-			const newCell2 = newRow1.insertCell();
-			const newCel21 = newRow2.insertCell();
-			const newCel22 = newRow2.insertCell();
-
-			newCell1.textContent = '11';
-			newCell2.textContent = '12';
-			newCel21.textContent = '21';
-			newCel22.textContent = '22';
+			rowsData.forEach(rowData => {
+				const newRow = tbody.insertRow();
+				rowData.forEach(cellData => {
+					const newCell = newRow.insertCell();
+					newCell.textContent = cellData;
+				});
+			});
 
 			table.appendChild(tbody);
 			document.body.appendChild(table);
